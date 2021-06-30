@@ -1,0 +1,965 @@
+
+________________________________________________________________________________
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+
+            This Report Was Created on October 25, 2006 at 15:58.
+
+________________________________________________________________________________
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       1
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+BASEBRGY                     QUESTION NUMBER:  BS1
+
+BARANGAY OF RESPONDENT'S RESIDENCE DURING BASELINE SURVEY
+
+(Barangay--small village or neighborhood--in which sample woman and her
+ household resided at Baseline survey.  This variable, along with BASEWMAN,
+ constitutes the principal identification number of each sample woman, her
+ household, household members and food records, throughout the study.  Use
+ with BASEWMAN for merging files.)
+
+SURVEY:  BASELINE            SUBJECT:     IDENTIFICATION
+SAMPLE:  3327                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ [labels deleted]
+
+  BASEBRGY     COUNT      PERCENT
+     1         143           4.30
+     2         103           3.10
+     3         235           7.06
+     4         131           3.94
+     5         17            0.51
+     6         109           3.28
+     7         165           4.96
+     8         114           3.43
+     9         181           5.44
+    10         195           5.86
+    11         153           4.60
+    12         96            2.89
+    13         355          10.67
+    14         96            2.89
+    15         85            2.55
+    16         120           3.61
+    17         257           7.72
+    18         38            1.14
+    19         25            0.75
+    20         71            2.13
+    21         17            0.51
+    22         23            0.69
+    23         28            0.84
+    24         15            0.45
+    25         28            0.84
+    26         64            1.92
+    27         73            2.19
+    28         175           5.26
+    29         61            1.83
+    30         46            1.38
+    31         56            1.68
+    32         36            1.08
+    33         16            0.48
+
+
+
+________________________________________________________________________________
+
+                                       2
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+BASEWMAN                     QUESTION NUMBER:  BS3
+
+SAMPLE WOMAN NUMBER IN BARANGAY DURING BASELINE SURVEY
+
+(Sample woman's identification number within the Barangay where she and her
+ household resided at Baseline survey.  This variable, along with BASEBRGY,
+ constitutes the principal identification number of each sample woman, her
+ household, household members and food records, throughout the survey.  Use
+ within BASEBRGY for merging files.)
+
+SURVEY:  BASELINE            SUBJECT:     IDENTIFICATION
+SAMPLE:  3327                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+  1  - Sample woman number one in barangay
+  :
+1000 - Sample woman number one thousand in barangay
+1001 - Second number of sample woman one with infant 2 born in HH
+  :
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       3
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+BATHER09                     QUESTION NUMBER: N/A
+
+NUMBER OF HOUSEHOLD MEMBERS THAT BATHE AT HOME
+
+SURVEY:  WATER QUALITY--L9   SUBJECT:     WATER QUALITY INSERT
+SAMPLE:  2657                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - 1 Person
+ :
+ 9 - 9 Persons
+ :
+-8 - NR/DK
+
+
+  BATHER09     COUNT      PERCENT
+     .         670            .
+    -8         405            .
+     0         701          31.13
+     1         459          20.38
+     2         222           9.86
+     3         161           7.15
+     4         203           9.01
+     5         136           6.04
+     6         119           5.28
+     7         79            3.51
+     8         51            2.26
+     9         52            2.31
+    10         25            1.11
+    11         22            0.98
+    12         10            0.44
+    13         5             0.22
+    14         3             0.13
+    15         1             0.04
+    16         2             0.09
+    20         1             0.04
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+                                       4
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+BBATHFRQ                     QUESTION NUMBER: N/A
+
+FREQUENCY OF BABY BATHING PER WEEK (times per week)
+
+SURVEY:  WATER QUALITY--L9   SUBJECT:     WATER QUALITY INSERT
+SAMPLE:  2657                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Once a week
+ :
+ 9 - Nine times a week
+ :
+-8 - NR/DK
+-9 - NA
+
+
+  BBATHFRQ     COUNT      PERCENT
+    -8         726            .
+    -9         132            .
+     0         8             0.32
+    .3         7             0.28
+    .5         8             0.32
+    .8         3             0.12
+     1         76            3.08
+     2         188           7.61
+     3         299          12.11
+     4         214           8.67
+     5         211           8.55
+     6         34            1.38
+     7         1264         51.19
+    14         94            3.81
+    21         29            1.17
+    28         17            0.69
+    35         4             0.16
+    42         2             0.08
+    49         11            0.45
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+                                       5
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+BEHAV09                      QUESTION NUMBER: N/A
+
+METHOD OF DISPOSING OF BABY'S FECES
+
+SURVEY:  WATER QUALITY--L9   SUBJECT:     WATER QUALITY INSERT
+SAMPLE:  2657                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Picks up or wraps feces with paper/banana leaves/plastic
+ 2 - Scrapes feces with cardboard/corn cob/coconut husk
+ 3 - Baby wears a diaper/panty
+ 4 - Mother picks up feces with hands
+ 5 - Baby uses toilet or chamber pot
+ 6 - Baby squats over paper
+ 7 - Mother sweeps up feces with broom, dustpan
+ 8 - Animal is called in to eat feces
+ 9 - Baby defecates over hole in floor
+10 - Baby defecates outside house
+11 - Feces are washed through floor with water
+12 - Feces scraped up with shovel/bolo/guna (outside house)
+-8 - NR/DK
+-9 - NA
+
+
+  BEHAV09      COUNT      PERCENT
+     .         670            .
+    -8         237            .
+     1         1428         59.01
+     2         68            2.81
+     3         39            1.61
+     4         1             0.04
+     5         170           7.02
+     6         105           4.34
+     7         86            3.55
+     8         30            1.24
+     9         60            2.48
+    10         230           9.50
+    11         141           5.83
+    12         62            2.56
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+                                       6
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+CONLAN09                     QUESTION NUMBER: N/A
+
+NUMBER OF ADDITIONAL CONTAINERS OF H2O USUALLY FETCHED FOR LAUNDRY
+
+SURVEY:  WATER QUALITY--L9   SUBJECT:     WATER QUALITY INSERT
+SAMPLE:  2657                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - 1 Container
+ :
+ 9 - 9 Container
+-8 - NR/DK
+-9 - NA, water source in house or yard
+
+
+  CONLAN09     COUNT      PERCENT
+     .         670            .
+    -8         1887           .
+    .5         2             0.26
+     1         17            2.21
+     2         76            9.87
+     3         97           12.60
+     4         110          14.29
+     5         81           10.52
+     6         86           11.17
+     7         28            3.64
+     8         45            5.84
+     9         13            1.69
+    10         75            9.74
+    11         1             0.13
+    12         29            3.77
+    13         1             0.13
+    14         6             0.78
+    15         14            1.82
+    16         22            2.86
+    18         7             0.91
+    20         29            3.77
+    21         1             0.13
+    23         2             0.26
+    24         2             0.26
+    25         4             0.52
+    26         1             0.13
+    28         1             0.13
+    30         9             1.17
+    32         1             0.13
+    35         1             0.13
+    40         5             0.65
+    50         1             0.13
+    68         1             0.13
+    80         2             0.26
+
+
+
+
+
+________________________________________________________________________________
+
+                                       7
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+CONNUM09                     QUESTION NUMBER: N/A
+
+NUMBER OF CONTAINERS USUALLY FETCHED PER DAY
+
+SURVEY:  WATER QUALITY--L9   SUBJECT:     WATER QUALITY INSERT
+SAMPLE:  2657                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ :
+ 1 - One container
+ :
+-7 - Multiple containers
+-8 - NR/DK
+-9 - NA, water source in house or yard
+
+
+  CONNUM09     COUNT      PERCENT
+     .         670            .
+    -8         409            .
+    .5         1             0.04
+     1         89            3.96
+     1.02      1             0.04
+     1.2       2             0.09
+     1.22      1             0.04
+     1.3       1             0.04
+     1.5       14            0.62
+     2         290          12.90
+     2.12      1             0.04
+     2.2       1             0.04
+     2.5       4             0.18
+     2.6       1             0.04
+     3         281          12.50
+     3.47      1             0.04
+     3.5       3             0.13
+     4         312          13.88
+     4.3       2             0.09
+     4.5       2             0.09
+     4.6       1             0.04
+     5         232          10.32
+     5.2       1             0.04
+     5.5       1             0.04
+     5.66      1             0.04
+     6         265          11.79
+     6.29      1             0.04
+     6.6       1             0.04
+     6.75      1             0.04
+     7         91            4.05
+     7.25      1             0.04
+     7.35      1             0.04
+     7.6       1             0.04
+     8         147           6.54
+     8.5       1             0.04
+     8.95      1             0.04
+     9         45            2.00
+     9.74      1             0.04
+    10         160           7.12
+    10.16      1             0.04
+    10.92      1             0.04
+    11         16            0.71
+    11.5       1             0.04
+    12         74            3.29
+    12.2       1             0.04
+    13         14            0.62
+    14         19            0.85
+    14.3       1             0.04
+    14.6       1             0.04
+    15         34            1.51
+    16         15            0.67
+    17         10            0.44
+    18         10            0.44
+    19         6             0.27
+    20         40            1.78
+    21         6             0.27
+    22         2             0.09
+    23         2             0.09
+    24         3             0.13
+    25         5             0.22
+    26         1             0.04
+    27         3             0.13
+    28         3             0.13
+    29         1             0.04
+    30         6             0.27
+    36         1             0.04
+    38         3             0.13
+    40         4             0.18
+    42         1             0.04
+    50         2             0.09
+    70         1             0.04
+
+
+
+
+
+
+
+________________________________________________________________________________
+
+                                       8
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+CONSUMP                      QUESTION NUMBER: N/A
+
+ESTIMATED NON-LAUNDRY WATER CONSUMPTION (Liters)
+
+SURVEY:  WATER QUALITY--L9   SUBJECT:     WATER QUALITY INSERT
+SAMPLE:  2657                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - 1 liter
+ :
+ 9 - 9 liters
+ :
+-8 - NR/DK
+-9 - NA
+
+-8'S=717   -9'S=366   MISSINGS(.)=0
+
+N=2244  MEAN=71.48  MIN=4  MAX=1323  Q1=30.09  MEDIAN=55  Q3=91
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       9
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+CONTYP09                     QUESTION NUMBER: N/A
+
+TYPE OF WATER FETCHING CONTAINER
+
+SURVEY:  WATER QUALITY--L9   SUBJECT:     WATER QUALITY INSERT
+SAMPLE:  2657                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Taro
+ 2 - Gallonan
+ 3 - Metal pail
+ 4 - Metal can (cylinder)
+ 5 - Plastic pail, small
+ 6 - Plastic pail (large)
+ 7 - Drum
+ 8 - Other
+ 9 - More than one container reported
+-8 - NR/DK
+-9 - NA, water source in house or yard
+
+
+  CONTYP09     COUNT      PERCENT
+     .         670            .
+    -8         405            .
+     1         93            4.13
+     2         692          30.73
+     3         295          13.10
+     4         502          22.29
+     5         210           9.33
+     6         241          10.70
+     7         11            0.49
+     8         155           6.88
+     9         53            2.35
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      10
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+CONVOL09                     QUESTION NUMBER: N/A
+
+ESTIMATED VOLUME OF PRIMARY CONTAINER (Liters)
+
+SURVEY:  WATER QUALITY--L9   SUBJECT:     WATER QUALITY INSERT
+SAMPLE:  2657                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - One liter
+ :
+ 9 - Nine liters
+ :
+-8 - NR/DK
+-9 - NA
+
+-8'S=423   -9'S=0   MISSINGS(.)=670
+
+N=2234  MEAN=12.84  MIN=1.9  MAX=208  Q1=7.6  MEDIAN=15  Q3=18.9
+
+
+
+
+
+________________________________________________________________________________
+
+DAYLAN09                     QUESTION NUMBER: N/A
+
+NUMBER OF LAUNDRY DAYS PER WEEK
+
+SURVEY:  WATER QUALITY--L9   SUBJECT:     WATER QUALITY INSERT
+SAMPLE:  2657                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - One day
+ :
+ 7 - Seven days
+-8 - NR/DK
+-9 - NA, water source in house or yard
+
+-8'S=1885   -9'S=0   MISSINGS(.)=670
+
+N=772  MEAN=3.88  MIN=0.25  MAX=7  Q1=2  MEDIAN=3  Q3=7
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+                                      11
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+FETCH09                      QUESTION NUMBER: N/A
+
+TRAVEL TIME TO WATER SOURCE (return trip in minutes)
+
+SURVEY:  WATER QUALITY--L9   SUBJECT:     WATER QUALITY INSERT
+SAMPLE:  2657                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - 1 minute
+ :
+ 9 - 9 minutes
+ :
+-8 - NR/DK
+-9 - NA
+
+-8'S=412   -9'S=0   MISSINGS(.)=670
+
+N=2245  MEAN=5.23  MIN=0.5  MAX=60  Q1=1  MEDIAN=2  Q3=5
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      12
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+HHSIZE09                     QUESTION NUMBER: N/A
+
+SIZE OF HOUSEHOLD
+
+SURVEY:  WATER QUALITY--L9   SUBJECT:     WATER QUALITY INSERT
+SAMPLE:  2657                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - 1 Person in household
+ :
+ 9 - 9 Persons in household
+ :
+-8 - NR/DK
+
+
+  HHSIZE09     COUNT      PERCENT
+     .         670            .
+    -8         410            .
+     1         4             0.18
+     2         20            0.89
+     3         192           8.54
+     4         382          17.00
+     5         428          19.05
+     6         361          16.07
+     7         255          11.35
+     8         210           9.35
+     9         143           6.36
+    10         105           4.67
+    11         65            2.89
+    12         36            1.60
+    13         17            0.76
+    14         11            0.49
+    15         7             0.31
+    16         9             0.40
+    17         1             0.04
+    20         1             0.04
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+                                      13
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+LAUNDR09                     QUESTION NUMBER: N/A
+
+SITE WHERE LAUNDRY IS DONE
+
+SURVEY:  WATER QUALITY--L9   SUBJECT:     WATER QUALITY INSERT
+SAMPLE:  2657                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Inside house or garden
+ 2 - Outside of house or garden
+-8 - NR/DK
+-9 - NA, water source in house or yard
+
+
+  LAUNDR09     COUNT      PERCENT
+     .         670            .
+    -8         402            .
+     1         749          33.22
+     2         1506         66.78
+
+
+
+
+
+
+________________________________________________________________________________
+
+PERCAP09                     QUESTION NUMBER: N/A
+
+ESTIMATED NON-LAUNDRY PER-CAPITA WATER CONSUMPTION (Liters/person)
+
+SURVEY:  WATER QUALITY--L9   SUBJECT:     WATER QUALITY INSERT
+SAMPLE:  2657                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - 1 liter
+ :
+ 9 - 9 liters
+ :
+-8 - NR/DK
+-9 - NA
+
+-8'S=427   -9'S=0   MISSINGS(.)=670
+
+N=2230  MEAN=15.01  MIN=0.62  MAX=250  Q1=5.75  MEDIAN=10.19  Q3=19
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+                                      14
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+PLACE09                      QUESTION NUMBER: N/A
+
+PLACE WHERE CHILD'S FECES ARE DISPOSED
+
+SURVEY:  WATER QUALITY--L9  SUBJECT:     AVAILABILITY OF WATER
+SAMPLE:  2657               FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - "A little further from the house"/"Far from the house"
+ 2 - Field/vacant lot
+ 3 - Garbage/dumping/burning area
+ 4 - Garbage can (regularly emptied)
+ 5 - Canal or drainage ditch
+ 6 - Under house (uncovered)
+ 7 - In yard (e.g. back of house, outside, outside window)
+ 8 - Kangkong field/swamp
+ 9 - On seashore
+10 - Toilet/latrine
+11 - Buried
+12 - Eaten by animal
+13 - In river
+14 - In sea
+15 - Washed from rag/diaper/panty
+
+
+  PLACE09      COUNT      PERCENT
+     .         670            .
+    -8         374            .
+     1         218           9.55
+     2         355          15.55
+     3         400          17.52
+     4         213           9.33
+     5         139           6.09
+     6         57            2.50
+     7         122           5.34
+     8         21            0.92
+     9         35            1.53
+    10         419          18.35
+    11         63            2.76
+    12         59            2.58
+    13         98            4.29
+    14         60            2.63
+    15         24            1.05
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+                                      15
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+QUAN09                       QUESTION NUMBER: N/A
+
+ESTIMATED TOTAL QUANTITY OF WATER FETCHED (Liters)
+
+SURVEY:  WATER QUALITY--L9   SUBJECT:     WATER QUALITY INSERT
+SAMPLE:  2657                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - 1 liter
+ :
+ 9 - 9 liters
+ :
+-8 - NR/DK
+-9 - NA
+
+-8'S=419   -9'S=0   MISSINGS(.)=670
+
+N=2238  MEAN=88.41  MIN=4  MAX=1971  Q1=34  MEDIAN=61  Q3=114
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      16

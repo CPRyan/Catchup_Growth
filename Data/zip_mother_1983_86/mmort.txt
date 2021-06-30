@@ -1,0 +1,5670 @@
+
+________________________________________________________________________________
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+
+            This Report Was Created on October 25, 2006 at 15:47.
+
+________________________________________________________________________________
+________________________________________________________________________________
+
+ABDOCRAM                     QUESTION NUMBER: Z60
+
+DID BABY EXPERIENCE ABDOMINAL CRAMPS SINCE ONSET OF DIARRHEA?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  ABDOCRAM     COUNT      PERCENT
+     .         3178           .
+    -9         95             .
+     0         27           50.00
+     1         27           50.00
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       1
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+AGEDIED                      QUESTION NUMBER: Z98
+
+AGE OF INFANT AT DEATH, COMPUTED MANUALLY (EXPRESSED IN DAYS)
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 0 - less than 1 day
+ 1 - One day or more but less than 2 days
+ :
+30 - 30 days or more but less than 1 month (depending on the month)
+ :
+-8 - NR/DK
+
+
+  AGEDIED      COUNT      PERCENT
+     .         3178           .
+     0         11            7.33
+     1         1             0.67
+     1.21      1             0.67
+     2         2             1.33
+     3         3             2.00
+     4         3             2.00
+     5         1             0.67
+     6         3             2.00
+     7         2             1.33
+     8         1             0.67
+    11         1             0.67
+    15         2             1.33
+    17         1             0.67
+    18         1             0.67
+    20         1             0.67
+    21         1             0.67
+    22         1             0.67
+    23         2             1.33
+    63         1             0.67
+    73         1             0.67
+    76         1             0.67
+    84         1             0.67
+   114         1             0.67
+   138         1             0.67
+   149         1             0.67
+   153         1             0.67
+   155         1             0.67
+   156         1             0.67
+   168         1             0.67
+   172         1             0.67
+   174         1             0.67
+   177         1             0.67
+   191         1             0.67
+   200         1             0.67
+   209         1             0.67
+   211         1             0.67
+   212         1             0.67
+   213         1             0.67
+   216         1             0.67
+   218         1             0.67
+   225         1             0.67
+   227         1             0.67
+   236         1             0.67
+   242         1             0.67
+   244         1             0.67
+   245         2             1.33
+   251         1             0.67
+   252         1             0.67
+   255         1             0.67
+   259         1             0.67
+   261         1             0.67
+   273         1             0.67
+   278         2             1.33
+   292         1             0.67
+   296         1             0.67
+   305         1             0.67
+   307         1             0.67
+   308         1             0.67
+   312         1             0.67
+   317         1             0.67
+   326         1             0.67
+   328         1             0.67
+   339         1             0.67
+   340         1             0.67
+   341         1             0.67
+   344         1             0.67
+   345         1             0.67
+   355         2             1.33
+   358         1             0.67
+   369         1             0.67
+   370         1             0.67
+   373         1             0.67
+   388         1             0.67
+   390         1             0.67
+   398         1             0.67
+   399         2             1.33
+   403         1             0.67
+   406         2             1.33
+   407         1             0.67
+   408         1             0.67
+   415         1             0.67
+   419         1             0.67
+   423         1             0.67
+   432         1             0.67
+   435         1             0.67
+   438         1             0.67
+   445         2             1.33
+   447         1             0.67
+   453         1             0.67
+   456         1             0.67
+   458         1             0.67
+   464         1             0.67
+   471         1             0.67
+   489         1             0.67
+   493         1             0.67
+   495         1             0.67
+   499         1             0.67
+   502         1             0.67
+   503         2             1.33
+   511         1             0.67
+   515         1             0.67
+   519         1             0.67
+   523         1             0.67
+   529         1             0.67
+   549         1             0.67
+   560         1             0.67
+   571         1             0.67
+   578         2             1.33
+   591         1             0.67
+   600         1             0.67
+   603         1             0.67
+   612         1             0.67
+   623         1             0.67
+   670         1             0.67
+   678         1             0.67
+   686         1             0.67
+   688         1             0.67
+   692         1             0.67
+   696         1             0.67
+   700         1             0.67
+   704         1             0.67
+   718         1             0.67
+
+
+
+
+
+________________________________________________________________________________
+
+                                       2
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+APPETITE                     QUESTION NUMBER: Z87
+
+HOW WAS BABY'S APPETITE DURING THE LAST 24 HOURS OF LIFE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Good at all times
+ 2 - Good during some hours, not so good on others
+ 3 - Poor during the entire 24 hours
+ 4 - Did not eat at all during the entire 24 hours
+ 5 - Others (SPECIFY)
+-8 - NR/DK
+-9 - NA
+
+
+  APPETITE     COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+    -9         3              .
+     1         34           23.45
+     2         21           14.48
+     3         63           43.45
+     4         26           17.93
+     5         1             0.69
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       3
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+BASEBRGY                     QUESTION NUMBER:  BS1
+
+BARANGAY OF RESPONDENT'S RESIDENCE DURING BASELINE SURVEY
+
+(Barangay--small village or neighborhood--in which sample woman and her
+ household resided at Baseline survey.  This variable, along with BASEWMAN,
+ constitutes the principal identification number of each sample woman, her
+ household, household members and food records, throughout the study.  Use
+ with BASEWMAN for merging files.)
+
+SURVEY:  BASELINE            SUBJECT:     IDENTIFICATION
+SAMPLE:  3327                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ [labels deleted]
+
+  BASEBRGY     COUNT      PERCENT
+     1         143           4.30
+     2         103           3.10
+     3         235           7.06
+     4         131           3.94
+     5         17            0.51
+     6         109           3.28
+     7         165           4.96
+     8         114           3.43
+     9         181           5.44
+    10         195           5.86
+    11         153           4.60
+    12         96            2.89
+    13         355          10.67
+    14         96            2.89
+    15         85            2.55
+    16         120           3.61
+    17         257           7.72
+    18         38            1.14
+    19         25            0.75
+    20         71            2.13
+    21         17            0.51
+    22         23            0.69
+    23         28            0.84
+    24         15            0.45
+    25         28            0.84
+    26         64            1.92
+    27         73            2.19
+    28         175           5.26
+    29         61            1.83
+    30         46            1.38
+    31         56            1.68
+    32         36            1.08
+    33         16            0.48
+
+
+
+________________________________________________________________________________
+
+                                       4
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+BASEWMAN                     QUESTION NUMBER:  BS3
+
+SAMPLE WOMAN NUMBER IN BARANGAY DURING BASELINE SURVEY
+
+(Sample woman's identification number within the Barangay where she and her
+ household resided at Baseline survey.  This variable, along with BASEBRGY,
+ constitutes the principal identification number of each sample woman, her
+ household, household members and food records, throughout the survey.  Use
+ within BASEBRGY for merging files.)
+
+SURVEY:  BASELINE            SUBJECT:     IDENTIFICATION
+SAMPLE:  3327                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+  1  - Sample woman number one in barangay
+  :
+1000 - Sample woman number one thousand in barangay
+1001 - Second number of sample woman one with infant 2 born in HH
+  :
+
+
+________________________________________________________________________________
+
+BFLAS24H                     QUESTION NUMBER: Z4
+
+WAS BABY BREASTFED DURING THE LAST 24 HOURS OF LIFE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes (If code in Z3 is 1, code -9 from Z5 to Z6)
+ 0 - No  (If code in Z3 is 0, code -9 from Z5 to Z6;
+          If code in Z3 is 1, continue)
+-8 - NR/DK
+-9 - NA
+
+
+  BFLAS24H     COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+    -9         1              .
+     0         119          80.95
+     1         28           19.05
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+                                       5
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+BFLASVIS                     QUESTION NUMBER: Z3
+
+WAS BABY BREASTFED DURING INTERVIEWER'S LAST VISIT?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  BFLASVIS     COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+     0         92           62.16
+     1         56           37.84
+
+
+
+
+
+________________________________________________________________________________
+
+BLOODFEC                     QUESTION NUMBER: Z58
+
+WAS BLOOD PRESENT IN BABY'S FECES DURING THE LAST 24 HOURS OF LIFE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No (Code -9 in CAUSBLOD)
+-8 - NR/DK
+-9 - NA
+
+
+  BLOODFEC     COUNT      PERCENT
+     .         3178           .
+    -9         95             .
+     0         46           85.19
+     1         8            14.81
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+                                       6
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+BRSTMILK                     QUESTION NUMBER: Z61
+
+WAS BABY BREASTFED THE DAY BEFORE THE ONSET OF DIARRHEA?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  BRSTMILK     COUNT      PERCENT
+     .         3178           .
+    -9         95             .
+     0         38           70.37
+     1         16           29.63
+
+
+
+
+
+________________________________________________________________________________
+
+BRWEIGHT                     QUESTION NUMBER: Z99
+
+BIRTH WEIGHT IN GRAMS FOR BABIES WHO WERE WEIGHED AT BIRTH
+(TO THE NEAREST 50th OR 100th OF A GRAM)
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT BIRTH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ :
+2000 - Two thousand grams
+ :
+-8   - NR/DK
+-9   - NA (Was not weighed right after birth)
+
+-8'S=0   -9'S=48   MISSINGS(.)=3178
+
+N=101  MEAN=2849.02  MIN=907  MAX=4400  Q1=2400  MEDIAN=2863  Q3=3350
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+                                       7
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+CAUSBLOD                     QUESTION NUMBER: Z59
+
+CAUSE OF BLOOD IN INFANT'S FECES DURING LAST 24 HOURS OF LIFE
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Because of virus or micro-organisms
+ 2 - Because of constipation or irritation
+ 3 - Others (SPECIFY)
+-8 - NR/DK
+-9 - NA
+
+
+  CAUSBLOD     COUNT      PERCENT
+     .         3178           .
+    -9         141            .
+     1         3            37.50
+     3         5            62.50
+
+
+
+
+
+________________________________________________________________________________
+
+CERTIFY                      QUESTION NUMBER: Z88
+
+DOES BABY HAVE A DEATH CERTIFICATE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No   (Code -9 from KILLER1 to KILLER3)
+-8 - NR/DK
+-9 - NA
+
+
+  CERTIFY      COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+     0         18           12.16
+     1         130          87.84
+
+
+
+
+
+________________________________________________________________________________
+
+
+                                       8
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+COSTMED                      QUESTION NUMBER: Z44
+
+TOTAL COST (PESOS) OF MEDICINE THAT MOTHER BOUGHT FOR THE BABY
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - One peso
+ :
+-8 - NR/DK
+-9 - NA
+
+-8'S=0   -9'S=64   MISSINGS(.)=3178
+
+N=85  MEAN=154.52  MIN=1  MAX=1500  Q1=35  MEDIAN=60  Q3=150
+
+
+
+
+
+________________________________________________________________________________
+
+COUGH                        QUESTION NUMBER: Z45
+
+WAS BABY COUGHING DURING THE LAST 24 HOURS OF LIFE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No  (Code -9 from STARTCOG to SELFMEDN)
+-8 - NR/DK
+-9 - NA
+
+
+  COUGH        COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+     0         72           48.65
+     1         76           51.35
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+                                       9
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+COUGHING                     QUESTION NUMBER: Z74
+
+AT ANY TIME DURING THE LAST 7 DAYS OF LIFE DID BABY COUGH?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  COUGHING     COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+    -9         50             .
+     0         71           72.45
+     1         27           27.55
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      10
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+DAYBORN                      QUESTION NUMBER: Z96
+
+DAY BABY WAS BORN
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT BIRTH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - First day of the month
+ :
+31 - Thirty-first day of the month
+-8 - NR/DK
+
+
+  DAYBORN      COUNT      PERCENT
+     .         3178           .
+     1         3             2.01
+     2         6             4.03
+     3         6             4.03
+     4         7             4.70
+     5         5             3.36
+     6         6             4.03
+     7         9             6.04
+     8         6             4.03
+     9         1             1.34
+    10         4             2.68
+    11         5             3.36
+    12         5             3.36
+    13         4             2.68
+    14         4             2.68
+    15         5             3.36
+    16         2             1.34
+    17         4             2.68
+    18         4             2.68
+    19         3             2.01
+    20         5             3.36
+    21         5             3.36
+    22         4             2.68
+    23         5             3.36
+    24         2             1.34
+    25         7             4.70
+    26         8             5.37
+    27         9             6.04
+    28         7             4.70
+    29         4             2.68
+    30         2             1.34
+    31         2             1.34
+
+
+
+
+
+________________________________________________________________________________
+
+                                      11
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+DAYDIED                      QUESTION NUMBER: Z1
+
+DAY BABY DIED
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - First day of the month
+ :
+31 - Thirty-first day of month
+-8 - NR/DK
+
+
+  DAYDIED      COUNT      PERCENT
+     .         3178           .
+     1         9             6.04
+     2         3             2.01
+     3         7             4.70
+     4         9             6.04
+     5         5             3.36
+     6         4             2.68
+     7         9             6.04
+     8         4             2.68
+     9         6             4.03
+    10         7             4.70
+    11         2             1.34
+    12         5             3.36
+    13         1             0.67
+    14         5             3.36
+    15         5             3.36
+    16         6             4.03
+    17         2             1.34
+    18         7             4.70
+    19         3             2.01
+    20         4             2.68
+    21         5             3.36
+    22         4             2.68
+    23         5             3.36
+    24         4             2.68
+    25         4             2.68
+    26         4             2.68
+    27         1             0.68
+    28         10            6.71
+    29         3             2.01
+    30         4             2.68
+    31         2             1.34
+
+
+
+
+
+________________________________________________________________________________
+
+                                      12
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+DAYLAPSE                     QUESTION NUMBER: Z21
+
+HOW MANY DAYS SINCE ONSET OF INFANT'S ILLNESS WAS FIRST CONSULTATION MADE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 0 - Less than one day
+ 1 - One day
+ :
+-8 - NR/DK
+-9 - NA (Child was not sick, due for immunization)
+
+-8'S=0   -9'S=34   MISSINGS(.)=3178
+
+N=115  MEAN=8.087  MIN=0  MAX=300  Q1=1  MEDIAN=3  Q3=7
+
+
+
+
+
+________________________________________________________________________________
+
+DAYSHOSP                     QUESTION NUMBER: Z33
+
+HOW MANY DAYS WAS BABY HOSPITALIZED FOR HIS/HER HEALTH PROBLEM?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE--HOSPITALIZATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 0 - Less than one day
+ 1 - One day
+ :
+-8 - NR/DK
+-9 - NA
+
+-8'S=0   -9'S=90   MISSINGS(.)=3177
+
+N=59  MEAN=4.93  MIN=0  MAX=52  Q1=1  MEDIAN=3  Q3=7
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+                                      13
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+DIAFEVER                     QUESTION NUMBER: Z60
+
+DID BABY HAVE FEVER SINCE ONSET OF DIARRHEA?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  DIAFEVER     COUNT      PERCENT
+     .         3178           .
+    -9         95             .
+     0         11           20.37
+     1         43           79.63
+
+
+
+
+
+________________________________________________________________________________
+
+DIAR24HR                     QUESTION NUMBER: Z54
+
+DID BABY HAVE DIARRHEA THE LAST 24 HOURS OF LIFE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No (Code -9 from DIARBEGN to SELFCURE)
+-8 - NR/DK
+-9 - NA
+
+
+  DIAR24HR     COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+    -9         1              .
+     0         93           63.27
+     1         54           36.73
+
+
+
+
+
+________________________________________________________________________________
+
+
+                                      14
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+DIARBEGN                     QUESTION NUMBER: Z55
+
+HOW MANY DAYS BEFORE INFANT'S DEATH DID DIARRHEA START?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 0 - The day baby died
+ 1 - The day before baby died
+ 2 - Two days before baby died
+ :
+-8 - NR/DK
+-9 - NA
+
+-8'S=0   -9'S=95   MISSINGS(.)=3178
+
+N=54  MEAN=5.49  MIN=0  MAX=30  Q1=2  MEDIAN=4  Q3=7
+
+
+
+
+
+________________________________________________________________________________
+
+DIARRHEA                     QUESTION NUMBER: Z79
+
+AT ANY TIME DURING THE LAST 7 DAYS OF LIFE DID BABY HAVE DIARRHEA?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No (Code -9 in NDAYSLBM)
+-8 - NR/DK
+-9 - NA
+
+
+  DIARRHEA     COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+    -9         21             .
+     0         108          85.04
+     1         19           14.96
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+                                      15
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+DISCOMFT                     QUESTION NUMBER: Z60
+
+DID BABY SUFFER OTHER DISCOMFORT SINCE ONSET OF DIARRHEA?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No (Code -9 in OTHERSUF)
+-8 - NR/DK
+-9 - NA
+
+
+  DISCOMFT     COUNT      PERCENT
+     .         3178           .
+    -9         95             .
+     0         53           98.15
+     1         1             1.85
+
+
+
+
+
+________________________________________________________________________________
+
+DOCTORMA                     QUESTION NUMBER: Z68
+
+DID MOTHER RESORT TO HER OWN MEDICATIONS TO CURE INFANT'S DIARRHEA?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No    (Code -9 in SELFCURE)
+-8 - NR/DK
+-9 - NA
+
+
+  DOCTORMA     COUNT      PERCENT
+     .         3178           .
+    -9         95             .
+     0         45           83.33
+     1         9            16.67
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+                                      16
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+DYINTRMF                     QUESTION NUMBER: ID9
+
+DAY INTERVIEW WAS COMPLETED (DD)
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     IDENTIFICATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - First day of the month
+ :
+31 - Thirty-first day of month
+
+
+  DYINTRMF     COUNT      PERCENT
+     .         3178           .
+     1         6             4.03
+     2         7             4.70
+     3         8             5.37
+     4         9             6.04
+     5         7             4.70
+     6         6             4.03
+     7         4             2.68
+     8         4             2.68
+     9         5             3.36
+    10         9             6.04
+    11         6             4.03
+    12         4             2.68
+    13         4             2.68
+    14         5             3.36
+    15         4             2.68
+    16         2             1.34
+    17         3             2.01
+    18         3             2.01
+    19         3             2.01
+    20         8             5.37
+    21         1             0.67
+    22         5             3.36
+    23         5             3.36
+    24         7             4.70
+    25         4             2.68
+    26         5             3.36
+    27         3             2.01
+    28         2             1.34
+    29         2             1.34
+    30         3             2.01
+    31         5             3.36
+
+
+
+
+
+________________________________________________________________________________
+
+                                      17
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+EARDISCH                     QUESTION NUMBER: Z47
+
+DID BABY EXPERIENCE EAR DISCHARGE DURING THE LAST 24 HOURS OF LIFE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  EARDISCH     COUNT      PERCENT
+     .         3178           .
+    -9         73             .
+     0         67           88.16
+     1         9            11.84
+
+
+
+
+
+________________________________________________________________________________
+
+EARDROP                      QUESTION NUMBER: Z77
+
+AT ANY TIME DURING THE LAST 7 DAYS OF LIFE DID BABY HAVE EAR DISCHARGE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  EARDROP      COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+    -9         50             .
+     0         95           96.94
+     1         3             3.06
+
+
+
+
+
+________________________________________________________________________________
+
+
+                                      18
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+EXAMPLE                      QUESTION NUMBER: Z72
+
+OTHER ILLNESS BABY SUFFERED FROM DURING THE LAST 24 HOURS OF LIFE
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Heart ailment, Cardiac arrest
+ 2 - Pneumonia/bronchopneumonia
+ 3 - Prematurity
+ 4 - Bronchitis
+ 5 - Meningitis
+ 6 - Nutritional deficiency
+ 7 - Colic, abdominal distention, flatulence
+ 8 - Swelling of hands and feet/swollen chest
+ 9 - Baby kept vomiting
+10 - Gisinyalan (i.e. obstruction in the throat,
+     buyag sa tubig, etc.)
+11 - Baby kept crying
+12 - Baby turned blue, cyanosis
+13 - Baby had scratches on the neck, rashes (pilas)
+     talipaso
+14 - Baby had jaundice
+15 - Green/blank liquid (or mucus) kept coming out of baby's
+     nostrils/mouth causing difficulty in breathing
+16 - Diabetes Mellitus Type II
+17 - Fever within
+18 - Difficulty in breathing, very weak
+19 - Measles
+20 - Convulsion
+21 - Baby kept perspiring (i.e. cold sweat)
+22 - Infection/tetanus of umbilical cord
+23 - Harelipped
+24 - Could not move bowels without medicine
+25 - Congenital defect (i.e. hole in the heart)
+26 - Chills
+27 - Nose bleeds
+28 - Child kept hitting his head
+29 - Child vomited ascaris (a type of worm)
+30 - Asthma
+31 - Thrush or lu-as
+32 - Child got weaker and weaker
+33 - Gums turned blue
+34 - During attempt to suction phlegm, blood came
+     out instead
+35 - Cataract due to Vitamin A deficiency
+36 - Left arm was filled with fluid
+37 - Beri-beri
+38 - Cellulitis (i.e., hubag sa nawong)
+39 - Sprain, bone dislocation (i.e., lisa, pi-ang)
+-8 - NR/DK
+-9 - NA
+
+
+  EXAMPLE      COUNT      PERCENT
+     .         3178           .
+    -9         65             .
+     1         1             1.19
+     2         1             1.19
+     3         2             2.38
+     4         1             1.19
+     5         2             2.38
+     6         1             1.19
+     7         4             4.76
+     8         4             4.76
+     9         3             3.57
+    10         3             3.57
+    11         7             8.33
+    12         4             4.76
+    13         5             5.95
+    14         2             2.38
+    15         2             2.38
+    16         1             1.19
+    17         4             4.76
+    18         9            10.71
+    19         1             1.19
+    20         4             4.76
+    21         2             2.38
+    22         2             2.38
+    23         1             1.19
+    24         1             1.19
+    26         2             2.38
+    27         1             1.19
+    28         1             1.19
+    29         2             2.38
+    30         2             2.38
+    31         1             1.19
+    32         2             2.38
+    33         1             1.19
+    34         1             1.19
+    35         1             1.19
+    38         1             1.19
+    39         2             2.38
+
+
+
+
+
+________________________________________________________________________________
+
+                                      19
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+FEVER                        QUESTION NUMBER: Z47
+
+DID THE BABY HAVE A FEVER DURING THE LAST 24 HOURS OF LIFE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  FEVER        COUNT      PERCENT
+     .         3178           .
+    -9         73             .
+     0         22           28.95
+     1         54           71.05
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      20
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+FIRSTCON                     QUESTION NUMBER: Z20
+
+WHO WAS FIRST CONSULTED FOR INFANT'S HEALTH PROBLEM?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Public Health facility doctor
+ 2 - Public Health facility nurse
+ 3 - RHU/CHO Personnel
+ 4 - Private Physician
+ 5 - Puericulture center personnel
+ 6 - Public Health midwife
+ 7 - Other Public Health agent
+ 8 - Traditional Health practitioner
+ 9 - Combination (SPECIFY)
+10 - Others (SPECIFY)
+-8 - NR/DK
+-9 - NA (Only one Health practitioner was consulted)
+
+
+  FIRSTCON     COUNT      PERCENT
+     .         3178           .
+    -9         87             .
+     1         13           20.97
+     3         1             1.61
+     4         36           58.06
+     8         12           19.35
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      21
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+FODRECOM                     QUESTION NUMBER: Z40
+
+DID ANY OF THE PERSONS CONSULTED ABOUT INFANT'S HEALTH PROBLEM RECOMMEND ANY
+FOOD FOR THE BABY?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE--FEEDING
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No   (Code -9 from RECOMONE to RECOMTWO)
+-8 - NR/DK
+-9 - NA
+
+
+  FODRECOM     COUNT      PERCENT
+     .         3178           .
+    -9         34             .
+     0         80           69.57
+     1         35           30.43
+
+
+
+
+
+________________________________________________________________________________
+
+FODWHELD                     QUESTION NUMBER: Z48
+
+WAS FOOD WITHHELD FROM INFANT BECAUSE OF COUGH?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No (Code -9 in FORBIDFD)
+-8 - NR/DK
+-9 - NA
+
+
+  FODWHELD     COUNT      PERCENT
+     .         3178           .
+    -9         73             .
+     0         53           69.74
+     1         23           30.26
+
+
+
+
+
+________________________________________________________________________________
+
+
+                                      22
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+FOODGIVN                     QUESTION NUMBER: Z38
+
+DID HOSPITAL GIVE FOOD/MILK TO THE BABY DURING HIS/HER HOSPITALIZATION?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE--HOSPITALIZATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No   (Code -9 in TYPEFOOD)
+-8 - NR/DK
+-9 - NA
+
+
+  FOODGIVN     COUNT      PERCENT
+     .         3178           .
+    -9         90             .
+     0         17           28.81
+     1         42           71.19
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      23
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+FORBIDFD                     QUESTION NUMBER: Z49
+
+FOODS WITHHELD FROM INFANT BECAUSE OF COUGH
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Cold/Icy foods or drinks
+ 2 - Salty foods
+ 3 - Fatty foods
+ 4 - Breastmilk
+ 5 - Lugaw
+ 6 - Others (SPECIFY)
+ 7 - Seafoods
+-8 - NR/DK
+-9 - NA
+
+
+  FORBIDFD     COUNT      PERCENT
+     .         3178           .
+    -9         126            .
+     2         12           52.17
+     3         8            34.78
+     4         1             4.35
+     5         1             4.35
+     7         1             4.35
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      24
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+FRE2DIAR                     QUESTION NUMBER: Z56
+
+HOW MANY TIMES DID BABY HAVE DIARRHEA THE LAST 24 HOURS OF LIFE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Once
+ 2 - Twice
+ :
+-8 - NR/DK
+-9 - NA
+
+-8'S=0   -9'S=95   MISSINGS(.)=3178
+
+N=54  MEAN=4  MIN=1  MAX=10  Q1=2  MEDIAN=3  Q3=5
+
+
+
+
+
+________________________________________________________________________________
+
+FREQVIS1                     QUESTION NUMBER: Z28
+
+NUMBER OF VISITS TO FIRST PERSON CONSULTED FOR INFANT'S HEALTH PROBLEM
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Once
+ :
+-8 - NR/DK
+-9 - NA
+
+-8'S=0   -9'S=33   MISSINGS(.)=3178
+
+N=116  MEAN=1.41  MIN=1  MAX=8  Q1=1  MEDIAN=1  Q3=1
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+                                      25
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+FREQVIS2                     QUESTION NUMBER: Z29
+
+NUMBER OF VISITS TO SECOND PERSON CONSULTED FOR INFANT'S HEALTH PROBLEM
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Once
+ :
+-8 - NR/DK
+-9 - NA
+
+-8'S=0   -9'S=90   MISSINGS(.)=3178
+
+N=60  MEAN=1.35  MIN=1  MAX=7  Q1=1  MEDIAN=1  Q3=1
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      26
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+FRSTDIAG                     QUESTION NUMBER: Z24
+
+FIRST DIAGNOSIS/PRESCRIPTION MADE FOR INFANT'S HEALTH PROBLEM
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Baby is all right
+ 2 - Baby is suffering from diarrhea
+ 3 - Baby has fever
+ 4 - Baby is suffering from respiratory infection
+     (i.e. colds, cough, bronchitis, bronchopneumonia)
+ 5 - Baby has measles
+ 6 - Baby is suffering from sprain, bone dislocation
+     (i.e. napi-ang and was massaged or 'gihilot')
+ 7 - Umbilical cord was infected
+ 8 - Baby is deficient in iron and/or certain vitamins/undernourished
+ 9 - Baby is teething/teething-related ailment
+10 - Baby has brain infection/meningitis
+11 - Baby suffers from colic, abdominal distention
+12 - Culture-related diagnosis
+     (i.e. gihangup sa dili ingon nato, gi-ungo, gibuyagan,
+           na-impatso, gipa-inum og tubig nga dunay papel
+           nga may orasyon nga gisulat, nabuyagan sa tubig,
+           gipanuhot, etc.)
+13 - Advised hospital admission
+14 - Others (SPECIFY)
+15 - Baby drank amniotic fluid or dumagat
+16 - Baby's heart is weak/heart ailment/rheumatic heart
+17 - Advised surgery
+18 - Had fever, applied oil prepared by mananambal
+19 - Convulsion
+20 - Swelling of feet
+21 - Advised to see a doctor
+22 - Gave oresol
+23 - Child given oxygen right away upon admission in hospital
+24 - Thrush or lu-as
+25 - Changed medication
+26 - Swollen liver
+-8 - NR/DK
+-9 - NA
+
+
+  FRSTDIAG     COUNT      PERCENT
+     .         3178           .
+    -9         33             .
+     1         9             7.76
+     2         18           15.52
+     3         6             5.17
+     4         31           26.72
+     5         5             4.31
+     6         4             3.45
+     7         1             0.86
+     8         3             2.59
+     9         1             0.86
+    10         2             1.72
+    11         3             2.59
+    12         7             6.03
+    13         14           12.07
+    14         4             3.45
+    15         1             0.86
+    16         4             3.45
+    18         1             0.86
+    23         1             0.86
+    25         1             0.86
+
+
+
+
+
+________________________________________________________________________________
+
+                                      27
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+GUMCARE                      QUESTION NUMBER: Z82
+
+DID MOTHER DO ANYTHING WITH TEETHING BABY'S GUMS?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No    (Code -9 in GUMTREAT)
+-8 - NR/DK
+-9 - NA
+
+
+  GUMCARE      COUNT      PERCENT
+     .         3178           .
+    -9         78             .
+     0         57           80.28
+     1         14           19.72
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      28
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+GUMTREAT                     QUESTION NUMBER: Z83
+
+MOTHER'S TREATMENT OF TEETHING BABY'S GUMS
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Applied honey/ delavarre syrup/
+     marka tiki-tiki powder to baby's gum
+     using finger
+ 2 - Hired somebody who specializes in
+     indigenous treatment of gums
+ 3 - Applied gum ointment using swab
+ 4 - Applied 7 grains of rice to baby's gums
+ 5 - Others
+-8 - NR/DK
+-9 - NA
+
+
+  GUMTREAT     COUNT      PERCENT
+     .         3178           .
+    -9         135            .
+     1         12           85.71
+     4         2            14.29
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      29
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+H2OCURE                      QUESTION NUMBER: Z67
+
+TYPE OF LIQUID GIVEN TO INFANT BECAUSE OF DIARRHEA
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Water
+ 2 - Tea, Gabon
+ 3 - Pedialyte
+ 4 - Oresol
+ 5 - Water with paper containing oracion soaked in it
+ 6 - Indigenous brew (i.e. atis leaves, avocado leaves,
+     guava leaves, cogon leaves, dried duhat skin,
+     bunga sa saging tundan
+-8 - NR/DK
+-9 - NA
+
+
+  H2OCURE      COUNT      PERCENT
+     .         3178           .
+    -9         129            .
+     2         3            15.00
+     4         2            10.00
+     5         1             5.00
+     6         14           70.00
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      30
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+HOSPBILL                     QUESTION NUMBER: Z34
+
+TOTAL COST (PESOS) FOR INFANT'S HOSPITALIZATION
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE--HOSPITALIZATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 0 - No Cost
+ 1 - One peso
+ :
+-8 - NR/DK
+-9 - NA
+
+-8'S=2   -9'S=91   MISSINGS(.)=3178
+
+N=56  MEAN=495.61  MIN=0  MAX=4000  Q1=0  MEDIAN=200  Q3=550
+
+
+
+
+
+________________________________________________________________________________
+
+HOSPITAL                     QUESTION NUMBER: Z32
+
+WAS BABY HOSPITALIZED AFTER CONSULTATION FOR HIS/HER HEALTH PROBLEM?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE--HOSPITALIZATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No   (Code -9 from DAYSHOSP to TYPEFOOD)
+-8 - NR/DK
+-9 - NA
+
+
+  HOSPITAL     COUNT      PERCENT
+     .         3178           .
+    -9         33             .
+     0         57           49.14
+     1         59           50.86
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+                                      31
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+HRDIEDMF                     QUESTION NUMBER: Z1
+
+HOUR OF THE DAY BABY DIED
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - First hour
+ :
+12 - Twelfth hour
+-8 - NR/DK
+-9 - NA
+
+
+  HRDIEDMF     COUNT      PERCENT
+     .         3178           .
+    -8         2              .
+     1         11            7.48
+     2         18           12.24
+     3         12            8.16
+     4         16           10.88
+     5         18           10.88
+     6         11            7.48
+     7         10            6.80
+     8         13            8.84
+     9         12            8.16
+    10         9             6.12
+    11         10            6.80
+    12         9             6.12
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      32
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+ILLNS24H                     QUESTION NUMBER: Z71
+
+DID BABY SUFFER FROM ANY OTHER ILLNESS DURING THE LAST 24 HOURS OF LIFE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No  (Code -9 in EXAMPLE)
+-8 - NR/DK
+-9 - NA
+
+
+  ILLNS24H     COUNT      PERCENT
+     .         3178           .
+    -8         2              .
+     0         63           42.86
+     1         84           57.14
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      33
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+IMMUNIZ                      QUESTION NUMBER: Z18
+
+TYPE OF IMMUNIZATION GIVEN IN INFANT'S HEALTH CONSULTATION
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - DPT first dose
+ 2 - DPT second dose
+ 3 - DPT third dose
+ 4 - Tuberculosis (BCG)
+ 5 - Anti-measles
+ 6 - Polio first dose
+ 7 - Polio second dose
+ 8 - Polio third dose
+ 9 - Tetanus
+10 - Cholera
+11 - First dose DPT & Polio
+12 - DPT booster dose
+13 - DPT booster dose
+14 - Combination (SPECIFY)
+15 - Others (SPECIFY)
+-8 - NR/DK
+-9 - NA
+
+
+  IMMUNIZ      COUNT      PERCENT
+     .         3178           .
+    -9         148            .
+    11         1           100.00
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      34
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+INSURAMF                     QUESTION NUMBER: Z35
+
+HOW MUCH OF THE INFANT'S HOSPITAL BILL WAS PAID BY INSURANCE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE--HOSPITALIZATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 0 - No payment from insurance, family has no insurance
+ 1 - One peso
+ :
+-8 - NR/DK
+-9 - NA
+
+-8'S=2   -9'S=91   MISSINGS(.)=3178
+
+N=56  MEAN=30  MIN=0  MAX=300  Q1=0  MEDIAN=0  Q3=0
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      35
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+INTRVRMF                     QUESTION NUMBER:  ID8
+
+NAME OF INTERVIEWER AT MORTALITY SURVEY
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     IDENTIFICATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Alicaba, Marialita
+ 2 - Carba, Delia
+ 3 - Chan, Josefa
+ 4 - Deniega, Lucena
+ 5 - Ege, Urbanieta
+ 6 - Espuelas, Machuchi
+ 7 - Gersalina, Rosalina
+ 8 - Hamoy, Perla
+ 9 - Intud, Janet
+10 - Kanen, Violet
+11 - Lampria, Juanilla
+12 - Layar, Rufina
+13 - Nacario, Edelisa
+14 - Nengasca, Rosalia
+15 - Padrigue, Teresita
+16 - Paglinawan, Letecia
+17 - Perez, Lorna
+18 - Rodil, Leonora
+19 - Rubio, Evangeline
+20 - Sato, Teresita
+21 - Tan Chinseng, Nenita
+22 - Zosa, Myrna
+23 - Cataos, Judith
+24 - Coja, Anita
+25 - Comendador, Lucia
+26 - Corpus, Mariver
+27 - Echavez, Judyline
+28 - Enriquez, Asuncion
+29 - Escasinas, Sandra
+30 - Hisoler, Rosemary
+31 - Lopez, Rosemarie
+32 - Obinque, Victoria
+33 - Villegas, Marilyn
+34 - Abbu, Gloricris
+35 - Alcoseba, Pearl
+36 - Calunsag, Emegilda
+37 - Macachor, Jocelli
+38 - Maningo, Marie Fern
+39 - Pabuhaya, Sylvia
+40 - Suarez, Susan
+41 - Briones, Merlyn
+42 - Mariblanca, Alicia
+43 - Derecho, Azucena
+44 - Librodo, Lynnette
+45 - Santos, Perlita
+46 - Ollada, Julie
+47 - Kangleon, Rowena
+48 - Rosales, Arleen Ann
+49 - Avila, Josephine
+50 - Fernandez, Ma. Erlinda
+51 - Lim, Alice
+52 - Laron, Cristeta
+53 - Jumao-as, Joy
+54 - Soria, Urania
+55 - Bas, Isabelita
+56 - Villordon, Christine
+57 - Bacon, Cris
+58 - Santosidad, Virginia
+59 - Nengasca, Olivia
+ :
+
+  INTRVRMF     COUNT      PERCENT
+     .         3178           .
+     2         7             4.70
+     3         4             2.68
+     4         8             5.37
+     5         6             4.03
+     7         4             2.68
+    11         7             4.70
+    12         2             1.34
+    15         1             0.67
+    17         4             2.68
+    20         6             4.03
+    24         2             1.34
+    25         4             2.68
+    26         3             2.01
+    28         5             3.36
+    30         11            7.38
+    32         1             0.67
+    33         5             3.36
+    35         3             2.01
+    36         9             6.04
+    38         6             4.03
+    39         1             0.67
+    41         5             3.36
+    42         6             4.03
+    44         1             0.67
+    45         7             4.70
+    46         5             3.36
+    47         8             5.37
+    48         4             2.68
+    52         2             1.34
+    53         2             1.34
+    54         2             1.34
+    55         3             2.01
+    56         1             0.67
+    58         3             2.01
+    59         1             0.67
+
+
+
+
+________________________________________________________________________________
+
+                                      36
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+KILLER1                      QUESTION NUMBER: Z89
+
+PRIMARY CAUSE OF DEATH ON INFANT'S DEATH CERTIFICATE
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Respiratory arrest, respiratory infection
+     (i.e. bronchopneumonia, cough, colds, fever,etc.)
+ 2 - Cardiac arrest, heart failure, weak heart
+ 3 - Measles
+ 4 - Meningitis, Brain infection
+ 5 - Prematurity, Blue baby, cyanotic baby
+ 6 - Congenital defects (i.e. hole in the heart)
+ 7 - Nutritional Deficiency, Avitaminosis, malnutrition
+ 8 - Diarrhea, gastro-enteritis, severe dehydration
+ 9 - Dengue fever
+10 - Swollen Liver, Jaundice, intestinal problem
+11 - Infection/Tetanus of umbilical cord
+12 - Fever
+13 - Diabetes Mellitus Type II
+14 - Dextrose given to the baby
+15 - Culture-related causes
+     (Gi-ungo, nabuyagan, gisinyalan, lamon,
+      dumagat, gika-ibgan sa dili ingon nato, gida-ut,
+      gihampak ug dautan nga hangin, naimpatso,
+      gidayongan, etc.)
+16 - Mother's not destined to have live children
+     (i.e. buayahan, gida-ug sa inahan, etc.)
+17 - Green/blank liquid coming out of the baby's
+     nostrils or mouth (liquid or mucus)
+18 - Combination
+19 - Affected by mother's ailment (i.e., beri-beri,
+     cardiovascular disease, aftereffect of anti-
+     biotic injection received by mother during her
+     pregnancy, etc.)
+20 - Colic (butod sa tiyan)
+21 - Teething-related cause, swollen gums
+22 - Child may have suffered from a broken rib
+     because of the massage/hilot
+23 - Wrong medication
+24 - Convulsion
+25 - Swollen feet, body (edema)
+26 - Chronic otitis media
+27 - Hypoglycemia
+28 - Tuberculosis (TB)
+29 - Because of all the injections given by the
+     doctors in hospital
+30 - Beri-beri
+31 - Cellulitis (Apoy)
+32 - Asthma
+33 - Thrush or lu-as
+34 - Septicemia (infection of the blood stream/
+     Sepsis neonotarum
+35 - Infected Insect bite
+36 - Hyaline Membrane
+37 - Failure to avail of prenatal care during pregnancy
+38 - Drank too much amniotic fluid
+-8 - NR/DK
+-9 - NA
+
+
+  KILLER1      COUNT      PERCENT
+     .         3178           .
+    -8         33             .
+    -9         19             .
+     1         23           23.71
+     2         19           19.59
+     3         15           15.46
+     4         6             6.19
+     5         8             8.25
+     7         4             4.12
+     8         9             9.28
+     9         1             1.03
+    11         1             1.03
+    12         3             3.09
+    15         2             2.06
+    20         1             1.03
+    24         1             1.03
+    31         1             1.03
+    33         3             3.09
+
+
+
+
+
+________________________________________________________________________________
+
+                                      37
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+KILLER2                      QUESTION NUMBER: Z90
+
+SECONDARY CAUSE OF DEATH ON INFANT'S  DEATH CERTIFICATE
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Respiratory arrest, respiratory infection
+     (i.e. bronchopneumonia, cough, colds, fever,etc.)
+ 2 - Cardiac arrest, heart failure, weak heart
+ 3 - Measles
+ 4 - Meningitis, Brain infection
+ 5 - Prematurity, Blue baby, cyanotic baby
+ 6 - Congenital defects (i.e. hole in the heart)
+ 7 - Nutritional Deficiency, Avitaminosis, malnutrition
+ 8 - Diarrhea, gastro-enteritis, severe dehydration
+ 9 - Dengue fever
+10 - Swollen Liver, Jaundice, intestinal problem
+11 - Infection/Tetanus of umbilical cord
+12 - Fever
+13 - Diabetes Mellitus Type II
+14 - Dextrose given to the baby
+15 - Culture-related causes
+     (Gi-ungo, nabuyagan, gisinyalan, lamon,
+      dumagat, gika-ibgan sa dili ingon nato, gida-ut,
+      gihampak ug dautan nga hangin, naimpatso,
+      gidayongan, etc.)
+16 - Mother's not destined to have live children
+     (i.e. buayahan, gida-ug sa inahan, etc.)
+17 - Green/blank liquid coming out of the baby's
+     nostrils or mouth (liquid or mucus)
+18 - Combination
+19 - Affected by mother's ailment (i.e., beri-beri,
+     cardiovascular disease, aftereffect of anti-
+     biotic injection received by mother during her
+     pregnancy, etc.)
+20 - Colic (butod sa tiyan)
+21 - Teething-related cause, swollen gums
+22 - Child may have suffered from a broken rib
+     because of the massage/hilot
+23 - Wrong medication
+24 - Convulsion
+25 - Swollen feet, body (edema)
+26 - Chronic otitis media
+27 - Hypoglycemia
+28 - Tuberculosis (TB)
+29 - Because of all the injections given by the
+     doctors in hospital
+30 - Beri-beri
+31 - Cellulitis (Apoy)
+32 - Asthma
+33 - Thrush or lu-as
+34 - Septicemia (infection of the blood stream/
+     Sepsis neonotarum
+35 - Infected Insect bite
+36 - Hyaline Membrane
+37 - Failure to avail of prenatal care during pregnancy
+38 - Drank too much amniotic fluid
+-8 - NR/DK
+-9 - NA (Code -9 in KILLER3)
+
+
+  KILLER2      COUNT      PERCENT
+     .         3178           .
+    -9         120            .
+     1         15           51.72
+     2         2             6.90
+     5         2             6.90
+     8         3            10.34
+    12         1             3.45
+    20         2             6.90
+    26         1             3.45
+    27         1             3.45
+    28         1             3.45
+    36         1             3.45
+
+
+
+
+
+________________________________________________________________________________
+
+                                      38
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+KILLER3                      QUESTION NUMBER: Z91
+
+THIRD CAUSE OF DEATH ON INFANT'S DEATH CERTIFICATE
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Respiratory arrest, respiratory infection
+     (i.e. bronchopneumonia, cough, colds, fever,etc.)
+ 2 - Cardiac arrest, heart failure, weak heart
+ 3 - Measles
+ 4 - Meningitis, Brain infection
+ 5 - Prematurity, Blue baby, cyanotic baby
+ 6 - Congenital defects (i.e. hole in the heart)
+ 7 - Nutritional Deficiency, Avitaminosis, malnutrition
+ 8 - Diarrhea, gastro-enteritis, severe dehydration
+ 9 - Dengue fever
+10 - Swollen Liver, Jaundice, intestinal problem
+11 - Infection/Tetanus of umbilical cord
+12 - Fever
+13 - Diabetes Mellitus Type II
+14 - Dextrose given to the baby
+15 - Culture-related causes
+     (Gi-ungo, nabuyagan, gisinyalan, lamon,
+      dumagat, gika-ibgan sa dili ingon nato, gida-ut,
+      gihampak ug dautan nga hangin, naimpatso,
+      gidayongan, etc.)
+16 - Mother's not destined to have live children
+     (i.e. buayahan, gida-ug sa inahan, etc.)
+17 - Green/blank liquid coming out of the baby's
+     nostrils or mouth (liquid or mucus)
+18 - Combination
+19 - Affected by mother's ailment (i.e., beri-beri,
+     cardiovascular disease, aftereffect of anti-
+     biotic injection received by mother during her
+     pregnancy, etc.)
+20 - Colic (butod sa tiyan)
+21 - Teething-related cause, swollen gums
+22 - Child may have suffered from a broken rib
+     because of the massage/hilot
+23 - Wrong medication
+24 - Convulsion
+25 - Swollen feet, body (edema)
+26 - Chronic otitis media
+27 - Hypoglycemia
+28 - Tuberculosis (TB)
+29 - Because of all the injections given by the
+     doctors in hospital
+30 - Beri-beri
+31 - Cellulitis (Apoy)
+32 - Asthma
+33 - Thrush or lu-as
+34 - Septicemia (infection of the blood stream/
+     Sepsis neonotarum
+35 - Infected Insect bite
+36 - Hyaline Membrane
+37 - Failure to avail of prenatal care during pregnancy
+38 - Drank too much amniotic fluid
+-8 - NR/DK
+-9 - NA
+
+  KILLER3      COUNT      PERCENT
+     .         3178           .
+    -9         136            .
+     1         2            15.38
+     2         1             7.69
+     3         2            15.38
+     8         3            23.08
+    12         2            15.38
+    13         1             7.69
+    34         2            15.38
+
+
+
+
+
+________________________________________________________________________________
+
+                                      39
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+KOOLAID                      QUESTION NUMBER: Z66
+
+WAS ANY SPECIAL DRINK/LIQIUD GIVEN TO INFANT BECAUSE OF DIARRHEA?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No    (Code -9 in H2OCURE)
+-8 - NR/DK
+-9 - NA
+
+
+  KOOLAID      COUNT      PERCENT
+     .         3178           .
+    -9         95             .
+     0         34           62.96
+     1         20           37.04
+
+
+
+
+
+________________________________________________________________________________
+
+LAGNAT                       QUESTION NUMBER: Z75
+
+AT ANY TIME DURING THE LAST 7 DAYS OF LIFE DID BABY HAVE FEVER?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  LAGNAT       COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+    -9         50             .
+     0         63           64.29
+     1         35           35.71
+
+
+
+
+
+________________________________________________________________________________
+
+
+                                      40
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+MEASLES1                     QUESTION NUMBER: Z86
+
+DID BABY HAVE MEASLES BETWEEN TIME OF DEATH AND INTERVIEWER'S LAST VISIT?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  MEASLES1     COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+    -9         10             .
+     0         115          83.33
+     1         23           16.67
+
+
+
+
+
+________________________________________________________________________________
+
+MEDBGHT                      QUESTION NUMBER: Z43
+
+DID MOTHER BUY ANY MEDICINE FOR THE BABY SINCE INTERVIEWER'S LAST VISIT AND/OR
+ON THE DAY BABY DIED?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No   (Code -9 in COSTMED)
+-8 - NR/DK
+-9 - NA
+
+
+  MEDBGHT      COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+    -9         1              .
+     0         62           42.18
+     1         85           57.82
+
+
+
+
+
+________________________________________________________________________________
+
+                                      41
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+MEDHOSP                      QUESTION NUMBER: Z36
+
+DID HOSPITAL ADMINISTER MEDICINE TO BABY DURING HIS/HER HOSPITALIZATION?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE--HOSPITALIZATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No   (Code -9 in PAYMENT)
+-8 - NR/DK
+-9 - NA
+
+
+  MEDHOSP      COUNT      PERCENT
+     .         3178           .
+    -9         90             .
+     0         14           23.73
+     1         45           76.27
+
+
+
+
+
+________________________________________________________________________________
+
+MEDICARE                     QUESTION NUMBER: Z16
+
+SINCE INTERVIEWER'S LAST VISIT WAS ANYONE CONSULTED ABOUT BABY'S HEALTH?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No  (Code -9 from REASCON to RECOMTWO)
+-8 - NR/DK
+-9 - NA
+
+
+  MEDICARE     COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+     0         32           21.62
+     1         116          78.38
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+                                      42
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+MILK24H                      QUESTION NUMBER: Z8
+
+WAS BABY GIVEN OTHER MILK DURING THE LAST 24 HOURS OF LIFE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes (If code in Z7 is 1, code -9 in Z9. Go to Z10;
+          If code in Z7 is 0, continue)
+ 0 - No  (Code -9 in Z9)
+-8 - NR/DK
+-9 - NA
+
+
+  MILK24H      COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+     0         99           66.89
+     1         49           33.11
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      43
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+MINALIVE                     QUESTION NUMBER: Z100
+
+NUMBER OF MINUTES BABY LIVED
+(Only infants with code 0 in Z98 (AGEDIED) will have entries in Z100)
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 0 - Less than one minute
+ 1 - One minute
+ :
+59 - Fifty-nine minutes
+ :
+-8 - NR/DK
+-9 - NA
+
+
+  MINALIVE     COUNT      PERCENT
+     .         3178           .
+    -9         138            .
+    10         1             9.09
+    27         1             9.09
+    30         1             9.09
+   130         1             9.09
+   180         1             9.09
+   300         1             9.09
+   360         1             9.09
+   540         1             9.09
+   900         1             9.09
+  1020         1             9.09
+  1110         1             9.09
+
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      44
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+MINDIED                      QUESTION NUMBER: Z1
+
+MINUTE OF THE DAY BABY DIED
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - First minute
+ :
+59 - Fifty-ninth minute
+-8 - NR/DK
+-9 - NA
+
+
+  MINDIED      COUNT      PERCENT
+     .         3178           .
+    -8         2              .
+     0         91           61.90
+     1         1             0.68
+     2         1             0.68
+     5         2             1.36
+    10         6             4.08
+    15         4             2.72
+    20         4             2.72
+    30         30           20.41
+    40         2             1.36
+    45         5             3.40
+    50         1             0.68
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      45
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+MOINTRMF                     QUESTION NUMBER: ID9
+
+MONTH INTERVIEW WAS COMPLETED (MM)
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     IDENTIFICATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - January
+ :
+12 - December
+
+
+  MOINTRMF     COUNT      PERCENT
+     .         3178           .
+     1         14            9.40
+     2         45           30.20
+     3         14            9.40
+     4         10            6.71
+     5         9             6.04
+     6         8             5.37
+     7         9             6.04
+     8         8             5.37
+     9         9             6.04
+    10         7             4.70
+    11         9             6.04
+    12         7             4.70
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      46
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+MONBORN                      QUESTION NUMBER: Z95
+
+MONTH BABY WAS BORN
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT BIRTH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - January
+ :
+12 - December
+-8 - NR/DK
+
+
+  MONBORN      COUNT      PERCENT
+     .         3178           .
+     1         11            7.38
+     2         12            8.05
+     3         9             6.04
+     4         3             2.01
+     5         11            7.38
+     6         13            8.72
+     7         18           12.08
+     8         15           10.07
+     9         16           10.74
+    10         20           13.42
+    11         13            8.72
+    12         8             5.37
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      47
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+MONDIED                      QUESTION NUMBER: Z1
+
+MONTH BABY DIED
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - January
+ :
+12 - December
+-8 - NR/DK
+
+
+  MONDIED      COUNT      PERCENT
+     .         3178           .
+     1         11            7.38
+     2         12            8.05
+     3         11            7.38
+     4         12            8.05
+     5         6             4.03
+     6         18           12.08
+     7         12            8.05
+     8         14            9.40
+     9         14            9.40
+    10         18           12.08
+    11         9             6.04
+    12         12            8.05
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      48
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+MSLES24H                     QUESTION NUMBER: Z70
+
+DID BABY HAVE MEASLES THE LAST 24 HOURS OF LIFE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  MSLES24H     COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+     0         114          77.03
+     1         34           22.97
+
+
+
+
+
+________________________________________________________________________________
+
+MUCUSFEC                     QUESTION NUMBER: Z57
+
+WAS MUCUS PRESENT IN BABY'S FECES DURING THE LAST 24 HOURS OF LIFE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  MUCUSFEC     COUNT      PERCENT
+     .         3178           .
+    -9         95             .
+     0         27           50.00
+     1         27           50.00
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+                                      49
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+NAMEIT                       QUESTION NUMBER: Z63
+
+FOOD WITHHELD FROM INFANT BECAUSE OF DIARRHEA
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Fatty/Oily Foods
+ 2 - Other Milk
+ 3 - Bakery Products/Sweets
+ 4 - Breastmilk
+ 5 - Mother avoided certain foods
+ 6 - Others (SPECIFY)
+ 7 - Rice
+-8 - NR/DK
+-9 - NA
+
+
+  NAMEIT       COUNT      PERCENT
+     .         3178           .
+    -9         129            .
+     1         6            30.00
+     2         7            35.00
+     3         3            15.00
+     4         3            15.00
+     7         1             5.00
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      50
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+NASALDIS                     QUESTION NUMBER: Z47
+
+DID BABY EXPERIENCE NASAL DISCHARGE DURING THE LAST 24 HOURS OF LIFE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  NASALDIS     COUNT      PERCENT
+     .         3178           .
+    -9         73             .
+     0         37           48.68
+     1         39           51.32
+
+
+
+
+
+________________________________________________________________________________
+
+NDAYSLBM                     QUESTION NUMBER: Z80
+
+HOW MANY DAYS DID BABY HAVE DIARRHEA BEFORE DYING?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 0 - The day baby died
+ 1 - One day before baby died
+ :                                _                     _
+ 7 - Seven days before baby died | Code -9 from DIARRHEA |
+ :                               |_     to NDAYSLBM     _|
+-8 - NR/DK
+-9 - NA
+
+-8'S=0   -9'S=128   MISSINGS(.)=3178
+
+N=21  MEAN=2.57  MIN=0  MAX=7  Q1=1  MEDIAN=2  Q3=4
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+                                      51
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+NDAYSTOP                     QUESTION NUMBER: Z5
+
+HOW MANY DAYS BEFORE INFANT'S DEATH WAS BREASTFEEDING STOPPED?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 0 - Less than one day
+ 1 - One day
+ :
+-8 - NR/DK
+-9 - NA
+
+-8'S=2   -9'S=121   MISSINGS(.)=3178
+
+N=26  MEAN=11.42  MIN=0  MAX=105  Q1=2  MEDIAN=5  Q3=14
+
+
+
+
+
+________________________________________________________________________________
+
+NDYSMLK                      QUESTION NUMBER: Z9
+
+HOW MANY DAYS BEFORE BABY'S DEATH WAS OTHER MILK INTRODUCED TO HIM/HER?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 0 - Less than 1 day
+ 1 - One day
+ :
+-8 - NR/DK
+-9 - NA
+
+-8'S=0   -9'S=139   MISSINGS(.)=3178
+
+N=10  MEAN=4.30  MIN=0.5  MAX=30  Q1=1  MEDIAN=1  Q3=3
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+                                      52
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+NICEFOOD                     QUESTION NUMBER: Z65
+
+SPECIAL FOOD GIVEN TO INFANT BECAUSE OF DIARRHEA
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Lanot
+ 2 - Lugaw
+ 3 - Isomil Milk Substitute
+ 4 - Banana
+ 5 - Breastfeeding Mother took certain foods
+ 6 - Others (SPECIFY)
+-8 - NR/DK
+-9 - NA
+
+
+  NICEFOOD     COUNT      PERCENT
+     .         3178           .
+    -9         135            .
+     1         7            50.00
+     4         7            50.00
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      53
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+NICTREAT                     QUESTION NUMBER: Z64
+
+WAS SPECIAL FOOD GIVEN TO INFANT BECAUSE OF DIARRHEA?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes, some food             _                   _
+ 2 - Did not feed at all       | Code -9 in NICEFOOD |
+ 0 - Did not feed regular food |_                   _|
+-8 - NR/DK
+-9 - NA
+
+
+  NICTREAT     COUNT      PERCENT
+     .         3178           .
+    -9         95             .
+     0         38           70.37
+     1         14           25.93
+     2         2             3.70
+
+
+
+
+
+________________________________________________________________________________
+
+NONOFOOD                     QUESTION NUMBER: Z62
+
+WAS ANY FOOD WITHHELD FROM INFANT BECAUSE OF DIARRHEA?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No   (Code -9 in NAMEIT)
+-8 - NR/DK
+-9 - NA
+
+
+  NONOFOOD     COUNT      PERCENT
+     .         3178           .
+    -9         95             .
+     0         34           62.96
+     1         20           37.04
+
+
+
+
+
+________________________________________________________________________________
+
+                                      54
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+OTHERSUF                     QUESTION NUMBER: Z60
+
+WHAT DISCOMFORT DID BABY SUFFER SINCE ONSET OF DIARRHEA?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Colic, flatulence (gassy stomach)
+ 2 - Restless
+ 3 - Others (SPECIFY)
+-8 - NR/DK
+-9 - NA
+
+
+  OTHERSUF     COUNT      PERCENT
+     .         3178           .
+    -9         148            .
+     1         1           100.00
+
+
+
+
+
+________________________________________________________________________________
+
+OTHRMILK                     QUESTION NUMBER: Z7
+
+WAS BABY RECEIVING OTHER MILK EITHER AT TIME OF INTERVIEWER'S LAST VISIT OR
+SINCE LAST VISIT?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  OTHRMILK     COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+     0         77           52.03
+     1         71           47.97
+
+
+
+
+
+________________________________________________________________________________
+
+
+                                      55
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+OTRMILK                      QUESTION NUMBER: Z61
+
+WAS BABY FED OTHER MILK THE DAY BEFORE THE ONSET OF DIARRHEA?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  OTRMILK      COUNT      PERCENT
+     .         3178           .
+    -9         95             .
+     0         29           53.70
+     1         25           46.30
+
+
+
+
+
+________________________________________________________________________________
+
+PAYMENT                      QUESTION NUMBER: Z37
+
+COST (PESOS) OF MEDICINE GIVEN TO HOSPITALIZED INFANT BY HOSPITAL
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE--HOSPITALIZATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 0 - No payment/Somebody else paid
+ 1 - One peso
+ :
+-8 - NR/DK
+-9 - NA
+
+-8'S=5   -9'S=104   MISSINGS(.)=3178
+
+N=40  MEAN=285.53  MIN=0  MAX=1179  Q1=64  MEDIAN=200  Q3=465
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+                                      56
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+PLACEDD                      QUESTION NUMBER: Z2
+
+PLACE OF BABY'S DEATH
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Home
+ 2 - Government Hospital/Clinic
+ 3 - Private Hospital/Clinic
+ 4 - On the way to a hospital/clinic
+ 5 - Outside Metro Cebu, within Cebu Province
+ 6 - Outside Cebu Province
+ 7 - Another Sample Barangay
+ 8 - House of Mananambal
+ 9 - Relative's House located in sample woman's barangay
+10 - Others (SPECIFY)
+-8 - NR/DK
+-9 - NA
+
+
+  PLACEDD      COUNT      PERCENT
+     .         3178           .
+     1         82           55.03
+     2         39           26.17
+     3         12            8.05
+     4         9             6.04
+     5         2             1.34
+     7         1             0.67
+     8         1             0.67
+     9         3             2.01
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      57
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+PLUSMORE                     QUESTION NUMBER: Z84
+
+DID BABY SUFFER FROM ANY OTHER ILLNESS DURING LAST 7 DAYS?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No   (Code -9 in SICKNESS)
+-8 - NR/DK
+-9 - NA
+
+
+  PLUSMORE     COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+     0         122          82.43
+     1         26           17.57
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      58
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+REASCON                      QUESTION NUMBER: Z17
+
+REASON FOR CONSULTATION ABOUT INFANT'S HEALTH
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Child was sick
+ 2 - Well-baby check up
+ 3 - Immunization
+ 4 - Cord dressing
+ 5 - Gi-ungo
+ 6 - Baby was born premature in hospital
+ 7 - Baby kept crying
+ 8 - Others (SPECIFY)
+-8 - NR/DK
+-9 - NA
+
+
+  REASCON      COUNT      PERCENT
+     .         3178           .
+    -9         33             .
+     1         113          97.41
+     3         1             0.86
+     5         1             0.86
+     6         1             0.86
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      59
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+RECOMONE                     QUESTION NUMBER: Z41
+
+FIRST FEEDING RECOMMENDATION MADE BY PERSON(S) CONSULTED FOR INFANT'S HEALTH
+PROBLEM
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE--FEEDING
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Breastfeed or continue breastfeeding baby
+ 2 - Stop breastfeeding baby
+ 3 - Give Nutripak to baby
+ 4 - Change baby's milk brand
+ 5 - Give vegetables to baby
+ 6 - Give juice
+ 7 - Give solid food
+ 8 - Stop giving other milk temporarily
+ 9 - Give lanot
+10 - Give Oresol/ORT/Pedialyte
+11 - Give saging tundan
+12 - Give milk and vitamins
+13 - Give corn grits coffee
+14 - Avoid salty foods
+15 - Give tru-orange (i.e. ipahimasmo)
+16 - Give balanced diet
+17 - Give beef soup only
+18 - Give tuba
+19 - Give tea
+20 - Give Nursoy
+-8 - NR/DK
+-9 - NA
+
+
+  RECOMONE     COUNT      PERCENT
+     .         3178           .
+    -9         121            .
+     1         3            10.71
+     4         3            10.71
+     5         4            14.29
+     7         1             3.57
+     8         1             3.57
+     9         5            17.86
+    10         1             3.57
+    12         1             3.57
+    13         2             7.14
+    14         2             7.14
+    15         2             7.14
+    16         1             3.57
+    17         1             3.57
+    18         1             3.57
+
+
+
+
+
+________________________________________________________________________________
+
+                                      60
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+RECOMTWO                     QUESTION NUMBER: Z42
+
+SECOND FEEDING RECOMMENDATION MADE BY PERSON(S) CONSULTED FOR INFANT'S HEALTH
+PROBLEM
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE--FEEDING
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Breastfeed or continue breastfeeding baby
+ 2 - Stop breastfeeding baby
+ 3 - Give Nutripak to baby
+ 4 - Change baby's milk brand
+ 5 - Give vegetables to baby
+ 6 - Give juice
+ 7 - Give solid food
+ 8 - Stop giving other milk temporarily
+ 9 - Give lanot
+10 - Give Oresol/ORT/Pedialyte
+11 - Give saging tundan
+12 - Give milk and vitamins
+13 - Give corn grits coffee
+14 - Avoid salty foods
+15 - Give tru-orange (i.e. ipahimasmo)
+16 - Give balanced diet
+17 - Give beef soup only
+18 - Give tuba
+19 - Give tea
+20 - Give Nursoy
+-8 - NR/DK
+-9 - NA
+
+  RECOMTWO     COUNT      PERCENT
+     .         3178           .
+    -9         136            .
+     4         1             7.69
+     5         3            23.08
+     9         4            30.77
+    10         1             7.69
+    11         1             7.69
+    12         1             7.69
+    14         1             7.69
+    15         1             7.69
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+                                      61
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+RUNNOSE                      QUESTION NUMBER: Z76
+
+AT ANY TIME DURING THE LAST 7 DAYS OF LIFE DID BABY HAVE COLDS?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  RUNNOSE      COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+    -9         50             .
+     0         75           76.53
+     1         23           23.47
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      62
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+SECDIAG                      QUESTION NUMBER: Z25
+
+SECOND DIAGNOSIS/PRESCRIPTION MADE FOR INFANT'S HEALTH PROBLEM
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Baby is all right
+ 2 - Baby is suffering from diarrhea
+ 3 - Baby has fever
+ 4 - Baby is suffering from respiratory infection
+     (i.e. colds, cough, bronchitis, bronchopneumonia)
+ 5 - Baby has measles
+ 6 - Baby is suffering from sprain, bone dislocation
+     (i.e. napi-ang and was massaged or 'gihilot')
+ 7 - Umbilical cord was infected
+ 8 - Baby is deficient in iron and/or certain vitamins/undernourished
+ 9 - Baby is teething/teething-related ailment
+10 - Baby has brain infection/meningitis
+11 - Baby suffers from colic, abdominal distention
+12 - Culture-related diagnosis
+     (i.e. gihangup sa dili ingon nato, gi-ungo, gibuyagan,
+           na-impatso, gipa-inum og tubig nga dunay papel
+           nga may orasyon nga gisulat, nabuyagan sa tubig,
+           gipanuhot, etc.)
+13 - Advised hospital admission
+14 - Others (SPECIFY)
+15 - Baby drank amniotic fluid or dumagat
+16 - Baby's heart is weak/heart ailment/rheumatic heart
+17 - Advised surgery
+18 - Had fever, applied oil prepared by mananambal
+19 - Convulsion
+20 - Swelling of feet
+21 - Advised to see a doctor
+22 - Gave oresol
+23 - Child given oxygen right away upon admission in hospital
+
+24 - Thrush or lu-as
+25 - Changed medication
+26 - Swollen liver
+-8 - NR/DK
+-9 - NA
+
+  SECDIAG      COUNT      PERCENT
+     .         3178           .
+    -9         89             .
+     2         6            10.00
+     3         5             8.33
+     4         11           18.33
+     5         6            10.00
+     6         10           16.67
+     8         2             3.33
+     9         1             1.67
+    12         10           16.67
+    13         4             6.67
+    14         1             1.67
+    16         1             1.67
+    17         1             1.67
+    20         1             1.67
+    24         1             1.67
+
+
+
+
+
+________________________________________________________________________________
+
+                                      63
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+SECLAPSE                     QUESTION NUMBER: Z23
+
+HOW MANY DAYS SINCE ONSET OF INFANT'S ILLNESS WAS SECOND CONSULTATION MADE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 0 - Less than one day
+ 1 - One day
+ :
+-8 - NR/DK
+-9 - NA
+
+-8'S=0   -9'S=89   MISSINGS(.)=3178
+
+N=60  MEAN=13.33  MIN=0  MAX=300  Q1=3  MEDIAN=5.5  Q3=11.5
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      64
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+SECONSLT                     QUESTION NUMBER: Z22
+
+SECOND HEALTH PRACTITIONER CONSULTED FOR INFANT'S HEALTH PROBLEM
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Public Health facility doctor
+ 2 - Public Health facility nurse
+ 3 - RHU/CHO Personnel
+ 4 - Private Physician
+ 5 - Puericulture center personnel
+ 6 - Public Health midwife
+ 7 - Other Public Health agent
+ 8 - Traditional Health practitioner
+ 9 - Combination (SPECIFY)
+10 - Others (SPECIFY)
+-8 - NR/DK
+-9 - NA (Only one Health practitioner was consulted)
+
+  SECONSLT     COUNT      PERCENT
+     .         3178           .
+    -9         89             .
+     1         9            15.00
+     2         1             1.67
+     4         24           40.00
+     8         26           43.33
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      65
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+SELFCURE                     QUESTION NUMBER: Z69
+
+TYPE OF MEDICATION USED BY MOTHER TO TREAT INFANT'S DIARRHEA
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Water with paper containing oracion
+ 2 - Avoid bathing
+ 3 - Mother either avoided or took certain foods
+ 4 - Mother give medicine for diarrhea
+ 5 - Mother applied coconut oil, kerosene, or
+     other external ointment on child's stomach
+     (i.e. masked young guava leaves)
+ 6 - Specify (not coded)
+ 7 - Specify (not coded)
+-8 - NR/DK
+-9 - NA
+
+
+  SELFCURE     COUNT      PERCENT
+     .         3178           .
+    -9         140            .
+     4         5            55.56
+     5         4            44.44
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      66
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+SELFMEDI                     QUESTION NUMBER: Z52
+
+DID MOTHER TREAT INFANT'S COUGH ON HER OWN?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No  (Code -9 in SELDMEDN)
+-8 - NR/DK
+-9 - NA
+
+
+  SELFMEDI     COUNT      PERCENT
+     .         3178           .
+    -9         73             .
+     0         46           60.55
+     1         30           39.47
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      67
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+SELFMEDN                     QUESTION NUMBER: Z53
+
+HOW DID MOTHER TREAT INFANT'S COUGH?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Gave cough syrup
+ 2 - Applied vaporub, ointment, kerosene to
+     baby's chest and/or throat
+ 3 - Mother took medicine or juice for the benefit
+     of breastfed baby
+ 4 - Indigenous treatment i.e. smoking
+ 5 - Others (SPECIFY)
+-8 - NR/DK
+-9 - NA
+
+
+  SELFMEDN     COUNT      PERCENT
+     .         3178           .
+    -9         119            .
+     1         9            30.00
+     2         16           53.33
+     4         5            16.67
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      68
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+SEMISOLD                     QUESTION NUMBER: Z61
+
+WAS BABY GIVEN SEMI-SOLID FOOD THE DAY BEFORE THE ONSET OF DIARRHEA?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  SEMISOLD     COUNT      PERCENT
+     .         3178           .
+    -9         95             .
+     0         13           24.07
+     1         41           75.93
+
+
+
+
+
+________________________________________________________________________________
+
+SEMISOLI                     QUESTION NUMBER: Z10
+
+WAS BABY FED SEMI-SOLIDS EITHER AT TIME OF INTERVIEWER'S LAST VISIT OR
+SINCE LAST VISIT?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  SEMISOLI     COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+     0         55           37.16
+     1         93           62.84
+
+
+
+
+
+________________________________________________________________________________
+
+
+                                      69
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+SICKNESS                     QUESTION NUMBER: Z85
+
+ILLNESS SUFFERED BY BABY DURING LAST SEVEN DAYS OF LIFE
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Heart ailment, Cardiac arrest
+ 2 - Pneumonia/bronchopneumonia
+ 3 - Prematurity
+ 4 - Bronchitis
+ 5 - Meningitis
+ 6 - Nutritional deficiency
+ 7 - Colic, abdominal distention, flatulence
+ 8 - Swelling of hands and feet/swollen chest
+ 9 - Baby kept vomiting
+10 - Gisinyalan (i.e. obstruction in the throat,
+     buyag sa tubig, etc.)
+11 - Baby kept crying
+12 - Baby turned blue, cyanosis
+13 - Baby had scratches on the neck, rashes (pilas)
+     talipaso
+14 - Baby had jaundice
+15 - Green/blank liquid (or mucus) kept coming out of baby's
+     nostrils/mouth causing difficulty in breathing
+16 - Diabetes Mellitus Type II
+17 - Fever within
+18 - Difficulty in breathing, very weak
+19 - Measles
+20 - Convulsion
+21 - Baby kept perspiring (i.e. cold sweat)
+22 - Infection/tetanus of umbilical cord
+23 - Harelipped
+24 - Could not move bowels without medicine
+25 - Congenital defect (i.e. hole in the heart)
+26 - Chills
+27 - Nose bleeds
+28 - Child kept hitting his head
+29 - Child vomited ascaris (a type of worm)
+30 - Asthma
+31 - Thrush or lu-as
+32 - Child got weaker and weaker
+33 - Gums turned blue
+34 - During attempt to suction phlegm, blood came
+     out instead
+35 - Cataract due to Vitamin A deficiency
+36 - Left arm was filled with fluid
+37 - Beri-beri
+38 - Cellulitis (i.e., hubag sa nawong)
+39 - Sprain, bone dislocation (i.e., lisa, pi-ang)
+-8 - NR/DK
+-9 - NA
+
+  SICKNESS     COUNT      PERCENT
+     .         3178           .
+    -9         123            .
+     4         1             3.85
+     7         4            15.38
+     8         1             3.85
+    11         1             3.85
+    12         2             7.69
+    14         1             3.85
+    15         2             7.69
+    17         1             3.85
+    19         8            30.77
+    22         1             3.85
+    25         1             3.85
+    31         1             3.85
+    35         1             3.85
+    38         1             3.85
+
+
+
+
+
+________________________________________________________________________________
+
+                                      70
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+SITEONE                      QUESTION NUMBER: Z26
+
+LOCATION OF FIRST CONSULTATION FOR INFANT'S HEALTH PROBLEM
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Public Health Office or Clinic
+ 2 - Public Health Hospital
+ 3 - RHU/CHO
+ 4 - Puericulture Center
+ 5 - Barangay Health Station
+ 6 - Home of Respondent
+ 7 - Private Office or Clinic
+ 8 - Private Hospital
+ 9 - Other Public Health Facility (SPECIFY)
+10 - Other Private Health Facility (SPECIFY)
+-8 - NR/DK
+-9 - NA
+
+
+  SITEONE      COUNT      PERCENT
+     .         3178           .
+    -9         33             .
+     1         1             0.86
+     2         15           12.93
+     3         12           10.34
+     5         4             3.45
+     6         5             4.31
+     7         47           40.52
+     8         9             7.76
+     9         5             4.31
+    10         18           15.52
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      71
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+SITETWO                      QUESTION NUMBER: Z27
+
+LOCATION OF SECOND CONSULTATION FOR INFANT'S HEALTH PROBLEM
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Public Health Office or Clinic
+ 2 - Public Health Hospital
+ 3 - RHU/CHO
+ 4 - Puericulture Center
+ 5 - Barangay Health Station
+ 6 - Home of Respondent
+ 7 - Private Office or Clinic
+ 8 - Private Hospital
+ 9 - Other Public Health Facility (SPECIFY)
+10 - Other Private Health Facility (SPECIFY)
+-8 - NR/DK
+-9 - NA
+
+  SITETWO      COUNT      PERCENT
+     .         3178           .
+    -9         89             .
+     2         9            15.00
+     3         1             1.67
+     5         1             1.67
+     6         6            10.00
+     7         21           35.00
+     8         3             5.00
+    10         19           31.67
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      72
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+SLD24HR                      QUESTION NUMBER: Z14
+
+WAS BABY GIVEN SOLID FOOD DURING THE LAST 24 HOURS OF LIFE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes (If code in Z13 is 1, code -9 in Z15;
+          If code in Z15 is 0, continue)
+ 0 - No  (Code -9 in Z15)
+-8 - NR/DK
+-9 - NA
+
+
+  SLD24HR      COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+     0         127          85.81
+     1         21           14.19
+
+
+
+
+
+________________________________________________________________________________
+
+SLDLASVS                     QUESTION NUMBER: Z13
+
+WAS BABY FED SOLID FOODS EITHER AT TIME OF INTERVIEWER'S LAST VISIT OR
+SINCE LAST VISIT?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  SLDLASVS     COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+     0         76           57.35
+     1         72           48.65
+
+
+
+
+
+________________________________________________________________________________
+
+                                      73
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+SOLIDINT                     QUESTION NUMBER: Z15
+
+HOW MANY DAYS BEFORE INFANT'S DEATH WAS SOLID FOOD INTRODUCED TO BABY?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 0 - Less than one day
+ 1 - One day
+ :
+-8 - NR/DK
+-9 - NA
+
+
+  SOLIDINT     COUNT      PERCENT
+     .         3178           .
+    -9         145            .
+     3         1            25.00
+     7         1            25.00
+    30         1            25.00
+    49         1            25.00
+
+
+
+
+
+________________________________________________________________________________
+
+SORETHRO                     QUESTION NUMBER: Z47
+
+DID BABY HAVE A SORE THROAT DURING THE LAST 24 HOURS OF LIFE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1- Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  SORETHRO     COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+    -9         73             .
+     0         38           50.67
+     1         37           49.33
+
+
+
+
+
+________________________________________________________________________________
+
+                                      74
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+SORETROT                     QUESTION NUMBER: Z78
+
+AT ANY TIME DURING THE LAST 7 DAYS OF LIFE DID BABY HAVE SORE THROAT?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  SORETROT     COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+    -9         50             .
+     0         84           85.71
+     1         14           14.29
+
+
+
+
+
+________________________________________________________________________________
+
+SPECIALF                     QUESTION NUMBER: Z50
+
+WAS ANY SPECIAL FOOD/DRINK GIVEN TO BABY BECAUSE OF COUGH?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No  (Code -9 in SPECLFD)
+-8 - NR/DK
+-9 - NA
+
+
+  SPECIALF     COUNT      PERCENT
+     .         3178           .
+    -9         73             .
+     0         58           76.32
+     1         18           23.68
+
+
+
+
+
+________________________________________________________________________________
+
+
+                                      75
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+SPECLFD                      QUESTION NUMBER: Z51
+
+SPECIAL FOOD/DRINKS GIVEN TO BABY BECAUSE OF COUGH
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Lemonsito juice
+ 2 - Royal tru-orange
+ 3 - Indigenous formulation i.e. atis leaves
+     soaked in water, water with oracion written
+     in a piece of paper, duga sa kimpisaw, etc.
+ 4 - Tuba
+ 5 - Egg
+ 6 - Others (SPECIFY)
+-8 - NR/DK
+-9 - NA
+
+
+  SPECLFD      COUNT      PERCENT
+     .         3178           .
+    -9         131            .
+     1         11           61.11
+     2         1             5.56
+     3         4            22.22
+     5         2            11.11
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      76
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+SSLD24H                      QUESTION NUMBER: Z11
+
+WAS BABY GIVEN SEMI-SOLIDS DURING THE LAST 24 HOURS OF LIFE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes (If answer in Z10 is 1, code -9 in Z12;
+          If answer in Z10 is 0, continue)
+ 0 - No  (Code -9 in Z10)
+-8 - NR/DK
+-9 - NA
+
+
+  SSLD24H      COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+     0         97           65.54
+     1         51           34.46
+
+
+
+
+
+________________________________________________________________________________
+
+SSLDINTR                     QUESTION NUMBER: Z12
+
+HOW MANY DAYS BEFORE HIS/HER DEATH WERE SEMI-SOLID FOODS INTRODUCED TO BABY?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 0 - Less than one day
+ 1 - One day
+ :
+-8 - NR/DK
+-9 - NA
+
+
+  SSLDINTR     COUNT      PERCENT
+     .         3178           .
+    -9         145            .
+     2         1            25.00
+     4         1            25.00
+     7         2            50.00
+
+
+
+
+
+________________________________________________________________________________
+
+                                      77
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+STARTCOG                     QUESTION NUMBER: Z46
+
+WHEN DID INFANT'S COUGHING START?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 0 - The day baby died
+ 1 - One day before baby died
+ :                                _                     _
+ 7 - Seven days before baby died | Code -9 from COUGHING |
+ :                               |_     to SORETROT     _|
+-8 - NR/DK
+-9 - NA
+
+-8'S=0   -9'S=73   MISSINGS(.)=3178
+
+N=76  MEAN=13.02  MIN=0  MAX=90  Q1=4  MEDIAN=7  Q3=14
+
+
+
+
+
+________________________________________________________________________________
+
+STRATMO                      QUESTION NUMBER:  ID3
+
+URBAN-RURAL STATUS OF SAMPLE WOMAN'S BARANGAY AT MORTALITY SURVEY
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     IDENTIFICATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Urban
+ 2 - Rural
+
+  STRATMO      COUNT      PERCENT
+     .         3178           .
+     1         107          71.80
+     2         42           28.20
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+                                      78
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+SUPER1                       QUESTION NUMBER: Z92
+
+MOTHER'S FIRST PERCEPTION OF CAUSE OF BABY'S DEATH
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Respiratory arrest, respiratory infection
+     (i.e. bronchopneumonia, cough, colds, fever,etc.)
+ 2 - Cardiac arrest, heart failure, weak heart
+ 3 - Measles
+ 4 - Meningitis, Brain infection
+ 5 - Prematurity, Blue baby, cyanotic baby
+ 6 - Congenital defects (i.e. hole in the heart)
+ 7 - Nutritional Deficiency, Avitaminosis, malnutrition
+ 8 - Diarrhea, gastro-enteritis, severe dehydration
+ 9 - Dengue fever
+10 - Swollen Liver, Jaundice, intestinal problem
+11 - Infection/Tetanus of umbilical cord
+12 - Fever
+13 - Diabetes Mellitus Type II
+14 - Dextrose given to the baby
+15 - Culture-related causes
+     (Gi-ungo, nabuyagan, gisinyalan, lamon,
+      dumagat, gika-ibgan sa dili ingon nato, gida-ut,
+      gihampak ug dautan nga hangin, naimpatso,
+      gidayongan, etc.)
+16 - Mother's not destined to have live children
+     (i.e. buayahan, gida-ug sa inahan, etc.)
+17 - Green/blank liquid coming out of the baby's
+     nostrils or mouth (liquid or mucus)
+18 - Combination
+19 - Affected by mother's ailment (i.e., beri-beri,
+     cardiovascular disease, aftereffect of anti-
+     biotic injection received by mother during her
+     pregnancy, etc.)
+20 - Colic (butod sa tiyan)
+21 - Teething-related cause, swollen gums
+22 - Child may have suffered from a broken rib
+     because of the massage/hilot
+23 - Wrong medication
+24 - Convulsion
+25 - Swollen feet, body (edema)
+26 - Chronic otitis media
+27 - Hypoglycemia
+28 - Tuberculosis (TB)
+29 - Because of all the injections given by the
+     doctors in hospital
+30 - Beri-beri
+31 - Cellulitis (Apoy)
+32 - Asthma
+33 - Thrush or lu-as
+34 - Septicemia (infection of the blood stream/
+     Sepsis neonotarum
+35 - Infected Insect bite
+36 - Hyaline Membrane
+37 - Failure to avail of prenatal care during pregnancy
+38 - Drank too much amniotic fluid
+-8 - NR/DK
+-9 - NA
+
+
+  SUPER1       COUNT      PERCENT
+     .         3178           .
+    -8         4              .
+    -9         1              .
+     1         25           17.93
+     2         7             4.83
+     3         23           15.86
+     4         3             2.07
+     5         9             6.21
+     6         1             0.69
+     7         2             1.38
+     8         17           11.72
+    10         3             2.07
+    11         7             4.83
+    12         1             0.69
+    15         19           13.10
+    16         2             1.38
+    17         2             1.38
+    19         3             2.07
+    20         2             1.38
+    21         4             2.76
+    24         2             1.38
+    25         2             1.38
+    29         1             0.69
+    30         1             0.69
+    31         1             0.69
+    32         1             0.69
+    33         3             2.07
+    35         2             1.38
+    38         1             0.69
+
+
+
+
+
+________________________________________________________________________________
+
+                                      79
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+SUPER2                       QUESTION NUMBER: Z93
+
+MOTHER'S SECOND PERCEPTION OF CAUSE OF BABY'S DEATH
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Respiratory arrest, respiratory infection
+     (i.e. bronchopneumonia, cough, colds, fever,etc.)
+ 2 - Cardiac arrest, heart failure, weak heart
+ 3 - Measles
+ 4 - Meningitis, Brain infection
+ 5 - Prematurity, Blue baby, cyanotic baby
+ 6 - Congenital defects (i.e. hole in the heart)
+ 7 - Nutritional Deficiency, Avitaminosis, malnutrition
+ 8 - Diarrhea, gastro-enteritis, severe dehydration
+ 9 - Dengue fever
+10 - Swollen Liver, Jaundice, intestinal problem
+11 - Infection/Tetanus of umbilical cord
+12 - Fever
+13 - Diabetes Mellitus Type II
+14 - Dextrose given to the baby
+15 - Culture-related causes
+     (Gi-ungo, nabuyagan, gisinyalan, lamon,
+      dumagat, gika-ibgan sa dili ingon nato, gida-ut,
+      gihampak ug dautan nga hangin, naimpatso,
+      gidayongan, etc.)
+16 - Mother's not destined to have live children
+     (i.e. buayahan, gida-ug sa inahan, etc.)
+17 - Green/blank liquid coming out of the baby's
+     nostrils or mouth (liquid or mucus)
+18 - Combination
+19 - Affected by mother's ailment (i.e., beri-beri,
+     cardiovascular disease, aftereffect of anti-
+     biotic injection received by mother during her
+     pregnancy, etc.)
+20 - Colic (butod sa tiyan)
+21 - Teething-related cause, swollen gums
+22 - Child may have suffered from a broken rib
+     because of the massage/hilot
+23 - Wrong medication
+24 - Convulsion
+25 - Swollen feet, body (edema)
+26 - Chronic otitis media
+27 - Hypoglycemia
+28 - Tuberculosis (TB)
+29 - Because of all the injections given by the
+     doctors in hospital
+30 - Beri-beri
+31 - Cellulitis (Apoy)
+32 - Asthma
+33 - Thrush or lu-as
+34 - Septicemia (infection of the blood stream/
+     Sepsis neonotarum
+35 - Infected Insect bite
+36 - Hyaline Membrane
+37 - Failure to avail of prenatal care during pregnancy
+38 - Drank too much amniotic fluid
+-8 - NR/DK
+-9 - NA (Code -9 in SUPER3)
+
+
+  SUPER2       COUNT      PERCENT
+     .         3178           .
+    -9         98             .
+     1         4             7.84
+     2         2             3.92
+     3         6            11.76
+     4         3             5.88
+     5         1             1.96
+     8         4             7.84
+    12         7            13.73
+    14         1             1.96
+    15         9            17.65
+    16         1             1.96
+    19         1             1.96
+    20         3             5.88
+    22         1             1.96
+    23         1             1.96
+    25         4             7.84
+    27         1             1.96
+    33         1             1.96
+    37         1             1.96
+
+
+
+
+
+________________________________________________________________________________
+
+                                      80
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+SUPER3                       QUESTION NUMBER: Z94
+
+MOTHER'S THIRD PERCEPTION OF CAUSE OF BABY'S DEATH
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Respiratory arrest, respiratory infection
+     (i.e. bronchopneumonia, cough, colds, fever,etc.)
+ 2 - Cardiac arrest, heart failure, weak heart
+ 3 - Measles
+ 4 - Meningitis, Brain infection
+ 5 - Prematurity, Blue baby, cyanotic baby
+ 6 - Congenital defects (i.e. hole in the heart)
+ 7 - Nutritional Deficiency, Avitaminosis, malnutrition
+ 8 - Diarrhea, gastro-enteritis, severe dehydration
+ 9 - Dengue fever
+10 - Swollen Liver, Jaundice, intestinal problem
+11 - Infection/Tetanus of umbilical cord
+12 - Fever
+13 - Diabetes Mellitus Type II
+14 - Dextrose given to the baby
+15 - Culture-related causes
+     (Gi-ungo, nabuyagan, gisinyalan, lamon,
+      dumagat, gika-ibgan sa dili ingon nato, gida-ut,
+      gihampak ug dautan nga hangin, naimpatso,
+      gidayongan, etc.)
+16 - Mother's not destined to have live children
+     (i.e. buayahan, gida-ug sa inahan, etc.)
+17 - Green/blank liquid coming out of the baby's
+     nostrils or mouth (liquid or mucus)
+18 - Combination
+19 - Affected by mother's ailment (i.e., beri-beri,
+     cardiovascular disease, aftereffect of anti-
+     biotic injection received by mother during her
+     pregnancy, etc.)
+20 - Colic (butod sa tiyan)
+21 - Teething-related cause, swollen gums
+22 - Child may have suffered from a broken rib
+     because of the massage/hilot
+23 - Wrong medication
+24 - Convulsion
+25 - Swollen feet, body (edema)
+26 - Chronic otitis media
+27 - Hypoglycemia
+28 - Tuberculosis (TB)
+29 - Because of all the injections given by the
+     doctors in hospital
+30 - Beri-beri
+31 - Cellulitis (Apoy)
+32 - Asthma
+33 - Thrush or lu-as
+34 - Septicemia (infection of the blood stream/
+     Sepsis neonotarum
+35 - Infected Insect bite
+36 - Hyaline Membrane
+37 - Failure to avail of prenatal care during pregnancy
+38 - Drank too much amniotic fluid
+-8 - NR/DK
+-9 - NA
+
+
+  SUPER3       COUNT      PERCENT
+     .         3178           .
+    -9         139            .
+     1         1            10.00
+     4         1            10.00
+     8         1            10.00
+    12         1            10.00
+    14         1            10.00
+    15         1            10.00
+    17         1            10.00
+    22         1            10.00
+    24         1            10.00
+    33         1            10.00
+
+
+
+
+
+________________________________________________________________________________
+
+                                      81
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+SWJUICE                      QUESTION NUMBER: Z61
+
+WAS BABY GIVEN SUGARED WATER OR JUICE THE DAY BEFORE THE ONSET OF DIARRHEA?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  SWJUICE      COUNT      PERCENT
+     .         3178           .
+    -9         95             .
+     0         36           66.67
+     1         18           33.33
+
+
+
+
+
+________________________________________________________________________________
+
+TABLEFOD                     QUESTION NUMBER: Z61
+
+WAS BABY GIVEN SOLID FOOD THE DAY BEFORE THE ONSET OF DIARRHEA?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  TABLEFOD     COUNT      PERCENT
+     .         3178           .
+    -9         95             .
+     0         31           57.41
+     1         23           42.59
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+                                      82
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+TEETHING                     QUESTION NUMBER: Z81
+
+WAS BABY TEETHING BEFORE DYING?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No   (Code -9 from GUMCARE to GUMTREAT)
+-8 - NR/DK
+-9 - NA
+
+
+  TEETHING     COUNT      PERCENT
+     .         3178           .
+    -8         2              .
+     0         76           51.70
+     1         71           48.30
+
+
+
+
+
+________________________________________________________________________________
+
+TEMPRA                       QUESTION NUMBER: Z73
+
+DID BABY HAVE FEVER THE LAST 24 HOURS OF LIFE?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  TEMPRA       COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+     0         67           45.27
+     1         81           54.73
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+                                      83
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+TENESMUS                     QUESTION NUMBER: Z60
+
+DID BABY EXPERIENCE TENESMUS SINCE ONSET OF DIARRHEA?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  TENESMUS     COUNT      PERCENT
+     .         3178           .
+    -9         95             .
+     0         42           77.78
+     1         12           22.22
+
+
+
+
+
+________________________________________________________________________________
+
+TIMEDAY                      QUESTION NUMBER: Z1
+
+TIME OF DAY BABY DIED
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - AM
+ 2 - PM
+-8 - NR/DK
+-9 - NA
+
+
+  TIMEDAY      COUNT      PERCENT
+     .         3178           .
+    -8         2              .
+     1         79           53.74
+     2         68           46.26
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+                                      84
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+TYPEFOOD                     QUESTION NUMBER: Z39
+
+TYPE OF FOOD/MILK GIVEN TO INFANT DURING HIS/HER HOSPITALIZATION
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE--HOSPITALIZATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Intravenous dextrose
+ 2 - Oral rehydration solution
+ 3 - Other milk
+ 4 - Semi-solid food
+ 5 - Table food
+ 6 - Distilled water
+ 7 - Lanot
+ 8 - Others (SPECIFY)
+-8 - NR/DK
+-9 - NA
+
+
+  TYPEFOOD     COUNT      PERCENT
+     .         3178           .
+    -9         107            .
+     1         29           69.05
+     2         1             2.38
+     3         3             7.14
+     4         4             9.52
+     5         1             2.38
+     7         4             9.52
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      85
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+VOMITING                     QUESTION NUMBER: Z60
+
+DID BABY EXPERIENCE VOMITING SINCE ONSET OF DIARRHEA?
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Yes
+ 0 - No
+-8 - NR/DK
+-9 - NA
+
+
+  VOMITING     COUNT      PERCENT
+     .         3178           .
+    -9         95             .
+     0         29           53.70
+     1         25           46.30
+
+
+
+
+
+________________________________________________________________________________
+
+WAITING1                     QUESTION NUMBER: Z30
+
+WAITING TIME IN MINUTES DURING FIRST CONSULTATION FOR INFANT'S HEALTH PROBLEM
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 0 - Attended to immediately
+ 1 - One minute
+ :
+-8 - NR/DK
+-9 - NA
+
+-8'S=0   -9'S=33   MISSINGS(.)=3178
+
+N=116  MEAN=20.72  MIN=0  MAX=270  Q1=1  MEDIAN=2  Q3=30
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+                                      86
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+WAITING2                     QUESTION NUMBER: Z31
+
+WAITING TIME IN MINUTES DURING SECOND CONSULTATION FOR INFANT'S HEALTH PROBLEM
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 0 - Attended to immediately
+ 1 - One minute
+ :
+-8 - NR/DK
+-9 - NA
+
+-8'S=0   -9'S=89   MISSINGS(.)=3178
+
+N=60  MEAN=23.17  MIN=0  MAX=180  Q1=1  MEDIAN=1  Q3=22.5
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      87
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+WHOCONSU                     QUESTION NUMBER: Z19
+
+TYPE OF HEALTH PRACTITIONER CONSULTED FOR INFANT'S HEALTH PROBLEM
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT HEALTH CARE
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Public Health facility doctor
+ 2 - Public Health facility nurse
+ 3 - RHU/CHO Personnel
+ 4 - Private Physician
+ 5 - Puericulture center personnel
+ 6 - Public Health midwife
+ 7 - Other Public Health agent
+ 8 - Traditional Health practitioner
+ 9 - Combination (SPECIFY)
+10 - Others (SPECIFY)
+-8 - NR/DK
+-9 - NA
+
+
+  WHOCONSU     COUNT      PERCENT
+     .         3178           .
+    -9         33             .
+     1         41           35.34
+     4         59           50.86
+     8         16           13.79
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      88
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+WHYSTOP                      QUESTION NUMBER: Z6
+
+REASON FOR TERMINATING BREASTFEEDING BEFORE INFANT'S DEATH
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - Quality of milk was no longer good (Milk was salty,
+     sour, dirty in color)
+ 2 - Mother did not have enough milk to satisfy the baby
+ 3 - Infant had diarrhea
+ 4 - Infant refused to breastfeed
+ 5 - Mother was pregnant again
+ 6 - Mother was working or studying
+ 7 - Husband wanted wife to stop
+ 8 - Mother had to leave child for some time
+ 9 - Mother had emotional problems
+10 - Mother was sick SPECIFY ILLNESS(ES)
+11 - To wean the child
+12 - Doctor's advice
+13 - Other reason (SPECIFY)
+14 - Child had illness other than diarrhea
+     (i.e. cough, fever, colds, etc.)
+-8 - NR/DK
+-9 - NA
+
+
+  WHYSTOP      COUNT      PERCENT
+     .         3178           .
+    -8         1              .
+    -9         121            .
+     2         3            11.11
+     3         7            25.93
+     4         9            33.33
+    12         6            22.22
+    14         2             7.41
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+                                      89
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+WMNHLDMO                     QUESTION NUMBER:  ID5
+
+NUMBER OF SAMPLE WOMEN IN HOUSEHOLD AT MORTALITY SURVEY
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     IDENTIFICATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ 1 - One sample woman identified in HH
+ 2 - Two sample women identified in HH
+
+  WMNHLDMO     COUNT      PERCENT
+     1         3259         97.96
+     2         68            2.04
+
+
+
+
+________________________________________________________________________________
+
+YEARBORN                     QUESTION NUMBER: Z97
+
+YEAR BABY WAS BORN
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT BIRTH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+83 - 1983
+84 - 1984
+ :
+-8 - NR/DK
+
+
+  YEARBORN     COUNT      PERCENT
+     .         3178           .
+    83         114          76.51
+    84         35           23.49
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+                                      90
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+YRDIEDMF                     QUESTION NUMBER: Z1
+
+YEAR BABY DIED
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     INFANT DEATH INFORMATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+83 - 1983
+ :
+86 - 1986
+-8 - NR/DK
+
+
+  YRDIEDMF     COUNT      PERCENT
+     .         3178           .
+    83         37           24.83
+    84         71           47.65
+    85         40           26.85
+    86         1             0.67
+
+
+
+
+
+________________________________________________________________________________
+
+YRINTRMF                     QUESTION NUMBER: ID9
+
+YEAR INTERVIEW WAS COMPLETED (YY)
+
+SURVEY:  MORTALITY FOLLOWUP  SUBJECT:     IDENTIFICATION
+SAMPLE:  149                 FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+83 - 1983
+ :
+86 - 1986
+
+
+  YRINTRMF     COUNT      PERCENT
+     .         3178           .
+    84         99           66.44
+    85         45           30.20
+    86         5             3.36
+
+
+
+
+
+________________________________________________________________________________
+
+
+
+
+
+                                      91

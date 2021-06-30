@@ -1,0 +1,47 @@
+---
+title: "01_Data_Setup"
+author: "Calen P. Ryan"
+date: "6/30/2021"
+output: html_document
+---
+
+We have data in dozens of files across decades of time. We need the data in the format we can work with. I'll start bringing things together. A key aspect to this analysis is that it has to be **scaleable**, in that we will later expand the sample size and need to make it as easy as possible to do so without massive changes to the code. 
+
+
+
+# Load packages
+```{r}
+library(tidyverse) # great collection of packages for data carpentry, modelling, and visualization
+library(haven) # package for loading Stata's .dta files. 
+library(sjlabelled) # good for renaming, changing classes, etc. in the piped dplyr mode
+
+here::here()
+# sets a placeholder 'here'. Then we refer to our files based on the *relative* not the *absolute* location.
+```
+
+
+
+# Load maternal/child data, birthdays, and early growth parameters
+
+# Load and inspect 83-86
+```{r}
+
+mbirth2 <-read_dta(here::here("Data/zip_mother_1983_86/mbirth2.dta")) %>% # note: here::here calls the here function
+  rename_all(tolower)
+
+dim(mbirth2)
+```
+```{r}
+names(mbirth2)
+```
+Lots of names that are not easy to interpret. We must read the document
+```{r}
+file.show(here::here("Data/zip_mother_1983_86/mbirth.txt")) # or you can click on it - easier to 'control + f ' to find words
+
+```
+
+Find the variables that relate to growth in this dataset
+```{r}
+
+```
+

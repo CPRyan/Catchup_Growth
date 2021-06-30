@@ -1,0 +1,234 @@
+
+________________________________________________________________________________
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+
+            This Report Was Created on October 25, 2006 at 15:38.
+
+________________________________________________________________________________
+________________________________________________________________________________
+
+
+NOTE:  --------------------------------------------------------------
+NOTE:  The STATUS variable has been moved to the MBASE2 file.  !!!!!!
+NOTE:  --------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       1
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+BASEBRGY                     QUESTION NUMBER:  BS1
+
+BARANGAY OF RESPONDENT'S RESIDENCE DURING BASELINE SURVEY
+
+(Barangay--small village or neighborhood--in which sample woman and her
+ household resided at Baseline survey.  This variable, along with BASEWMAN,
+ constitutes the principal identification number of each sample woman, her
+ household, household members and food records, throughout the study.  Use
+ with BASEWMAN for merging files.)
+
+SURVEY:  BASELINE            SUBJECT:     IDENTIFICATION
+SAMPLE:  3327                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+ [labels deleted]
+
+  BASEBRGY     COUNT      PERCENT
+     1         143           4.30
+     2         103           3.10
+     3         235           7.06
+     4         131           3.94
+     5         17            0.51
+     6         109           3.28
+     7         165           4.96
+     8         114           3.43
+     9         181           5.44
+    10         195           5.86
+    11         153           4.60
+    12         96            2.89
+    13         355          10.67
+    14         96            2.89
+    15         85            2.55
+    16         120           3.61
+    17         257           7.72
+    18         38            1.14
+    19         25            0.75
+    20         71            2.13
+    21         17            0.51
+    22         23            0.69
+    23         28            0.84
+    24         15            0.45
+    25         28            0.84
+    26         64            1.92
+    27         73            2.19
+    28         175           5.26
+    29         61            1.83
+    30         46            1.38
+    31         56            1.68
+    32         36            1.08
+    33         16            0.48
+
+
+
+________________________________________________________________________________
+
+                                       2
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+BASEWMAN                     QUESTION NUMBER:  BS3
+
+SAMPLE WOMAN NUMBER IN BARANGAY DURING BASELINE SURVEY
+
+(Sample woman's identification number within the Barangay where she and her
+ household resided at Baseline survey.  This variable, along with BASEBRGY,
+ constitutes the principal identification number of each sample woman, her
+ household, household members and food records, throughout the survey.  Use
+ within BASEBRGY for merging files.)
+
+SURVEY:  BASELINE            SUBJECT:     IDENTIFICATION
+SAMPLE:  3327                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+  1  - Sample woman number one in barangay
+  :
+1000 - Sample woman number one thousand in barangay
+1001 - Second number of sample woman one with infant 2 born in HH
+  :
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       3
+
+Carolina Population Center : Mother Data Base Codebook : Version 7.1.4
+________________________________________________________________________________
+
+STATUS                       QUESTION NUMBER:  N/A
+
+STATUS OF SAMPLE WOMAN IN THE SURVEY
+
+SURVEY:  GLOBAL              SUBJECT:     SURVEY STATUS
+SAMPLE:  3327                FILE LEVEL:  HOUSEHOLD / SAMPLE WOMAN
+
+12 - Sample woman with child surviving past age 2 and complete survey
+     records (14 longitudinal interviews).
+
+13 - Sample woman left the survey area during the survey period.
+
+14 - Sample woman with one or more missing longitudinal interviews. Woman
+     either completed the last (12th) longitudinal interview or confirmed,
+     upon return to the sample area after her survey period, that the
+     sample child was alive.
+
+15 - Sample woman refused to be interviewed before Baseline or after last
+     interview shown in Master List.
+
+16 - Sample baby died.  --  At the beginning of the survey, women who had
+                         |  experienced an abnormal pregnancy termination were
+17 - Stillbirth          |  dropped from the survey. At a later stage of the
+                         |  operations, it was decided to take these women back
+18 - Miscarriage         |  into the sample. 56 women whose babies died have
+                        --  complete survey records (14 interviews).
+
+19 - Twin birth. Woman was dropped from the sample. Baseline interview obtained
+     is included in the data files.
+
+23 - Woman was dropped from the sample because of giving erroneous information
+     to the interviewer or because delivery was reported too late to the
+     survey personnel. In some instances, the Baseline interview was obtained
+     after the Birth Information interview. All interviews obtained are
+     included in the data files.
+
+
+   STATUS      COUNT      PERCENT
+     12        2184         65.64
+     13        446          13.41
+     14        377          11.33
+     15        66            1.98
+     16        155           4.66
+     17        38            1.14
+     18        13            0.39
+     19        26            0.78
+     23        22            0.66
+
+________________________________________________________________________________
+
+
+
+
+
+                                       4

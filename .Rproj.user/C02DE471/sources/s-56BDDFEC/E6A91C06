@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1625079698500.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "E6A91C06",
+    "lastKnownWriteTime" : 1591734167,
+    "last_content_update" : 1591734167,
+    "path" : "~/Academic_2021/Male_reproductive_epigenetics/Code/survey_measures/01a_anthro.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "35,0",
+        "scrollLine" : "26"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

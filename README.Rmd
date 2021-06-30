@@ -1,0 +1,28 @@
+---
+title: "README"
+author: "Calen P. Ryan and Milan Hilde-Jones"
+date: "6/30/2021"
+output: html_document
+---
+
+Use this document for metadata about the project. This could include:  
+
+* Clarity: Notes about analysis decisions  
+* Reproducibility: Details for someone else picking up the analysis (or future you)  
+* Something else (feel free to add)  
+ 
+The document uses Rmarkdown. You can find out more about how to write using this language [in this cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf).
+
+# Setup
+
+This project is going to require growth data from a number of years during childhood, as well as epigenetic age data during young adulthood (20-22 years old) for about 500 individuals. (We have more data coming, but this is going to lay the foundation for the larger analysis). 
+
+Data about growth can be accessed at the [UNC Dataverse](https://dataverse.unc.edu/dataverse/cebu)
+
+
+We're going to need: 
+
+* Only live births
+* Data about growth (birth weight, length, skinfolds if we have them)
+* Birthday (for age)
+* 
