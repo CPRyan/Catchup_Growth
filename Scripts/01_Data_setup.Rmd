@@ -14,7 +14,7 @@ We have data in dozens of files across decades of time. We need the data in the 
 library(tidyverse) # great collection of packages for data carpentry, modelling, and visualization
 library(haven) # package for loading Stata's .dta files. 
 library(sjlabelled) # good for renaming, changing classes, etc. in the piped dplyr mode
-
+library(zscorer)
 here::here()
 # sets a placeholder 'here'. Then we refer to our files based on the *relative* not the *absolute* location.
 ```
@@ -42,6 +42,32 @@ file.show(here::here("Data/zip_mother_1983_86/mbirth.txt")) # or you can click o
 
 Find the variables that relate to growth in this dataset
 ```{r}
+weight83_86_data<-mbirth2 %>% 
+  select(basebrgy,hhldnubi, basewman, daybirth, dayintw, mothintw, yearintw, weight1, weightak, weightgm )
+
+weight83_86_data
+
+ggplot(weight83_86_data, aes(x = weight1))+
+  geom_histogram(color = "white")
+
+ggplot(weight83_86_data, aes(x = weightak))+
+  geom_histogram(color = "white")
+
+ggplot(weight83_86_data, aes(x = weightgm))+
+  geom_histogram(color = "white")
+  
+```
+
+```{r}
+height83_86_data<-mbirth2 %>% 
+  select(basebrgy,hhldnubi, basewman, daybirth, dayintw, mothintw, yearintw, heightcm )
+
+height83_86_data
+
+ggplot(height83_86_data, aes(x=heightcm))+
+  geom_histogram(color = "white")
 
 ```
+
+
 
