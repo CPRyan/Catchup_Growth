@@ -203,6 +203,22 @@ summary {
 <li>Something else (feel free to add)</li>
 </ul>
 <p>The document uses Rmarkdown. You can find out more about how to write using this language <a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf">in this cheatsheet</a>.</p>
+<div id="setup" class="section level1">
+<h1>Setup</h1>
+<p>This project is going to require growth data from a number of years during childhood, as well as epigenetic age data during young adulthood (20-22 years old) for about 500 individuals. (We have more data coming, but this is going to lay the foundation for the larger analysis).</p>
+<p>Data about growth can be accessed at the <a href="https://dataverse.unc.edu/dataverse/cebu">UNC Dataverse</a></p>
+<p>We're going to need:</p>
+<ul>
+<li>Only live births</li>
+<li>Data about growth (birth weight, length, skinfolds if we have them)</li>
+<li>Birthday (for age)</li>
+</ul>
+<p>For births, we need:</p>
+<p>BBWIEGHT: WAS THE INFANT WEIGHED AFTER DELIVERY? 0 - No, baby has not been weighed yet (Code -9 in WEIGHT1) 1 - Yes, first hour of life 2 - Yes, later on first day of life 3 - Yes, second day of life 4 - Yes, third day of life 5 - Yes, fourth day of life 6 - Yes, fifth day of life 7 - Yes, after fifth day of life -8 - NR/DK -9 - NA</p>
+<p>If yes (&gt;0), - then use WEIGHT1, corrected for age (using BBWIEGHT or HRSAFTER coding for age)</p>
+<p>If not (&lt;1), - WEIGHTAK: WEIGHT IN GRAMS OF THE INFANT WHEN WEIGHED BY THE INTERVIEWER, corrected for age (YEARINTW, MOTHINTW, DAYINTW)</p>
+<p><strong>What is the difference between WEIGHTAK: WEIGHT IN GRAMS OF THE INFANT WHEN WEIGHED BY THE INTERVIEWER and WEIGHTGM INFANT'S WEIGHT IN GRAMS AT THE TIME OF WEIGHING</strong></p>
+</div>
 
 
 
