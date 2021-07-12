@@ -31,6 +31,7 @@ mbirth2 <-read_dta(here::here("Data/zip_mother_1983_86/mbirth2.dta")) %>% # note
 
 dim(mbirth2)
 ```
+
 ```{r}
 names(mbirth2)
 ```
