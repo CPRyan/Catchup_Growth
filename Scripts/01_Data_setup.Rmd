@@ -15,6 +15,7 @@ library(tidyverse) # great collection of packages for data carpentry, modelling,
 library(haven) # package for loading Stata's .dta files. 
 library(sjlabelled) # good for renaming, changing classes, etc. in the piped dplyr mode
 library(zscorer)
+library(lubridate)
 here::here()
 # sets a placeholder 'here'. Then we refer to our files based on the *relative* not the *absolute* location.
 ```
@@ -43,7 +44,10 @@ file.show(here::here("Data/zip_mother_1983_86/mbirth.txt")) # or you can click o
 Find the variables that relate to growth in this dataset
 ```{r}
 weight83_86_data<-mbirth2 %>% 
-  select(basebrgy,hhldnubi, basewman, daybirth, dayintw, mothintw, yearintw, weight1, weightak, weightgm )
+  select(basebrgy,hhldnubi, basewman, daybirth, mnthbrth, yearbirt, dayintw, mothintw, yearintw,   weight1, weightak, weightgm ) %>% 
+  mutate(birthdate = make_date(yearbirt, mnthbrth, daybirth)) %>% 
+  mutate(intwdate = make_date(yearintw, mothintw, dayintw)) %>% 
+  mutate(age_at_weigh = intwdate - birthdate)
 
 weight83_86_data
 
@@ -60,7 +64,11 @@ ggplot(weight83_86_data, aes(x = weightgm))+
 
 ```{r}
 height83_86_data<-mbirth2 %>% 
-  select(basebrgy,hhldnubi, basewman, daybirth, dayintw, mothintw, yearintw, heightcm )
+  select(basebrgy,hhldnubi, basewman, daybirth, mnthbrth, yearbirt, dayintw, mothintw, yearintw, heightcm ) %>% 
+  mutate(birthdate = make_date(yearbirt, mnthbrth, daybirth)) %>% 
+  mutate(intwdate = make_date(yearintw, mothintw, dayintw)) %>% 
+  mutate(age_at_intw = intwdate - birthdate)
+  
 
 height83_86_data
 
@@ -68,6 +76,7 @@ ggplot(height83_86_data, aes(x=heightcm))+
   geom_histogram(color = "white")
 
 ```
+
 
 
 

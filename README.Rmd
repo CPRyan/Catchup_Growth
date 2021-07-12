@@ -22,7 +22,56 @@ Data about growth can be accessed at the [UNC Dataverse](https://dataverse.unc.e
 
 We're going to need: 
 
-* Only live births
+* Only live births (OUTCOME)
+* Sex of child (SEXCHILD)
 * Data about growth (birth weight, length, skinfolds if we have them)
-* Birthday (for age)
-* 
+* Birthday (for age) (YEARBIRT, MNTHBRTH, DAYBIRTH)
+
+
+
+Live births (OUTCOME):  
+
+ 1 - Single live birth
+ 2 - Single stillbirth    (Code -9 from STATUSBB to DAYFEDLS;
+     from HOLDBABY to SKINFLD3)
+ 3 - Miscarriage/abortion (Code -9 from SEXCHILD to SKINFLD3)
+ 4 - Twin birth, regardless whether alive or dead
+     (Code -9 from MNTHBRTH to SKINFLD3)
+ 5 - Multiple births i.e. triplets (Code -9 from MNTHBRTH to SKINFLD3)
+-8 - NR/DK
+
+Sex of child ((SEXCHILD)):
+
+ 1 - Male
+ 2 - Female
+-8 - NR/DK
+-9 - NA
+
+
+
+For births, we need:  
+
+BBWIEGHT: WAS THE INFANT WEIGHED AFTER DELIVERY?
+ 0 - No, baby has not been weighed yet (Code -9 in WEIGHT1)
+ 1 - Yes, first hour of life
+ 2 - Yes, later on first day of life
+ 3 - Yes, second day of life
+ 4 - Yes, third day of life
+ 5 - Yes, fourth day of life
+ 6 - Yes, fifth day of life
+ 7 - Yes, after fifth day of life
+-8 - NR/DK
+-9 - NA  
+
+If yes (>0), 
+- then use WEIGHT1, corrected for age (using BBWIEGHT or HRSAFTER coding for age)  
+
+If not (<1),
+- WEIGHTAK: WEIGHT IN GRAMS OF THE INFANT WHEN WEIGHED BY THE INTERVIEWER, corrected for age (YEARINTW, MOTHINTW, DAYINTW)
+
+
+
+**What is the difference between WEIGHTAK: WEIGHT IN GRAMS OF THE INFANT WHEN WEIGHED BY THE INTERVIEWER and WEIGHTGM INFANT'S WEIGHT IN GRAMS AT THE TIME OF WEIGHING**
+
+
+HEIGHTCM
