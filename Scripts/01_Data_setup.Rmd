@@ -43,38 +43,50 @@ file.show(here::here("Data/zip_mother_1983_86/mbirth.txt")) # or you can click o
 
 Find the variables that relate to growth in this dataset
 ```{r}
-weight83_86_data<-mbirth2 %>% 
-  select(basebrgy,hhldnubi, basewman, daybirth, mnthbrth, yearbirt, dayintw, mothintw, yearintw,   weight1, weightak, weightgm ) %>% 
+
+growth83_86_data<-mbirth2 %>% 
+  select(basebrgy,hhldnubi, basewman, sexchild, outcome, daybirth, mnthbrth, yearbirt, dayintw, mothintw, yearintw, bbweight,weight1, weightak, weightgm, heightcm ) %>% 
+  mutate(weightak_kg = (weightak/1000)) %>% 
   mutate(birthdate = make_date(yearbirt, mnthbrth, daybirth)) %>% 
   mutate(intwdate = make_date(yearintw, mothintw, dayintw)) %>% 
-  mutate(age_at_weigh = intwdate - birthdate)
+  mutate(age_at_weigh_days = as.numeric(intwdate - birthdate)) %>%
+  filter(outcome != "2" | outcome !="3" ) %>% 
+  filter(age_at_weigh_days < 30)
 
-weight83_86_data
-
-ggplot(weight83_86_data, aes(x = weight1))+
-  geom_histogram(color = "white")
-
-ggplot(weight83_86_data, aes(x = weightak))+
-  geom_histogram(color = "white")
-
-ggplot(weight83_86_data, aes(x = weightgm))+
-  geom_histogram(color = "white")
   
+growth83_86_data <- addWGSR(data = growth83_86_data, sex = "sexchild", firstPart= "weightak_kg", secondPart = "age_at_weigh_days", index = "wfa")
+
+growth83_86_data <- addWGSR(data = growth83_86_data, sex = "sexchild", firstPart = "heightcm", secondPart = "age_at_weigh_days", index = "hfa")
+
+
+growth83_86_data
+
 ```
 
 ```{r}
-height83_86_data<-mbirth2 %>% 
-  select(basebrgy,hhldnubi, basewman, daybirth, mnthbrth, yearbirt, dayintw, mothintw, yearintw, heightcm ) %>% 
-  mutate(birthdate = make_date(yearbirt, mnthbrth, daybirth)) %>% 
-  mutate(intwdate = make_date(yearintw, mothintw, dayintw)) %>% 
-  mutate(age_at_intw = intwdate - birthdate)
-  
-
-height83_86_data
-
-ggplot(height83_86_data, aes(x=heightcm))+
+ggplot(growth83_86_data, aes(x = weight1))+
   geom_histogram(color = "white")
 
+ggplot(growth83_86_data, aes(x = weightak))+
+  geom_histogram(color = "white")
+
+ggplot(growth83_86_data, aes(x = weightgm))+
+  geom_histogram(color = "white")
+  
+ggplot(growth83_86_data, aes(x=heightcm))+
+  geom_histogram(color = "white")
+```
+```{r}
+
+ggplot(growth83_86_data, aes(x=wfaz))+
+  geom_histogram(color = "white")+
+  facet_wrap(~sexchild)
+
+
+ggplot(growth83_86_data, aes(x=hfaz))+
+  geom_histogram(color = "white")+
+  facet_wrap(~sexchild)
+  
 ```
 
 
