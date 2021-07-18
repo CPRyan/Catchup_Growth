@@ -5,9 +5,14 @@
 
 # create date
 # This function is an easy way to smash together year month day into a single 'date' object. You can then work with the dates arithemetically. 
+
 # e.g. date_intrv - date_birth = age_intrv
 
-create_date <- function(df, year, month, day, add_millenium = 1900) { # Default add_millenium = 1900 (1983), can customize to add 2000. Note, if its already in that ormat the formula won't 'fix' it.  
+# Default add_millenium = 1900 (1983), can customize to add 2000. Note, if its already in that ormat the formula won't 'fix' it.  
+
+install.packages("lubridate")
+
+create_date <- function(df, year, month, day, add_millenium = 1900) { 
   fixed_year <-if_else(df$year < 1900, 
                        df$year + add_millenium, 
                        df$year)

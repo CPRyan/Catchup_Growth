@@ -43,6 +43,14 @@ file.show(here::here("Data/zip_mother_1983_86/mbirth.txt")) # or you can click o
 
 Find the variables that relate to growth in this dataset
 ```{r}
+print("nothing in here yet - place holder")
+```
+
+
+Find the variables in the 91 dataset that pertain to age
+
+All of the community data was collected on the same day - I'm going to check all three files and make sure they all look similar. 
+```{r}
 
 ```
 
