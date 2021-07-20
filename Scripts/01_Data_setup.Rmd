@@ -87,8 +87,57 @@ ggplot(growth83_86_data, aes(x=hfaz))+
   geom_histogram(color = "white")+
   facet_wrap(~sexchild)
   
+summary_wfaz83_86
+summary_hfaz83_86
 ```
 
+```{r}
+child2 <-read_dta(here::here("Data/zip_child_91/child291.dta")) %>% # note: here::here calls the here function
+  rename_all(tolower)
 
+childiq <-read_dta(here::here("Data/zip_child_91/iq91.dta")) %>% # note: here::here calls the here function
+  rename_all(tolower)
 
+dim(child2)
+dim(childiq)
+```
+
+```{r}
+growth2 <-child2 %>%
+  select(basebrgy, basewman, basehhno, currbrgy, weghtndx, hightndx) 
+
+childiq_dates <-childiq %>% 
+  select(basebrgy, basewman,monthiq, dayiq, yeariq )
+
+birthdates_data <- growth83_86_data %>% 
+  select(basebrgy, basewman, sexchild, birthdate)
+
+growth91_data <- left_join(growth2, childiq_dates, by = c("basebrgy", "basewman"))
+         
+growth91_data <- left_join(growth91_data, birthdates_data, by = c("basebrgy", "basewman"))
+
+growth91_data
+```
+
+```{r}
+growth91_data<- growth91_data %>% 
+  mutate(intwdate2 = make_date(yeariq, monthiq, dayiq)) %>% 
+  mutate(age2_days = as.numeric(intwdate2 - birthdate))
+
+growth91_data <- addWGSR(data = growth91_data, sex = "sexchild", firstPart= "weghtndx", secondPart = "age2_days", index = "wfa")
+
+growth91_data <- addWGSR(data = growth91_data, sex = "sexchild", firstPart = "hightndx", secondPart = "age2_days", index = "hfa")
+
+growth91_data
+```
+```{r}
+ggplot(growth91_data, aes(x=wfaz))+
+  geom_histogram(color = "white")+
+  facet_wrap(~sexchild)
+
+ggplot(growth91_data, aes(x=hfaz))+
+  geom_histogram(color = "white")+
+  facet_wrap(~sexchild)
+
+```
 
