@@ -91,6 +91,8 @@ summary_wfaz83_86
 summary_hfaz83_86
 ```
 
+
+#Load and inspect 91 data
 ```{r}
 child2 <-read_dta(here::here("Data/zip_child_91/child291.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
@@ -139,5 +141,63 @@ ggplot(growth91_data, aes(x=hfaz))+
   geom_histogram(color = "white")+
   facet_wrap(~sexchild)
 
+summary_wfaz91 <- growth91_data %>%
+  group_by(sexchild) %>% 
+  drop_na() %>%
+  summarize(mean_wfaz91 = mean(wfaz),
+            std_dev_wfaz91 = sd(wfaz),
+            med_wfaz91 = median(wfaz),
+            count = n(), .groups = "keep")
+
+summary_hfaz91 <- growth91_data %>%
+  group_by(sexchild) %>% 
+  drop_na() %>% 
+  summarize(mean_hfaz91 = mean(hfaz),
+            std_dev_hfaz91 = sd(hfaz),
+            med_hfaz91 = median(hfaz),
+            count = n(), .groups = "keep")
+
+summary_hfaz91
+summary_wfaz91
 ```
+
+#Load and inspect 94 data
+
+
+```{r}
+
+cdietiq <-read_dta(here::here("Data/zip_child_94 2/cdietiq.dta")) %>% # note: here::here calls the here function
+  rename_all(tolower)
+
+dim(cdietiq)
+names(cdietiq)
+```
+
+
+```{r}
+growth94_data <- cdietiq %>% 
+  select(basebrgy, basehhn2,basewman,chldwma2,chldcode, mointrv2, dyintrv2, yrintrv2, weghtnd2, hightnd2) %>% 
+  filter(chldcode == "1")
+
+growth94_data <- left_join(growth94_data, birthdates_data, by = c("basebrgy", "basewman")) 
+
+growth94_data <- growth94_data %>% 
+  mutate(intwdate3 = make_date(yrintrv2, mointrv2, dyintrv2)) %>% 
+  mutate(age3_days = as.numeric(intwdate3 - birthdate))
+
+growth94_data <- addWGSR(data = growth94_data, sex = "sexchild", firstPart= "weghtnd2", secondPart = "age3_days", index = "wfa")
+
+growth94_data <- addWGSR(data = growth94_data, sex = "sexchild", firstPart = "hightnd2", secondPart = "age3_days", index = "hfa")
+
+growth94_data
+
+  
+```
+
+
+
+
+
+
+
 
