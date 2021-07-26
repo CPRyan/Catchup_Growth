@@ -1,0 +1,1363 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff28\deflang1033\deflangfe1033{\fonttbl{\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f28\fnil\fcharset0\fprq2{\*\panose 00000000000000000000}Courier 10cpi;}
+{\f29\fnil\fcharset2\fprq2{\*\panose 00000000000000000000}WP BoxDrawing;}{\f94\froman\fcharset238\fprq2 Times New Roman CE;}{\f95\froman\fcharset204\fprq2 Times New Roman Cyr;}{\f97\froman\fcharset161\fprq2 Times New Roman Greek;}
+{\f98\froman\fcharset162\fprq2 Times New Roman Tur;}{\f99\froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\f100\froman\fcharset178\fprq2 Times New Roman (Arabic);}{\f101\froman\fcharset186\fprq2 Times New Roman Baltic;}}{\colortbl;\red0\green0\blue0;
+\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;
+\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}{\stylesheet{\ql \li0\ri0\nowidctlpar\faauto\rin0\lin0\itap0 \f28\fs20\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 \snext0 Normal;}{\*\cs10 \additive 
+Default Paragraph Font;}{\s15\ql \li0\ri0\nowidctlpar\tqc\tx4320\tqr\tx8640\faauto\rin0\lin0\itap0 \f28\fs20\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 \sbasedon0 \snext15 header;}{\s16\ql \li0\ri0\nowidctlpar
+\tqc\tx4320\tqr\tx8640\faauto\rin0\lin0\itap0 \f28\fs20\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 \sbasedon0 \snext16 footer;}{\s17\qj \li0\ri0\nowidctlpar\faauto\rin0\lin0\itap0 \f28\fs20\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 
+\sbasedon0 \snext17 Body Text;}}{\info{\author Abeth}{\operator Abeth}{\creatim\yr2005\mo9\dy20\hr12\min51}{\revtim\yr2005\mo9\dy21\hr8\min36}{\version7}{\edmins21}{\nofpages32}{\nofwords5935}{\nofchars-32766}{\*\company University of San Carlos}
+{\nofcharsws0}{\vern8247}}\margl1440\margr1440 \widowctrl\ftnbj\aenddoc\ftnrestart\aftnnar\noxlattoyen\expshrtn\noultrlspc\dntblnsbdb\nospaceforul\hyphcaps0\horzdoc\dghspace120\dgvspace120\dghorigin1701\dgvorigin1984\dghshow0\dgvshow3
+\jcompress\viewkind1\viewscale100\nolnhtadjtbl \fet0\sectd \sbknone\linex0\headery1440\endnhere\sectdefaultcl {\header \pard\plain \ql \li0\ri0\nowidctlpar\faauto\rin0\lin0\itap0 \f28\fs20\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {HOUSEHOLD FILE
+\tab  (UNC 1991 SURVEY)\tab \tab \tab \tab \tab \tab Page No.\chpgn 
+\par ===============================================================================
+\par QUEST.\tab VAR.\tab VAR.\tab \tab \tab VARIABLE CODE
+\par NO.\tab \tab NO.\tab NAME
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par }}{\*\pnseclvl1\pndec\pnstart1 {\pntxta .}}{\*\pnseclvl2\pnlcltr\pnstart1 {\pntxta .}}{\*\pnseclvl3\pnlcrm\pnstart1 {\pntxta .}}{\*\pnseclvl4\pndec\pnstart1 {\pntxtb (}{\pntxta )}}{\*\pnseclvl5\pnlcltr\pnstart1 {\pntxtb (}{\pntxta )}}{\*\pnseclvl6
+\pnlcrm\pnstart1 {\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pndec\pnstart1 {\pntxta .}}{\*\pnseclvl8\pnlcltr\pnstart1 {\pntxta .}}{\*\pnseclvl9\pnlcrm\pnstart1 }\pard\plain \qj \li0\ri0\nowidctlpar\faauto\rin0\lin0\itap0 
+\f28\fs20\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {ID1\tab \tab 1\tab SURVEY\tab \tab }{\ul TYPE OF SURVEY}{
+\par 
+\par \tab \tab \tab \tab \tab \tab 7 - 1991 Follow-up Survey
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID2\tab \tab 2\tab CURRBRGY\tab \tab }{\ul CURRENT BARANGAY}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Quiot, Pardo
+\par \tab \tab \tab \tab \tab \tab  2 - Pahina, San Nicolas
+\par \tab \tab \tab \tab \tab \tab  3 - Sambag II
+\par \tab \tab \tab \tab \tab \tab  4 - Opao, Mandaue
+\par \tab \tab \tab \tab \tab \tab  5 - Cansaga, Consolacion
+\par \tab \tab \tab \tab \tab \tab  6 - Poblacion, Consolacion
+\par \tab \tab \tab \tab \tab \tab  7 - Basak, Pardo
+\par \tab \tab \tab \tab \tab \tab  8 - Mantuyong, Mandaue
+\par \tab \tab \tab \tab \tab \tab  9 - Basak, Lapu-lapu
+\par \tab \tab \tab \tab \tab \tab 10 - T. Padilla
+\par \tab \tab \tab \tab \tab \tab 11 - San Roque, Talisay
+\par \tab \tab \tab \tab \tab \tab 12 - Poblacion, Lapu-lapu
+\par \tab \tab \tab \tab \tab \tab 13 - Labangon
+\par \tab \tab \tab \tab \tab \tab 14 - Basak, Mandaue
+\par \tab \tab \tab \tab \tab \tab 15 - Mojon, Talisay
+\par \tab \tab \tab \tab \tab \tab 16 - Casuntingan, Mandaue
+\par \tab \tab \tab \tab \tab \tab 17 - Lorega-San Miguel
+\par \tab \tab \tab \tab \tab \tab 18 - Jaguimit, Naga
+\par \tab \tab \tab \tab \tab \tab 19 - Danlag, Consolacion
+\par \tab \tab \tab \tab \tab \tab 20 - Balirong, Naga
+\par \tab \tab \tab \tab \tab \tab 21 - Panoypoy, Consolacion
+\par \tab \tab \tab \tab \tab \tab 22 - Cao-oy, Lapu-lapu
+\par \tab \tab \tab \tab \tab \tab 23 - Bairan, Naga
+\par \tab \tab \tab \tab \tab \tab 24 - Caohagan, Lapu-lapu
+\par \tab \tab \tab \tab \tab \tab 25 - Sta. Cruz, Liloan
+\par \tab \tab \tab \tab \tab \tab 26 - Budlaan
+\par \tab \tab \tab \tab \tab \tab 27 - Cantao-an, Naga
+\par \tab \tab \tab \tab \tab \tab 28 - Pulpogan, Consolacion
+\par \tab \tab \tab \tab \tab \tab 29 - Inoburan, Naga
+\par \tab \tab \tab \tab \tab \tab 30 - Cogon, Cordova
+\par \tab \tab \tab \tab \tab \tab 31 - Pamutan
+\par \tab \tab \tab \tab \tab \tab 32 - Tolo-tolo, Consolacion
+\par \tab \tab \tab \tab \tab \tab 33 - Poblacion Central, Naga
+\par \tab \tab \tab \tab \tab     134 - Bacayan, Cebu city
+\par \tab \tab \tab \tab \tab     135 - Talamban, Cebu City
+\par \tab \tab \tab \tab \tab     136 - Inayawan, Pardo
+\par \tab \tab \tab \tab \tab     137 - Tabunok, Talisay
+\par \tab \tab \tab \tab \tab     138 - Calajo-an, Minglanilla
+\par \tab \tab \tab \tab \tab     139 - Colon, Naga
+\par \tab \tab \tab \tab \tab     140 - Umapad, Mandaue
+\par \tab \tab \tab \tab \tab     141 - Casili, Consolacion
+\par \tab \tab \tab \tab \tab     142 - Tayud, Liloan
+\par \tab \tab \tab \tab \tab     143 - Pajo, Lapu-lapu
+\par \tab \tab \tab \tab \tab     144 - Punta Engano, Lapu-lapu
+\par \tab \tab \tab \tab \tab \tab  :
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID3\tab \tab 3\tab CURRSTRA\tab \tab }{\ul CURRENT STRATUM}{
+\par 
+\par \tab \tab \tab \tab \tab \tab 1 - Urban
+\par \tab \tab \tab \tab \tab \tab 2 - Rural
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID4\tab \tab 4\tab BASEBRGY\tab \tab }{\ul BASELINE BARANGAY ID NUMBER}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Quiot, Pardo
+\par \tab \tab \tab \tab \tab \tab  2 - Pahina, San Nicolas
+\par \tab \tab \tab \tab \tab \tab  3 - Sambag II
+\par \tab \tab \tab \tab \tab \tab  4 - Opao, Mandaue
+\par \tab \tab \tab \tab \tab \tab  5 - Cansaga, Consolacion
+\par \tab \tab \tab \tab \tab \tab  6 - Poblacion, Consolacion
+\par \tab \tab \tab \tab \tab \tab  7 - Basak, Pardo
+\par \tab \tab \tab \tab \tab \tab  8 - Mantuyong, Mandaue
+\par \tab \tab \tab \tab \tab \tab  9 - Basak, Lapu-lapu
+\par \tab \tab \tab \tab \tab \tab 10 - T. Padilla
+\par \tab \tab \tab \tab \tab \tab 11 - San Roque, Talisay
+\par \tab \tab \tab \tab \tab \tab 12 - Poblacion, Lapu-lapu
+\par \tab \tab \tab \tab \tab \tab 13 - Labangon
+\par \tab \tab \tab \tab \tab \tab 14 - Basak, Mandaue
+\par \tab \tab \tab \tab \tab \tab 15 - Mojon, Talisay
+\par \tab \tab \tab \tab \tab \tab 16 - Casuntingan, Mandaue
+\par \tab \tab \tab \tab \tab \tab 17 - Lorega-San Miguel
+\par \tab \tab \tab \tab \tab \tab 18 - Jaguimit, Naga
+\par \tab \tab \tab \tab \tab \tab 19 - Danlag, Consolacion
+\par \tab \tab \tab \tab \tab \tab 20 - Balirong, Naga
+\par \tab \tab \tab \tab \tab \tab 21 - Panoypoy, Consolacion
+\par \tab \tab \tab \tab \tab \tab 22 - Cao-oy, Lapu-lapu
+\par \tab \tab \tab \tab \tab \tab 23 - Bairan, Naga
+\par \tab \tab \tab \tab \tab \tab 24 - Caohagan, Lapu-lapu
+\par \tab \tab \tab \tab \tab \tab 25 - Sta. Cruz, Liloan
+\par \tab \tab \tab \tab \tab \tab 26 - Budlaan
+\par \tab \tab \tab \tab \tab \tab 27 - Cantao-an, Naga
+\par \tab \tab \tab \tab \tab \tab 28 - Pulpogan, Consolacion
+\par \tab \tab \tab \tab \tab \tab 29 - Inoburan, Naga
+\par \tab \tab \tab \tab \tab \tab 30 - Cogon, Cordova
+\par \tab \tab \tab \tab \tab \tab 31 - Pamutan
+\par \tab \tab \tab \tab \tab \tab 32 - Tolo-tolo, Consolacion
+\par \tab \tab \tab \tab \tab \tab 33 - Poblacion Central, Naga
+\par ---------------------------------------------------------------}{-----------------------------------------------------------------
+\par }{
+\par \page ID4\tab \tab 5\tab BASEHHNO\tab \tab }{\ul BASELINE HOUSEHOLD ID NUMBER}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1   - Household no. one
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 1000 - Household no. one thousand
+\par \tab \tab \tab \tab \tab \tab  :
+\par ------------------------------------------------------------------------------------------------------------------------------------------- 
+\par ID4\tab \tab 6\tab BASEWMAN\tab \tab }{\ul BASELINE SAMPLE WOMAN ID NUMBER}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1   - Sample woman no. one
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 1000 - Sample woman no. one
+\par \tab \tab \tab \tab \tab \tab \tab   thousand
+\par \tab \tab \tab \tab \tab \tab  :
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID5\tab \tab 7\tab LCURBRGY\tab \tab }{\ul LAST CURRENT BARANGAY ID NUMBER}{
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS BASEBRGY)
+\par \tab \tab \tab \tab \tab      100      - Non Sample Barangay
+\par \tab \tab \tab \tab \tab \tab 134 
+\par \tab \tab \tab \tab \tab \tab :      > - Control Barangays
+\par \tab \tab \tab \tab \tab \tab 144 
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID5\tab \tab 8\tab CURRHHNO\tab \tab }{\ul LAST CURRENT HOUSEHOLD ID NUMBER}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1   - Household no. one
+\par \tab \tab \tab \tab \tab \tab  :
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID5\tab \tab 9\tab CURRWMAN\tab \tab }{\ul LAST CURRENT WOMAN ID NUMBER}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1    - Sample woman no. one
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 1000  - Sample woman no. one
+\par \tab \tab \tab \tab \tab \tab \tab    thousand
+\par \tab \tab \tab \tab \tab \tab  :
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID6\tab \tab 10\tab BRGYID91\tab \tab }{\ul BARANGAY ID NUMBER IN 1991/92}{
+\par \tab \tab \tab \tab \tab \tab (BRGY. OF RESIDENCE IN 1991/92)
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS CURRBRGY)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID6\tab \tab 11\tab HHLDID91\tab \tab }{\ul HOUSEHOLD ID NUMBER IN 1991/92}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Household number one
+\par \tab \tab \tab \tab \tab \tab  :
+\par ----------------------------------------------------------------------------}{----------------------------------------------------------------
+\par }{
+\par \page ID6\tab \tab 12\tab WMANID91\tab \tab }{\ul WOMAN ID NUMBER IN 1991/92}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Sample woman number one
+\par \tab \tab \tab \tab \tab \tab  :
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID7\tab \tab 13\tab STAT1991\tab \tab STATUS OF MOTHER AND CHILD AS OF
+\par \tab \tab \tab \tab \tab \tab 1991/92
+\par 
+\par \tab \tab \tab \tab \tab  \tab  1 - Mother and Child in household
+\par \tab \tab \tab \tab \tab  \tab  2 - Mother in household, Child
+\par \tab \tab \tab \tab \tab \tab      elsewhere
+\par \tab \tab \tab \tab \tab  \tab  3 - Mother in household, Child
+\par \tab \tab \tab \tab \tab \tab \tab dead
+\par \tab \tab \tab \tab \tab  \tab  4 - Mother in household, Child not
+\par \tab \tab \tab \tab \tab \tab      located
+\par \tab \tab \tab \tab \tab  \tab  5 - Child in household, Mother
+\par \tab \tab \tab \tab \tab \tab      elsewhere
+\par \tab \tab \tab \tab \tab  \tab  6 - Child in household, Mother
+\par \tab \tab \tab \tab \tab \tab \tab dead
+\par \tab \tab \tab \tab \tab  \tab  7 - Child in household, Mother not
+\par \tab \tab \tab \tab \tab \tab      located
+\par \tab \tab \tab \tab \tab  \tab  8 - Mother and Child not located
+\par \tab \tab \tab \tab \tab  \tab  9 - Mother and Child dead
+\par \tab \tab \tab \tab \tab      10 - Other (SPECIFY)
+\par \tab \tab \tab \tab \tab \tab 11 - Mother and Child elsewhere
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID9\tab \tab 14\tab INTRVEWR\tab \tab }{\ul NAME OF INTERVIEWER}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Absin, Ana Liza
+\par \tab \tab \tab \tab \tab \tab  2 - Calunsag, Emegilda
+\par \tab \tab \tab \tab \tab \tab  3 - Chan, Josefa
+\par \tab \tab \tab \tab \tab \tab  4 - Dizon, Joey
+\par \tab \tab \tab \tab \tab \tab  5 - Hamoy, Perla
+\par \tab \tab \tab \tab \tab \tab  6 - Lampria, Juanilla
+\par \tab \tab \tab \tab \tab \tab  7 - Mariblanca, Alice
+\par \tab \tab \tab \tab \tab \tab  8 - Morga, Maximina Avelina
+\par \tab \tab \tab \tab \tab \tab  9 - Navaja, Ma. Rita
+\par \tab \tab \tab \tab \tab \tab 10 - Nengasca, Olivia
+\par \tab \tab \tab \tab \tab \tab 11 - Perez, Lorna
+\par \tab \tab \tab \tab \tab \tab 12 - Rosell, Lyneth
+\par \tab \tab \tab \tab \tab \tab 13 - Sato, Teresita
+\par \tab \tab \tab \tab \tab \tab 14 - Uy, Urbanieta
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page ID10\tab \tab 15\tab MOINTRVW\tab \tab }{\ul MONTH OF INTERVIEW COMPLETION (MM)}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - January
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 12 - December
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID10\tab \tab 16\tab DYINTRVW\tab \tab }{\ul DAY OF INTERVIEW COMPLETION (DD)}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - First day of the month
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 31 - Thirty-first day of the month
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID10\tab \tab 17\tab YRINTRVW\tab \tab }{\ul YEAR OF INTERVIEW COMPLETION (YY)}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  91 - 1991
+\par \tab \tab \tab \tab \tab \tab   :
+\par \tab \tab \tab \tab \tab \tab  93 - 1993
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID11\tab \tab 18\tab SESSIONS\tab \tab NUMBER OF SESSIONS REQUIRED TO
+\par \tab \tab \tab \tab \tab \tab COMPLETE INTERVIEW
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - One session
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 10 - Ten sessions
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par ------------------------------------------------------------------------------------------------------------------------------------------
+\par X1\tab \tab 19\tab STILNHHD\tab \tab IS SAMPLE WOMAN/MOTHER STILL LIVING
+\par \tab \tab \tab \tab \tab \tab IN THIS HOUSEHOLD (the same
+\par \tab \tab \tab \tab \tab \tab household she had at last
+\par \tab \tab \tab \tab \tab \tab interview)?
+\par 
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab  1 - Yes (Code -9 from NOTINHHD to
+\par \tab \tab \tab \tab \tab \tab \tab CURRLIVE)
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK (Code -8 from INDCHILD
+\par \tab \tab \tab \tab \tab \tab \tab to CURRLIVE)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page X2\tab \tab 20\tab NOTINHHD\tab \tab REASON WHY SAMPLE WOMAN/MOTHER IS
+\par \tab \tab \tab \tab \tab \tab NO LONGER LIVING IN THIS HOUSEHOLD?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Dead since last survey
+\par \tab \tab \tab \tab \tab \tab  2 - Moved elsewhere 
+\par \tab \tab \tab \tab \tab \tab \tab (Code -9 from DEATHMON to
+\par \tab \tab \tab \tab \tab \tab \tab COZDEATH)\tab \tab 
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK (Code -8 from DEATHMON
+\par \tab \tab \tab \tab \tab \tab \tab to CURRLIVE)
+\par \tab \tab \tab \tab \tab \tab -9 -NA
+\par ------------------------------------------------------------------------------------------------------------------------------------------
+\par X3\tab \tab 21\tab DEATHMON  \tab \tab MONTH OF DEATH OF SAMPLE WOMAN/
+\par \tab \tab \tab \tab \tab \tab MOTHER
+\par 
+\par \tab \tab \tab \tab \tab \tab 01 - January
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 12 - December
+\par \tab \tab \tab \tab \tab \tab -8 - DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par X3\tab \tab 22\tab DEATHYER\tab \tab YEAR OF DEATH OF SAMPLE WOMAN/
+\par \tab \tab \tab \tab \tab \tab MOTHER
+\par 
+\par \tab \tab \tab \tab \tab \tab 83 - 1983
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 92 - 1992
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par X4\tab \tab 23\tab COZDEATH\tab \tab CAUSE OF DEATH OF SAMPLE WOMAN/
+\par \tab \tab \tab \tab \tab \tab MOTHER
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Tuberculosis
+\par \tab \tab \tab \tab \tab \tab  2 - Leukemia
+\par \tab \tab \tab \tab \tab \tab  3 - Fractures
+\par \tab \tab \tab \tab \tab \tab  4 - Hypertension
+\par \tab \tab \tab \tab \tab \tab  5 - "Gidautan/Gibarang/Gibuyagan"
+\par \tab \tab \tab \tab \tab \tab  6 - Accident
+\par \tab \tab \tab \tab \tab \tab  7 - Typhoid fever
+\par \tab \tab \tab \tab \tab \tab  8 - Suicide
+\par \tab \tab \tab \tab \tab \tab  9 - Bughat/Pasmo
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page X5\tab \tab 24\tab CURRLIVE\tab \tab CURRENT ADDRESS OF SAMPLE WOMAN/
+\par \tab \tab \tab \tab \tab \tab MOTHER (BARANGAY CODE) 
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS CURRBRGY)
+\par \tab \tab \tab \tab \tab \tab 300 - Outside Metro Cebu
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par X6\tab \tab 25\tab INDCHILD\tab \tab IS INDEX CHILD STILL LIVING IN THIS
+\par \tab \tab \tab \tab \tab \tab HOUSEHOLD (the same household
+\par \tab \tab \tab \tab \tab \tab he/she at last interview)?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes (Code -9 from INDNOTLV to
+\par \tab \tab \tab \tab \tab \tab \tab CARERETL)
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab -9 - No Index Child e.g., Sample
+\par \tab \tab \tab \tab \tab \tab \tab woman had Stillborn/
+\par \tab \tab \tab \tab \tab \tab \tab Miscarriage as of last
+\par \tab \tab \tab \tab \tab \tab \tab interview\tab 
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par X7\tab \tab 26\tab INDNOTLV\tab \tab }{\ul REASON WHY INDEX CHILD IS NO LONGER}{
+\par \tab \tab \tab \tab \tab \tab }{\ul LIVING IN THIS HOUSEHOLD}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Died during last survey
+\par \tab \tab \tab \tab \tab \tab  2 - Died after last survey
+\par \tab \tab \tab \tab \tab \tab  3 - Child moved elsewhere (Code -9
+\par \tab \tab \tab \tab \tab \tab \tab from MONTHDIE to YEARDIE)
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par X8\tab \tab 27\tab MONTHDIE\tab \tab }{\ul MONTH OF DEATH OF SAMPLE INDEX}{
+\par \tab \tab \tab \tab \tab \tab }{\ul CHILD}{
+\par 
+\par \tab \tab \tab \tab \tab \tab 01 - January
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 12 - December
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par X8\tab \tab 28\tab YEARDIE\tab \tab YEAR OF DEATH OF SAMPLE INDEX
+\par \tab \tab \tab \tab \tab \tab CHILD
+\par 
+\par \tab \tab \tab \tab \tab \tab 83 - 1983
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 92 - 1992
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page X9\tab \tab 29\tab CAUSDEAT\tab \tab }{\ul CAUSE OF DEATH OF INDEX CHILD
+\par }{
+\par \tab \tab \tab \tab \tab \tab  1 - Measles
+\par \tab \tab \tab \tab \tab \tab  2 - Pneumonia (bronchopneumonia)
+\par \tab \tab \tab \tab \tab \tab  3 - Cough e.g., "gahi nga ubo,
+\par \tab \tab \tab \tab \tab \tab \tab grabe nga ubo)
+\par \tab \tab \tab \tab \tab \tab  4 - Meningitis
+\par \tab \tab \tab \tab \tab \tab  5 - Heart disease
+\par \tab \tab \tab \tab \tab \tab  6 - Disease of the digestive
+\par \tab \tab \tab \tab \tab \tab \tab system e.g., nalata ang tina-i
+\par \tab \tab \tab \tab \tab \tab  7 - Accident e.g., transport
+\par \tab \tab \tab \tab \tab \tab \tab accident, accidental
+\par \tab \tab \tab \tab \tab \tab \tab poisoning, accidental fall, 
+\par \tab \tab \tab \tab \tab \tab  8 - Diarrhea
+\par \tab \tab \tab \tab \tab \tab  9 - Sudden infant death
+\par \tab \tab \tab \tab \tab \tab 10 - Typhoid Fever
+\par \tab \tab \tab \tab \tab \tab 11 - "Gidautan/Gibarang/Gibuyagan"
+\par \tab \tab \tab \tab \tab \tab 12 - Cancer
+\par \tab \tab \tab \tab \tab \tab 13 - Fever/Febrile convulsion/Fever
+\par \tab \tab \tab \tab \tab \tab \tab of unknown origin
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par X10\tab \tab 30\tab LIVINGAT\tab \tab CURRENT ADDRESS OF INDEX CHILD
+\par \tab \tab \tab \tab \tab \tab (BARANGAY CODE)
+\par \tab \tab \tab \tab \tab \tab 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS CURRBRGY)
+\par \tab \tab \tab \tab \tab \tab 300 - Outside Metro Cebu
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par X11\tab \tab 31\tab ELSEWHER\tab \tab }{\ul DOES INDEX CHILD LIVE WITH MOTHER}{
+\par \tab \tab \tab \tab \tab \tab }{\ul (ELSEWHERE)?}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes (Code -9 from MOMSCARE to
+\par \tab \tab \tab \tab \tab \tab \tab CARERELT)
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par X12\tab \tab 32\tab MOMSCARE\tab \tab IS THE PERSON WHO IS TAKING CARE OF
+\par \tab \tab \tab \tab \tab \tab INDEX CHILD HIS/HER MOTHER? OR A
+\par \tab \tab \tab \tab \tab \tab CARETAKER?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Mother (Code -9 in CARERELT)
+\par \tab \tab \tab \tab \tab \tab  2 - Caretaker
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page X13\tab \tab 33\tab CARERELT\tab \tab RELATIONSHIP OF CARETAKER TO INDEX
+\par \tab \tab \tab \tab \tab \tab CHILD
+\par 
+\par \tab \tab \tab \tab \tab \tab 01 - Adoptive father
+\par \tab \tab \tab \tab \tab \tab 02 - Adoptive mother
+\par \tab \tab \tab \tab \tab \tab 03 - Grandmother
+\par \tab \tab \tab \tab \tab \tab 04 - Grandfather
+\par \tab \tab \tab \tab \tab \tab 05 - Aunt
+\par \tab \tab \tab \tab \tab \tab 06 - Uncle
+\par \tab \tab \tab \tab \tab \tab 07 - Sister
+\par \tab \tab \tab \tab \tab \tab 08 - Brother
+\par \tab \tab \tab \tab \tab \tab 09 - Cousin
+\par \tab \tab \tab \tab \tab \tab 10 - Other relative
+\par \tab \tab \tab \tab \tab \tab 11 - Non-relative
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par B1\tab \tab 34\tab NOPERSON\tab \tab NUMBER OF PERSONS LIVING IN
+\par \tab \tab \tab \tab \tab \tab HOUSEHOLD AT PRESENT
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - One person
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 25 - Twenty-five persons
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par B2\tab \tab 35\tab NOABSENT\tab \tab NUMBER OF PERSONS USUALLY LIVING IN
+\par \tab \tab \tab \tab \tab \tab HOUSEHOLD THAT CURRENTLY ARE ABSENT
+\par 
+\par \tab \tab \tab \tab \tab \tab  0 - None
+\par \tab \tab \tab \tab \tab \tab  1 - One person
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 10 - Ten persons
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page B13\tab \tab 36\tab TYPEHHLD\tab \tab }{\ul TYPE OF HOUSEHOLD}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Single-person household
+\par \tab \tab \tab \tab \tab \tab  2 - One nuclear family household
+\par \tab \tab \tab \tab \tab \tab      only
+\par \tab \tab \tab \tab \tab \tab  3 - Horizontally extended nuclear
+\par \tab \tab \tab \tab \tab \tab      family household
+\par \tab \tab \tab \tab \tab \tab  4 - Vertically extended nuclear
+\par \tab \tab \tab \tab \tab \tab      family household
+\par \tab \tab \tab \tab \tab \tab  5 - Horizontally and Vertically
+\par \tab \tab \tab \tab \tab \tab      extended family household
+\par \tab \tab \tab \tab \tab \tab  6 - Multi-nuclear family household
+\par \tab \tab \tab \tab \tab \tab  7 - Household of unrelated persons
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C1\tab \tab 37\tab SOURSWAT\tab \tab USUAL MAIN SOURCE OF HOUSEHOLD'S
+\par \tab \tab \tab \tab \tab \tab DRINKING WATER
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - MCWD piped supply
+\par \tab \tab \tab \tab \tab \tab  2 - Other municipal piped
+\par \tab \tab \tab \tab \tab \tab \tab supply
+\par \tab \tab \tab \tab \tab \tab  3 - Tubewell, borehole
+\par \tab \tab \tab \tab \tab \tab  4 - Dug well fitted with pump
+\par \tab \tab \tab \tab \tab \tab  5 - dug well without pump (bucket
+\par \tab \tab \tab \tab \tab \tab      used to remove water
+\par \tab \tab \tab \tab \tab \tab  6 - Spring
+\par \tab \tab \tab \tab \tab \tab  7 - River
+\par \tab \tab \tab \tab \tab \tab  8 - Rain water
+\par \tab \tab \tab \tab \tab \tab  9 - Other (SPECIFY)
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C2\tab \tab 38\tab LOCTNWAT\tab \tab }{\ul LOCATION OF DRINKING WATER SOURCE}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Inside respondent's house
+\par \tab \tab \tab \tab \tab \tab  2 - In respondent's yard
+\par \tab \tab \tab \tab \tab \tab  3 - Not in house or yard, water is
+\par \tab \tab \tab \tab \tab \tab \tab brought to house by vendor
+\par \tab \tab \tab \tab \tab \tab \tab (somebody who is paid to haul
+\par \tab \tab \tab \tab \tab \tab \tab water to house)
+\par \tab \tab \tab \tab \tab \tab  4 - Not in house or yard,
+\par \tab \tab \tab \tab \tab \tab \tab respondent or household member
+\par \tab \tab \tab \tab \tab \tab \tab hauls water to house
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par --------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page C3\tab \tab 39\tab TOILET\tab \tab WHAT TOILET FACILITIES DOES
+\par \tab \tab \tab \tab \tab \tab HOUSEHOLD HAVE?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Flush toilet
+\par \tab \tab \tab \tab \tab \tab  2 - Water-sealed toilet
+\par \tab \tab \tab \tab \tab \tab  3 - Latrine, antipolo
+\par \tab \tab \tab \tab \tab \tab  4 - Open pit 
+\par \tab \tab \tab \tab \tab \tab  5 - None, use field, 
+\par \tab \tab \tab \tab \tab \tab \tab canal, seashore  > (Code -9 in
+\par \tab \tab \tab \tab \tab \tab  6 - Other (SPECIFY)  }{\f29 \'2d}{  LOCTOILE)
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C4\tab \tab 40\tab LOCTOILE\tab \tab }{\ul LOCATION OF TOILET FACILITIES}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Respondent's house
+\par \tab \tab \tab \tab \tab \tab  2 - Neighbor's house
+\par \tab \tab \tab \tab \tab \tab  3 - Outside, private
+\par \tab \tab \tab \tab \tab \tab  4 - Outside, public
+\par \tab \tab \tab \tab \tab \tab  5 - Other (SPECIFY)
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA - (Coded 5 or 6 in TOILET)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C5\tab \tab 41\tab GARBAGE\tab \tab }{\ul MAIN METHOD OF GARBAGE DISPOSAL}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Disposed far away from house
+\par \tab \tab \tab \tab \tab \tab \tab (dumping in specified place
+\par \tab \tab \tab \tab \tab \tab \tab far from house, collected by a
+\par \tab \tab \tab \tab \tab \tab \tab garbage collector)
+\par \tab \tab \tab \tab \tab \tab  2 - Disposed around or near house
+\par \tab \tab \tab \tab \tab \tab \tab but through methods that
+\par \tab \tab \tab \tab \tab \tab \tab contain contamination (burning
+\par }\pard\plain \s17\qj \li0\ri0\nowidctlpar\faauto\rin0\lin0\itap0 \f28\fs20\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\tab \tab \tab \tab \tab \tab \tab composting)
+\par }\pard\plain \qj \li0\ri0\nowidctlpar\faauto\rin0\lin0\itap0 \f28\fs20\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\tab \tab \tab \tab \tab \tab  3 - Dumped around or near house
+\par \tab \tab \tab \tab \tab \tab  4 - Other (SPECIFY)
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C6\tab \tab 42\tab LITETYPE\tab \tab TYPE OF LIGHTING USED IN HOUSEHOLD
+\par \tab \tab \tab \tab \tab \tab MOST OF THE TIME
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Electric
+\par \tab \tab \tab \tab \tab \tab  2 - Kerosene
+\par \tab \tab \tab \tab \tab \tab  3 - Oil
+\par \tab \tab \tab \tab \tab \tab  4 - LPG (e.g., GASUL)
+\par \tab \tab \tab \tab \tab \tab  5 - Candle
+\par \tab \tab \tab \tab \tab \tab  6 - Other (SPECIFY)
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C7\tab \tab 43\tab COOKFUEL\tab \tab FUEL USUALLY USED FOR COOKING BY
+\par \tab \tab \tab \tab \tab \tab HOUSEHOLD
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Electricity
+\par \tab \tab \tab \tab \tab \tab  2 - Kerosene
+\par \tab \tab \tab \tab \tab \tab  3 - LPG (e.g., GASUL)
+\par \tab \tab \tab \tab \tab \tab  4 - Wood/Charcoal
+\par \tab \tab \tab \tab \tab \tab  5 - Other (SPECIFY)
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C8\tab \tab 44\tab STORFOOD\tab \tab WHERE DO YOU USUALLY BUY MOST OF
+\par \tab \tab \tab \tab \tab \tab YOUR FOOD?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Carbon/Taboan Market
+\par \tab \tab \tab \tab \tab \tab  2 - Other market in Metro Cebu
+\par \tab \tab \tab \tab \tab \tab  3 - Supermarket
+\par \tab \tab \tab \tab \tab \tab  4 - Sari-sari store
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C9\tab \tab 45\tab WALKSTOR\tab \tab NUMBER OF 'MINUTES WALK' TO USUAL
+\par \tab \tab \tab \tab \tab \tab FOOD MARKET OR STORE
+\par \tab \tab \tab \tab \tab \tab  0  - less than a 
+\par \tab \tab \tab \tab \tab \tab \tab  minute  
+\par \tab \tab \tab \tab \tab                :                                     (Code -9 
+\par \tab \tab \tab \tab \tab  \tab  5  - Five minutes     from  
+\par \tab \tab \tab \tab \tab            walking                >  TRAVSTOR
+\par \tab \tab \tab \tab \tab \tab  :                             to   
+\par \tab \tab \tab \tab \tab \tab 240 - Two hundred    TRANCOST)
+\par \tab \tab \tab \tab \tab \tab \tab  forty minutes 
+\par \tab \tab \tab \tab \tab \tab \tab  walking        
+\par \tab \tab \tab \tab \tab \tab  :                 
+\par \tab \tab \tab \tab \tab \tab -8  - NR/DK (Code -8 from TRAVSTOR
+\par \tab \tab \tab \tab \tab \tab \tab  to TRANCOST)
+\par \tab \tab \tab \tab \tab \tab -9  - Too far to walk
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C10\tab \tab 46\tab TRAVSTOR\tab \tab NUMBER OF MINUTES TRAVEL/RIDE TO
+\par \tab \tab \tab \tab \tab \tab USUAL FOOD MARKET OR STORE
+\par 
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 15  - Fifteen minutes
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 240 - Two hundred forty minutes
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8  - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9  - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page C11\tab \tab 47\tab TRANCOST\tab \tab TRANSPORTATION COSTS (PESOS) TO
+\par \tab \tab \tab \tab \tab \tab TRAVEL TO USUAL FOOD MARKET OR
+\par \tab \tab \tab \tab \tab \tab STORE
+\par 
+\par \tab \tab \tab \tab \tab \tab  0  - None (e.g. uses own vehicle)
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab  1  - One peso
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 10  - Ten pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8   - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9   - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C12\tab \tab 48\tab RUFING\tab \tab DID TYPHOON RUFING DO ANY DAMAGE
+\par \tab \tab \tab \tab \tab \tab TO YOUR HOUSE?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No - (Code -9 in REPAIR)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C13\tab \tab 49\tab REPAIR\tab \tab }{\ul ESTIMATED COSTS OF REPAIRS}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  0     - None (did not buy any
+\par \tab \tab \tab \tab \tab \tab \tab     construction material)
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab  1     - One peso
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 10000  - Ten thousand pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -7     - House was not repaired
+\par \tab \tab \tab \tab \tab \tab -8     - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9     - NA (House was rented)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C14\tab \tab 50\tab AID\tab \tab \tab DID YOU RECEIVE TYPHOON AID FROM
+\par \tab \tab \tab \tab \tab \tab GOVERNMENT OR OTHER INSTITUTION?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page C15\tab \tab 51\tab GENCONDN\tab \tab WHAT IS THE GENERAL CONDITION OF
+\par \tab \tab \tab \tab \tab \tab THE AREA IMMEDIATELY AROUND THE
+\par \tab \tab \tab \tab \tab \tab HOUSE WITH RESPECT TO EXCRETA
+\par \tab \tab \tab \tab \tab \tab REMOVAL? (IS THE HOUSE SMELLING?)
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Heavy defecation in area
+\par \tab \tab \tab \tab \tab \tab  2 - Some defecation in area
+\par \tab \tab \tab \tab \tab \tab  3 - Very little excreta visible
+\par \tab \tab \tab \tab \tab \tab  4 - No excreta visible
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C16\tab \tab 52\tab NEIGHCON\tab \tab WHAT IS THE GENERAL CONDITION OF
+\par \tab \tab \tab \tab \tab \tab THE NEIGHBORHOOD WITH RESPECT TO
+\par \tab \tab \tab \tab \tab \tab EXCRETA REMOVAL?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS GENCONDN)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C17\tab \tab 53\tab NEIGHGAR\tab \tab WHAT IS THE GENERAL CONDITION OF
+\par \tab \tab \tab \tab \tab \tab THE NEIGHBORHOOD WITH RESPECT TO
+\par \tab \tab \tab \tab \tab \tab GARBAGE DISPOSAL?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Lots of uncollected garbage
+\par \tab \tab \tab \tab \tab \tab  2 - Some uncollected garbage
+\par \tab \tab \tab \tab \tab \tab  3 - Very little garbage
+\par \tab \tab \tab \tab \tab \tab  4 - No garbage visible
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C18\tab \tab 54\tab AREAFOOD\tab \tab GENERAL CONDITION OF THE AREA IN
+\par \tab \tab \tab \tab \tab \tab THE HOUSE WHERE THE FOOD IS BEING
+\par \tab \tab \tab \tab \tab \tab KEPT
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Very clean
+\par \tab \tab \tab \tab \tab \tab  2 - Not so clean
+\par \tab \tab \tab \tab \tab \tab  3 - Filthy
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page C19\tab \tab 55\tab SETTLEME\tab \tab TYPE OF SETTLEMENT WHERE THE
+\par \tab \tab \tab \tab \tab \tab RESPONDENT LIVE
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Urban squatter area
+\par \tab \tab \tab \tab \tab \tab  2 - Urban, congested and dirty
+\par \tab \tab \tab \tab \tab \tab  3 - Urban, less congested and
+\par \tab \tab \tab \tab \tab \tab \tab dirty
+\par \tab \tab \tab \tab \tab \tab  4 - Urban, outskirts of City
+\par \tab \tab \tab \tab \tab \tab \tab center, e.g., Camputhaw,
+\par \tab \tab \tab \tab \tab \tab \tab Gaudalupe, Lahug
+\par \tab \tab \tab \tab \tab \tab  5 - Rural town (poblacion)
+\par \tab \tab \tab \tab \tab \tab  6 - Rural barangay outside of
+\par \tab \tab \tab \tab \tab \tab \tab poblacion
+\par \tab \tab \tab \tab \tab \tab  7 - Rural-remote (isolated sitio
+\par \tab \tab \tab \tab \tab \tab \tab or single house)
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C20\tab \tab 56\tab RESAREA\tab \tab WHAT IS THE AREA IMMEDIATELY AROUND
+\par \tab \tab \tab \tab \tab \tab THE RESPONDENT'S HOUSE USED FOR?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Mostly residential houses
+\par \tab \tab \tab \tab \tab \tab  2 - Mostly commercial buildings
+\par \tab \tab \tab \tab \tab \tab  3 - Mostly open space, used for
+\par \tab \tab \tab \tab \tab \tab \tab farming and/or livestock
+\par \tab \tab \tab \tab \tab \tab  4 - Mostly open space, not used
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C21\tab \tab 57\tab AREAIN50\tab \tab WHAT IS THE GENERAL AREA AROUND THE
+\par \tab \tab \tab \tab \tab \tab RESPONDENT'S HOUSE (WITHIN FIFTY
+\par \tab \tab \tab \tab \tab \tab METERS) USED FOR?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS RESAREA)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C22\tab \tab 58\tab HOUSES\tab \tab NUMBER OF HOUSES VERY CLOSE (WITHIN
+\par \tab \tab \tab \tab \tab \tab FIFTY METERS) TO THE RESPONDENT'S
+\par \tab \tab \tab \tab \tab \tab HOUSE
+\par 
+\par \tab \tab \tab \tab \tab \tab   1 - One
+\par \tab \tab \tab \tab \tab \tab   2 - Two
+\par \tab \tab \tab \tab \tab \tab   :
+\par \tab \tab \tab \tab \tab \tab  20 - Twenty and greater
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page C23\tab \tab 59\tab WALKHOUS\tab \tab NUMBER OF MINUTES TO WALK TO THE
+\par \tab \tab \tab \tab \tab \tab THE HOUSE CLOSEST TO THE
+\par \tab \tab \tab \tab \tab \tab RESPONDENT'S HOUSE
+\par 
+\par \tab \tab \tab \tab \tab \tab  0 - Less than one minute
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 60 - Sixty minutes
+\par \tab \tab \tab \tab \tab \tab  :
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C24\tab \tab 60\tab WALKROAD\tab \tab NUMBER OF MINUTES NEEDED TO WALK
+\par \tab \tab \tab \tab \tab \tab FROM RESPONDENT'S HOUSE TO NEAREST
+\par \tab \tab \tab \tab \tab \tab ROAD
+\par 
+\par \tab \tab \tab \tab \tab \tab  0 - Less than one  }{\f29 \'2c}{
+\par \tab \tab \tab \tab \tab \tab \tab minute         }{\f29 \'2a}{  (Code -9   
+\par \tab \tab \tab \tab \tab \tab  :                  >    in      
+\par \tab \tab \tab \tab \tab \tab 60 - Sixty minutes  }{\f29 \'2a}{  BOATRIDE)
+\par \tab \tab \tab \tab \tab \tab  :                  }{\f29 \'2d}{
+\par \tab \tab \tab \tab \tab \tab -7 - Respondent lives on an island
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C25\tab \tab 61\tab BOATRIDE\tab \tab NUMBER OF MINUTES NEEDED FOR
+\par \tab \tab \tab \tab \tab \tab RESPONDENT TO TRAVEL BY BOAT FROM
+\par \tab \tab \tab \tab \tab \tab ISLAND (e.g., Caohagan, Cao-oy) TO
+\par \tab \tab \tab \tab \tab \tab THE NEAREST ROAD IN NEXT ISLAND
+\par \tab \tab \tab \tab \tab \tab (e.g., Mactan, Cebu)
+\par 
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 60 - Sixty minutes
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C26\tab \tab 62\tab ROADPAVE\tab \tab }{\ul IS THIS ROAD PAVED?}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C27\tab \tab 63\tab TARTANLA\tab \tab DO TARTANILLAS ORDINARILY PASS
+\par \tab \tab \tab \tab \tab \tab ALONG THIS ROAD?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA (No road on island)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page C27\tab \tab 64\tab TRUCKS\tab \tab DO TRUCKS ORDINARILY PASS ALONG
+\par \tab \tab \tab \tab \tab \tab THIS ROAD?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS TARTANLA)
+\par -----------------------------------------------------------------
+\par C27\tab \tab 65\tab MINIBUS\tab \tab DO BUSES/MINIBUSES ORDINARILY PASS
+\par \tab \tab \tab \tab \tab \tab ALONG THIS ROAD?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS TARTANLA)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C27\tab \tab 66\tab JEEPNEY\tab \tab DO JEEPNEYS ORDINARILY PASS
+\par \tab \tab \tab \tab \tab \tab ALONG THIS ROAD?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS TARTANLA)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C27\tab \tab 67\tab PASSCARS\tab \tab DO PASSENGER CARS (e.g., PU, taxi)
+\par \tab \tab \tab \tab \tab \tab ORDINARILY PASS ALONG THIS ROAD?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS TARTANLA)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C27\tab \tab 68\tab TRICYCLE\tab \tab DO MOTORIZED TRICYCLES ORDINARILY
+\par \tab \tab \tab \tab \tab \tab PASS ALONG THIS ROAD?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS TARTANLA)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C27\tab \tab 69\tab BICYCLES\tab \tab DO PEDAL-OPERATED TRICYCLES
+\par \tab \tab \tab \tab \tab \tab ORDINARILY PASS ALONG THIS ROAD?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS TARTANLA)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C27\tab \tab 70\tab PRIVCARS\tab \tab DO PRIVATE CARS ORDINARILY PASS
+\par \tab \tab \tab \tab \tab \tab ALONG THIS ROAD?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS TARTANLA)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C27\tab \tab 71\tab OTHRVHCL\tab \tab DO OTHER VEHICLES ORDINARILY PASS
+\par \tab \tab \tab \tab \tab \tab ALONG THIS ROAD?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS TARTANLA)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page C28\tab \tab 72\tab WALKTRAN\tab \tab NUMBER OF MINUTES NEEDED TO WALK TO
+\par \tab \tab \tab \tab \tab \tab THE NEAREST PUBLIC TRANSPORT (e.g.,
+\par \tab \tab \tab \tab \tab \tab jeepney, bus, tricycle, boat)
+\par 
+\par \tab \tab \tab \tab \tab \tab  0  - Less than one minute
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 15  - Fifteen minutes
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 120 - One hundred and twenty
+\par \tab \tab \tab \tab \tab \tab \tab  minutes
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C29\tab \tab 73\tab DOWNTOWN\tab \tab DISTANCE IN KILOMETERS OF
+\par \tab \tab \tab \tab \tab \tab RESPONDENT'S HOUSE FROM DOWNTOWN
+\par \tab \tab \tab \tab \tab \tab CEBU/MANDAUE/LAPU-LAPU CITY
+\par \tab \tab \tab \tab \tab \tab (whichever is closer)
+\par 
+\par \tab \tab \tab \tab \tab \tab  0 - House is in downtown area of
+\par \tab \tab \tab \tab \tab \tab \tab Cebu/Mandaue/Lapu-lapu City
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab  1 - One kilometer
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 10 - Ten kilometers
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C30\tab \tab 74\tab ELECTRIC\tab \tab IS THE RESPONDENT'S HOUSE CONNECTED
+\par \tab \tab \tab \tab \tab \tab TO THE ELECTRICAL SYSTEM (VECO IN
+\par \tab \tab \tab \tab \tab \tab CEBU CITY, MANDAUE, LAPU-LAPU CITY;
+\par \tab \tab \tab \tab \tab \tab SOME OTHER PUBLIC SYSTEM)
+\par \tab \tab \tab \tab \tab \tab REGARDLESS AS TO WHETHER IT IS USED
+\par \tab \tab \tab \tab \tab \tab OR NOT?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C31\tab \tab 75\tab ELECSERV\tab \tab DO ANY OF THE HOUSES AROUND THE
+\par \tab \tab \tab \tab \tab \tab RESPONDENT'S HOUSE HAVE ELECTRICAL
+\par \tab \tab \tab \tab \tab \tab SERVICE?
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page C32\tab \tab 76\tab MATERIAL\tab \tab OF WHAT KIND OF MATERIAL IS THE
+\par \tab \tab \tab \tab \tab \tab HOUSE CONSTRUCTED?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Light (house made of nipa or
+\par \tab \tab \tab \tab \tab \tab \tab similar material)
+\par \tab \tab \tab \tab \tab \tab  2 - Mixed (house made of cement
+\par \tab \tab \tab \tab \tab \tab \tab and/or wood, but with nipa or
+\par \tab \tab \tab \tab \tab \tab \tab similar materials either for
+\par \tab \tab \tab \tab \tab \tab \tab wall or roof
+\par \tab \tab \tab \tab \tab \tab  3 - Strong (house made exclusively
+\par \tab \tab \tab \tab \tab \tab \tab of cement and/or wood with
+\par \tab \tab \tab \tab \tab \tab \tab galvanized iron roofing
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par C33\tab \tab 77\tab NEIGHMAT\tab \tab OVERALL, HOW WOULD YOU RATE THE
+\par \tab \tab \tab \tab \tab \tab CONSTRUCTION OF THE HOUSES AROUND
+\par \tab \tab \tab \tab \tab \tab THE RESPONDENT'S HOUSE?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Mostly light (bamboo, nipa,
+\par \tab \tab \tab \tab \tab \tab \tab cheap wood)
+\par \tab \tab \tab \tab \tab \tab  2 - Mostly mixed (wood with hollow
+\par \tab \tab \tab \tab \tab \tab \tab blocks, cement)
+\par \tab \tab \tab \tab \tab \tab  3 - Mostly strong (hollow blocks,
+\par \tab \tab \tab \tab \tab \tab \tab concrete or good wood)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D1\tab \tab 78\tab OWNHOUSE\tab \tab DO YOU OR YOUR HOUSEHOLD OWN THE
+\par \tab \tab \tab \tab \tab \tab HOUSE IN WHICH YOU ARE LIVING?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes (Code -9 in RENTFREE)
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D2\tab \tab 79\tab ANOTHOUS\tab \tab DO YOU OR YOUR HOUSEHOLD OWN ANY
+\par \tab \tab \tab \tab \tab \tab OTHER RESIDENTIAL HOUSES?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page D3\tab \tab 80\tab VALHOUSE\tab \tab ESTIMATED CURRENT TOTAL VALUE
+\par \tab \tab \tab \tab \tab \tab (PESOS) OF ALL HOUSES OWNED BY
+\par \tab \tab \tab \tab \tab \tab HOUSEHOLD
+\par 
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 50     - Fifty pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 200000 - Two hundred thousand
+\par \tab \tab \tab \tab \tab \tab \tab \tab pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8     - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9     - NA (Coded 0 in OWNHOUSE &
+\par \tab \tab \tab \tab \tab \tab \tab     ANOTHOUS)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D4\tab \tab 81\tab RENTFREE\tab \tab DOES YOUR HOUSEHOLD RENT THIS HOUSE
+\par \tab \tab \tab \tab \tab \tab OR STAY IN IT FOR FREE?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Rents (Code -9 in FEERENTN)
+\par \tab \tab \tab \tab \tab \tab  2 - Stay for free (Code -9 in
+\par \tab \tab \tab \tab \tab \tab \tab RENTAL)
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D5\tab \tab 82\tab RENTAL\tab \tab RENTAL FEE (PESOS) PER MONTH FOR
+\par \tab \tab \tab \tab \tab \tab THIS HOUSE
+\par 
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab  5   - Five pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 1000 - One thousand pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8   - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9   - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D6\tab \tab 83\tab FEERENTN\tab \tab HOW MUCH (PESOS) DO YOU THINK YOU
+\par \tab \tab \tab \tab \tab \tab WOULD HAVE TO PAY PER MONTH IF YOU
+\par \tab \tab \tab \tab \tab \tab WERE TO RENT THIS HOUSE?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS RENTAL)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page D7\tab \tab 84\tab ROOMNUMB\tab \tab NUMBER OF ROOMS IN THIS HOUSE,
+\par \tab \tab \tab \tab \tab \tab EXCLUDING THE BATHROOM AND THE
+\par \tab \tab \tab \tab \tab \tab TOILET
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - One
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 10 - Ten
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D8\tab \tab 85\tab OWNCARTS\tab \tab DO YOU OR YOUR HOUSEHOLD OWN A
+\par \tab \tab \tab \tab \tab \tab CARABAO CART?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D8\tab \tab 86\tab PUSHCART\tab \tab DO YOU OR YOUR HOUSEHOLD OWN A PUSH
+\par \tab \tab \tab \tab \tab \tab CART?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS OWNCARTS)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D8\tab \tab 87\tab OWNBICYL\tab \tab DO YOU OR YOUR HOUSEHOLD OWN A
+\par \tab \tab \tab \tab \tab \tab BICYCLE?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS OWNCARTS)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D8\tab \tab 88\tab OWNTRICY\tab \tab }{\ul DO YOU OR YOUR HOUSEHOLD OWN A
+\par \tab \tab \tab \tab \tab \tab TRICYCLE?}{
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS OWNCARTS)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D8\tab \tab 89\tab OWNJEPNY\tab \tab DO YOU OR YOUR HOUSEHOLD OWN A
+\par \tab \tab \tab \tab \tab \tab JEEPNEY?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS OWNCARTS)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D8\tab \tab 90\tab OWNBUS\tab \tab DO YOU OR YOUR HOUSEHOLD OWN A
+\par \tab \tab \tab \tab \tab \tab TRUCK/BUS?
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS OWNCARTS)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page D8\tab \tab 91\tab OWNCARS\tab \tab DO YOU OR YOUR HOUSEHOLD OWN A
+\par \tab \tab \tab \tab \tab \tab CAR?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS OWNCARTS)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D8\tab \tab 92\tab OWNVEHCL\tab \tab DO YOU OR YOUR HOUSEHOLD OWN OTHER
+\par \tab \tab \tab \tab \tab \tab VEHICLE?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS OWNCARTS)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D9\tab \tab 93\tab VALVEHCL\tab \tab ESTIMATED TOTAL CURRENT VALUE
+\par \tab \tab \tab \tab \tab \tab (PESOS) OF ALL VEHICLES OWNED BY
+\par \tab \tab \tab \tab \tab \tab HOUSEHOLD
+\par 
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 100    - One hundred pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 100000 - One hundred thousand pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8     - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9     - NA (Coded 0 from OWNCARTS
+\par \tab \tab \tab \tab \tab \tab \tab     to OWNVEHCL)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D10\tab \tab 94\tab OWNPOULT\tab \tab DO YOU OR YOUR HOUSEHOLD OWN
+\par \tab \tab \tab \tab \tab \tab POULTRY?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D10\tab \tab 95\tab OWNPIGS\tab \tab DO YOU OR YOUR HOUSEHOLD OWN
+\par \tab \tab \tab \tab \tab \tab PIGS?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS OWNPOULT)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D10\tab \tab 96\tab OWNGOATS\tab \tab DO YOU OR YOUR HOUSEHOLD OWN
+\par \tab \tab \tab \tab \tab \tab GOATS?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS OWNPOULT)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D10\tab \tab 97\tab OWNCOWS\tab \tab DO YOU OR YOUR HOUSEHOLD OWN
+\par \tab \tab \tab \tab \tab \tab COWS?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS OWNPOULT)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page D10\tab \tab 98\tab OWNCRBAO\tab \tab DO YOU OR YOUR HOUSEHOLD OWN
+\par \tab \tab \tab \tab \tab \tab CARABAO?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS OWNPOULT)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D10\tab \tab 99\tab OWNANIML\tab \tab DO YOU OR YOUR HOUSEHOLD OWN
+\par \tab \tab \tab \tab \tab \tab OTHER ANIMALS?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS OWNPOULT)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D11\tab \tab 100\tab VALLIVES\tab \tab ESTIMATED TOTAL CURRENT VALUE
+\par \tab \tab \tab \tab \tab \tab (PESOS) OF ALL LIVESTOCK OWNED BY
+\par \tab \tab \tab \tab \tab \tab HOUSEHOLD
+\par 
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 100    - One hundred pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 100000 - One hundred thousand pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8     - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9     - NA (Coded 0 from OWNPOULT
+\par \tab \tab \tab \tab \tab \tab \tab     to OWNANIML)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D12\tab \tab 101\tab VALEQUIP\tab \tab ESTIMATED TOTAL CURRENT VALUE
+\par \tab \tab \tab \tab \tab \tab (PESOS) OF ALL AGRICULTURAL/
+\par \tab \tab \tab \tab \tab \tab FISHING/BUSINESS/PROFESSIONAL
+\par \tab \tab \tab \tab \tab \tab EQUIPMENT OWNED BY HOUSEHOLD
+\par 
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 100    - One hundred pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 100000 - One hundred thousand pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8     - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9     - NA (Owns no equipment)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D13\tab \tab 102\tab BENCHES\tab \tab DO YOU OR YOUR HOUSEHOLD OWN
+\par \tab \tab \tab \tab \tab \tab BENCHES/CHAIRS?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page D13\tab \tab 103\tab SALASET\tab \tab DO YOU OR YOUR HOUSEHOLD OWN
+\par \tab \tab \tab \tab \tab \tab A SALA SET?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS BENCHES)
+\par D13\tab \tab 104\tab TABLES \tab \tab DO YOU OR YOUR HOUSEHOLD OWN
+\par \tab \tab \tab \tab \tab \tab TABLES?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS BENCHES)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D13\tab \tab 105\tab DININGST\tab \tab DO YOU OR YOUR HOUSEHOLD OWN
+\par \tab \tab \tab \tab \tab \tab A DINING SET?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS BENCHES)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D13\tab \tab 106\tab APARADOR\tab \tab DO YOU OR YOUR HOUSEHOLD OWN
+\par \tab \tab \tab \tab \tab \tab AN APARADOR?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS BENCHES)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D13\tab \tab 107\tab BEDS    \tab \tab DO YOU OR YOUR HOUSEHOLD OWN
+\par \tab \tab \tab \tab \tab \tab BEDS?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS BENCHES)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D13\tab \tab 108\tab FURNITUR\tab \tab DO YOU OR YOUR HOUSEHOLD OWN
+\par \tab \tab \tab \tab \tab \tab OTHER FURNITURES?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS BENCHES)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D14\tab \tab 109\tab VALFURNI\tab \tab ESTIMATED TOTAL CURRENT VALUE
+\par \tab \tab \tab \tab \tab \tab (PESOS) OF ALL FURNITURES OWNED BY
+\par \tab \tab \tab \tab \tab \tab YOUR HOUSEHOLD
+\par 
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 100    - One hundred pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 100000 - One hundred thousand pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8     - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9     - NA (Coded 0 from BENCHES
+\par \tab \tab \tab \tab \tab \tab \tab     to FURNITUR)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page D15\tab \tab 110\tab OWNIRON\tab \tab DO YOU OR YOUR HOUSEHOLD OWN AN
+\par \tab \tab \tab \tab \tab \tab ELECTRIC IRON?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab -8 - NA/DK
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D15\tab \tab 111\tab RECORDER\tab \tab DO YOU OR YOUR HOUSEHOLD OWN A
+\par \tab \tab \tab \tab \tab \tab TAPE RECORDER OR STEREO SET?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS OWNIRON)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D15\tab \tab 112\tab OWNTEVEE \tab \tab DO YOU OR YOUR HOUSEHOLD OWN A
+\par \tab \tab \tab \tab \tab \tab TELEVISION SET?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS OWNIRON)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D15\tab \tab 113\tab REFRIGER\tab \tab DO YOU OR YOUR HOUSEHOLD OWN A
+\par \tab \tab \tab \tab \tab \tab REFRIGERATOR?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS OWNIRON)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par }\pard\plain \s17\qj \li0\ri0\nowidctlpar\faauto\rin0\lin0\itap0 \f28\fs20\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {D15\tab \tab 114\tab AIRCON\tab \tab DO YOU OR YOUR HOUSEHOLD OWN AN AIR \tab \tab \tab \tab \tab \tab CONDITIONER?
+\par }\pard\plain \qj \li0\ri0\nowidctlpar\faauto\rin0\lin0\itap0 \f28\fs20\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS OWNIRON)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D15\tab \tab 115\tab ELECFANS\tab \tab DO YOU OR YOUR HOUSEHOLD OWN AN
+\par \tab \tab \tab \tab \tab \tab ELECTRIC FAN?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS OWNIRON)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D15\tab \tab 116\tab APPLIANS\tab \tab DO YOU OR YOUR HOUSEHOLD OWN OTHER
+\par \tab \tab \tab \tab \tab \tab HOUSEHOLD APPLIANCES?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS OWNIRON)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page D16\tab \tab 117\tab VALAPPLI\tab \tab ESTIMATED TOTAL CURRENT VALUE
+\par \tab \tab \tab \tab \tab \tab (PESOS) OF ALL HOUSEHOLD APPLIANCES
+\par \tab \tab \tab \tab \tab \tab OWNED BY HOUSEHOLD
+\par 
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 100    - One hundred pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 100000 - One hundred thousand pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8     - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9     - NA (Coded 0 from OWNIRON
+\par \tab \tab \tab \tab \tab \tab \tab     to APPLIANS)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D17\tab \tab 118\tab VALKTCHE\tab \tab ESTIMATED TOTAL CURRENT VALUE
+\par \tab \tab \tab \tab \tab \tab (PESOS) OF ALL KITCHEN EQUIPMENT/
+\par \tab \tab \tab \tab \tab \tab UTENSILS OWNED BY HOUSEHOLD
+\par 
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 100    - One hundred pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 100000 - One hundred thousand pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8     - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9     - NA (Owns no kitchen
+\par \tab \tab \tab \tab \tab \tab \tab     utensils)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D18\tab \tab 119\tab PURCHASE\tab \tab DID YOUR HOUSEHOLD MAKE ANY MAJOR
+\par \tab \tab \tab \tab \tab \tab PURCHASES DURING THE LAST FIVE
+\par \tab \tab \tab \tab \tab \tab YEARS?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No (Code -9 from BUYLAND to
+\par \tab \tab \tab \tab \tab \tab \tab VALPURCH)
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK (Code -9 from BUYLAND to
+\par \tab \tab \tab \tab \tab \tab \tab VALPURCH)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D19\tab \tab 120\tab BUYLAND\tab \tab DID YOUR HOUSEHOLD PURCHASE LAND
+\par \tab \tab \tab \tab \tab \tab DURING THE LAST FIVE YEARS?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA (Coded 0 in PURCHASE)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page D19\tab \tab 121\tab BUYHOUSE\tab \tab DID YOUR HOUSEHOLD PURCHASE HOUSE
+\par \tab \tab \tab \tab \tab \tab DURING THE LAST FIVE YEARS?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS LAND)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D19\tab \tab 122\tab BUYAUTO\tab \tab DID YOUR HOUSEHOLD PURCHASE
+\par \tab \tab \tab \tab \tab \tab AUTOMOBILE OR ANY OTHER KIND OF
+\par \tab \tab \tab \tab \tab \tab MOTORIZED VEHICLE DURING THE LAST
+\par \tab \tab \tab \tab \tab \tab FIVE YEARS?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS LAND)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D19\tab \tab 123\tab BUYTEVEE\tab \tab DID YOUR HOUSEHOLD PURCHASE
+\par \tab \tab \tab \tab \tab \tab TELEVISION SET DURING THE LAST FIVE
+\par \tab \tab \tab \tab \tab \tab YEARS?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS LAND)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D19\tab \tab 124\tab BUYSTREO\tab \tab DID YOUR HOUSEHOLD PURCHASE
+\par \tab \tab \tab \tab \tab \tab STEREO SET DURING THE LAST FIVE
+\par \tab \tab \tab \tab \tab \tab YEARS?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS LAND)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D19\tab \tab 125\tab BUYREFRI\tab \tab DID YOUR HOUSEHOLD PURCHASE
+\par \tab \tab \tab \tab \tab \tab REFRIGERATOR DURING THE LAST FIVE
+\par \tab \tab \tab \tab \tab \tab YEARS?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS LAND)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par D19\tab \tab 126\tab BUYOTHER\tab \tab DID YOUR HOUSEHOLD PURCHASE OTHER
+\par \tab \tab \tab \tab \tab \tab VALUABLES DURING THE LAST FIVE
+\par \tab \tab \tab \tab \tab \tab YEARS?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS LAND)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page D20\tab \tab 127\tab VALPURCH\tab \tab ESTIMATED TOTAL CURRENT VALUE
+\par \tab \tab \tab \tab \tab \tab (PESOS) OF ALL MAJOR PURCHASES
+\par \tab \tab \tab \tab \tab \tab MADE DURING THE LAST FIVE YEARS
+\par 
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 100    - One hundred pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 100000 - One hundred thousand pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8     - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9     - NA (Coded 0 in PURCHASE) 
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par F36\tab \tab 128\tab OTHSOURC\tab \tab DOES (DID) THE HOUSEHOLD OR ANY OF
+\par \tab \tab \tab \tab \tab \tab ITS MEMBERS HAVE ANY OTHER SOURCES
+\par \tab \tab \tab \tab \tab \tab OF INCOME?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No (Code -9 from AGRICOMM to
+\par \tab \tab \tab \tab \tab \tab \tab AMNTOTH)
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK (Code -8 from AGRICOMM
+\par \tab \tab \tab \tab \tab \tab \tab to AMNTOTH)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par F37\tab \tab 129\tab AGRICOMM\tab \tab RENT OF AGRICULTURAL/COMMERCIAL
+\par \tab \tab \tab \tab \tab \tab LAND AS OTHER SOURCE OF INCOME FOR
+\par \tab \tab \tab \tab \tab \tab THE HOUSEHOLD?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par F37\tab \tab 130\tab BOARDERS\tab \tab INCOME FROM BOARDERS/LODGERS AS
+\par \tab \tab \tab \tab \tab \tab OTHER SOURCE OF INCOME FOR THE
+\par \tab \tab \tab \tab \tab \tab HOUSEHOLD?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page F37\tab \tab 131\tab PENSIONS\tab \tab PENSIONS, DIVIDENDS, BONUSES,
+\par \tab \tab \tab \tab \tab \tab SAVINGS, INTEREST AS OTHER SOURCE
+\par \tab \tab \tab \tab \tab \tab OF INCOME FOR THE HOUSEHOLD?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par F37\tab \tab 132\tab REMITKID\tab \tab CASH REMITTANCES FROM CHILDREN,
+\par \tab \tab \tab \tab \tab \tab PARENTS/PARENTS-IN-LAW, OTHER
+\par \tab \tab \tab \tab \tab \tab RELATIVES, FRIENDS OR ANYONE ELSE
+\par \tab \tab \tab \tab \tab \tab AS OTHER SOURCE OF INCOME FOR THE
+\par \tab \tab \tab \tab \tab \tab HOUSEHOLD?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par F37\tab \tab 133\tab ALLOTMNT\tab \tab REMITTANCES FROM SPOUSE ABROAD/
+\par \tab \tab \tab \tab \tab \tab 'SUSTENTO' AS OTHER SOURCE OF
+\par \tab \tab \tab \tab \tab \tab INCOME FOR THE HOUSEHOLD?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par F37\tab \tab 134\tab SOURCES\tab \tab ANY "OTHER SOURCE" AS OTHER SOURCE
+\par \tab \tab \tab \tab \tab \tab OF INCOME FOR THE HOUSEHOLD?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page F38\tab \tab 135\tab AMNTOTH\tab \tab TOTAL ADDITIONAL INCOME (PESOS)
+\par \tab \tab \tab \tab \tab \tab FROM OTHER SOURCES OF INCOME IN
+\par \tab \tab \tab \tab \tab \tab THE LAST TWELVE MONTHS
+\par 
+\par \tab \tab \tab \tab \tab \tab  0   - None
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 10   - Ten pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 4000 - Four thousand pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8   - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9   - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par F39\tab \tab 136\tab KINDAMT\tab \tab DID YOU OR YOUR HOUSEHOLD RECEIVE
+\par \tab \tab \tab \tab \tab \tab ANY INCOME IN KIND (FOOD OR
+\par \tab \tab \tab \tab \tab \tab CLOTHING) IN THE LAST TWELVE
+\par \tab \tab \tab \tab \tab \tab MONTHS FROM CHILDREN, PARENTS,
+\par \tab \tab \tab \tab \tab \tab OTHER RELATIVES, FRIENDS OR ANYBODY
+\par \tab \tab \tab \tab \tab \tab ELSE?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No (Code -9 in VALKIND)
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK (Code -8 in VALKIND)
+\par ------------------------------------------------------------------------------------------------------------------------------------------
+\par F40\tab \tab 137\tab VALKIND\tab \tab APPROXIMATE VALUE (PESOS) OF ALL
+\par \tab \tab \tab \tab \tab \tab INCOME IN KIND RECEIVED BY
+\par \tab \tab \tab \tab \tab \tab HOUSEHOLD IN THE LAST TWELVE MONTHS
+\par 
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 10  - Ten pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 500 - Five hundred pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8  - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9  - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par F41\tab \tab 138\tab GARDENG\tab \tab DOES YOUR HOUSEHOLD ENGAGE IN HOME
+\par \tab \tab \tab \tab \tab \tab GARDENING?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No (Code -9 from GARDEMEM to
+\par \tab \tab \tab \tab \tab \tab \tab GARDNSAV)
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK (Code -8 from GARDEMEM
+\par }\pard\plain \s17\qj \li0\ri0\nowidctlpar\faauto\rin0\lin0\itap0 \f28\fs20\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\tab \tab \tab \tab \tab \tab \tab to GARDNSAV)
+\par }\pard\plain \qj \li0\ri0\nowidctlpar\faauto\rin0\lin0\itap0 \f28\fs20\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {--------------------------------------------------------------------------------------------------------------------------------
+-----------
+\par 
+\par \page F42\tab \tab 139\tab GARDEMEM\tab \tab TOTAL NO. OF HOUSEHOLD MEMBERS THAT
+\par \tab \tab \tab \tab \tab \tab USUALLY HELP WITH HOME GARDENING
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - One member
+\par }\pard\plain \s17\qj \li0\ri0\nowidctlpar\faauto\rin0\lin0\itap0 \f28\fs20\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\tab \tab \tab \tab \tab \tab  :
+\par }\pard\plain \qj \li0\ri0\nowidctlpar\faauto\rin0\lin0\itap0 \f28\fs20\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\tab \tab \tab \tab \tab \tab 10 - Ten members
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par 
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par F43\tab \tab 140\tab HRSGARDE\tab \tab TOTAL NO. OF HOURS IN A USUAL WEEK
+\par \tab \tab \tab \tab \tab \tab HOUSEHOLD MEMBER(S) USUALLY HELP
+\par \tab \tab \tab \tab \tab \tab WITH HOME GARDENING
+\par 
+\par \tab \tab \tab \tab \tab \tab  0 - None (looks after plants which
+\par \tab \tab \tab \tab \tab \tab \tab do not need intensive care
+\par \tab \tab \tab \tab \tab \tab \tab e.g. malunggay, papaya, other
+\par \tab \tab \tab \tab \tab \tab \tab fruit trees)
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab  1 - One hour
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 24 - Twenty-four hours
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par F44\tab \tab 141\tab AMNTSALE\tab \tab AVERAGE AMOUNT (PESOS) HOUSEHOLD
+\par \tab \tab \tab \tab \tab \tab GET IN A MONTH FROM THE SALE OF
+\par \tab \tab \tab \tab \tab \tab FRUITS, VEGETABLES, OR PLANTS GROWN
+\par \tab \tab \tab \tab \tab \tab IN HOME GARDEN
+\par 
+\par \tab \tab \tab \tab \tab \tab  0  - No income
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 10  - Ten pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 500 - Five hundred pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8  - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9  - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page F45\tab \tab 142\tab GARDNSAV\tab \tab ESTIMATED SAVINGS (PESOS) PER MONTH
+\par \tab \tab \tab \tab \tab \tab THROUGH HOME GARDENING OF
+\par \tab \tab \tab \tab \tab \tab VEGETABLES OR FRUITS WHICH 
+\par \tab \tab \tab \tab \tab \tab OTHERWISE HOUSEHOLD WOULD HAVE TO
+\par \tab \tab \tab \tab \tab \tab BUY FROM MARKET
+\par 
+\par \tab \tab \tab \tab \tab \tab  0  - No savings
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 10  - Ten pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 500 - Five hundred pesos
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8  - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9  - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par }}

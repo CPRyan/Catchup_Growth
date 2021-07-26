@@ -54,3 +54,44 @@ All of the community data was collected on the same day - I'm going to check all
 
 ```
 
+```{r}
+meaghan_full <-read_dta(here::here("Data/Misc/Full_cohort_for_Meaghan.dta")) %>% # note: here::here calls the here function
+  rename_all(tolower)
+
+names(meaghan_full)[1:1000]
+
+sample_dates <-meaghan_full %>% 
+  select(basebrgy, basewman, uncchdid, contains("intrvw91"), contains("icage91"))
+```
+
+```{r}
+source(here::here("Scripts/Functions.R"))
+
+library(tidyverse)
+
+create_date(df = sample_dates, 
+            year = yrintrvw91, 
+            month = mointrvw91, 
+            day = dyintrvw91)
+
+sample_dates$meg_dates <-lubridate::make_date(year = sample_dates$yrintrvw91, 
+            month = sample_dates$mointrvw91, 
+            day = sample_dates$dyintrvw91)
+```
+
+```{r}
+iq_dates <-read_dta(here::here("Data/zip_child_91/iq91.dta")) %>% # note: here::here calls the here function
+  rename_all(tolower) %>% 
+  select(basebrgy, basewman, yeariq, monthiq, dayiq) %>% 
+  mutate(iq_date = lubridate::make_date( yeariq+1900, monthiq, dayiq))
+
+
+
+```
+
+```{r}
+left_join(sample_dates, iq_dates, by = c("basebrgy", "basewman")) %>% 
+  mutate(iq_intrvw_date_diff = iq_date - meg_dates) %>% 
+  select(basebrgy, basewman, uncchdid, iq_intrvw_date_diff) 
+```
+

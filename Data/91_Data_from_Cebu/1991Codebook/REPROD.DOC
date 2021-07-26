@@ -1,0 +1,630 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff28\deflang1033\deflangfe1033{\fonttbl{\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f28\fnil\fcharset0\fprq2{\*\panose 00000000000000000000}Courier 10cpi;}
+{\f94\froman\fcharset238\fprq2 Times New Roman CE;}{\f95\froman\fcharset204\fprq2 Times New Roman Cyr;}{\f97\froman\fcharset161\fprq2 Times New Roman Greek;}{\f98\froman\fcharset162\fprq2 Times New Roman Tur;}
+{\f99\froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\f100\froman\fcharset178\fprq2 Times New Roman (Arabic);}{\f101\froman\fcharset186\fprq2 Times New Roman Baltic;}}{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;
+\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;
+\red128\green128\blue128;\red192\green192\blue192;}{\stylesheet{\ql \li0\ri0\nowidctlpar\faauto\rin0\lin0\itap0 \f28\fs20\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 \snext0 Normal;}{\*\cs10 \additive Default Paragraph Font;}{
+\s15\ql \li0\ri0\nowidctlpar\tqc\tx4320\tqr\tx8640\faauto\rin0\lin0\itap0 \f28\fs20\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 \sbasedon0 \snext15 header;}{\s16\ql \li0\ri0\nowidctlpar\tqc\tx4320\tqr\tx8640\faauto\rin0\lin0\itap0 
+\f28\fs20\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 \sbasedon0 \snext16 footer;}}{\info{\author Abeth}{\operator Abeth}{\creatim\yr2005\mo9\dy20\hr16\min50}{\revtim\yr2005\mo9\dy21\hr8\min17}{\version3}{\edmins6}{\nofpages13}{\nofwords3092}
+{\nofchars17626}{\*\company University of San Carlos}{\nofcharsws0}{\vern8247}}\margl1440\margr1440 \widowctrl\ftnbj\aenddoc\ftnrestart\aftnnar\noxlattoyen\expshrtn\noultrlspc\dntblnsbdb\nospaceforul\hyphcaps0\horzdoc\dghspace120\dgvspace120\dghorigin1701
+\dgvorigin1984\dghshow0\dgvshow3\jcompress\viewkind1\viewscale100\nolnhtadjtbl \fet0\sectd \sbknone\linex0\headery1440\endnhere\sectdefaultcl {\header \pard\plain \ql \li0\ri0\nowidctlpar\faauto\rin0\lin0\itap0 
+\f28\fs20\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {REPRODUCTIVE FILE (UNC 1991 SURVEY)\tab \tab \tab \tab \tab \tab Page No. \chpgn 
+\par ================================================================================
+\par QUEST.\tab VAR.\tab VAR.\tab \tab VARIABLE CODE
+\par NO.\tab \tab NO.\tab NAME
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par }}{\*\pnseclvl1\pndec\pnstart1 {\pntxta .}}{\*\pnseclvl2\pnlcltr\pnstart1 {\pntxta .}}{\*\pnseclvl3\pnlcrm\pnstart1 {\pntxta .}}{\*\pnseclvl4\pndec\pnstart1 {\pntxtb (}{\pntxta )}}{\*\pnseclvl5\pnlcltr\pnstart1 {\pntxtb (}{\pntxta )}}{\*\pnseclvl6
+\pnlcrm\pnstart1 {\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pndec\pnstart1 {\pntxta .}}{\*\pnseclvl8\pnlcltr\pnstart1 {\pntxta .}}{\*\pnseclvl9\pnlcrm\pnstart1 }\pard\plain \qj \li0\ri0\nowidctlpar\faauto\rin0\lin0\itap0 
+\f28\fs20\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {ID1\tab \tab 1\tab SURVEY\tab \tab }{\ul TYPE OF SURVEY}{
+\par 
+\par \tab \tab \tab \tab \tab \tab 7 - 1991 Follow-up survey
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID2\tab \tab 2\tab CURRBRGY\tab \tab }{\ul CURRENT BARANGAY}{
+\par 
+\par \tab \tab \tab \tab \tab \tab   1 - Quiot, Pardo
+\par }\pard \qj \fi720\li2160\ri0\nowidctlpar\faauto\rin0\lin2160\itap0 {                            2 - Pahina, San Nicolas
+\par }\pard \qj \li0\ri0\nowidctlpar\faauto\rin0\lin0\itap0 { \tab \tab \tab \tab                             3 - Sambag 11
+\par       \tab \tab \tab \tab \tab \tab   4 - Opao, Mandaue
+\par \tab \tab \tab \tab \tab \tab   5 - Cansaga, Consolacion
+\par \tab \tab \tab \tab \tab \tab   6 - Poblacion, Consolacion
+\par \tab \tab \tab \tab \tab \tab   7 - Basak, Pardo
+\par \tab \tab \tab \tab \tab \tab   8 - Mantuyong, Mandaue
+\par \tab \tab \tab \tab \tab \tab   9 - Basak, Lapu-lapu
+\par \tab \tab \tab \tab \tab \tab  10 - T. Padilla
+\par \tab \tab \tab \tab \tab \tab  11 - San Roque, Talisay
+\par \tab \tab \tab \tab \tab \tab  12 - Poblacion, Lapu-lapu
+\par \tab \tab \tab \tab \tab \tab  13 - Labangon
+\par \tab \tab \tab \tab \tab \tab  14 - Basak, Mandaue
+\par \tab \tab \tab \tab \tab \tab  15 - Mojon, Talisay
+\par \tab \tab \tab \tab \tab \tab  16 - Casuntingan, Mandaue
+\par \tab \tab \tab \tab \tab \tab  17 - Lorega, San Miguel
+\par \tab \tab \tab \tab \tab \tab  18 - Jaguimit, Naga
+\par \tab \tab \tab \tab \tab \tab  19 - Danlag, Consolacion
+\par \tab \tab \tab \tab \tab \tab  20 - Balirong, Naga
+\par \tab \tab \tab \tab \tab \tab  21 - Panoypoy, Consolacion
+\par \tab \tab \tab \tab \tab \tab  22 - Cao-oy, Lapu-lapu
+\par \tab \tab \tab \tab \tab \tab  23 - Bairan, Naga
+\par \tab \tab \tab \tab \tab \tab  24 - Caohagan, Lapu-lapu
+\par \tab \tab \tab \tab \tab \tab  25 - Sta. Cruz, Liloan
+\par \tab \tab \tab \tab \tab \tab  26 - Budla-an
+\par \tab \tab \tab \tab \tab \tab  27 - Cantao-an, Naga
+\par \tab \tab \tab \tab \tab \tab  28 - Pulpogan, Consolacion
+\par \tab \tab \tab \tab \tab \tab  29 - Inoburan, Naga
+\par \tab \tab \tab \tab \tab \tab  30 - Cogon, Cordova
+\par \tab \tab \tab \tab \tab \tab  31 - Pamutan
+\par \tab \tab \tab \tab \tab \tab  32 - Tolo-tolo, Consolacion
+\par \tab \tab \tab \tab \tab \tab  33 - Poblacion Central, Naga
+\par \tab \tab \tab \tab \tab      \tab 134 - Bacayan, Cebu City
+\par \tab \tab \tab \tab \tab \tab 135 - Talamban, Cebu City
+\par \tab \tab \tab \tab \tab \tab 136 - Inayawan, Pardo
+\par \tab \tab \tab \tab \tab \tab 137 - Tabunok, Talisay
+\par \tab \tab \tab \tab \tab \tab 138 - Calajo-an, Minglanilla
+\par \tab \tab \tab \tab \tab \tab 139 - Colon, Naga
+\par }\pard \qj \fi720\li720\ri0\nowidctlpar\faauto\rin0\lin720\itap0 {  \tab  \tab  \tab              140 - Umapad, Mandaue
+\par }\pard \qj \li0\ri0\nowidctlpar\faauto\rin0\lin0\itap0 {\tab \tab \tab \tab \tab \tab 141 - Casili, Consolacion
+\par \tab \tab \tab \tab \tab \tab 142 - Tayud, Liloan
+\par \tab \tab \tab \tab \tab \tab 143 - Pajo, Lapu-lapu
+\par \tab \tab \tab \tab \tab \tab 144 - Punta Engano
+\par \tab \tab \tab \tab   \tab \tab  :
+\par ------------------------------------------------------------------------------------------------------------------------------------------
+\par ID3\tab \tab 3\tab CURRSTRA\tab \tab }{\ul CURRENT STRATUM}{
+\par 
+\par \tab \tab \tab \tab \tab \tab 1 - Urban
+\par \tab \tab \tab \tab \tab \tab 2 - Rural
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID4\tab \tab 4\tab BASEBRGY\tab \tab }{\ul BASELINE BARANGAY ID NUMBER}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Quiot, Pardo
+\par \tab \tab \tab \tab \tab \tab  2 - Pahina, San Nicolas
+\par \tab \tab \tab \tab \tab \tab  3 - Sambag II
+\par \tab \tab \tab \tab \tab \tab  4 - Opao, Mandaue
+\par \tab \tab \tab \tab \tab \tab  5 - Cansaga, Consolacion
+\par \tab \tab \tab \tab \tab \tab  6 - Poblacion, Consolacion
+\par \tab \tab \tab \tab \tab \tab  7 - Basak, Pardo
+\par \tab \tab \tab \tab \tab \tab  8 - Mantuyong, Mandaue
+\par \tab \tab \tab \tab \tab \tab  9 - Basak, Lapu-lapu
+\par \tab \tab \tab \tab \tab \tab 10 - T. Padilla
+\par \tab \tab \tab \tab \tab \tab 11 - San Roque, Talisay
+\par \tab \tab \tab \tab \tab \tab 12 - Poblacion, Lapu-lapu
+\par \tab \tab \tab \tab \tab \tab 13 - Labangon
+\par \tab \tab \tab \tab \tab \tab 14 - Basak, Mandaue
+\par \tab \tab \tab \tab \tab \tab 15 - Mojon, Talisay
+\par \tab \tab \tab \tab \tab \tab 16 - Casuntingan, Mandaue
+\par \tab \tab \tab \tab \tab \tab 17 - Lorega-San Miguel
+\par \tab \tab \tab \tab \tab \tab 18 - Jaguimit, Naga
+\par \tab \tab \tab \tab \tab \tab 19 - Danlag, Consolacion
+\par \tab \tab \tab \tab \tab \tab 20 - Balirong, Naga
+\par \tab \tab \tab \tab \tab \tab 21 - Panoypoy, Consolacion
+\par \tab \tab \tab \tab \tab \tab 22 - Cao-oy, Lapu-lapu
+\par \tab \tab \tab \tab \tab \tab 23 - Bairan, Naga
+\par \tab \tab \tab \tab \tab \tab 24 - Caohagan, Lapu-lapu
+\par \tab \tab \tab \tab \tab \tab 25 - Sta. Cruz, Liloan
+\par \tab \tab \tab \tab \tab \tab 26 - Budlaan
+\par \tab \tab \tab \tab \tab \tab 27 - Cantao-an, Naga
+\par \tab \tab \tab \tab \tab \tab 28 - Pulpogan, Consolacion
+\par \tab \tab \tab \tab \tab \tab 29 - Inoburan, Naga
+\par \tab \tab \tab \tab \tab \tab 30 - Cogon, Cordova
+\par \tab \tab \tab \tab \tab \tab 31 - Pamutan
+\par \tab \tab \tab \tab \tab \tab 32 - Tolo-tolo, Consolacion
+\par \tab \tab \tab \tab \tab \tab 33 - Poblacion Central, Naga
+\par ------------------------------------------------------------------------------------------------------------------------------------------- 
+\par 
+\par \page ID4\tab \tab 5\tab BASEHHNO\tab \tab }{\ul BASELINE HOUSEHOLD ID NUMBER}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1   - Household no. one
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 1000 - Household no. one thousand
+\par \tab \tab \tab \tab \tab \tab  :
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID4\tab \tab 6\tab BASEWMAN\tab \tab }{\ul BASELINE SAMPLE WOMAN ID NUMBER}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1   - Sample woman no. one
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 1000 - Sample woman no. one
+\par \tab \tab \tab \tab \tab \tab \tab   thousand
+\par \tab \tab \tab \tab \tab \tab  :
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID5\tab \tab 7\tab LCURBRGY\tab \tab }{\ul LAST CURRENT BARANGAY ID NUMBER}{
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS BASEBRGY)
+\par \tab \tab \tab \tab \tab      100     - Non Sample Barangay
+\par \tab \tab \tab \tab \tab \tab 134  
+\par \tab \tab \tab \tab \tab \tab :       > Control Barangays
+\par \tab \tab \tab \tab \tab \tab 144  
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID5\tab \tab 8\tab CURRHHNO\tab \tab }{\ul LAST CURRENT HOUSEHOLD ID NUMBER}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1   - Household no. one
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 1000 - Household no. one thousand
+\par \tab \tab \tab \tab \tab \tab  :
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID5\tab \tab 9\tab CURRWMAN\tab \tab }{\ul LAST CURRENT WOMAN ID NUMBER}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1    - Sample woman no. one
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 1000  - Sample woman no. one\tab \tab \tab \tab \tab \tab \tab    \tab \tab    thousand
+\par \tab \tab \tab \tab \tab \tab  :
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID6\tab \tab 10\tab BRGYID91\tab \tab }{\ul BARANGAY ID NUMBER IN 1991/92}{
+\par 
+\par \tab \tab \tab \tab \tab      (SAME CODE AS CURRBRGY)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID6\tab \tab 11\tab HHLDID91\tab \tab }{\ul HOUSEHOLD ID NUMBER IN 1991/92}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Household number one
+\par \tab \tab \tab \tab \tab \tab  :
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par ID6\tab \tab 12\tab WMANID91\tab \tab }{\ul WOMAN ID NUMBER IN 1991/92}{
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Household number one
+\par \tab \tab \tab \tab \tab \tab  :
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par ID7\tab \tab 13\tab STAT1991\tab \tab STATUS OF MOTHER AND CHILD AS OF
+\par \tab \tab \tab \tab \tab \tab 1991/92
+\par 
+\par \tab \tab \tab \tab \tab  \tab  1 - Mother and Child in household
+\par \tab \tab \tab \tab \tab  \tab  2 - Mother in household, Child
+\par \tab \tab \tab \tab \tab \tab      elsewhere
+\par \tab \tab \tab \tab \tab  \tab  3 - Mother in household, Child
+\par \tab \tab \tab \tab \tab \tab \tab dead
+\par \tab \tab \tab \tab \tab  \tab  4 - Mother in household, Child not
+\par \tab \tab \tab \tab \tab \tab      located
+\par \tab \tab \tab \tab \tab  \tab  5 - Child in household, Mother
+\par \tab \tab \tab \tab \tab \tab      elsewhere
+\par \tab \tab \tab \tab \tab  \tab  6 - Child in household, Mother
+\par \tab \tab \tab \tab \tab \tab \tab dead
+\par \tab \tab \tab \tab \tab  \tab  7 - Child in household, Mother not
+\par \tab \tab \tab \tab \tab \tab      located
+\par \tab \tab \tab \tab \tab  \tab  8 - Mother and Child not located
+\par \tab \tab \tab \tab \tab  \tab  9 - Mother and Child dead
+\par \tab \tab \tab \tab \tab      10 - Other (SPECIFY)
+\par \tab \tab \tab \tab \tab \tab 11 - Mother and Child elsewhere
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G2\tab \tab 14\tab PREGTERM\tab \tab TYPE OF PREGNANCY TERMINATION
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Live birth currently alive
+\par \tab \tab \tab \tab \tab \tab \tab (Code -9 from MODEATH to
+\par \tab \tab \tab \tab \tab \tab \tab CAUSEDTH; MOSTILLB to
+\par \tab \tab \tab \tab \tab \tab \tab DOCTOEND)
+\par \tab \tab \tab \tab \tab \tab  2 - Child born alive who died
+\par \tab \tab \tab \tab \tab \tab \tab (Code -9 from AGEALIVE to
+\par \tab \tab \tab \tab \tab \tab \tab LIVEHERE; MOSTILLB to
+\par \tab \tab \tab \tab \tab \tab \tab DOCTOEND; FATHERCH)
+\par \tab \tab \tab \tab \tab \tab  3 - Pregnancy that ended in 
+\par \tab \tab \tab \tab \tab \tab \tab Stillbirth    (Code -9 
+\par \tab \tab \tab \tab \tab \tab  4 - Pregnancy that   from
+\par \tab \tab \tab \tab \tab \tab \tab was lost before > SEXALIVE to
+\par \tab \tab \tab \tab \tab \tab \tab full term      LIVEHERE; 
+\par \tab \tab \tab \tab \tab \tab \tab MODEATH to CAUSDTH2;
+\par \tab \tab \tab \tab \tab \tab \tab BRSTFEED to AGESOLID;
+\par \tab \tab \tab \tab \tab \tab \tab FATHERCH)
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par G3\tab \tab 15\tab SEXALIVE\tab \tab SEX OF CHILD BORN ALIVE
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Male
+\par \tab \tab \tab \tab \tab \tab  2 - Female
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G4\tab \tab 16\tab MOBIRTH\tab \tab MONTH OF BIRTH CHILD BORN ALIVE
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - January
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 12 - December
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G5\tab \tab 17\tab YRBIRTH\tab \tab YEAR OF BIRTH CHILD BORN ALIVE
+\par 
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 60 - 1960
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 92 - 1992
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G6\tab \tab 18\tab AGEALIVE\tab \tab PRESENT AGE (YEARS) OF LIVING CHILD
+\par 
+\par \tab \tab \tab \tab \tab \tab  0 - Less than one year
+\par \tab \tab \tab \tab \tab \tab  1 - One year old
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 10 - Ten years old
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G7\tab \tab 19\tab LIVEHERE\tab \tab IS LIVING CHILD STAYING HERE WITH
+\par \tab \tab \tab \tab \tab \tab YOU OR ELSEWHERE?
+\par 
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Here
+\par \tab \tab \tab \tab \tab \tab  2 - Elsewhere
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page G10\tab \tab 20\tab MODEATH\tab \tab MONTH OF DEATH OF LIVE-BORN CHILD
+\par \tab \tab \tab \tab \tab \tab WHO DIED
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - January
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 12 - December
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G11\tab \tab 21\tab YRDEATH\tab \tab YEAR OF DEATH OF LIVE-BORN CHILD
+\par \tab \tab \tab \tab \tab \tab WHO DIED
+\par 
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 60 - 1960
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 92 - 1992
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G12\tab \tab 22\tab AGEDEATH\tab \tab AGE (IN YEARS) AT DEATH OF LIVE-\tab \tab \tab \tab \tab \tab BORN CHILD WHO DIED
+\par 
+\par \tab \tab \tab \tab \tab \tab  0 - Less than one year
+\par \tab \tab \tab \tab \tab \tab  1 - One year old
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 10 - Ten years old
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G13\tab \tab 23\tab CAUSDTH1\tab \tab CAUSE OF DEATH 1 OF LIVE-BORN CHILD
+\par \tab \tab \tab \tab \tab \tab WHO DIED (MOTHER'S OPINION)
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Diarrhea with or without
+\par \tab \tab \tab \tab \tab \tab \tab vomiting
+\par \tab \tab \tab \tab \tab \tab  2 - Diphtheria
+\par \tab \tab \tab \tab \tab \tab  3 - Whooping cough
+\par \tab \tab \tab \tab \tab \tab  4 - Tetanus
+\par \tab \tab \tab \tab \tab \tab  5 - Measles and other rashes e.g.,
+\par \tab \tab \tab \tab \tab \tab \tab roseola (dap), rubella/German
+\par \tab \tab \tab \tab \tab \tab \tab measles
+\par \tab \tab \tab \tab \tab \tab  6 - Dengue fever/H-fever
+\par \tab \tab \tab \tab \tab \tab  7 - Thrush (lu-as)
+\par \tab \tab \tab \tab \tab \tab  8 - Leukemia
+\par \tab \tab \tab \tab \tab \tab  9 - Malnutrition/nutritional
+\par \tab \tab \tab \tab \tab \tab \tab deficiences e.g., Kwashiorkor,
+\par \tab \tab \tab \tab \tab \tab \tab Marasmus, etc.
+\par \tab \tab \tab \tab \tab \tab 10 - Meningitis
+\par \tab \tab \tab \tab \tab \tab 11 - Heart disease e.g., rheumatic,
+\par \tab \tab \tab \tab \tab \tab 12 - Pneumonia and bronchopneumonia
+\par \tab \tab \tab \tab \tab \tab 13 - Disease of the digestive
+\par \tab \tab \tab \tab \tab \tab \tab system e.g., nalata ang tina-i
+\par \tab \tab \tab \tab \tab \tab 14 - Complications relatedd to
+\par \tab \tab \tab \tab \tab \tab \tab pregnancy e.g., hemorrhage in
+\par \tab \tab \tab \tab \tab \tab \tab early pregnancy, toxaemia of 
+\par \tab \tab \tab \tab \tab \tab \tab pregnancy, placenta previae
+\par \tab \tab \tab \tab \tab \tab 15 - Congenital anomalies
+\par \tab \tab \tab \tab \tab \tab 16 - Birth asphyxia and other
+\par \tab \tab \tab \tab \tab \tab \tab respiratory conditions
+\par \tab \tab \tab \tab \tab \tab 17 - Prematurity
+\par \tab \tab \tab \tab \tab \tab 18 - Complication occuring mainly 
+\par \tab \tab \tab \tab \tab \tab \tab in the course of labour and
+\par \tab \tab \tab \tab \tab \tab \tab delivery e.g., hemolytic
+\par \tab \tab \tab \tab \tab \tab \tab disease of the fetus or
+\par \tab \tab \tab \tab \tab \tab \tab newborn, "bughat"
+\par \tab \tab \tab \tab \tab \tab 19 - Fever/Febrile convulsion/Fever
+\par \tab \tab \tab \tab \tab \tab \tab of unknown origin
+\par \tab \tab \tab \tab \tab \tab 20 - Sudden infant death syndrome,
+\par \tab \tab \tab \tab \tab \tab \tab respiratory distress syndrome
+\par \tab \tab \tab \tab \tab \tab 21 - Accident e.g., transport
+\par \tab \tab \tab \tab \tab \tab \tab accident, accidental
+\par \tab \tab \tab \tab \tab \tab \tab poisoning, accidental fall
+\par \tab \tab \tab \tab \tab \tab 22 - "Gibarang, giungo, gibuyagan"
+\par \tab \tab \tab \tab \tab \tab 23 - Cough e.g., "gahi nga ubo,
+\par \tab \tab \tab \tab \tab \tab \tab grabe nga ubo"
+\par \tab \tab \tab \tab \tab \tab 24 - Rabies
+\par \tab \tab \tab \tab \tab \tab 25 - Typhoid fever
+\par \tab \tab \tab \tab \tab \tab 26 - Cancer
+\par \tab \tab \tab \tab \tab \tab 27 - Poliomyelitis
+\par \tab \tab \tab \tab \tab \tab 28 - Disease of the reproductive
+\par \tab \tab \tab \tab \tab \tab \tab system
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G13\tab \tab 24\tab CAUSDTH2\tab \tab CAUSE OF DEATH 2 OF LIVE-BORN CHILD
+\par \tab \tab \tab \tab \tab \tab WHO DIED (MOTHER'S OPINION)
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS CAUSDTH1)\tab \tab \tab  
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par 
+\par \page G16\tab \tab 25\tab MOSTILLB\tab \tab MONTH OF PREGNANCY TERMINATION OF
+\par \tab \tab \tab \tab \tab \tab NON-LIVE BIRTH
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - January
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 12 - December
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G17\tab \tab 26\tab YRSTILLB\tab \tab YEAR OF PREGNANCY TERMINATION OF
+\par \tab \tab \tab \tab \tab \tab NON-LIVE BIRTH
+\par 
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 60 - 1960
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 92 - 1992
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G18\tab \tab 27\tab BORNDEAD\tab \tab WAS CHILD BORN DEAD (STILLBIRTH) OR
+\par \tab \tab \tab \tab \tab \tab LOST BEFORE FULL TERM?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Born dead (Code -9 in
+\par \tab \tab \tab \tab \tab \tab \tab DOCTOEND; BRSTFEED to
+\par \tab \tab \tab \tab \tab \tab \tab AGESOLID)
+\par \tab \tab \tab \tab \tab \tab  2 - Lost before full term
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G19\tab \tab 28\tab DOCTOEND\tab \tab DID YOU OR A DOCTOR OR ANYONE ELSE
+\par \tab \tab \tab \tab \tab \tab DO ANYTHING TO TERMINATE PREGNANCY?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G46\tab \tab 29\tab FATHERCH\tab \tab WHICH OF YOUR HUSBAND IS THE FATHER
+\par \tab \tab \tab \tab \tab \tab OF THIS LIVING CHILD?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - First husband
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab  5 - Fifth husband
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA (R has been married only
+\par \tab \tab \tab \tab \tab \tab \tab once)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G25\tab \tab 30\tab BRSTFEED\tab \tab DID MOTHER EVER BREASTFEED THIS
+\par \tab \tab \tab \tab \tab \tab CHILD?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes
+\par \tab \tab \tab \tab \tab \tab  0 - No (Code -9 in DURABRST)
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G26\tab \tab 31\tab DURABRST\tab \tab DURATION IN DAYS MOTHER BREASTFEED
+\par \tab \tab \tab \tab \tab \tab THIS CHILD
+\par 
+\par \tab \tab \tab \tab \tab \tab  0  - Still breastfeeding (Code -9
+\par \tab \tab \tab \tab \tab \tab \tab  from NOTBRSTF to STOPBRF2)
+\par \tab \tab \tab \tab \tab \tab  1  - One day
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 30  - Thirty days
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 365 - Three hundred sixty five days
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -8  - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9  - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G27\tab \tab 32\tab NOTBRSTF\tab \tab REASON WHY MOTHER NEVER BREASTFEED
+\par \tab \tab \tab \tab \tab \tab THIS CHILD
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Infection of the breast e.g.,
+\par \tab \tab \tab \tab \tab \tab \tab cyst
+\par \tab \tab \tab \tab \tab \tab  2 - Inverted nipples
+\par \tab \tab \tab \tab \tab \tab  3 - Mother has/had tuberculosis
+\par \tab \tab \tab \tab \tab \tab  4 - Mother has/had other
+\par \tab \tab \tab \tab \tab \tab \tab illness(es) e.g. asthma, high
+\par \tab \tab \tab \tab \tab \tab \tab blood pressure
+\par \tab \tab \tab \tab \tab \tab  5 - Mother had emotional problem
+\par \tab \tab \tab \tab \tab \tab  6 - Mother is/was working or 
+\par \tab \tab \tab \tab \tab \tab \tab studying
+\par \tab \tab \tab \tab \tab \tab  7 - Mother's milk is not good
+\par \tab \tab \tab \tab \tab \tab  8 - Mother has little milk/has
+\par \tab \tab \tab \tab \tab \tab \tab no milk
+\par \tab \tab \tab \tab \tab \tab  9 - Mother had to leave child/
+\par \tab \tab \tab \tab \tab \tab \tab Mother and child were
+\par \tab \tab \tab \tab \tab \tab \tab separated
+\par \tab \tab \tab \tab \tab \tab 10 - Husband's objection/relatives'
+\par \tab \tab \tab \tab \tab \tab \tab objection/ was advised by
+\par \tab \tab \tab \tab \tab \tab \tab other persons including hilot
+\par \tab \tab \tab \tab \tab \tab \tab not to breastfeed child
+\par \tab \tab \tab \tab \tab \tab 11 - Child has a physical defect
+\par \tab \tab \tab \tab \tab \tab \tab e.g., harelip
+\par \tab \tab \tab \tab \tab \tab 12 - Child stayed in the hospital/
+\par \tab \tab \tab \tab \tab \tab \tab incubator/nursery for some 
+\par \tab \tab \tab \tab \tab \tab \tab time
+\par \tab \tab \tab \tab \tab \tab 13 - Child won't take breastmilk
+\par \tab \tab \tab \tab \tab \tab \tab or won't suck Mom's breast
+\par \tab \tab \tab \tab \tab \tab 14 - Child lived for few minutes
+\par \tab \tab \tab \tab \tab \tab \tab or few hours only
+\par \tab \tab \tab \tab \tab \tab 15 - "Gilokan/Lainan/Sakitan"
+\par \tab \tab \tab \tab \tab \tab 16 - Mother practised Family
+\par \tab \tab \tab \tab \tab \tab \tab Planning
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G28\tab \tab 33\tab STOPBRF1\tab \tab REASON 1 WHY MOTHER STOP
+\par \tab \tab \tab \tab \tab \tab BREASTFEEDING THIS CHILD
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Quality of breastmilk no
+\par \tab \tab \tab \tab \tab \tab \tab longer good (Milk was salty,
+\par \tab \tab \tab \tab \tab \tab \tab sour, dirty in color)
+\par \tab \tab \tab \tab \tab \tab  2 - Mother did not have enough
+\par \tab \tab \tab \tab \tab \tab \tab milk anymore to satisfy child
+\par \tab \tab \tab \tab \tab \tab  3 - Infant had diarrhea/watery
+\par \tab \tab \tab \tab \tab \tab \tab stool
+\par \tab \tab \tab \tab \tab \tab  4 - Infant had other illness(es)
+\par \tab \tab \tab \tab \tab \tab  5 - Mother was pregnant again
+\par \tab \tab \tab \tab \tab \tab  6 - Mother was working or studying
+\par \tab \tab \tab \tab \tab \tab  7 - Husband wanted wife to stop/
+\par \tab \tab \tab \tab \tab \tab \tab Relatives wanted Mom to
+\par \tab \tab \tab \tab \tab \tab \tab stop/Doctor's advice
+\par \tab \tab \tab \tab \tab \tab  8 - Mother(Child) had to leave
+\par \tab \tab \tab \tab \tab \tab \tab child(mother) for some time
+\par \tab \tab \tab \tab \tab \tab  9 - Mother had emotional problem
+\par \tab \tab \tab \tab \tab \tab 10 - Mother was sick
+\par \tab \tab \tab \tab \tab \tab 11 - To wean the child
+\par \tab \tab \tab \tab \tab \tab 12 - Child bites mother's nipple
+\par \tab \tab \tab \tab \tab \tab 13 - Mother practised Family
+\par \tab \tab \tab \tab \tab \tab \tab Planning
+\par \tab \tab \tab \tab \tab \tab 14 - Child died
+\par \tab \tab \tab \tab \tab \tab 15 - Child won't take breastmilk
+\par \tab \tab \tab \tab \tab \tab \tab anymore
+\par \tab \tab \tab \tab \tab \tab 16 - Infection of the breast
+\par \tab \tab \tab \tab \tab \tab 17 - Child is allergic to mother's
+\par \tab \tab \tab \tab \tab \tab \tab milk
+\par \tab \tab \tab \tab \tab \tab 18 - Mother gave birth to another
+\par \tab \tab \tab \tab \tab \tab \tab child
+\par \tab \tab \tab \tab \tab \tab 19 - Inverted nipples
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G28\tab \tab 34\tab STOPBRF2\tab \tab REASON 2 WHY MOTHER STOP
+\par \tab \tab \tab \tab \tab \tab BREASTFEEDING THIS CHILD
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS STOPBRF2)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G29\tab \tab 35\tab AGESUBMI\tab \tab AGE (IN MONTHS) OF CHILD WHEN
+\par \tab \tab \tab \tab \tab \tab MOTHER STARTED FEEDING BREASTMILK
+\par \tab \tab \tab \tab \tab \tab SUBSTITUTES (e.g., commercial
+\par \tab \tab \tab \tab \tab \tab milks, formula) ON A REGULAR BASIS
+\par 
+\par \tab \tab \tab \tab \tab \tab  0 - Less than one month/since
+\par \tab \tab \tab \tab \tab \tab \tab birth
+\par \tab \tab \tab \tab \tab \tab  1 - One month
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 12 - Twelve months
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -7 - Commercial milk was not
+\par \tab \tab \tab \tab \tab \tab \tab introduced 
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par G30\tab \tab 36\tab AGESOLID\tab \tab AGE (IN MONTHS) OF THIS CHILD WHEN
+\par \tab \tab \tab \tab \tab \tab MOTHER STARTED FEEDING SEMI-SOLID
+\par \tab \tab \tab \tab \tab \tab AND SOLID FOODS (including lugao)
+\par \tab \tab \tab \tab \tab \tab ON A REGULAR BASIS
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - One month
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab 12 - Twelve months
+\par \tab \tab \tab \tab \tab \tab  :
+\par \tab \tab \tab \tab \tab \tab -7 - Semi-solid/solid food not
+\par \tab \tab \tab \tab \tab \tab \tab introduced yet
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par H5\tab \tab 37\tab WORKPREG\tab \tab DID MOTHER WORK DURING THIS
+\par \tab \tab \tab \tab \tab \tab PREGNANCY?
+\par 
+\par \tab \tab \tab \tab \tab \tab  0 - No (Code -9 from DUPREGJ1 to
+\par \tab \tab \tab \tab \tab \tab \tab JOBDOIN2)
+\par \tab \tab \tab \tab \tab \tab  1 - Yes, during the first half
+\par \tab \tab \tab \tab \tab \tab  2 - Yes, during the last half
+\par \tab \tab \tab \tab \tab \tab  3 - Always
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par --------------------------------------------------------------------------------------------------------------------------------------------
+\par H6\tab \tab 38\tab DUPREGJ1\tab \tab TYPE OF JOB 1 MOTHER DO DURING THIS
+\par \tab \tab \tab \tab \tab \tab PREGNANCY
+\par 
+\par \tab \tab \tab \tab \tab \tab (SEE DETAILED OCCUPATION CODES)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par H6\tab \tab 39\tab DUPREGJ2\tab \tab TYPE OF JOB 2 MOTHER DO DURING THIS
+\par \tab \tab \tab \tab \tab \tab PREGNANCY
+\par 
+\par \tab \tab \tab \tab \tab \tab (SEE DETAILED OCCUPATION CODES)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par H7\tab \tab 40\tab JOBDOIN1\tab \tab HOW WAS MOTHER DOING JOB (1) MOST
+\par \tab \tab \tab \tab \tab \tab OF THE TIME DURING THIS PREGNANCY?
+\par \tab \tab \tab \tab \tab \tab  1 - Sitting down most of the time
+\par \tab \tab \tab \tab \tab \tab  2 - Standing up most of the time
+\par \tab \tab \tab \tab \tab \tab  3 - Squatting on ground
+\par \tab \tab \tab \tab \tab \tab  4 - Standing and bending
+\par \tab \tab \tab \tab \tab \tab  5 - Moving around
+\par \tab \tab \tab \tab \tab \tab  6 - Combination of codes 1 & 2
+\par \tab \tab \tab \tab \tab \tab  7 - Combination of codes 2 & 3
+\par \tab \tab \tab \tab \tab \tab  8 - Combination of codes 3 7 4
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par H7\tab \tab 41\tab JOBDOIN2\tab \tab HOW WAS MOTHER DOING JOB (2) MOST
+\par \tab \tab \tab \tab \tab \tab OF THE TIME DURING THIS PREGNANCY?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS JOBDOIN1)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par H8\tab \tab 42\tab WEEKWORK\tab \tab DID MOTHER WORK AFTER THIS
+\par \tab \tab \tab \tab \tab \tab PREGNANCY?
+\par 
+\par \tab \tab \tab \tab \tab \tab   0 - No (Code -9 from SAMEJOB to
+\par \tab \tab \tab \tab \tab \tab \tab DOINJOB2)
+\par \tab \tab \tab \tab \tab \tab .14 - Yes, one day after pregnancy
+\par \tab \tab \tab \tab \tab \tab \tab  termination
+\par \tab \tab \tab \tab \tab \tab   :
+\par \tab \tab \tab \tab \tab \tab   1 - Yes, one week after pregnancy
+\par \tab \tab \tab \tab \tab \tab \tab  termination
+\par \tab \tab \tab \tab \tab \tab   :
+\par \tab \tab \tab \tab \tab \tab  10 - Yes, ten weeks after
+\par \tab \tab \tab \tab \tab \tab \tab  pregnancy termination
+\par \tab \tab \tab \tab \tab \tab   :
+\par \tab \tab \tab \tab \tab \tab  -7 - Mother still on maternity
+\par \tab \tab \tab \tab \tab \tab \tab leave (Code -9 in SAMEJOB)
+\par \tab \tab \tab \tab \tab \tab  -8 - NR/DK (Code -8 in SAMEJOB)
+\par \tab \tab \tab \tab \tab \tab  -9 - NA (Code -9 in SAMEJOB)
+\par --------------------------------------------------------------------------------------------------------------------------------------------
+\par H9\tab \tab 43\tab SAMEJOB\tab \tab DID MOTHER DO THE SAME JOB AS
+\par \tab \tab \tab \tab \tab \tab BEFORE?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Yes (Code -9 from POPREGJ1 to
+\par \tab \tab \tab \tab \tab \tab \tab DOINJOB2)
+\par \tab \tab \tab \tab \tab \tab  0 - No
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK (Code -8 in POPREGJ1 to
+\par \tab \tab \tab \tab \tab \tab \tab DOINJOB2)
+\par \tab \tab \tab \tab \tab \tab -9 - NA (No job before)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par H10\tab \tab 44\tab POPREGJ1\tab \tab TYPE OF JOB 1 MOTHER DO AFTER THIS
+\par \tab \tab \tab \tab \tab \tab PREGNANCY
+\par 
+\par \tab \tab \tab \tab \tab \tab (SEE DETAILED OCCUPATION CODES)
+\par -----------------------------------------------------------------
+\par H10\tab \tab 45\tab POPREGJ2\tab \tab TYPE OF JOB 2 MOTHER DO AFTER THIS
+\par \tab \tab \tab \tab \tab \tab PREGNANCY
+\par 
+\par \tab \tab \tab \tab \tab \tab (SEE DETAILED OCCUPATION CODES)
+\par -----------------------------------------------------------------
+\par H11\tab \tab 46\tab DOINJOB1\tab \tab HOW WAS MOTHER DOING JOB (1) MOST
+\par \tab \tab \tab \tab \tab \tab OF THE TIME AFTER THIS PREGNANCY?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Sitting down most of the time
+\par \tab \tab \tab \tab \tab \tab  2 - Standing up most of the time
+\par \tab \tab \tab \tab \tab \tab  3 - Squatting on ground 
+\par \tab \tab \tab \tab \tab \tab  4 - Standing and bending
+\par \tab \tab \tab \tab \tab \tab  5 - Moving around
+\par \tab \tab \tab \tab \tab \tab  6 - Combination of codes 1 & 2
+\par \tab \tab \tab \tab \tab \tab  7 - Combination of codes 2 & 3
+\par \tab \tab \tab \tab \tab \tab  8 - Combination of codes 3 & 4
+\par \tab \tab \tab \tab \tab \tab -8 - NR/DK
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par H11\tab \tab 47\tab DOINJOB2\tab \tab HOW WAS MOTHER DOING JOB (2) MOST
+\par \tab \tab \tab \tab \tab \tab OF THE TIME AFTER THIS PREGNANCY?
+\par 
+\par \tab \tab \tab \tab \tab \tab (SAME CODE AS DOINJOB1)
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par H12\tab \tab 48\tab HWORPREG\tab \tab WHO DID THE MAIN SHARE OF THE
+\par \tab \tab \tab \tab \tab \tab HOUSEWORK DURING THIS PREGNANCY?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Mother herself
+\par \tab \tab \tab \tab \tab \tab  2 - Paid helper
+\par \tab \tab \tab \tab \tab \tab  3 - Other person
+\par \tab \tab \tab \tab \tab \tab -9 \endash  NA
+\par --------------------------------------------------------------------------------------------------------------------------------------------
+\par H12\tab \tab 49\tab HWORMO1\tab \tab WHO DID THE MAIN SHARE OF THE
+\par \tab \tab \tab \tab \tab \tab HOUSEWORK FIRST MONTH AFTER
+\par \tab \tab \tab \tab \tab \tab DELIVERY OF THIS PREGNANCY?
+\par 
+\par \tab \tab \tab \tab \tab \tab  1 - Mother herself
+\par \tab \tab \tab \tab \tab \tab  2 - Paid helper
+\par \tab \tab \tab \tab \tab \tab  3 - Other person
+\par \tab \tab \tab \tab \tab \tab -9 - NA
+\par -------------------------------------------------------------------------------------------------------------------------------------------
+\par }}
