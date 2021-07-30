@@ -95,3 +95,19 @@ left_join(sample_dates, iq_dates, by = c("basebrgy", "basewman")) %>%
   select(basebrgy, basewman, uncchdid, iq_intrvw_date_diff) 
 ```
 
+```{r}
+growth83_86_data %>% 
+  mutate(ic_mom_info = paste(basebrgy, basewman, sep = "_")) %>% 
+  mutate(age_weigh_month = time_length(days(age_at_weigh_days), unit = "months")) %>% 
+  select(ic_mom_info, sexchild, age_weigh_month, weightak_kg, heightcm) %>% 
+  top_n(200) %>% 
+  rename(id = ic_mom_info, 
+         sex = sexchild, 
+         agemons = age_weigh_month,
+         weight = weightak_kg, 
+         height = heightcm) %>% 
+  write_csv(here::here("Output/Data/CPR/sample_for_WHOcurves.csv"))
+  
+  
+```
+
