@@ -16,6 +16,7 @@ library(haven) # package for loading Stata's .dta files.
 library(sjlabelled) # good for renaming, changing classes, etc. in the piped dplyr mode
 library(zscorer)
 library(lubridate)
+library(anthro)
 here::here()
 # sets a placeholder 'here'. Then we refer to our files based on the *relative* not the *absolute* location.
 ```
@@ -51,15 +52,16 @@ growth83_86_data<-mbirth2 %>%
   mutate(intwdate = make_date(yearintw, mothintw, dayintw)) %>% 
   mutate(age_at_weigh_days = as.numeric(intwdate - birthdate)) %>%
   filter(outcome != "2" | outcome !="3" ) %>% 
-  filter(age_at_weigh_days < 30)
-
-  
-growth83_86_data <- addWGSR(data = growth83_86_data, sex = "sexchild", firstPart= "weightak_kg", secondPart = "age_at_weigh_days", index = "wfa")
-
-growth83_86_data <- addWGSR(data = growth83_86_data, sex = "sexchild", firstPart = "heightcm", secondPart = "age_at_weigh_days", index = "hfa")
+  filter(age_at_weigh_days < 30) %>% 
+  filter(age_at_weigh_days > 0)
 
 
+zscores83_86 <- with(growth83_86_data, anthro_zscores(
+  sex = sexchild, age = age_at_weigh_days, weight = weightak_kg, lenhei = heightcm))
+    
 growth83_86_data
+zscores83_86
+
 
 ```
 
@@ -87,8 +89,24 @@ ggplot(growth83_86_data, aes(x=hfaz))+
   geom_histogram(color = "white")+
   facet_wrap(~sexchild)
   
+summary_wfaz83_86 <- growth83_86_data %>%
+  group_by(sexchild) %>% 
+  drop_na() %>%
+  summarize(mean_wfaz83_86 = mean(wfaz),
+            std_dev_wfaz83_86 = sd(wfaz),
+            med_wfaz83_86 = median(wfaz),
+            count = n(), .groups = "keep")
+
+summary_hfaz83_86 <- growth83_86_data %>%
+  group_by(sexchild) %>% 
+  drop_na() %>%
+  summarize(mean_hfaz83_86 = mean(hfaz),
+            std_dev_hfaz83_86 = sd(hfaz),
+            med_hfaz83_86 = median(hfaz),
+            count = n(), .groups = "keep")
+
 summary_wfaz83_86
-summary_hfaz83_86
+summary_hfaz83_86 
 ```
 
 
@@ -97,24 +115,24 @@ summary_hfaz83_86
 child2 <-read_dta(here::here("Data/zip_child_91/child291.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
 
-childiq <-read_dta(here::here("Data/zip_child_91/iq91.dta")) %>% # note: here::here calls the here function
+hhold91 <-read_dta(here::here("Data/zip_household_91/hhold91.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
 
 dim(child2)
-dim(childiq)
+dim(hhold91)
 ```
 
 ```{r}
 growth2 <-child2 %>%
   select(basebrgy, basewman, basehhno, currbrgy, weghtndx, hightndx) 
 
-childiq_dates <-childiq %>% 
-  select(basebrgy, basewman,monthiq, dayiq, yeariq )
+intw_date91 <- hhold91 %>% 
+  select(basebrgy, basewman, mointr91, dyintrvw, yrintr91)
 
 birthdates_data <- growth83_86_data %>% 
   select(basebrgy, basewman, sexchild, birthdate)
 
-growth91_data <- left_join(growth2, childiq_dates, by = c("basebrgy", "basewman"))
+growth91_data <- left_join(growth2, intw_date91, by = c("basebrgy", "basewman"))
          
 growth91_data <- left_join(growth91_data, birthdates_data, by = c("basebrgy", "basewman"))
 
@@ -123,7 +141,7 @@ growth91_data
 
 ```{r}
 growth91_data<- growth91_data %>% 
-  mutate(intwdate2 = make_date(yeariq, monthiq, dayiq)) %>% 
+  mutate(intwdate2 = make_date( yrintr91, mointr91, dyintrvw)) %>% 
   mutate(age2_days = as.numeric(intwdate2 - birthdate))
 
 growth91_data <- addWGSR(data = growth91_data, sex = "sexchild", firstPart= "weghtndx", secondPart = "age2_days", index = "wfa")
