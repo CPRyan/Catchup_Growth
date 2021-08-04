@@ -12,16 +12,16 @@ We have data in dozens of files across decades of time. We need the data in the 
 # Load packages
 ```{r}
 library(tidyverse) # great collection of packages for data carpentry, modelling, and visualization
+library(readr)
 library(haven) # package for loading Stata's .dta files. 
 library(sjlabelled) # good for renaming, changing classes, etc. in the piped dplyr mode
 library(zscorer)
 library(lubridate)
 library(anthro)
+library(childsds)
 here::here()
 # sets a placeholder 'here'. Then we refer to our files based on the *relative* not the *absolute* location.
 ```
-
-
 
 # Load maternal/child data, birthdays, and early growth parameters
 
@@ -46,15 +46,16 @@ Find the variables that relate to growth in this dataset
 ```{r}
 
 growth83_86_data<-mbirth2 %>% 
-  select(basebrgy,hhldnubi, basewman, sexchild, outcome, daybirth, mnthbrth, yearbirt, dayintw, mothintw, yearintw, bbweight,weight1, weightak, weightgm, heightcm ) %>% 
+  select(basebrgy,hhldnubi, basewman, sexchild, outcome, daybirth, mnthbrth, yearbirt, dayintw, mothintw, yearintw, bbweight, weight1, weightak, weightgm, heightcm ) %>% 
   mutate(weightak_kg = (weightak/1000)) %>% 
   mutate(birthdate = make_date(yearbirt, mnthbrth, daybirth)) %>% 
   mutate(intwdate = make_date(yearintw, mothintw, dayintw)) %>% 
   mutate(age_at_weigh_days = as.numeric(intwdate - birthdate)) %>%
   filter(outcome != "2" | outcome !="3" ) %>% 
   filter(age_at_weigh_days < 30) %>% 
-  filter(age_at_weigh_days > 0)
-
+  filter(age_at_weigh_days > 0) %>% 
+  filter(weightak > 0) %>% 
+  filter(heightcm > 0)
 
 zscores83_86 <- with(growth83_86_data, anthro_zscores(
   sex = sexchild, age = age_at_weigh_days, weight = weightak_kg, lenhei = heightcm))
@@ -67,46 +68,39 @@ zscores83_86
 
 ```{r}
 ggplot(growth83_86_data, aes(x = weight1))+
-  geom_histogram(color = "white")
+  geom_histogram(color = "white")+
+  facet_wrap(~sexchild)
 
 ggplot(growth83_86_data, aes(x = weightak))+
-  geom_histogram(color = "white")
+  geom_histogram(color = "white")+
+  facet_wrap(~sexchild)
 
 ggplot(growth83_86_data, aes(x = weightgm))+
-  geom_histogram(color = "white")
+  geom_histogram(color = "white")+
+  facet_wrap(~sexchild)
   
 ggplot(growth83_86_data, aes(x=heightcm))+
-  geom_histogram(color = "white")
-```
-```{r}
-
-ggplot(growth83_86_data, aes(x=wfaz))+
   geom_histogram(color = "white")+
   facet_wrap(~sexchild)
 
-
-ggplot(growth83_86_data, aes(x=hfaz))+
-  geom_histogram(color = "white")+
-  facet_wrap(~sexchild)
-  
-summary_wfaz83_86 <- growth83_86_data %>%
+summary_weight83_86 <- growth83_86_data %>%
   group_by(sexchild) %>% 
   drop_na() %>%
-  summarize(mean_wfaz83_86 = mean(wfaz),
-            std_dev_wfaz83_86 = sd(wfaz),
-            med_wfaz83_86 = median(wfaz),
+  summarize(mean_weight83_86 = mean(weightak),
+            std_dev_weight83_86 = sd(weightak),
+            med_weight83_86 = median(weightak),
             count = n(), .groups = "keep")
 
-summary_hfaz83_86 <- growth83_86_data %>%
+summary_height83_86 <- growth83_86_data %>%
   group_by(sexchild) %>% 
   drop_na() %>%
-  summarize(mean_hfaz83_86 = mean(hfaz),
-            std_dev_hfaz83_86 = sd(hfaz),
-            med_hfaz83_86 = median(hfaz),
+  summarize(mean_height83_86 = mean(heightcm),
+            std_dev_height83_86 = sd(heightcm),
+            med_height83_86 = median(heightcm),
             count = n(), .groups = "keep")
 
-summary_wfaz83_86
-summary_hfaz83_86 
+summary_weight83_86
+summary_height83_86 
 ```
 
 
@@ -117,6 +111,11 @@ child2 <-read_dta(here::here("Data/zip_child_91/child291.dta")) %>% # note: here
 
 hhold91 <-read_dta(here::here("Data/zip_household_91/hhold91.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
+
+who2007_boys<- read_csv(here::here("Data/hfa-boys-z-who-2007-exp.csv"))
+
+who2007_girls <- read_csv(here::here("Data/hfa-girls-z-who-2007-exp.csv"))
+
 
 dim(child2)
 dim(hhold91)
@@ -140,43 +139,48 @@ growth91_data
 ```
 
 ```{r}
+
 growth91_data<- growth91_data %>% 
   mutate(intwdate2 = make_date( yrintr91, mointr91, dyintrvw)) %>% 
-  mutate(age2_days = as.numeric(intwdate2 - birthdate))
+  mutate(age2_days = as.numeric(intwdate2 - birthdate)) %>% 
+  filter(age2_days > 0) %>% 
+  filter(weghtndx > 0) %>% 
+  filter(hightndx > 0)
 
-growth91_data <- addWGSR(data = growth91_data, sex = "sexchild", firstPart= "weghtndx", secondPart = "age2_days", index = "wfa")
 
-growth91_data <- addWGSR(data = growth91_data, sex = "sexchild", firstPart = "hightndx", secondPart = "age2_days", index = "hfa")
+zscores91 <- with(growth91_data, anthro_zscores(
+  sex = sexchild, age = age2_days, weight = weghtndx, lenhei = hightndx))
 
 growth91_data
+zscores91
 ```
 ```{r}
-ggplot(growth91_data, aes(x=wfaz))+
+ggplot(growth91_data, aes(x= weghtndx))+
   geom_histogram(color = "white")+
   facet_wrap(~sexchild)
 
-ggplot(growth91_data, aes(x=hfaz))+
+ggplot(growth91_data, aes(x=hightndx))+
   geom_histogram(color = "white")+
   facet_wrap(~sexchild)
 
-summary_wfaz91 <- growth91_data %>%
+summary_weight91 <- growth91_data %>%
   group_by(sexchild) %>% 
   drop_na() %>%
-  summarize(mean_wfaz91 = mean(wfaz),
-            std_dev_wfaz91 = sd(wfaz),
-            med_wfaz91 = median(wfaz),
+  summarize(mean_weight91 = mean(weghtndx),
+            std_dev_weight91 = sd(weghtndx),
+            med_weight91 = median(weghtndx),
             count = n(), .groups = "keep")
 
-summary_hfaz91 <- growth91_data %>%
+summary_height91 <- growth91_data %>%
   group_by(sexchild) %>% 
-  drop_na() %>% 
-  summarize(mean_hfaz91 = mean(hfaz),
-            std_dev_hfaz91 = sd(hfaz),
-            med_hfaz91 = median(hfaz),
+  drop_na() %>%
+  summarize(mean_height91 = mean(hightndx),
+            std_dev_height91 = sd(hightndx),
+            med_height91 = median(hightndx),
             count = n(), .groups = "keep")
 
-summary_hfaz91
-summary_wfaz91
+summary_weight91
+summary_height91
 ```
 
 #Load and inspect 94 data
@@ -191,6 +195,27 @@ dim(cdietiq)
 names(cdietiq)
 ```
 
+```{r}
+# write a function to calculate z-scores from WHO tables
+
+# need a column of rounded ages in months
+
+calcz <- function(age,val,whotab=who2007_girls){
+  i <- which(whotab$Month == age)
+  z <- (val - whotab[i,"M"])/whotab[i,"StDev"]
+  return(z)
+}
+
+calcz(age=102,val=115)
+whotab <- who2007_girls
+
+zzz <- rep(0,dim(growth91_data)[1])
+for(j in 1:dim(growth91_data)[1]){
+  zzz[j] <- calcz(age=whotab[j,"Month"], val=whotab[j,"M"],whotab=whotab)
+}
+zzz
+```
+
 
 ```{r}
 growth94_data <- cdietiq %>% 
@@ -201,17 +226,68 @@ growth94_data <- left_join(growth94_data, birthdates_data, by = c("basebrgy", "b
 
 growth94_data <- growth94_data %>% 
   mutate(intwdate3 = make_date(yrintrv2, mointrv2, dyintrv2)) %>% 
-  mutate(age3_days = as.numeric(intwdate3 - birthdate))
+  mutate(age3_days = as.numeric(intwdate3 - birthdate)) %>% 
+  mutate(age3_years = as.numeric(intwdate3 - birthdate)/365.25) %>% 
+  filter(age3_days > 0) %>% 
+  filter(weghtnd2 > 0) %>% 
+  filter(hightnd2 > 0) %>% 
+  drop_na() 
+  
 
-growth94_data <- addWGSR(data = growth94_data, sex = "sexchild", firstPart= "weghtnd2", secondPart = "age3_days", index = "wfa")
 
-growth94_data <- addWGSR(data = growth94_data, sex = "sexchild", firstPart = "hightnd2", secondPart = "age3_days", index = "hfa")
+
+
+
+
+
+ zscores_94 <- weightZ_94 = sds(value = growth94_data$weghtnd2,
+                          age =   growth94_data$age3_years,
+                          sex =   growth94_data$sexchild, male = "1", female = "2",
+                          ref =   who.ref,
+                          item =  "weight",
+                          type =  "SDS"
+                           )
+ 
 
 growth94_data
 
   
 ```
 
+```{r} 
+
+ggplot(growth94_data, aes(x=weghtnd2))+
+  geom_histogram(color = "white")+
+  facet_wrap(~sexchild)
+
+ggplot(growth94_data, aes(x=hightnd2))+
+  geom_histogram(color = "white")+
+  facet_wrap(~sexchild)
+
+summary_weight94 <- growth94_data %>%
+  group_by(sexchild) %>% 
+  drop_na() %>%
+  summarize(mean_weight94 = mean(weghtnd2),
+            std_dev_weight94 = sd(weghtnd2),
+            med_weight94 = median(weghtnd2),
+            max = max(weghtnd2),
+            min = min(weghtnd2),
+            count = n(), .groups = "keep")
+
+summary_height94 <- growth94_data %>%
+  group_by(sexchild) %>% 
+  drop_na() %>%
+  summarize(mean_height94 = mean(hightnd2),
+            std_dev_height94 = sd(hightnd2),
+            med_height94 = median(hightnd2),
+            max = max(hightnd2),
+            min = min(hightnd2),
+            count = n(), .groups = "keep")
+
+summary_weight94
+summary_height94
+
+```
 
 
 
