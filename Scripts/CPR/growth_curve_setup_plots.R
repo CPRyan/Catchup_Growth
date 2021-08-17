@@ -63,10 +63,10 @@ mlong_anthro_bday %>%
 # Boxplots by age group
 mlong_anthro_bday %>% 
   filter(!is.na(sexchild)) %>%
-  mutate(growth_accel_bin = cut_interval(growth_accel, n = 5)) %>% 
+  mutate(growth_accel_bin = cut_interval(growth_accel, n = 8)) %>% 
   ggplot(., aes(x = age_inf_meas, y = height, group = basebrgy_basewman, col = growth_accel_bin))+
   geom_point(alpha = 0.2)+
-  geom_line(alpha = 0.1)+
+  geom_line(alpha = 0.4)+
  # scale_color_manual(values = c("black", "brown", "blue", "green", "red", "white"))+
   facet_wrap(.~sexchild)+
   scale_color_brewer(palette = 3)+

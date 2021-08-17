@@ -98,6 +98,17 @@ child2 <-read_dta(here::here("Data/zip_child_91/child291.dta")) %>% # note: here
 childiq <-read_dta(here::here("Data/zip_child_91/iq91.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
 
+<<<<<<< HEAD
+=======
+getwd()
+#who2007_boys<- read_csv(here::here("Data/hfa-boys-z-who-2007-exp.csv"))
+who2007_boys <- read.csv("../Data/hfa-boys-z-who-2007-exp.csv",header=TRUE)
+who2007_boys
+
+#who2007_girls <- read_csv(here::here("Data/hfa-girls-z-who-2007-exp.csv"))
+
+
+>>>>>>> 91e3e4b26e026fdb8f135bb2eb4fa099e84bbda2
 dim(child2)
 dim(childiq)
 ```
@@ -129,9 +140,166 @@ growth91_data <- addWGSR(data = growth91_data, sex = "sexchild", firstPart= "weg
 growth91_data <- addWGSR(data = growth91_data, sex = "sexchild", firstPart = "hightndx", secondPart = "age2_days", index = "hfa")
 
 growth91_data
+<<<<<<< HEAD
 ```
 ```{r}
 ggplot(growth91_data, aes(x=wfaz))+
+=======
+zscores91
+```
+```{r}
+ggplot(growth91_data, aes(x= weghtndx))+
+  geom_histogram(color = "white")+
+  facet_wrap(~sexchild)
+
+ggplot(growth91_data, aes(x=hightndx))+
+  geom_histogram(color = "white")+
+  facet_wrap(~sexchild)
+
+summary_weight91 <- growth91_data %>%
+  group_by(sexchild) %>% 
+  drop_na() %>%
+  summarize(mean_weight91 = mean(weghtndx),
+            std_dev_weight91 = sd(weghtndx),
+            med_weight91 = median(weghtndx),
+            count = n(), .groups = "keep")
+
+summary_height91 <- growth91_data %>%
+  group_by(sexchild) %>% 
+  drop_na() %>%
+  summarize(mean_height91 = mean(hightndx),
+            std_dev_height91 = sd(hightndx),
+            med_height91 = median(hightndx),
+            count = n(), .groups = "keep")
+
+summary_weight91
+summary_height91
+```
+
+#Load and inspect 94 data
+
+
+```{r}
+
+cdietiq <-read_dta(here::here("Data/zip_child_94 2/cdietiq.dta")) %>% # note: here::here calls the here function
+  rename_all(tolower)
+
+dim(cdietiq)
+names(cdietiq)
+```
+
+```{r}
+# write a function to calculate z-scores from WHO tables
+
+# need a column of rounded ages in months
+
+calcz <- function(age,val,whotab=who2007_girls){
+  age <- round(age)
+  i <- which(whotab$Month == age)
+  z <- (val - as.numeric(whotab[i,"M"]))/as.numeric(whotab[i,"StDev"])
+  return(z)
+}
+
+calcz(age=102,val=115)
+whotab <- who2007_girls
+
+i <- 10
+as.numeric(whotab[i,"StDev"])
+
+zzz <- rep(0,dim(growth94_data)[1])
+for(j in 1:dim(growth94_data)[1]){
+  zzz[j] <- calcz(age=whotab[j,"Month"], val=whotab[j,"M"],whotab=whotab)
+}
+
+```
+
+<!---
+probably want to create a single table with 
+tab <- data.frame(age=Month,boysval,boyssd,girlsval,girlssd)
+c <- ifelse(sex==1,2,4)
+then the z calc would be
+z <- (val - tab[i,c])/tab[i,c+1]
+
+so this:
+
+calcz <- function(age,val,sex,whotab){
+  age <- round(age)
+  c <- ifelse(sex==1,2,4)
+  i <- which(whotab$age == age)
+  z <- (val - tab[i,c])/tab[i,c+1]
+  return(z)
+}
+-->
+
+```{r}
+growth94_data <- cdietiq %>% 
+  select(basebrgy, basehhn2,basewman,chldwma2,chldcode, mointrv2, dyintrv2, yrintrv2, weghtnd2, hightnd2) %>% 
+  filter(chldcode == "1")
+
+growth94_data <- left_join(growth94_data, birthdates_data, by = c("basebrgy", "basewman")) 
+
+growth94_data <- growth94_data %>% 
+  mutate(intwdate3 = make_date(yrintrv2, mointrv2, dyintrv2)) %>% 
+  mutate(age3_days = as.numeric(intwdate3 - birthdate)) %>% 
+  mutate(age3_years = as.numeric(intwdate3 - birthdate)/365.25) %>% 
+  mutate(age3_months = age3_years*12) %>% 
+  filter(age3_days > 0) %>% 
+  filter(weghtnd2 > 0) %>% 
+  filter(hightnd2 > 0) %>% 
+  drop_na() 
+  
+height_94_boys <- growth94_data %>%
+  filter(sexchild == "1") %>% 
+  mutate(heightz_94 = calcz(age= age3_months, val= hightnd2, whotab=who2007_boys))
+  
+rlang::last_error()
+
+growth94_data
+growth94_data$hightnd2
+max(who2007_boys$Month)
+max(growth94_data$age3_months)
+
+# this works
+with(growth94_data, calcz(age=age3_months[1],val=hightnd2[1], whotab=who2007_boys))
+##
+height_94_boys <- growth94_data %>%
+  filter(sexchild == "1")
+
+dim(height_94_boys)
+# [1] 88 16
+zzz <- rep(0,88)
+boy_height <- as.vector(height_94_boys$hightnd2)
+boy_age <- as.vector(height_94_boys$age3_months)
+boy_height
+boy_age
+
+for(j in 1:88) zzz[j] <- calcz(age=boy_age[j], val=boy_height[j], whotab=who2007_boys)
+length(zzz)
+zzz
+
+
+## this does weird things. First 88 are fine, but then there are lots of zeros (hundreds).
+for(j in 1:88) zzz[j] <- calcz(age=height_94_boys$age3_months[j],val=height_94_boys$hightnd2[j], whotab=who2007_boys)
+unlist(zzz)
+
+ zscores_94 <- weightZ_94 = sds(value = growth94_data$weghtnd2,
+                          age =   growth94_data$age3_years,
+                          sex =   growth94_data$sexchild, male = "1", female = "2",
+                          ref =   who.ref,
+                          item =  "weight",
+                          type =  "SDS"
+                           )
+ 
+
+growth94_data
+
+  
+```
+
+```{r} 
+
+ggplot(growth94_data, aes(x=weghtnd2))+
+>>>>>>> 91e3e4b26e026fdb8f135bb2eb4fa099e84bbda2
   geom_histogram(color = "white")+
   facet_wrap(~sexchild)
 
