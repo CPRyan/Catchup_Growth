@@ -46,3 +46,42 @@ turn_to_time <- function(x) {
 }
 
 
+
+# Function to get z-scores for boys, girls, different years using left_join merging approach
+# 
+# 
+who_z <- function(clhns_data, who_data, sex_variable, z_variable) {
+  growth91_dataz <-left_join(clhns_data %>% 
+    filter(sexchild == sex_variable) %>% 
+    mutate(age_mo_91_rounded = round(age_mo_91)), 
+  who_data, 
+  by = c("age_mo_91_rounded" = "Month"))
+
+growth91_dataz %>% 
+  mutate(new_z = (z_variable - M)/StDev) %>% 
+  select(new_z)
+}
+
+
+
+
+
+
+# Test it
+who_z(clhns_data = growth91_data, 
+      who_data = who2007_girls, 
+      sex_variable = 2, 
+      z_variable = hightndx)
+
+
+
+
+growth91_dataz <-left_join(growth91_data %>%
+                             filter(sexchild == 2) %>% 
+                             mutate(age_mo_91 = round(age_mo_91)), 
+                           who2007_girls, 
+                           by = c("age_mo_91" = "Month"))
+
+
+growth91_dataz %>% 
+  mutate(heightz = (hightndx - M)/StDev)

@@ -111,3 +111,215 @@ growth83_86_data %>%
   
 ```
 
+# Testing code for calculating z-scores in 91 from Milan's data
+Starting just after calculating growth91_data
+
+
+```{r}
+growth2 <-child2 %>%
+  select(basebrgy, basewman, basehhno, currbrgy, weghtndx, hightndx) 
+
+intw_date91 <- hhold91 %>% 
+  select(basebrgy, basewman, mointr91, dyintrvw, yrintr91)
+
+birthdates_data <- growth83_86_data %>% 
+  select(basebrgy, basewman, sexchild, birthdate)
+
+growth91_data <- left_join(growth2, intw_date91, by = c("basebrgy", "basewman"))
+         
+growth91_data <- left_join(growth91_data, birthdates_data, by = c("basebrgy", "basewman"))
+
+growth91_data
+```
+
+
+```{r}
+growth91_data<- growth91_data %>% 
+  mutate(intwdate2 = make_date( yrintr91 + 1900, mointr91, dyintrvw)) %>%
+  mutate(birthdate = birthdate + years(1900)) %>% 
+  mutate(age2_days = intwdate2 - birthdate) %>% 
+  filter(age2_days > 0) %>% 
+  filter(weghtndx > 0) %>% 
+  filter(hightndx > 0)
+
+
+zscores91 <- with(growth91_data, anthro_zscores(
+  sex = sexchild, age = sjlabelled::as_numeric(age2_days), weight = weghtndx, lenhei = hightndx))
+
+growth91_data
+zscores91
+# Ok, doesn't calculate as these children are too old. 
+
+```
+
+# CPR attempt at function to calculate z-scores (Based on above)
+
+```{r}
+
+cdietiq <-read_dta(here::here("Data/zip_child_94 2/cdietiq.dta")) %>% # note: here::here calls the here function
+  rename_all(tolower)
+
+dim(cdietiq)
+names(cdietiq)
+```
+
+
+
+```{r}
+# The calc function seems to work well, given a number for age, a number for weight. 
+# There is no 'sex' variable, (although that's wrapped in whotab). 
+
+# I'll first need the data in the right format. Then the function
+
+# Make a months unit for age
+growth91_data <-growth91_data %>% 
+  mutate(age_mo_91 = time_length(age2_days, unit = "months"))
+
+
+# Make a function
+calcz <- function(age,val,whotab=who2007_girls){
+  i <- which(whotab$Month == age)
+  z <- (val - whotab[i,"M"])/whotab[i,"StDev"]
+  return(z)
+}
+
+# Test function
+calcz(age = round(100.86242), val =125.0 , whotab =  who2007_girls)
+# OK works but I need to round the months.
+
+
+
+
+zzz <- rep(0,nrow(growth91_data))
+
+for(j in 1:nrow(growth91_data)){
+  zzz[j] <- calcz(age=round(growth91_data[j,"age_mo_91"]),
+                  val=growth91_data[j,"hightndx"],
+                  whotab=who2007_girls)
+}
+
+
+
+```
+# Can't get that working. Try the next function
+
+
+```{r}
+growth94_data <- cdietiq %>% 
+  select(basebrgy, basehhn2,basewman,chldwma2,chldcode, mointrv2, dyintrv2, yrintrv2, weghtnd2, hightnd2) %>% 
+  filter(chldcode == "1")
+
+growth94_data <- left_join(growth94_data, birthdates_data, by = c("basebrgy", "basewman")) 
+
+growth94_data <- growth94_data %>% 
+  mutate(intwdate3 = make_date(yrintrv2, mointrv2, dyintrv2)) %>% 
+  mutate(age3_days = as.numeric(intwdate3 - birthdate)) %>% 
+  mutate(age3_years = as.numeric(intwdate3 - birthdate)/365.25) %>% 
+  filter(age3_days > 0) %>% 
+  filter(weghtnd2 > 0) %>% 
+  filter(hightnd2 > 0) %>% 
+  drop_na() 
+  
+
+
+
+growth_subset <-growth94_data[1:10,] %>% remove_all_labels() %>% zap_formats()
+
+
+
+ zscores_94 <- sds(value = growth_subset$weghtnd2,
+                          age =   growth_subset$age3_years,
+                          sex =   as_character(growth_subset$sexchild), male = "1", female = "2",
+                          ref =   who.ref,
+                          item =  "weight",
+                          type =  "SDS"
+                           )
+ 
+
+growth94_data
+# Nope. 
+
+# The example data
+x <- data.frame(height=c(50,100,60,54),
+                sex=c("m","f","f","m"),
+                age=c(0,2.9,0.6,0.2))
+sds(value = x$height, age = x$age, sex = x$sex, male = "m", female = "f",
+    ref = who.ref, item = "height")
+# Ok, works. 
+# 
+# 
+
+# Try a subset
+growth_subset2 <-growth_subset %>% 
+  select(weghtnd2, sexchild, age3_years) %>% 
+  mutate(sexchild = as_character(sexchild))
+
+# Only works when I reduce the age a lot. Seems like 5 years old is the oldest.
+sds(value = growth_subset2$weghtnd2,
+    age =   c(2, 3, 3, 2, 3, 2, 2, 3, 3, 3),# Made up numbers
+    sex =   growth_subset2$sexchild, male = "1", female = "2",
+    ref =   who.ref,
+    item =  "weight",
+    type =  "SDS")
+
+
+
+sds(value = growth_subset2$weghtnd2,
+    age =   growth_subset2$age3_years,
+    sex =   growth_subset2$sexchild, male = "1", female = "2",
+    ref =   japanese.ref,
+    item =  "weight",
+    type =  "SDS")
+# Ok also works for kro.ref (older kids?)
+
+```
+
+Ok, so the function works if I include lower ages. What is the WHO reference data
+```{r}
+who.ref
+# I see. The only older age is for dataset 6, which is [1] "sfsubscap - subscapular skinfold (mm)"
+
+```
+# Creating Z-score using WHO reference by merging in matching age, M, sd, and calculating myself. 
+```{r}
+# Make a months unit for age
+growth91_data <-growth91_data %>% 
+  mutate(age_mo_91 = time_length(age2_days, unit = "months"))
+
+
+# Make a function
+# calcz <- function(age,val,whotab=who2007_girls){
+#   i <- which(whotab$Month == age)
+#   z <- (val - whotab[i,"M"])/whotab[i,"StDev"]
+#   return(z)
+# }
+
+growth91_dataz <-left_join(growth91_data %>%
+            filter(sexchild == 2) %>% 
+            mutate(age_mo_91 = round(age_mo_91)), 
+          who2007_girls, 
+          by = c("age_mo_91" = "Month"))
+
+
+growth91_dataz %>% 
+  mutate(heightz = (hightndx - M)/StDev)
+```
+
+
+```{r}
+mlong_anthro <-mlong %>% 
+  select(basebrgy, basewman, weight, height, yearms, mntham, daymes) %>% 
+  mutate(date_inf_meas = lubridate::make_date(year = yearms+1900,
+                                              month = mntham,
+                                              day = daymes)) %>% 
+  arrange(desc(basewman, basebrgy, date_inf_meas))
+```
+
+
+```{r}
+mlong_anthro %>% 
+  ggplot(., aes(x = date_inf_meas, y = height))+
+  geom_point(alpha = 0.2)+
+  geom_line(alpha = 0.2)
+```
+
