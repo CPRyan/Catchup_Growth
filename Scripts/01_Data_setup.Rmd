@@ -56,7 +56,7 @@ view(mlong)
 ```
 
 Find the variables that relate to growth in this dataset
-```{r}
+```{r, cache=TRUE}
 
 growth83_86_birthdata<-mbirth2 %>% 
   select(basebrgy,hhldnubi, basewman, sexchild, outcome, daybirth, mnthbrth, yearbirt, dayintw, mothintw, yearintw, bbweight, weight1, weightak, weightgm, heightcm )
@@ -79,7 +79,7 @@ growth83_86_birthdata <- addWGSR(data = growth83_86_birthdata, sex = "sexchild",
 
 ```
 
-```{r}
+```{r, cache=TRUE}
  mlong_anthro <-mlong %>% 
   select(basebrgy, basewman, weight, height, yearms, mntham, daymes) %>% 
   mutate(date_inf_meas = lubridate::make_date(year = yearms,
@@ -180,7 +180,7 @@ growth91_data <- left_join(growth91_data, birthdates_data, by = c("basebrgy", "b
 growth91_data
 ```
 
-```{r}
+```{r, cache=TRUE}
 
 growth91_data<- growth91_data %>% 
   mutate(intwdate91 = make_date( yrintr91, mointr91, dyintrvw)) %>% 
@@ -266,51 +266,6 @@ growth94_data <- growth94_data %>%
   filter(hightnd2 > 0) %>% 
   drop_na() 
   
-height_94_boys <- growth94_data %>%
-  filter(sexchild == "1") %>% 
-  mutate(heightz_94 = calcz(age= age3_months, val= hightnd2, whotab=who2007_boys))
-  
-rlang::last_error()
-
-growth94_data
-growth94_data$hightnd2
-max(who2007_boys$Month)
-max(growth94_data$age3_months)
-
-# this works
-with(growth94_data, calcz(age=age3_months[1],val=hightnd2[1], whotab=who2007_boys))
-##
-height_94_boys <- growth94_data %>%
-  filter(sexchild == "1")
-
-dim(height_94_boys)
-# [1] 88 16
-zzz <- rep(0,88)
-boy_height <- as.vector(height_94_boys$hightnd2)
-boy_age <- as.vector(height_94_boys$age3_months)
-boy_height
-boy_age
-
-for(j in 1:88) zzz[j] <- calcz(age=boy_age[j], val=boy_height[j], whotab=who2007_boys)
-length(zzz)
-zzz
-
-
-## this does weird things. First 88 are fine, but then there are lots of zeros (hundreds).
-for(j in 1:88) zzz[j] <- calcz(age=height_94_boys$age3_months[j],val=height_94_boys$hightnd2[j], whotab=who2007_boys)
-unlist(zzz)
-
- zscores_94 <- weightZ_94 = sds(value = growth94_data$weghtnd2,
-                          age =   growth94_data$age3_years,
-                          sex =   growth94_data$sexchild, male = "1", female = "2",
-                          ref =   who.ref,
-                          item =  "weight",
-                          type =  "SDS"
-                           )
- 
-
-growth94_data
-
   
 ```
 
@@ -350,6 +305,23 @@ summary_height94
 ```
 
 
+#zscore analysis
+
+```{r, cache=TRUE }
+zscore_data <- left_join(growth83_86_data, growth91_data, by = c("basebrgy", "basewman", "sexchild")) 
+
+zscore_wfa<- zscore_data %>% 
+  select(basebrgy, basewman, sexchild, age_days_birthweigh, age_days_infweigh, age91_days, wfaz_birth, wfaz_inf, wfaz_91)
+
+zscore_hfa <-zscore_data %>% 
+  select(basebrgy, basewman, sexchild, age_days_birthweigh, age_days_infweigh, age91_days, hfaz_birth, hfaz_inf, hfaz_91)
+
+zscore_wfa
+zscore_hfa
+
+slope <- function(x0,x1,y0,y1) (y1-y0)/(x1-x0)
+slope(zscore_hfa[1,4],zscore_hfa[1,5],zscore_hfa[1,7],zscore_hfa[1,8])
+```
 
 
 
