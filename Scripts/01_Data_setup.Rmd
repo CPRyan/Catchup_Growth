@@ -98,8 +98,7 @@ child2 <-read_dta(here::here("Data/zip_child_91/child291.dta")) %>% # note: here
 childiq <-read_dta(here::here("Data/zip_child_91/iq91.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
 
-<<<<<<< HEAD
-=======
+
 getwd()
 #who2007_boys<- read_csv(here::here("Data/hfa-boys-z-who-2007-exp.csv"))
 who2007_boys <- read.csv("../Data/hfa-boys-z-who-2007-exp.csv",header=TRUE)
@@ -107,8 +106,6 @@ who2007_boys
 
 #who2007_girls <- read_csv(here::here("Data/hfa-girls-z-who-2007-exp.csv"))
 
-
->>>>>>> 91e3e4b26e026fdb8f135bb2eb4fa099e84bbda2
 dim(child2)
 dim(childiq)
 ```
