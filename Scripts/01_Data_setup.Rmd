@@ -28,10 +28,10 @@ here::here()
 # Load and inspect 83-86
 ```{r}
 
-mbirth2 <-read_dta(here::here("Data/zip_mother_1983_86/mbirth2.dta")) %>% # note: here::here calls the here function
+mbirth2 <-read_dta(here::here("Projects/Catchup_Growth/Data/zip_mother_1983_86/mbirth2.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
 
-mlong <-read_dta(here::here("Data/zip_mother_1983_86/mlong.dta")) %>% # note: here::here calls the here function
+mlong <-read_dta(here::here("Projects/Catchup_Growth/Data/zip_mother_1983_86/mlong.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
 
 dim(mbirth2)
@@ -48,7 +48,7 @@ names (mlong)
 
 Lots of names that are not easy to interpret. We must read the document
 ```{r}
-file.show(here::here("Data/zip_mother_1983_86/mbirth.txt")) # or you can click on it - easier to 'control + f ' to find words
+file.show(here::here("Projects/Catchup_Growth/Data/zip_mother_1983_86/mbirth2.dta")) # or you can click on it - easier to 'control + f ' to find words
 
 view(mlong)
 
@@ -64,8 +64,8 @@ growth83_86_birthdata<-mbirth2 %>%
 
  growth83_86_birthdata <- growth83_86_birthdata %>%  
   mutate(weightak_kg = (weightak/1000)) %>% 
-  mutate(birthdate = make_date(yearbirt, mnthbrth, daybirth)) %>% 
-  mutate(intwdate = make_date(yearintw, mothintw, dayintw)) %>% 
+  mutate(birthdate = make_date(yearbirt + 1000, mnthbrth, daybirth)) %>% 
+  mutate(intwdate = make_date(yearintw +1000, mothintw, dayintw)) %>% 
   mutate(age_days_birthweigh = as.numeric(intwdate - birthdate)) %>%
   filter(outcome != "2" | outcome !="3" ) %>% 
   filter(age_days_birthweigh < 30) %>% 
@@ -82,7 +82,7 @@ growth83_86_birthdata <- addWGSR(data = growth83_86_birthdata, sex = "sexchild",
 ```{r, cache=TRUE}
  mlong_anthro <-mlong %>% 
   select(basebrgy, basewman, weight, height, yearms, mntham, daymes) %>% 
-  mutate(date_inf_meas = lubridate::make_date(year = yearms,
+  mutate(date_inf_meas = lubridate::make_date(year = yearms+1000,
                                               month = mntham,
                                               day = daymes)) %>% 
   arrange(desc(basewman, basebrgy, date_inf_meas))
@@ -155,10 +155,10 @@ summary_height83_86
 
 #Load and inspect 91 data
 ```{r}
-child2 <-read_dta(here::here("Data/zip_child_91/child291.dta")) %>% # note: here::here calls the here function
+child2 <-read_dta(here::here("Projects/Catchup_Growth/Data/zip_child_91/child291.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
 
-hhold91 <-read_dta(here::here("Data/zip_household_91/hhold91.dta")) %>% # note: here::here calls the here function
+hhold91 <-read_dta(here::here("Projects/Catchup_Growth/Data/zip_household_91/hhold91.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
 
 
@@ -191,7 +191,7 @@ growth91_data
 ```{r, cache=TRUE}
 
 growth91_data<- growth91_data %>% 
-  mutate(intwdate91 = make_date( yrintr91, mointr91, dyintrvw)) %>% 
+  mutate(intwdate91 = make_date( yrintr91+1000, mointr91, dyintrvw)) %>% 
   mutate(age91_days = as.numeric(intwdate91 - birthdate)) %>% 
   mutate(age91_years = as.numeric(intwdate91 - birthdate)/365.25) %>% 
   mutate(age_mo_91 = age91_years*12) %>% 
@@ -239,76 +239,11 @@ summary_weight91
 summary_height91
 ```
 
-#Load and inspect 94 data
+#Load and inspect 02 data
 
 
 ```{r}
 
-cdietiq <-read_dta(here::here("Data/zip_child_94 2/cdietiq.dta")) %>% # note: here::here calls the here function
-  rename_all(tolower)
-
-dim(cdietiq)
-names(cdietiq)
-```
-
-```{r}
-
-```
-
-
-
-```{r}
-growth94_data <- cdietiq %>% 
-  select(basebrgy, basehhn2,basewman,chldwma2,chldcode, mointrv2, dyintrv2, yrintrv2, weghtnd2, hightnd2) %>% 
-  filter(chldcode == "1")
-
-growth94_data <- left_join(growth94_data, birthdates_data, by = c("basebrgy", "basewman")) 
-
-growth94_data <- growth94_data %>% 
-  mutate(intwdate3 = make_date(yrintrv2, mointrv2, dyintrv2)) %>% 
-  mutate(age3_days = as.numeric(intwdate3 - birthdate)) %>% 
-  mutate(age3_years = as.numeric(intwdate3 - birthdate)/365.25) %>% 
-  mutate(age3_months = age3_years*12) %>% 
-  filter(age3_days > 0) %>% 
-  filter(weghtnd2 > 0) %>% 
-  filter(hightnd2 > 0) %>% 
-  drop_na() 
-  
-  
-```
-
-```{r} 
-
-ggplot(growth94_data, aes(x=weghtnd2))+
-  geom_histogram(color = "white")+
-  facet_wrap(~sexchild)
-
-ggplot(growth94_data, aes(x=hightnd2))+
-  geom_histogram(color = "white")+
-  facet_wrap(~sexchild)
-
-summary_weight94 <- growth94_data %>%
-  group_by(sexchild) %>% 
-  drop_na() %>%
-  summarize(mean_weight94 = mean(weghtnd2),
-            std_dev_weight94 = sd(weghtnd2),
-            med_weight94 = median(weghtnd2),
-            max = max(weghtnd2),
-            min = min(weghtnd2),
-            count = n(), .groups = "keep")
-
-summary_height94 <- growth94_data %>%
-  group_by(sexchild) %>% 
-  drop_na() %>%
-  summarize(mean_height94 = mean(hightnd2),
-            std_dev_height94 = sd(hightnd2),
-            med_height94 = median(hightnd2),
-            max = max(hightnd2),
-            min = min(hightnd2),
-            count = n(), .groups = "keep")
-
-summary_weight94
-summary_height94
 
 ```
 
