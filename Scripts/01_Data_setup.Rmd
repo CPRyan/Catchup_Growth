@@ -162,14 +162,6 @@ hhold91 <-read_dta(here::here("Projects/Catchup_Growth/Data/zip_household_91/hho
   rename_all(tolower)
 
 
-getwd()
-#who2007_boys<- read_csv(here::here("Data/hfa-boys-z-who-2007-exp.csv"))
-who2007_boys <- read.csv("../Data/hfa-boys-z-who-2007-exp.csv",header=TRUE)
-who2007_boys
-
-#who2007_girls <- read_csv(here::here("Data/hfa-girls-z-who-2007-exp.csv"))
-
-
 dim(child2)
 dim(hhold91)
 ```
@@ -243,10 +235,25 @@ summary_height91
 
 
 ```{r}
+anthdiet <-read_dta(here::here("~/Projects/Catchup_Growth/Data/zip_child_2002/anthdiet.dta")) %>% # note: here::here calls the here function
+  rename_all(tolower)
+
+anthdiet <- anthdiet %>% 
+  select(basebrgy, basewman, height)
+
+anthdiet <- left_join(birthdates_data, anthdiet, by = c("basebrgy", "basewman"))
+
+anthdiet
+
+
 
 
 ```
 
+
+```{r}
+
+```
 
 #zscore analysis
 
