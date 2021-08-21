@@ -57,11 +57,13 @@ view(mlong)
 
 Find the variables that relate to growth in this dataset
 ```{r, cache=TRUE}
-
+#subset mbirth data 
+#unite identifier variables
 growth83_86_birthdata<-mbirth2 %>% 
-  select(basebrgy,hhldnubi, basewman, sexchild, outcome, daybirth, mnthbrth, yearbirt, dayintw, mothintw, yearintw, bbweight, weight1, weightak, weightgm, heightcm )
+  select(basebrgy,hhldnubi, basewman, sexchild, outcome, daybirth, mnthbrth, yearbirt, dayintw, mothintw, yearintw, bbweight, weight1, weightak, weightgm, heightcm ) %>% 
+  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
 
-
+#Create variables for birthday and age at first weigh
  growth83_86_birthdata <- growth83_86_birthdata %>%  
   mutate(weightak_kg = (weightak/1900)) %>% 
   mutate(birthdate = make_date(yearbirt + 1900, mnthbrth, daybirth)) %>% 
@@ -72,69 +74,128 @@ growth83_86_birthdata<-mbirth2 %>%
   filter(age_days_birthweigh > 0) %>% 
   filter(weightak > 0) %>% 
   filter(heightcm > 0) 
+
+#zscores for birth data and rename wfaz/hfaz
  
 growth83_86_birthdata <- addWGSR(data = growth83_86_birthdata, sex = "sexchild", firstPart= "weightak_kg", secondPart = "age_days_birthweigh", index = "wfa")
 
 growth83_86_birthdata <- addWGSR(data = growth83_86_birthdata, sex = "sexchild", firstPart = "heightcm", secondPart = "age_days_birthweigh", index = "hfa")
 
+growth83_86_birthdata <- growth83_86_birthdata %>% 
+  rename( wfaz_birth = wfaz, hfaz_birth = hfaz)
+
 ```
 
 ```{r, cache=TRUE}
- mlong_anthro <-mlong %>% 
-  select(basebrgy, basewman, weight, height, yearms, mntham, daymes) %>% 
+#subset mlong data and add date of interview
+mlong_anthro <-mlong %>% 
+  select(basebrgy, basewman,weight, height, yearms, mntham, daymes) %>% 
   mutate(date_inf_meas = lubridate::make_date(year = yearms+1900,
                                               month = mntham,
                                               day = daymes)) %>% 
-  arrange(desc(basewman, basebrgy, date_inf_meas))
+  arrange(desc(basewman, basebrgy, date_inf_meas)) %>% 
+  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
 
-
+#make a subset for birthday data
 birthdates_data <- growth83_86_birthdata %>% 
-  select(basebrgy, basewman, sexchild, birthdate)
+  select(basebrgy_basewman, sexchild, birthdate) 
+  
+#join birthdata and mlong to calculate ages
+#unite identifier variables
 
-mlong_anthro_bday <- left_join(birthdates_data, mlong_anthro, by = c("basebrgy", "basewman")) %>% 
-  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman") 
-
+mlong_anthro_bday <- left_join(birthdates_data, mlong_anthro, by = c("basebrgy_basewman"))
+ 
 mlong_anthro_bday <- mlong_anthro_bday %>% 
    mutate(age_days_infweigh = as.numeric(date_inf_meas - birthdate)) %>% 
    mutate(weight_kg = (weight/1000))
 
- 
-growth83_86_infdata <-mlong_anthro_bday %>%
-  select(basebrgy_basewman, weight_kg, height, date_inf_meas, age_days_infweigh, birthdate) %>%
+# make the mlong data into wide form, creade new id variables for weight and height 1/12 to reflect first and last infancy measurements
+
+weight_mlong_bday <-mlong_anthro_bday %>%
+  select(basebrgy_basewman, sexchild, weight_kg, date_inf_meas, age_days_infweigh, birthdate) %>%
   group_by(basebrgy_basewman) %>%
   mutate(id = row_number()) %>%
   filter(id == max(id) | id == min(id)) %>%
-  arrange(basebrgy_basewman, id)
-
-
-growth83_86_infdata %>%
-  mutate(weight_diff = weight_kg - lag(weight_kg, default = first(weight_kg)),
-         height_diff = height - lag(height, default = first(height)),
-         time_diff =   age_days_infweigh - lag(age_days_infweigh)) %>%
-  select(basebrgy_basewman, weight_diff, height_diff, time_diff, everything(.)) %>% 
+  arrange(basebrgy_basewman, id) %>% 
   spread(key = id, value = weight_kg, drop = TRUE) 
 
-growth83_86_infdata
 
-growth83_86_infdata <- addWGSR(data = growth83_86_infdata, sex = "sexchild", firstPart= "weight_kg", secondPart = "age_days_infweigh", index = "wfa")
+height_mlong_bday <-mlong_anthro_bday %>%
+  select(basebrgy_basewman, sexchild, height, date_inf_meas, age_days_infweigh, birthdate) %>%
+  group_by(basebrgy_basewman) %>%
+  mutate(id = row_number()) %>%
+  filter(id == max(id) | id == min(id)) %>%
+  arrange(basebrgy_basewman, id) %>% 
+  spread(key = id, value = height, drop = TRUE) 
 
-growth83_86_infdata <- addWGSR(data = growth83_86_infdata, sex = "sexchild", firstPart = "height", secondPart = "age_days_infweigh", index = "hfa")
+weight_mlong_bday
+height_mlong_bday
+
+
+```
+
+
+```{r, cache=TRUE}
+#weight zscores infancy
+
+weight_mlong_bday_1 <- weight_mlong_bday %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "1")
+
+weight_mlong_bday_12 <- weight_mlong_bday %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "12")
+
+
+weight_mlong_bday_1 <- addWGSR(data = weight_mlong_bday_1, sex = "sexchild", firstPart= "1", secondPart = "age_days_infweigh", index = "wfa") %>% 
+  rename( wfaz_inf_1 = wfaz)
+  
+weight_mlong_bday_12 <- addWGSR(data = weight_mlong_bday_12, sex = "sexchild", firstPart= "12", secondPart = "age_days_infweigh", index = "wfa") %>% 
+  rename( wfaz_inf_12 = wfaz)
+
+weight_mlong_bday_z <-left_join(weight_mlong_bday_1, weight_mlong_bday_12, by = c("basebrgy_basewman","sexchild","age_days_infweigh", "date_inf_meas", "birthdate"))
+
+weight_mlong_bday_z
+
+#height z scores infancy
+
+height_mlong_bday_1 <- height_mlong_bday %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "1")
+
+height_mlong_bday_12 <- height_mlong_bday %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "12")
+
+
+height_mlong_bday_1 <- addWGSR(data = height_mlong_bday_1, sex = "sexchild", firstPart= "1", secondPart = "age_days_infweigh", index = "hfa") %>% 
+  rename( hfaz_inf_1 = hfaz)
+  
+height_mlong_bday_12 <- addWGSR(data = height_mlong_bday_12, sex = "sexchild", firstPart= "12", secondPart = "age_days_infweigh", index = "hfa") %>% 
+  rename( hfaz_inf_12 = hfaz)
+
+height_mlong_bday_z <-left_join(height_mlong_bday_1, height_mlong_bday_12, by = c("basebrgy_basewman","sexchild","age_days_infweigh", "date_inf_meas", "birthdate"))
+
+height_mlong_bday_z
 
 ```
 
 ```{r}
-growth83_86_birthdata <- growth83_86_birthdata %>% 
-  rename( wfaz_birth = wfaz, hfaz_birth = hfaz)
+#join wfa and hfa zscores in one table
 
-growth83_86_infdata <- growth83_86_infdata %>% 
-  rename( wfaz_inf = wfaz, hfaz_inf = hfaz)
+growth83_86_infdata <-left_join(weight_mlong_bday_z, height_mlong_bday_z, by = c("basebrgy_basewman","sexchild","age_days_infweigh", "date_inf_meas", "birthdate"))
 
-growth83_86_data <- left_join(growth83_86_birthdata, growth83_86_infdata, by = c("basebrgy", "basewman", "sexchild", "birthdate"))
+growth83_86_infdata
+
+```
+
+
+```{r}
+#make one big 83/86 table with z scores
+
+growth83_86_data <- left_join(growth83_86_birthdata, growth83_86_infdata, by = c("basebrgy_basewman", "sexchild", "birthdate"))
 
 growth83_86_data
 ```
 
 ```{r}
+#model weight distributions 
 ggplot(growth83_86_data, aes(x = weight1))+
   geom_histogram(color = "white")+
   facet_wrap(~sexchild)
@@ -146,11 +207,13 @@ ggplot(growth83_86_data, aes(x = weightak))+
 ggplot(growth83_86_data, aes(x = weightgm))+
   geom_histogram(color = "white")+
   facet_wrap(~sexchild)
-  
+
+#model height distributions  
 ggplot(growth83_86_data, aes(x=heightcm))+
   geom_histogram(color = "white")+
   facet_wrap(~sexchild)
 
+#summary stats of weight and height
 summary_weight83_86 <- growth83_86_data %>%
   group_by(sexchild) %>% 
   drop_na() %>%
@@ -186,21 +249,29 @@ dim(hhold91)
 ```
 
 ```{r}
+#subset child2 data
+#unite identifier variables
+
 growth2 <-child2 %>%
-  select(basebrgy, basewman, basehhno, currbrgy, weghtndx, hightndx) 
+  select(basebrgy, basewman, basehhno, currbrgy, weghtndx, hightndx) %>% 
+  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
 
+#subset hh91 data
+#unite identifier variables
 intw_date91 <- hhold91 %>% 
-  select(basebrgy, basewman, mointr91, dyintrvw, yrintr91)
+  select(basebrgy, basewman, mointr91, dyintrvw, yrintr91) %>% 
+  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
 
-growth91_data <- left_join(growth2, intw_date91, by = c("basebrgy", "basewman"))
+#join tables together to make growth91_data
+growth91_data <- left_join(growth2, intw_date91, by = c("basebrgy_basewman"))
          
-growth91_data <- left_join(growth91_data, birthdates_data, by = c("basebrgy", "basewman"))
+growth91_data <- left_join(growth91_data, birthdates_data, by = c("basebrgy_basewman"))
 
 growth91_data
 ```
 
 ```{r, cache=TRUE}
-
+#make interview dates and find age at interview
 growth91_data<- growth91_data %>% 
   mutate(intwdate91 = make_date( yrintr91+1900, mointr91, dyintrvw)) %>% 
   mutate(age91_days = as.numeric(intwdate91 - birthdate)) %>% 
@@ -209,6 +280,8 @@ growth91_data<- growth91_data %>%
   filter(age91_days > 0) %>% 
   filter(weghtndx > 0) %>% 
   filter(hightndx > 0)
+
+#calculate zscores for 91 data and rename hfaz/wfaz
 
 growth91_data <- addWGSR(data = growth91_data, sex = "sexchild", firstPart= "weghtndx", secondPart = "age91_days", index = "wfa")
 
@@ -222,6 +295,7 @@ growth91_data
 
 ```
 ```{r}
+#model height and weight distributions
 ggplot(growth91_data, aes(x= weghtndx))+
   geom_histogram(color = "white")+
   facet_wrap(~sexchild)
@@ -238,6 +312,7 @@ summary_weight91 <- growth91_data %>%
             med_weight91 = median(weghtndx),
             count = n(), .groups = "keep")
 
+#height and weight summary stats
 summary_height91 <- growth91_data %>%
   group_by(sexchild) %>% 
   drop_na() %>%
@@ -252,7 +327,6 @@ summary_height91
 
 #Load and inspect 02 data
 
-
 ```{r}
 anthdiet <-read_dta(here::here("~/Projects/Catchup_Growth/Data/zip_child_2002/anthdiet.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
@@ -260,21 +334,28 @@ anthdiet <-read_dta(here::here("~/Projects/Catchup_Growth/Data/zip_child_2002/an
 screen_data<-read_dta(here::here("Projects/Catchup_Growth/Data/zip_child_2002/screen.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
 
+#subset anthdiet
+#join identifier variable
 anthdiet <- anthdiet %>% 
-  select(basebrgy, basewman, height)
+  select(basebrgy, basewman, height) %>% 
+  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
 
+#subset screen_data
+#join identifier variable
 screen_data <- screen_data %>% 
   select(basebrgy, basewman, dayntrvw, yrntrvw, montrvw) %>% 
-  mutate(intw_date02 = make_date(yrntrvw, montrvw, dayntrvw))
+  mutate(intw_date02 = make_date(yrntrvw, montrvw, dayntrvw)) %>% 
+  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
  
-
-screen_data <- left_join(birthdates_data, screen_data, by = c("basebrgy", "basewman")) %>% 
+#make interview date and find age at interview
+screen_data <- left_join(birthdates_data, screen_data, by = c("basebrgy_basewman")) %>% 
   mutate(age_days_02 = as.numeric(intw_date02 - birthdate)) %>% 
   mutate(age_years_02 = age_days_02/365.25) %>% 
   mutate(age_cutoff = if_else(age_years_02 > 19, 19, age_years_02)) %>% 
   mutate(age_cutoff_days = age_cutoff*365.25)
+  
 
-growth02_data <- left_join(screen_data, anthdiet, by = c("basebrgy", "basewman"))
+growth02_data <- left_join(screen_data, anthdiet, by = c("basebrgy_basewman"))
 
 growth02_data <- addWGSR(data = growth02_data, sex = "sexchild", firstPart= "height", secondPart = "age_cutoff_days", index = "hfa") %>% 
    rename(hfaz_02 = hfaz)
@@ -295,14 +376,16 @@ growth02_data
 #zscore analysis
 
 ```{r, cache=TRUE }
-zscore_data <- left_join(growth83_86_data, growth91_data, by = c("basebrgy", "basewman", "sexchild")) 
-zscore_data <- left_join(zscore_data, growth02_data, by = c("basebrgy", "basewman", "sexchild"))
+#table of zscores :)
+zscore_data <- left_join(growth83_86_data, growth91_data, by = c("basebrgy_basewman", "sexchild")) 
+zscore_data <- left_join(zscore_data, growth02_data, by = c("basebrgy_basewman", "sexchild"))
 
 zscore_wfa<- zscore_data %>% 
-  select(basebrgy, basewman, sexchild, age_days_birthweigh, age_days_infweigh, age91_days, wfaz_birth, wfaz_inf, wfaz_91)
+  select(basebrgy_basewman, sexchild, age_days_birthweigh, age_days_infweigh, age91_days, wfaz_birth, wfaz_inf_1, wfaz_inf_12, wfaz_91)
 
 zscore_hfa <-zscore_data %>% 
-  select(basebrgy, basewman, sexchild, age_days_birthweigh, age_days_infweigh, age91_days, hfaz_birth, hfaz_inf, hfaz_91, hfaz_02)
+  select(basebrgy_basewman, sexchild, age_days_birthweigh, age_days_infweigh, age91_days, hfaz_birth, hfaz_inf_1, hfaz_inf_12, hfaz_91, hfaz_02) 
+  
 
 zscore_hfa
 zscore_wfa
