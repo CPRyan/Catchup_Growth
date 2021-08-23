@@ -74,3 +74,19 @@ mlong_anthro_bday %>%
 
 
 
+mlong_anthro_bday %>% 
+  select(basebrgy_basewman, weight, height, date_inf_meas, age_inf_meas, birthdate) %>% 
+  group_by(basebrgy_basewman) %>%
+  mutate(id = row_number()) %>% 
+  spread(key = id, value = weight, drop = TRUE) 
+# Not ideal. 
+# 
+# 
+# PIck the first and last ones. 
+
+mlong_anthro_bday %>% 
+  select(basebrgy_basewman, weight, height, date_inf_meas, age_inf_meas, birthdate) %>% 
+  group_by(basebrgy_basewman) %>%
+  mutate(id = row_number())
+
+  
