@@ -84,9 +84,18 @@ mlong_anthro_bday %>%
 # 
 # PIck the first and last ones. 
 
-mlong_anthro_bday %>% 
+mlong_for_spread <-mlong_anthro_bday %>% 
   select(basebrgy_basewman, weight, height, date_inf_meas, age_inf_meas, birthdate) %>% 
   group_by(basebrgy_basewman) %>%
-  mutate(id = row_number())
+  mutate(id = row_number()) %>% 
+  filter(id == max(id) | id == min(id)) %>% 
+  arrange(basebrgy_basewman, id)
 
-  
+
+mlong_for_spread %>% 
+  mutate(weight_diff = weight - lag(weight, default = first(weight)), 
+         height_diff = height - lag(height, default = first(height)), 
+         time_diff =   age_inf_meas - lag(age_inf_meas)) %>% 
+  select(basebrgy_basewman, weight_diff, height_diff, time_diff, everything(.))
+
+         
