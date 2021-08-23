@@ -27,7 +27,6 @@ here::here()
 
 # Load and inspect 83-86
 ```{r}
-
 mbirth2 <-read_dta(here::here("Projects/Catchup_Growth/Data/zip_mother_1983_86/mbirth2.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
 
@@ -328,6 +327,7 @@ summary_height91
 #Load and inspect 02 data
 
 ```{r}
+
 anthdiet <-read_dta(here::here("~/Projects/Catchup_Growth/Data/zip_child_2002/anthdiet.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
 
@@ -390,14 +390,64 @@ zscore_hfa <-zscore_data %>%
 zscore_hfa
 zscore_wfa
 
-slope <- function(x0,x1,y0,y1) (y1-y0)/(x1-x0)
-slope(zscore_hfa[1,4],zscore_hfa[1,5],zscore_hfa[1,7],zscore_hfa[1,8])
 ```
 
+#Hfaz differences 
+```{r, cache = TRUE}
+#make a table for birth and 2 yrs old data
+#find the difference between these
 
-```{r}
+hfa_diff_birth_inf12 <- zscore_hfa %>% 
+  select(basebrgy_basewman, sexchild, hfaz_birth, hfaz_inf_12) %>%
+  mutate(hfa_diff_inf12_91 = (hfaz_inf_12 - hfaz_birth))
+
+#make a table for 2 yrs old - 91 data
+#find the difference between these
+
+hfa_diff_inf12_91 <- zscore_hfa %>% 
+  select(basebrgy_basewman, sexchild, hfaz_inf_12, hfaz_91) %>%
+  mutate(hfa_diff_inf12_91 = (hfaz_91 - hfaz_inf_12))
+
+#make a table for 91 and 02 data
+#find the difference between these
+
+hfa_diff_91_02 <- zscore_hfa %>% 
+  select(basebrgy_basewman, sexchild, hfaz_91, hfaz_02) %>%
+  mutate(hfa_diff_inf12_91 = (hfaz_02 - hfaz_91))
+
+#visualize
+hfa_diff_birth_inf12
+hfa_diff_inf12_91
+hfa_diff_91_02
+
 
 ```
 
+#wfaz differences
+
+```{r, cache =TRUE}
+
+#make a table for birth and 2 yrs old data
+#find the difference between these
+
+wfa_diff_birth_inf12 <- zscore_wfa %>% 
+  select(basebrgy_basewman, sexchild, wfaz_birth, wfaz_inf_12) %>%
+  mutate(wfa_diff_inf12_91 = (wfaz_inf_12 - wfaz_birth))
+
+#make a table for 2 yrs old - 91 data
+#find the difference between these
+
+wfa_diff_inf12_91 <- zscore_wfa %>% 
+  select(basebrgy_basewman, sexchild, wfaz_inf_12, wfaz_91) %>%
+  mutate(wfa_diff_inf12_91 = (wfaz_91 - wfaz_inf_12))
+
+
+#visualize
+wfa_diff_birth_inf12
+wfa_diff_inf12_91
+
+
+
+```
 
 
