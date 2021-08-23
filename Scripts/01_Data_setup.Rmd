@@ -324,7 +324,7 @@ summary_weight91
 summary_height91
 ```
 
-#Load and inspect 02 data
+#Load and inspect 2002 data
 
 ```{r}
 
@@ -335,9 +335,14 @@ screen_data<-read_dta(here::here("Projects/Catchup_Growth/Data/zip_child_2002/sc
   rename_all(tolower)
 
 #subset anthdiet
+#calculate bmi
 #join identifier variable
 anthdiet <- anthdiet %>% 
-  select(basebrgy, basewman, height) %>% 
+  select(basebrgy, basewman, weight, height) %>% 
+  mutate(height_m = (height/100)) %>% 
+  mutate( bmi_02 = (weight/(height_m^2))) %>% 
+  filter(weight > 0) %>% 
+  filter(height > 0) %>% 
   unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
 
 #subset screen_data
@@ -352,7 +357,9 @@ screen_data <- left_join(birthdates_data, screen_data, by = c("basebrgy_basewman
   mutate(age_days_02 = as.numeric(intw_date02 - birthdate)) %>% 
   mutate(age_years_02 = age_days_02/365.25) %>% 
   mutate(age_cutoff = if_else(age_years_02 > 19, 19, age_years_02)) %>% 
-  mutate(age_cutoff_days = age_cutoff*365.25)
+  mutate(age_cutoff_days = age_cutoff*365.25) %>% 
+  filter(age_days_02 > 0)
+  
   
 
 growth02_data <- left_join(screen_data, anthdiet, by = c("basebrgy_basewman"))
@@ -364,13 +371,44 @@ growth02_data <- addWGSR(data = growth02_data, sex = "sexchild", firstPart= "hei
 growth02_data
 
 
-
-
 ```
 
 
-```{r}
+```{r, cache = TRUE}
+#visualize hieght distribution
+ggplot(growth02_data, aes(x=height))+
+  geom_histogram(color = "white")+
+  facet_wrap(~sexchild)
 
+#visualize weight distribution 
+ggplot(growth02_data, aes(x=weight))+
+  geom_histogram(color = "white")+
+  facet_wrap(~sexchild)
+
+#summarize height 
+summary_height_02 <- growth02_data %>%
+  group_by(sexchild) %>% 
+  drop_na() %>%
+  summarize(mean_height02 = mean(height),
+            std_dev_height02 = sd(height),
+            med_height02 = median(height),
+            max_height02 = max(height),
+            min_height02 = min(height),
+            count = n(), .groups = "keep")
+summary_height_02
+
+#summarize weight
+summary_weight_02 <- growth02_data %>%
+  group_by(sexchild) %>% 
+  drop_na() %>%
+  summarize(mean_weight02 = mean(weight),
+            std_dev_height02 = sd(height),
+            med_weight02 = median(weight),
+            max_weight02 = max(weight),
+            min_weight02 = min(weight),
+            count = n(), .groups = "keep")
+
+summary_weight_02
 ```
 
 #zscore analysis
