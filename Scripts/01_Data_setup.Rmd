@@ -339,8 +339,6 @@ screen_data<-read_dta(here::here("Projects/Catchup_Growth/Data/zip_child_2002/sc
 #join identifier variable
 anthdiet <- anthdiet %>% 
   select(basebrgy, basewman, weight, height) %>% 
-  mutate(height_m = (height/100)) %>% 
-  mutate( bmi_02 = (weight/(height_m^2))) %>% 
   filter(weight > 0) %>% 
   filter(height > 0) %>% 
   unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
@@ -411,6 +409,69 @@ summary_weight_02 <- growth02_data %>%
 summary_weight_02
 ```
 
+#2005 data
+```{r, chache=TRUE}
+#load anthdiet 05
+anthdiet05 <-read_dta(here::here("Projects/Catchup_Growth/Data/zip_child_2005/anthdiet.dta")) %>% # note: here::here calls the here function
+  rename_all(tolower)
+
+#subsetand  unite id variable
+#calculate bmi
+anthdiet05 <- anthdiet05 %>% 
+  select(basebrgy, basewman, age, sex, weight, height) %>% 
+  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
+  
+growth05_data <- left_join(birthdates_data, anthdiet05, by = c("basebrgy_basewman")) %>% 
+  mutate(height_m = (height/100)) %>% 
+  mutate( bmi_05 = (weight/(height_m^2))) %>% 
+  filter(weight > 0) %>% 
+  filter(height > 0)
+
+growth05_data
+
+#summarize height 
+summary_height_05 <- growth05_data %>%
+  group_by(sexchild) %>% 
+  drop_na() %>%
+  summarize(mean_height05 = mean(height),
+            std_dev_height05 = sd(height),
+            med_height05 = median(height),
+            max_height05 = max(height),
+            min_height05 = min(height),
+            count = n(), .groups = "keep")
+summary_height_05
+
+#summarize weight
+summary_weight_05 <- growth05_data %>%
+  group_by(sexchild) %>% 
+  drop_na() %>%
+  summarize(mean_weight05 = mean(weight),
+            std_dev_height05 = sd(height),
+            med_weight05 = median(weight),
+            max_weight05 = max(weight),
+            min_weight05 = min(weight),
+            count = n(), .groups = "keep")
+
+summary_weight_05
+ 
+#summarize bmi
+summary_bmi_05 <- growth05_data %>%
+  group_by(sexchild) %>% 
+  drop_na() %>%
+  summarize(mean_bmi = mean(bmi_05),
+            std_dev_bmi = sd(bmi_05),
+            med_bmi = median(bmi_05),
+            max_bmi = max(bmi_05),
+            min_bmi = min(bmi_05),
+            count = n(), .groups = "keep")
+
+summary_bmi_05
+
+
+```
+
+
+
 #zscore analysis
 
 ```{r, cache=TRUE }
@@ -451,26 +512,29 @@ hfa_diff_inf12_91 <- zscore_hfa %>%
 
 hfa_diff_91_02 <- zscore_hfa %>% 
   select(basebrgy_basewman, sexchild, hfaz_91, hfaz_02) %>%
-  mutate(hfa_diff_inf12_91 = (hfaz_02 - hfaz_91))
+  mutate(hfa_diff_91_02 = (hfaz_02 - hfaz_91))
 
 #visualize
 hfa_diff_birth_inf12
 hfa_diff_inf12_91
 hfa_diff_91_02
 
+#put all into one table
+
+
 
 ```
 
 #wfaz differences
 
-```{r, cache =TRUE}
+```{r, cache=TRUE}
 
 #make a table for birth and 2 yrs old data
 #find the difference between these
 
 wfa_diff_birth_inf12 <- zscore_wfa %>% 
   select(basebrgy_basewman, sexchild, wfaz_birth, wfaz_inf_12) %>%
-  mutate(wfa_diff_inf12_91 = (wfaz_inf_12 - wfaz_birth))
+  mutate(wfa_diff_birth_inf12 = (wfaz_inf_12 - wfaz_birth))
 
 #make a table for 2 yrs old - 91 data
 #find the difference between these
@@ -487,5 +551,23 @@ wfa_diff_inf12_91
 
 
 ```
+
+#Join all of the data needed into one table
+```{r, cache =TRUE}
+#join difference tables
+zscore_hfa_diffs <- left_join(hfa_diff_birth_inf12, hfa_diff_inf12_91, by = c("basebrgy_basewman", "sexchild")) 
+zscore_hfa_diffs <- left_join(hfa_diff_inf12_91, hfa_diff_91_02, by = c("basebrgy_basewman", "sexchild", "hfaz_91"))
+
+zscore_hfa_diffs
+
+zscore_wfa_diffs <- left_join(wfa_diff_birth_inf12, wfa_diff_inf12_91, by = c("basebrgy_basewman", "sexchild", "wfaz_inf_12")) 
+
+zscore_wfa_diffs
+
+#join hfa diff and wfa diff
+zscore_diffs <- left_join(zscore_hfa_diffs, zscore_wfa_diffs, by = c("basebrgy_basewman", "sexchild"))
+zscore_diffs
+```
+
 
 
