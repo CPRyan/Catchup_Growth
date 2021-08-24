@@ -14,7 +14,7 @@ We have data in dozens of files across decades of time. We need the data in the 
 library(tidyverse) # great collection of packages for data carpentry, modelling, and visualization
 library(haven) # package for loading Stata's .dta files. 
 library(sjlabelled) # good for renaming, changing classes, etc. in the piped dplyr mode
-
+library(lubridate)
 here::here()
 # sets a placeholder 'here'. Then we refer to our files based on the *relative* not the *absolute* location.
 ```
@@ -94,6 +94,20 @@ left_join(sample_dates, iq_dates, by = c("basebrgy", "basewman")) %>%
   mutate(iq_intrvw_date_diff = iq_date - meg_dates) %>% 
   select(basebrgy, basewman, uncchdid, iq_intrvw_date_diff) 
 ```
+
+```{r}
+
+growth83_86_data<-mbirth2 %>% 
+  select(basebrgy,hhldnubi, basewman, sexchild, outcome, daybirth, mnthbrth, yearbirt, dayintw, mothintw, yearintw, bbweight,weight1, weightak, weightgm, heightcm ) %>% 
+  mutate(weightak_kg = (weightak/1000)) %>% 
+  mutate(birthdate = make_date(yearbirt, mnthbrth, daybirth)) %>% 
+  mutate(intwdate = make_date(yearintw, mothintw, dayintw)) %>% 
+  mutate(age_at_weigh_days = as.numeric(intwdate - birthdate)) %>%
+  filter(outcome != "2" | outcome !="3" ) %>% 
+  filter(age_at_weigh_days < 30)
+```
+
+
 
 ```{r}
 growth83_86_data %>% 
@@ -322,4 +336,20 @@ mlong_anthro %>%
   geom_point(alpha = 0.2)+
   geom_line(alpha = 0.2)
 ```
+
+# Look for basebrgy/basewman/uncchdid in one file.
+```{r}
+full_for_meaghan <-haven::read_dta(here::here("Data/Misc/Full_cohort_for_Meaghan.dta"))
+
+brgy_uncchdid_info <-full_for_meaghan %>% 
+  select(uncchdid, basebrgy, basewman)
+
+reprostat_females_w_dnam <-read_csv(here::here("Data/Misc/repro_final_original.csv")) %>% 
+  select(uncchdid, reprostat, was.preg, trimester)
+
+unc_base_reprostat <-left_join(brgy_uncchdid_info, reprostat_females_w_dnam, by = "uncchdid")
+
+readr::write_csv(unc_base_reprostat, here::here("Output/Data/CPR/unc_base_reprostat.csv"))
+```
+
 
