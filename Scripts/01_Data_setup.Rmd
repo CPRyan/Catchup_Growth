@@ -116,7 +116,8 @@ weight_mlong_bday <-mlong_anthro_bday %>%
   mutate(id = row_number()) %>%
   filter(id == max(id) | id == min(id)) %>%
   arrange(basebrgy_basewman, id) %>% 
-  spread(key = id, value = weight_kg, drop = TRUE) 
+  spread(key = id, value = weight_kg, drop = TRUE) %>% 
+  rename(wght_1 = "1", wght_12 = "12" )
 
 
 height_mlong_bday <-mlong_anthro_bday %>%
@@ -125,7 +126,8 @@ height_mlong_bday <-mlong_anthro_bday %>%
   mutate(id = row_number()) %>%
   filter(id == max(id) | id == min(id)) %>%
   arrange(basebrgy_basewman, id) %>% 
-  spread(key = id, value = height, drop = TRUE) 
+  spread(key = id, value = height, drop = TRUE) %>% 
+  rename(hght_1 = "1", hght_12 = "12" )
 
 weight_mlong_bday
 height_mlong_bday
@@ -138,16 +140,16 @@ height_mlong_bday
 #weight zscores infancy
 
 weight_mlong_bday_1 <- weight_mlong_bday %>% 
-  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "1")
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "wght_1")
 
 weight_mlong_bday_12 <- weight_mlong_bday %>% 
-  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "12")
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "wght_12")
 
 
-weight_mlong_bday_1 <- addWGSR(data = weight_mlong_bday_1, sex = "sexchild", firstPart= "1", secondPart = "age_days_infweigh", index = "wfa") %>% 
+weight_mlong_bday_1 <- addWGSR(data = weight_mlong_bday_1, sex = "sexchild", firstPart= "wght_1", secondPart = "age_days_infweigh", index = "wfa") %>% 
   rename( wfaz_inf_1 = wfaz)
   
-weight_mlong_bday_12 <- addWGSR(data = weight_mlong_bday_12, sex = "sexchild", firstPart= "12", secondPart = "age_days_infweigh", index = "wfa") %>% 
+weight_mlong_bday_12 <- addWGSR(data = weight_mlong_bday_12, sex = "sexchild", firstPart= "wght_12", secondPart = "age_days_infweigh", index = "wfa") %>% 
   rename( wfaz_inf_12 = wfaz)
 
 weight_mlong_bday_z <-left_join(weight_mlong_bday_1, weight_mlong_bday_12, by = c("basebrgy_basewman","sexchild","age_days_infweigh", "date_inf_meas", "birthdate"))
@@ -157,16 +159,16 @@ weight_mlong_bday_z
 #height z scores infancy
 
 height_mlong_bday_1 <- height_mlong_bday %>% 
-  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "1")
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "hght_1")
 
 height_mlong_bday_12 <- height_mlong_bday %>% 
-  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "12")
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "hght_12")
 
 
-height_mlong_bday_1 <- addWGSR(data = height_mlong_bday_1, sex = "sexchild", firstPart= "1", secondPart = "age_days_infweigh", index = "hfa") %>% 
+height_mlong_bday_1 <- addWGSR(data = height_mlong_bday_1, sex = "sexchild", firstPart= "hght_1", secondPart = "age_days_infweigh", index = "hfa") %>% 
   rename( hfaz_inf_1 = hfaz)
   
-height_mlong_bday_12 <- addWGSR(data = height_mlong_bday_12, sex = "sexchild", firstPart= "12", secondPart = "age_days_infweigh", index = "hfa") %>% 
+height_mlong_bday_12 <- addWGSR(data = height_mlong_bday_12, sex = "sexchild", firstPart= "hght_12", secondPart = "age_days_infweigh", index = "hfa") %>% 
   rename( hfaz_inf_12 = hfaz)
 
 height_mlong_bday_z <-left_join(height_mlong_bday_1, height_mlong_bday_12, by = c("basebrgy_basewman","sexchild","age_days_infweigh", "date_inf_meas", "birthdate"))
@@ -341,7 +343,8 @@ anthdiet <- anthdiet %>%
   select(basebrgy, basewman, weight, height) %>% 
   filter(weight > 0) %>% 
   filter(height > 0) %>% 
-  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
+  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman") %>% 
+  rename(weight_02 = weight, height_02 = height)
 
 #subset screen_data
 #join identifier variable
@@ -362,7 +365,7 @@ screen_data <- left_join(birthdates_data, screen_data, by = c("basebrgy_basewman
 
 growth02_data <- left_join(screen_data, anthdiet, by = c("basebrgy_basewman"))
 
-growth02_data <- addWGSR(data = growth02_data, sex = "sexchild", firstPart= "height", secondPart = "age_cutoff_days", index = "hfa") %>% 
+growth02_data <- addWGSR(data = growth02_data, sex = "sexchild", firstPart= "height_02", secondPart = "age_cutoff_days", index = "hfa") %>% 
    rename(hfaz_02 = hfaz)
 
 
@@ -374,12 +377,12 @@ growth02_data
 
 ```{r, cache = TRUE}
 #visualize hieght distribution
-ggplot(growth02_data, aes(x=height))+
+ggplot(growth02_data, aes(x=height_02))+
   geom_histogram(color = "white")+
   facet_wrap(~sexchild)
 
 #visualize weight distribution 
-ggplot(growth02_data, aes(x=weight))+
+ggplot(growth02_data, aes(x=weight_02))+
   geom_histogram(color = "white")+
   facet_wrap(~sexchild)
 
@@ -387,11 +390,11 @@ ggplot(growth02_data, aes(x=weight))+
 summary_height_02 <- growth02_data %>%
   group_by(sexchild) %>% 
   drop_na() %>%
-  summarize(mean_height02 = mean(height),
-            std_dev_height02 = sd(height),
-            med_height02 = median(height),
-            max_height02 = max(height),
-            min_height02 = min(height),
+  summarize(mean_height02 = mean(height_02),
+            std_dev_height02 = sd(height_02),
+            med_height02 = median(height_02),
+            max_height02 = max(height_02),
+            min_height02 = min(height_02),
             count = n(), .groups = "keep")
 summary_height_02
 
@@ -399,11 +402,11 @@ summary_height_02
 summary_weight_02 <- growth02_data %>%
   group_by(sexchild) %>% 
   drop_na() %>%
-  summarize(mean_weight02 = mean(weight),
-            std_dev_height02 = sd(height),
-            med_weight02 = median(weight),
-            max_weight02 = max(weight),
-            min_weight02 = min(weight),
+  summarize(mean_weight02 = mean(weight_02),
+            std_dev_height02 = sd(height_02),
+            med_weight02 = median(weight_02),
+            max_weight02 = max(weight_02),
+            min_weight02 = min(weight_02),
             count = n(), .groups = "keep")
 
 summary_weight_02
@@ -419,13 +422,14 @@ anthdiet05 <-read_dta(here::here("Projects/Catchup_Growth/Data/zip_child_2005/an
 #calculate bmi
 anthdiet05 <- anthdiet05 %>% 
   select(basebrgy, basewman, age, sex, weight, height) %>% 
-  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
+  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman") %>% 
+  rename(weight_05 = weight, height_05 = height)
   
 growth05_data <- left_join(birthdates_data, anthdiet05, by = c("basebrgy_basewman")) %>% 
-  mutate(height_m = (height/100)) %>% 
-  mutate( bmi_05 = (weight/(height_m^2))) %>% 
-  filter(weight > 0) %>% 
-  filter(height > 0)
+  mutate(height_m_05 = (height_05/100)) %>% 
+  mutate( bmi_05 = (weight_05/(height_m_05^2))) %>% 
+  filter(weight_05 > 0) %>% 
+  filter(height_05 > 0)
 
 growth05_data
 
@@ -433,11 +437,11 @@ growth05_data
 summary_height_05 <- growth05_data %>%
   group_by(sexchild) %>% 
   drop_na() %>%
-  summarize(mean_height05 = mean(height),
-            std_dev_height05 = sd(height),
-            med_height05 = median(height),
-            max_height05 = max(height),
-            min_height05 = min(height),
+  summarize(mean_height05 = mean(height_05),
+            std_dev_height05 = sd(height_05),
+            med_height05 = median(height_05),
+            max_height05 = max(height_05),
+            min_height05 = min(height_05),
             count = n(), .groups = "keep")
 summary_height_05
 
@@ -445,11 +449,11 @@ summary_height_05
 summary_weight_05 <- growth05_data %>%
   group_by(sexchild) %>% 
   drop_na() %>%
-  summarize(mean_weight05 = mean(weight),
-            std_dev_height05 = sd(height),
-            med_weight05 = median(weight),
-            max_weight05 = max(weight),
-            min_weight05 = min(weight),
+  summarize(mean_weight05 = mean(weight_05),
+            std_dev_height05 = sd(height_05),
+            med_weight05 = median(weight_05),
+            max_weight05 = max(weight_05),
+            min_weight05 = min(weight_05),
             count = n(), .groups = "keep")
 
 summary_weight_05
@@ -519,7 +523,7 @@ hfa_diff_birth_inf12
 hfa_diff_inf12_91
 hfa_diff_91_02
 
-#put all into one table
+
 
 
 
@@ -567,6 +571,17 @@ zscore_wfa_diffs
 #join hfa diff and wfa diff
 zscore_diffs <- left_join(zscore_hfa_diffs, zscore_wfa_diffs, by = c("basebrgy_basewman", "sexchild"))
 zscore_diffs
+
+# join the growth datasets
+
+growth_data <- left_join(growth83_86_data, growth91_data, by = c("basebrgy_basewman", "sexchild", "birthdate")) 
+growth_data <- left_join(growth_data, growth02_data, by = c("basebrgy_basewman", "sexchild", "birthdate"))
+growth_data <- left_join(growth_data, growth05_data, by = c("basebrgy_basewman", "sexchild", "birthdate"))
+
+growth_data
+
+#join growth and difference datasets
+growth_data <- left_join(growth_data, zscore_diffs, by = c("basebrgy_basewman", "sexchild"))
 ```
 
 
