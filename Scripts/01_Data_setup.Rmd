@@ -578,10 +578,13 @@ growth_data <- left_join(growth83_86_data, growth91_data, by = c("basebrgy_basew
 growth_data <- left_join(growth_data, growth02_data, by = c("basebrgy_basewman", "sexchild", "birthdate"))
 growth_data <- left_join(growth_data, growth05_data, by = c("basebrgy_basewman", "sexchild", "birthdate"))
 
-growth_data
+growth_data_unfiltered
 
 #join growth and difference datasets
-growth_data <- left_join(growth_data, zscore_diffs, by = c("basebrgy_basewman", "sexchild"))
+growth_data_unfiltered <- left_join(growth_data, zscore_diffs, by = c("basebrgy_basewman", "sexchild")) 
+
+growth_data<- growth_data_unfiltered %>% 
+  select(basebrgy_basewman, sexchild, sex, outcome, birthdate, intwdate, weightak_kg, heightcm, age_days_birthweigh, date_infweigh,    )
 ```
 
 
