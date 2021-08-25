@@ -27,10 +27,10 @@ here::here()
 
 # Load and inspect 83-86
 ```{r}
-mbirth2 <-read_dta(here::here("Projects/Catchup_Growth/Data/zip_mother_1983_86/mbirth2.dta")) %>% # note: here::here calls the here function
+mbirth2 <-read_dta(here::here("Data/zip_mother_1983_86/mbirth2.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
 
-mlong <-read_dta(here::here("Projects/Catchup_Growth/Data/zip_mother_1983_86/mlong.dta")) %>% # note: here::here calls the here function
+mlong <-read_dta(here::here("Data/zip_mother_1983_86/mlong.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
 
 dim(mbirth2)
@@ -44,15 +44,6 @@ names(mbirth2)
 names (mlong)
 ```
 
-
-Lots of names that are not easy to interpret. We must read the document
-```{r}
-file.show(here::here("Projects/Catchup_Growth/Data/zip_mother_1983_86/mbirth2.dta")) # or you can click on it - easier to 'control + f ' to find words
-
-view(mlong)
-
-
-```
 
 Find the variables that relate to growth in this dataset
 ```{r, cache=TRUE}
@@ -217,10 +208,10 @@ summary_height83_86
 
 #Load and inspect 91 data
 ```{r}
-child2 <-read_dta(here::here("Projects/Catchup_Growth/Data/zip_child_91/child291.dta")) %>% # note: here::here calls the here function
+child2 <-read_dta(here::here("Data/zip_child_91/child291.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
 
-hhold91 <-read_dta(here::here("Projects/Catchup_Growth/Data/zip_household_91/hhold91.dta")) %>% # note: here::here calls the here function
+hhold91 <-read_dta(here::here("Data/zip_household_91/hhold91.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
 
 
@@ -309,10 +300,10 @@ summary_height91
 
 ```{r}
 
-anthdiet <-read_dta(here::here("~/Projects/Catchup_Growth/Data/zip_child_2002/anthdiet.dta")) %>% # note: here::here calls the here function
+anthdiet <-read_dta(here::here("Data/zip_child_2002/anthdiet.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
 
-screen_data<-read_dta(here::here("Projects/Catchup_Growth/Data/zip_child_2002/screen.dta")) %>% # note: here::here calls the here function
+screen_data<-read_dta(here::here("Data/zip_child_2002/screen.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
 
 #subset anthdiet
@@ -394,7 +385,7 @@ summary_weight_02
 #2005 data
 ```{r, chache=TRUE}
 #load anthdiet 05
-anthdiet05 <-read_dta(here::here("Projects/Catchup_Growth/Data/zip_child_2005/anthdiet.dta")) %>% # note: here::here calls the here function
+anthdiet05 <-read_dta(here::here("Data/zip_child_2005/anthdiet.dta")) %>% # note: here::here calls the here function
   rename_all(tolower)
 
 #subsetand  unite id variable
@@ -503,9 +494,6 @@ hfa_diff2
 hfa_diff3
 
 
-
-
-
 ```
 
 #wfaz differences
@@ -579,6 +567,14 @@ growth_data<- growth_data_unfiltered %>%
   rename(dayintw_birth = dayintw, mothintw_birth = mothintw, yearintw_birth = yearintw, intwdate_birth = intwdate, weightak_birth_kg = weightak_kg, heightcm_birth = heightcm, yearms_inf12 = yearms , mntham_inf12 = mntham, daymes_inf12 = daymes, dyintrvw91 = dyintrvw, weghtndx_91 = weghtndx, hightndx_91 = hightndx, age_cutoff_02 = age_cutoff, age_cutoff_02_days = age_cutoff_days, age_05 = age, dayntrvw_02 = dayntrvw, montrvw_02 = montrvw, yrntrvw_02 = yrntrvw, hfaz_birth = hfaz_birth.x, hfaz_inf_12 = hfaz_inf_12.x, hfaz_91 = hfaz_91.x, hfaz_02 = hfaz_02.x , wfaz_birth = wfaz_birth.x, wfaz_inf_12 = wfaz_inf_12.x, wfaz_91 = wfaz_91.x)
 
 growth_data
+```
+
+```{r}
+#read in unc child ID data
+
+anthdiet05 <-read_dta(here::here("")) %>% # note: here::here calls the here function
+  rename_all(tolower)
+
 ```
 
 
