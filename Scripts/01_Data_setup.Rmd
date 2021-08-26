@@ -596,10 +596,10 @@ growth_clocks_data <- left_join(growth_data, clocks_data, by = c("uncchdid"))
 growth_clocks_data
 
 ```
-
-```{r}
-# build regression model
-# minimal just clock data and z scores? need to filter sex later
+# modeling hfaz
+```{r, cache=TRUE}
+# build regression models for birth hfaz
+# minimal just clock data and z scores?
 
 grim_hbirth_min_f<-lm(AgeAccelGrim ~ hfaz_birth, subset(growth_clocks_data, sex == "2"))
 grim_hbirth_min_f
@@ -629,6 +629,177 @@ horv_hbirth_min_m
 mod1_full_f <-update(mod1_minimal, . ~ . + smoke + etc.)
 
 lm (y ~ x + e, df %>% filter(female == 'f')
+
+```
+```{r, cache=TRUE}
+#hfaz 2years old model
+grim_hinf12_min_f<-lm(AgeAccelGrim ~ hfaz_inf_12, subset(growth_clocks_data, sex == "2"))
+grim_hbirth_min_f
+
+grim_hinf12_min_m<-lm(AgeAccelGrim ~ hfaz_inf_12 , subset(growth_clocks_data, sex == "1"))
+grim_hinf12_min_m
+
+pheno_hinf12_min_f <-update(grim_hinf12_min_f, AgeAccelPheno ~ .)
+pheno_hinf12_min_f
+
+pheno_hinf12_min_m <-update(grim_hinf12_min_m, AgeAccelPheno ~ .)
+pheno_hinf12_min_m
+
+han_hinf12_min_f <-update(grim_hinf12_min_f, EEAA ~ .)
+han_hinf12_min_f
+
+han_hinf12_min_m <-update(grim_hinf12_min_m, EEAA ~ .)
+han_hbirth_min_m
+
+horv_hinf12_min_f <-update(grim_hinf12_min_f, IEAA ~ .)
+horv_hinf12_min_f
+
+horv_hinf12_min_m <-update(grim_hinf12_min_m, IEAA ~ .)
+horv_hinf12_min_m
+
+```
+
+```{r, cache=TRUE}
+#hfaz_91 minimal models
+
+grim_h91_min_f<-lm(AgeAccelGrim ~ hfaz_91, subset(growth_clocks_data, sex == "2"))
+grim_h91_min_f
+
+grim_h91_min_m<-lm(AgeAccelGrim ~ hfaz_91, subset(growth_clocks_data, sex == "1"))
+grim_h91_min_m
+
+pheno_h91_min_f <-update(grim_h91_min_f, AgeAccelPheno ~ .)
+pheno_h91_min_f
+
+pheno_h91_min_m <-update(grim_h91_min_m, AgeAccelPheno ~ .)
+pheno_h91_min_m
+
+han_h91_min_f <-update(grim_h91_min_f, EEAA ~ .)
+han_h91_min_f
+
+han_h91_min_m <-update(grim_h91_min_m, EEAA ~ .)
+han_h91_min_m
+
+horv_h91_min_f <-update(grim_h91_min_f, IEAA ~ .)
+horv_h91_min_f
+
+horv_h91_min_m <-update(grim_h91_min_m, IEAA ~ .)
+horv_h91_min_m
+
+```
+
+```{r, cache=TRUE}
+#hfaz 02 models: minimal
+
+grim_h02_min_f<-lm(AgeAccelGrim ~ hfaz_02, subset(growth_clocks_data, sex == "2"))
+grim_h02_min_f
+
+grim_h02_min_m<-lm(AgeAccelGrim ~ hfaz_02, subset(growth_clocks_data, sex == "1"))
+grim_h02_min_m
+
+pheno_h02_min_f <-update(grim_h02_min_f, AgeAccelPheno ~ .)
+pheno_h02_min_f
+
+pheno_h02_min_m <-update(grim_h02_min_m, AgeAccelPheno ~ .)
+pheno_h02_min_m
+
+han_h02_min_f <-update(grim_h02_min_f, EEAA ~ .)
+han_h02_min_f
+
+han_h02_min_m <-update(grim_h02_min_m, EEAA ~ .)
+han_h02_min_m
+
+horv_h02_min_f <-update(grim_h02_min_f, IEAA ~ .)
+horv_h02_min_f
+
+horv_h02_min_m <-update(grim_h02_min_m, IEAA ~ .)
+horv_h02_min_m
+
+```
+#modeling wfaz
+
+```{r, cache=TRUE}
+#wfa birth minimal models
+grim_wbirth_min_f<-lm(AgeAccelGrim ~ wfaz_birth, subset(growth_clocks_data, sex == "2"))
+grim_wbirth_min_f
+
+grim_wbirth_min_m<-lm(AgeAccelGrim ~ wfaz_birth, subset(growth_clocks_data, sex == "1"))
+grim_wbirth_min_m
+
+pheno_wbirth_min_f <-update(grim_wbirth_min_f, AgeAccelPheno ~ .)
+pheno_wbirth_min_f
+
+pheno_wbirth_min_m <-update(grim_wbirth_min_m, AgeAccelPheno ~ .)
+pheno_wbirth_min_m
+
+han_wbirth_min_f <-update(grim_wbirth_min_f, EEAA ~ .)
+han_wbirth_min_f
+
+han_wbirth_min_m <-update(grim_wbirth_min_m, EEAA ~ .)
+han_wbirth_min_m
+
+horv_wbirth_min_f <-update(grim_wbirth_min_f, IEAA ~ .)
+horv_wbirth_min_f
+
+horv_wbirth_min_m <-update(grim_wbirth_min_m, IEAA ~ .)
+horv_wbirth_min_m
+
+
+```
+
+```{r, cache=TRUE}
+#wfaz inf12 minimal models
+grim_winf12_min_f<-lm(AgeAccelGrim ~ hfaz_inf_12, subset(growth_clocks_data, sex == "2"))
+grim_winf12_min_f
+
+grim_winf12_min_m<-lm(AgeAccelGrim ~ wfaz_inf_12, subset(growth_clocks_data, sex == "1"))
+grim_winf12_min_m
+
+pheno_winf12_min_f <-update(grim_winf12_min_f, AgeAccelPheno ~ .)
+pheno_winf12_min_f
+
+pheno_winf12_min_m <-update(grim_winf12_min_m, AgeAccelPheno ~ .)
+pheno_winf12_min_m
+
+han_winf12_min_f <-update(grim_winf12_min_f, EEAA ~ .)
+han_winf12_min_f
+
+han_winf12_min_m <-update(grim_winf12_min_m, EEAA ~ .)
+han_winf12_min_m
+
+horv_winf12_min_f <-update(grim_winf12_min_f, IEAA ~ .)
+horv_winf12_min_f
+
+horv_winf12_min_m <-update(grim_winf12_min_m, IEAA ~ .)
+horv_winf12_min_m
+
+```
+
+```{r, cache=TRUE}
+#wfaz 91 minimal models
+grim_w91_min_f<-lm(AgeAccelGrim ~ hfaz_91, subset(growth_clocks_data, sex == "2"))
+grim_w91_min_f
+
+grim_w91_min_m<-lm(AgeAccelGrim ~ wfaz_91, subset(growth_clocks_data, sex == "1"))
+grim_w91_min_m
+
+pheno_w91_min_f <-update(grim_w91_min_f, AgeAccelPheno ~ .)
+pheno_w91_min_f
+
+pheno_w91_min_m <-update(grim_w91_min_m, AgeAccelPheno ~ .)
+pheno_w91_min_m
+
+han_w91_min_f <-update(grim_w91_min_f, EEAA ~ .)
+han_w91_min_f
+
+han_w91_min_m <-update(grim_w91_min_m, EEAA ~ .)
+han_w91_min_m
+
+horv_w91_min_f <-update(grim_w91_min_f, IEAA ~ .)
+horv_w91_min_f
+
+horv_w91_min_m <-update(grim_w91_min_m, IEAA ~ .)
+horv_w91_min_m
 
 ```
 
