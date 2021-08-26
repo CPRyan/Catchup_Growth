@@ -597,4 +597,38 @@ growth_clocks_data
 
 ```
 
+```{r}
+# build regression model
+# minimal just clock data and z scores? need to filter sex later
+
+grim_hbirth_min_f<-lm(AgeAccelGrim ~ hfaz_birth, subset(growth_clocks_data, sex == "2"))
+grim_hbirth_min_f
+
+grim_hbirth_min_m<-lm(AgeAccelGrim ~ hfaz_birth, subset(growth_clocks_data, sex == "1"))
+grim_hbirth_min_m
+
+pheno_hbirth_min_f <-update(grim_hbirth_min_f, AgeAccelPheno ~ .)
+pheno_hbirth_min_f
+
+pheno_hbirth_min_m <-update(grim_hbirth_min_m, AgeAccelPheno ~ .)
+pheno_hbirth_min_m
+
+han_hbirth_min_f <-update(grim_hbirth_min_f, EEAA ~ .)
+han_hbirth_min_f
+
+han_hbirth_min_m <-update(grim_hbirth_min_m, EEAA ~ .)
+han_hbirth_min_m
+
+horv_hbirth_min_f <-update(grim_hbirth_min_f, IEAA ~ .)
+horv_hbirth_min_f
+
+horv_hbirth_min_m <-update(grim_hbirth_min_m, IEAA ~ .)
+horv_hbirth_min_m
+
+#this is just examples of stuff I'm gonna need to do
+mod1_full_f <-update(mod1_minimal, . ~ . + smoke + etc.)
+
+lm (y ~ x + e, df %>% filter(female == 'f')
+
+```
 
