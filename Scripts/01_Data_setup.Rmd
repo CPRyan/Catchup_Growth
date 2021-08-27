@@ -1,6 +1,6 @@
 ---
 title: "01_Data_Setup"
-author: "Calen P. Ryan"
+author: "Milan Hilde-Jones and Calen P. Ryan"
 date: "6/30/2021"
 output: html_document
 ---
@@ -37,11 +37,13 @@ mlong <-read_dta(here::here("Data/zip_mother_1983_86/mlong.dta")) %>% # note: he
 dim(mbirth2)
 dim(mlong)
 ```
-```{r}
-names(mbirth2)
 
+## names of mbirth2
+```{r eval = FALSE}
+names(mbirth2)
 ```
-```{r}
+## Names of mlong
+```{r eval = FALSE}
 names (mlong)
 ```
 
@@ -266,6 +268,7 @@ growth91_data <- growth91_data %>%
 growth91_data
 
 ```
+
 ```{r}
 #model height and weight distributions
 ggplot(growth91_data, aes(x= weghtndx))+
@@ -342,7 +345,7 @@ growth02_data <- addWGSR(data = growth02_data, sex = "sexchild", firstPart= "hei
 
 growth02_data
 
-
+# We may need to check if we have any pregnant women in here. 
 ```
 
 
@@ -528,12 +531,28 @@ wfa_diff2
 ```{r, cache =TRUE}
 #join difference tables
 zscore_hfa_diffs <- left_join(hfa_diff1, hfa_diff2, by = c("basebrgy_basewman", "sexchild")) 
-zscore_hfa_diffs <- left_join(zscore_hfa_diffs, hfa_diff3, by = c("basebrgy_basewman", "sexchild")) %>% 
-  select(basebrgy_basewman, sexchild, hfaz_birth, hfaz_inf_12.x, hfaz_91.x, hfaz_02, hfa_diff_birth_inf12, hfa_diff_inf12_91, hfa_diff_91_02) %>% 
-  rename(hfaz_inf_12 = hfaz_inf_12.x, hfaz_91 = hfaz_91.x )
-  
+dim(hfa_diff1)
+dim(hfa_diff2)
+dim(zscore_hfa_diffs)
+# OK, we're introducing extra rows here somehow. hfa_diffs1 and hfa_diffs2 both have 3069, but zscore_hfa_diffs has 3161
+# 
+intersect(names(hfa_diff1), names(hfa_diff2))
+# Ok, at least this one place we are including 2 variables for hfaz_inf_12
+
+zscore_hfa_diffs <- left_join(hfa_diff1, hfa_diff2 %>% 
+                                select(-hfaz_inf_12), by = c("basebrgy_basewman", "sexchild")) 
+dim(zscore_hfa_diffs)
+# Still 3161
+
+intersect(names(zscore_hfa_diffs), names(hfa_diff3))
+
+zscore_hfa_diffs <- left_join(zscore_hfa_diffs, hfa_diff3 %>% 
+                                select(-hfaz_91), 
+                              by = c("basebrgy_basewman", "sexchild")) %>% 
+  select(basebrgy_basewman, sexchild, hfaz_birth, hfaz_inf_12, hfaz_91, hfaz_02, hfa_diff_birth_inf12, hfa_diff_inf12_91, hfa_diff_91_02)
 
 zscore_hfa_diffs
+# Dang, we have yet more rows. We're definitely adding artifacts.
 
 zscore_wfa_diffs <- left_join(wfa_diff1, wfa_diff2, by = c("basebrgy_basewman", "sexchild", "wfaz_inf_12")) %>% 
   select(basebrgy_basewman, sexchild, wfaz_birth, wfaz_inf_12, wfaz_91, wfa_diff_birth_inf12, wfa_diff_inf12_91)
@@ -541,8 +560,15 @@ zscore_wfa_diffs <- left_join(wfa_diff1, wfa_diff2, by = c("basebrgy_basewman", 
 zscore_wfa_diffs
 
 #join hfa diff and wfa diff
-zscore_diffs <- left_join(zscore_hfa_diffs, zscore_wfa_diffs, by = c("basebrgy_basewman", "sexchild"))
-zscore_diffs
+intersect(names(zscore_hfa_diffs), names(zscore_wfa_diffs))
+
+
+zscore_diffs <- left_join(zscore_hfa_diffs, zscore_wfa_diffs %>% select(-sexchild), by = c("basebrgy_basewman"))
+# Ok, we're introducing another 1000 almost here. This is a problem...
+
+zscore_diffs %>% filter(basebrgy_basewman == "1_178")
+zscore_hfa_diffs %>% filter(basebrgy_basewman == "1_178")
+zscore_wfa_diffs %>% filter(basebrgy_basewman == "1_178")
 
 
 ```
