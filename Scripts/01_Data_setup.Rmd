@@ -152,18 +152,28 @@ height_mlong_bday_12 <- addWGSR(data = height_mlong_bday_12, sex = "sexchild", f
 
 ```{r, cache=TRUE}
 #join wfa and hfa zscores in one table
+intersect(names(height_mlong_bday_12), names(weight_mlong_bday_12))
 
-growth83_86_infdata <-left_join(height_mlong_bday_12, weight_mlong_bday_12, by = c("basebrgy_basewman","sexchild","age_days_infweigh", "date_inf_meas", "birthdate"))
+growth83_86_infdata <-left_join(height_mlong_bday_12, weight_mlong_bday_12 %>%  
+                               select(-date_inf_meas, -age_days_infweigh, -birthdate, -sexchild), by = c("basebrgy_basewman")) 
 
 growth83_86_infdata
+ 
 
+
+zscore_hfa_diffs <- left_join(hfa_diff1, hfa_diff2 %>% 
+                               select(-sexchild, -hfaz_inf_12), by = c("basebrgy_basewman"))
+
+zscore_hfa_diffs
 ```
 
 
 ```{r}
 #make one big 83/86 table with z scores
+intersect(names(growth83_86_birthdata), names(growth83_86_infdata))
 
-growth83_86_data <- left_join(growth83_86_birthdata, growth83_86_infdata, by = c("basebrgy_basewman", "sexchild", "birthdate"))
+growth83_86_data <- left_join(growth83_86_birthdata, growth83_86_infdata %>% 
+                                select(-sexchild, -birthdate), by = c("basebrgy_basewman")) 
 
 growth83_86_data
 ```
@@ -227,7 +237,7 @@ dim(hhold91)
 #unite identifier variables
 
 growth2 <-child2 %>%
-  select(basebrgy, basewman, basehhno, currbrgy, weghtndx, hightndx) %>% 
+  select(basebrgy, basewman, weghtndx, hightndx) %>% 
   unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
 
 #subset hh91 data
@@ -237,9 +247,13 @@ intw_date91 <- hhold91 %>%
   unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
 
 #join tables together to make growth91_data
-growth91_data <- left_join(growth2, intw_date91, by = c("basebrgy_basewman"))
-         
-growth91_data <- left_join(growth91_data, birthdates_data, by = c("basebrgy_basewman"))
+intersect(names(growth91_data_nobday), names(birthdates_data))
+
+growth91_data_nobday <- left_join(growth2, intw_date91, by = c("basebrgy_basewman"))
+
+growth91_data_nobday
+
+growth91_data <- left_join(growth91_data_nobday, birthdates_data, by = c("basebrgy_basewman"))
 
 growth91_data
 ```
@@ -399,6 +413,9 @@ anthdiet05 <- anthdiet05 %>%
   unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman") %>% 
   rename(weight_05 = weight, height_05 = height)
   
+intersect(names(birthdates_data), names(anthdiet05))
+
+
 growth05_data <- left_join(birthdates_data, anthdiet05, by = c("basebrgy_basewman")) %>% 
   mutate(height_m_05 = (height_05/100)) %>% 
   mutate( bmi_05 = (weight_05/(height_m_05^2))) %>% 
@@ -454,49 +471,37 @@ summary_bmi_05
 
 ```{r, cache=TRUE }
 #table of zscores :)
-zscore_data <- left_join(growth83_86_data, growth91_data, by = c("basebrgy_basewman", "sexchild")) 
-zscore_data <- left_join(zscore_data, growth02_data, by = c("basebrgy_basewman", "sexchild"))
+zscore_data <- left_join(growth83_86_data, growth91_data %>%  
+                         select(-sexchild, -birthdate), by = c("basebrgy_basewman")) 
+ 
 
-zscore_wfa<- zscore_data %>% 
-  select(basebrgy_basewman, sexchild, age_days_birthweigh, age_days_infweigh, age91_days, wfaz_birth, wfaz_inf_12, wfaz_91)
+intersect(names(zscore_data), names(growth02_data))
 
-zscore_hfa <-zscore_data %>% 
-  select(basebrgy_basewman, sexchild, age_days_birthweigh, age_days_infweigh, age91_days, hfaz_birth, hfaz_inf_12, hfaz_91, hfaz_02) 
+zscore_data_unfilt <- left_join(zscore_data, growth02_data %>% 
+                         select(-sexchild, -birthdate), by = c("basebrgy_basewman")) 
+
+zscore_data <- zscore_data_unfilt %>% 
+  select(basebrgy_basewman, sexchild, age_days_birthweigh, age_days_infweigh, age91_days, hfaz_birth, hfaz_inf_12, hfaz_91, hfaz_02,  wfaz_birth, wfaz_inf_12, wfaz_91)
   
 
-zscore_hfa
-zscore_wfa
+zscore_data
+
 
 ```
 
 #Hfaz differences 
 ```{r, cache = TRUE}
-#make a table for birth and 2 yrs old data
-#find the difference between these
+#find the differences between hfaz
 
-hfa_diff1 <- zscore_hfa %>% 
-  select(basebrgy_basewman, sexchild, hfaz_birth, hfaz_inf_12) %>%
-  mutate(hfa_diff_birth_inf12 = (hfaz_inf_12 - hfaz_birth))
-
-#make a table for 2 yrs old - 91 data
-#find the difference between these
-
-hfa_diff2 <- zscore_hfa %>% 
-  select(basebrgy_basewman, sexchild, hfaz_inf_12, hfaz_91) %>%
-  mutate(hfa_diff_inf12_91 = (hfaz_91 - hfaz_inf_12))
-
-#make a table for 91 and 02 data
-#find the difference between these
-
-hfa_diff3 <- zscore_hfa %>% 
-  select(basebrgy_basewman, sexchild, hfaz_91, hfaz_02) %>%
+hfaz_diffs <- zscore_data %>% 
+  select(basebrgy_basewman, sexchild, hfaz_birth, hfaz_inf_12, hfaz_91, hfaz_02) %>%
+  mutate(hfa_diff_birth_inf12 = (hfaz_inf_12 - hfaz_birth)) %>% 
+  mutate(hfa_diff_inf12_91 = (hfaz_91 - hfaz_inf_12)) %>% 
   mutate(hfa_diff_91_02 = (hfaz_02 - hfaz_91))
 
 #visualize
-hfa_diff1
-hfa_diff2
-hfa_diff3
-
+hfaz_diffs
+dim(hfaz_diffs)
 
 ```
 
@@ -507,68 +512,35 @@ hfa_diff3
 #make a table for birth and 2 yrs old data
 #find the difference between these
 
-wfa_diff1 <- zscore_wfa %>% 
-  select(basebrgy_basewman, sexchild, wfaz_birth, wfaz_inf_12) %>%
-  mutate(wfa_diff_birth_inf12 = (wfaz_inf_12 - wfaz_birth))
-
-#make a table for 2 yrs old - 91 data
-#find the difference between these
-
-wfa_diff2 <- zscore_wfa %>% 
-  select(basebrgy_basewman, sexchild, wfaz_inf_12, wfaz_91) %>%
+wfaz_diffs <- zscore_data %>% 
+  select(basebrgy_basewman, sexchild, wfaz_birth, wfaz_inf_12, wfaz_91) %>%
+  mutate(wfa_diff_birth_inf12 = (wfaz_inf_12 - wfaz_birth)) %>% 
   mutate(wfa_diff_inf12_91 = (wfaz_91 - wfaz_inf_12))
 
 
 #visualize
-wfa_diff1
-wfa_diff2
-
-
+wfaz_diffs
+dim(wfaz_diffs)
 
 ```
 
 #Join all of the data needed into one table
 ```{r, cache =TRUE}
 #join difference tables
-zscore_hfa_diffs <- left_join(hfa_diff1, hfa_diff2, by = c("basebrgy_basewman", "sexchild")) 
-dim(hfa_diff1)
-dim(hfa_diff2)
-dim(zscore_hfa_diffs)
-# OK, we're introducing extra rows here somehow. hfa_diffs1 and hfa_diffs2 both have 3069, but zscore_hfa_diffs has 3161
-# 
-intersect(names(hfa_diff1), names(hfa_diff2))
-# Ok, at least this one place we are including 2 variables for hfaz_inf_12
 
-zscore_hfa_diffs <- left_join(hfa_diff1, hfa_diff2 %>% 
-                                select(-hfaz_inf_12), by = c("basebrgy_basewman", "sexchild")) 
-dim(zscore_hfa_diffs)
-# Still 3161
-
-intersect(names(zscore_hfa_diffs), names(hfa_diff3))
-
-zscore_hfa_diffs <- left_join(zscore_hfa_diffs, hfa_diff3 %>% 
-                                select(-hfaz_91), 
-                              by = c("basebrgy_basewman", "sexchild")) %>% 
-  select(basebrgy_basewman, sexchild, hfaz_birth, hfaz_inf_12, hfaz_91, hfaz_02, hfa_diff_birth_inf12, hfa_diff_inf12_91, hfa_diff_91_02)
-
-zscore_hfa_diffs
-# Dang, we have yet more rows. We're definitely adding artifacts.
-
-zscore_wfa_diffs <- left_join(wfa_diff1, wfa_diff2, by = c("basebrgy_basewman", "sexchild", "wfaz_inf_12")) %>% 
-  select(basebrgy_basewman, sexchild, wfaz_birth, wfaz_inf_12, wfaz_91, wfa_diff_birth_inf12, wfa_diff_inf12_91)
-  
-zscore_wfa_diffs
-
-#join hfa diff and wfa diff
-intersect(names(zscore_hfa_diffs), names(zscore_wfa_diffs))
-
-
-zscore_diffs <- left_join(zscore_hfa_diffs, zscore_wfa_diffs %>% select(-sexchild), by = c("basebrgy_basewman"))
+zscore_diffs <- left_join(hfaz_diffs, wfaz_diffs %>% 
+                            select(-sexchild), by = c("basebrgy_basewman"))
+zscore_diffs
 # Ok, we're introducing another 1000 almost here. This is a problem...
+dim(hfaz_diffs)
+dim(wfaz_diffs)
+dim(zscore_diffs)
 
 zscore_diffs %>% filter(basebrgy_basewman == "1_178")
 zscore_hfa_diffs %>% filter(basebrgy_basewman == "1_178")
 zscore_wfa_diffs %>% filter(basebrgy_basewman == "1_178")
+
+
 
 
 ```
@@ -576,14 +548,18 @@ zscore_wfa_diffs %>% filter(basebrgy_basewman == "1_178")
 ```{r}
 # join the growth datasets
 
-growth_data <- left_join(growth83_86_data, growth91_data, by = c("basebrgy_basewman", "sexchild", "birthdate")) 
-growth_data <- left_join(growth_data, growth02_data, by = c("basebrgy_basewman", "sexchild", "birthdate"))
-growth_data <- left_join(growth_data, growth05_data, by = c("basebrgy_basewman", "sexchild", "birthdate"))
+growth_data1 <- left_join(growth83_86_data, growth91_data %>% 
+                           select(-sexchild, -birthdate), by = c("basebrgy_basewman")) 
 
-
+growth_data2 <- left_join(growth_data1, growth02_data %>% 
+                           select( -sexchild, -birthdate), by = c("basebrgy_basewman"))
+growth_data3 <- left_join(growth_data2, growth05_data %>% 
+                           select(-sexchild, -birthdate), by = c("basebrgy_basewman"))
+growth_data3
 
 #join growth and difference datasets
-growth_data_unfiltered <- left_join(growth_data, zscore_diffs, by = c("basebrgy_basewman", "sexchild")) %>% 
+growth_data_unfiltered <- left_join(growth_data3, zscore_diffs %>% 
+                                      select(-sexchild, -wfaz_birth, -hfaz_birth, -hfaz_inf_12, -wfaz_inf_12, -wfaz_91, -hfaz_91, -hfaz_02), by = c("basebrgy_basewman")) %>% 
   separate(basebrgy_basewman, into = c("basebrgy", "basewman"), sep = "_")
 
 growth_data_unfiltered
@@ -605,8 +581,8 @@ by = c("basebrgy", "basewman"))
 #rename variables so they're labeled with year
 
 growth_data<- growth_data_unfiltered %>% 
-  select(uncchdid, basebrgy, basewman, sexchild, sex, outcome, daybirth, mnthbrth, yearbirt, birthdate, dayintw,mothintw, yearintw, intwdate, age_days_birthweigh, weightak_kg, heightcm, daymes, mntham, yearms, date_inf_meas, age_days_infweigh, hght_12, wght_12, dyintrvw, mointr91, yrintr91, intwdate91, age91_days, age_mo_91, age91_years, hightndx, weghtndx, dayntrvw, montrvw, yrntrvw, intw_date02, age_days_02, age_years_02, age_cutoff, age_cutoff_days, height_02, weight_02, age, height_05, height_m_05, weight_05, bmi_05, hfaz_birth.x, hfaz_inf_12.x, hfaz_91.x, hfaz_02.x, hfa_diff_birth_inf12, hfa_diff_inf12_91, hfa_diff_91_02, wfaz_birth.x, wfaz_inf_12.x, wfaz_91.x, wfa_diff_birth_inf12, wfa_diff_inf12_91, reprostat, was_preg_no_na, trimester) %>% 
-  rename(dayintw_birth = dayintw, mothintw_birth = mothintw, yearintw_birth = yearintw, intwdate_birth = intwdate, weightak_birth_kg = weightak_kg, heightcm_birth = heightcm, yearms_inf12 = yearms , mntham_inf12 = mntham, daymes_inf12 = daymes, dyintrvw91 = dyintrvw, weghtndx_91 = weghtndx, hightndx_91 = hightndx, age_cutoff_02 = age_cutoff, age_cutoff_02_days = age_cutoff_days, age_05 = age, dayntrvw_02 = dayntrvw, montrvw_02 = montrvw, yrntrvw_02 = yrntrvw, hfaz_birth = hfaz_birth.x, hfaz_inf_12 = hfaz_inf_12.x, hfaz_91 = hfaz_91.x, hfaz_02 = hfaz_02.x , wfaz_birth = wfaz_birth.x, wfaz_inf_12 = wfaz_inf_12.x, wfaz_91 = wfaz_91.x) 
+  select(uncchdid, basebrgy, basewman, sexchild, sex, outcome, birthdate, intwdate, age_days_birthweigh, weightak_kg, heightcm, date_inf_meas, age_days_infweigh, hght_12, wght_12, intwdate91, age91_days, age_mo_91, age91_years, hightndx, weghtndx, intw_date02, age_days_02, age_years_02, age_cutoff, age_cutoff_days, height_02, weight_02, age, height_05, height_m_05, weight_05, bmi_05, hfaz_birth, hfaz_inf_12, hfaz_91, hfaz_02, hfa_diff_birth_inf12, hfa_diff_inf12_91, hfa_diff_91_02, wfaz_birth, wfaz_inf_12, wfaz_91, wfa_diff_birth_inf12, wfa_diff_inf12_91, reprostat, was_preg_no_na, trimester) %>% 
+  rename(intwdate_birth = intwdate, weightak_birth_kg = weightak_kg, heightcm_birth = heightcm, weghtndx_91 = weghtndx, hightndx_91 = hightndx, age_cutoff_02 = age_cutoff, age_cutoff_02_days = age_cutoff_days, age_05 = age) 
   
 
 growth_data
@@ -651,10 +627,6 @@ horv_hbirth_min_f
 horv_hbirth_min_m <-update(grim_hbirth_min_m, IEAA ~ .)
 horv_hbirth_min_m
 
-#this is just examples of stuff I'm gonna need to do
-mod1_full_f <-update(mod1_minimal, . ~ . + smoke + etc.)
-
-lm (y ~ x + e, df %>% filter(female == 'f')
 
 ```
 ```{r, cache=TRUE}
