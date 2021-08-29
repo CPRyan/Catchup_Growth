@@ -535,6 +535,10 @@ zscore_diffs
 dim(hfaz_diffs)
 dim(wfaz_diffs)
 dim(zscore_diffs)
+dim(zscore_diffs[duplicated(zscore_diffs$basebrgy_basewman),])[1]
+
+length(unique(zscore_diffs$basebrgy_basewman)) == nrow(zscore_diffs)
+zscore_diffs[duplicated(zscore_diffs$basebrgy_basewman),]
 
 zscore_diffs %>% filter(basebrgy_basewman == "1_178")
 zscore_hfa_diffs %>% filter(basebrgy_basewman == "1_178")
@@ -581,7 +585,8 @@ by = c("basebrgy", "basewman"))
 #rename variables so they're labeled with year
 
 growth_data<- growth_data_unfiltered %>% 
-  select(uncchdid, basebrgy, basewman, sexchild, sex, outcome, birthdate, intwdate, age_days_birthweigh, weightak_kg, heightcm, date_inf_meas, age_days_infweigh, hght_12, wght_12, intwdate91, age91_days, age_mo_91, age91_years, hightndx, weghtndx, intw_date02, age_days_02, age_years_02, age_cutoff, age_cutoff_days, height_02, weight_02, age, height_05, height_m_05, weight_05, bmi_05, hfaz_birth, hfaz_inf_12, hfaz_91, hfaz_02, hfa_diff_birth_inf12, hfa_diff_inf12_91, hfa_diff_91_02, wfaz_birth, wfaz_inf_12, wfaz_91, wfa_diff_birth_inf12, wfa_diff_inf12_91, reprostat, was_preg_no_na, trimester) %>% 
+   unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman") %>% 
+  select(uncchdid, basebrgy_basewman, sexchild, sex, outcome, birthdate, intwdate, age_days_birthweigh, weightak_kg, heightcm, date_inf_meas, age_days_infweigh, hght_12, wght_12, intwdate91, age91_days, age_mo_91, age91_years, hightndx, weghtndx, intw_date02, age_days_02, age_years_02, age_cutoff, age_cutoff_days, height_02, weight_02, age, height_05, height_m_05, weight_05, bmi_05, hfaz_birth, hfaz_inf_12, hfaz_91, hfaz_02, hfa_diff_birth_inf12, hfa_diff_inf12_91, hfa_diff_91_02, wfaz_birth, wfaz_inf_12, wfaz_91, wfa_diff_birth_inf12, wfa_diff_inf12_91, reprostat, was_preg_no_na, trimester) %>% 
   rename(intwdate_birth = intwdate, weightak_birth_kg = weightak_kg, heightcm_birth = heightcm, weghtndx_91 = weghtndx, hightndx_91 = hightndx, age_cutoff_02 = age_cutoff, age_cutoff_02_days = age_cutoff_days, age_05 = age) 
   
 
