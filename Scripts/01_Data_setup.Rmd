@@ -29,10 +29,15 @@ here::here()
 # Load and inspect 83-86
 ```{r}
 mbirth2 <-read_dta(here::here("Data/zip_mother_1983_86/mbirth2.dta")) %>% # note: here::here calls the here function
-  rename_all(tolower)
+  rename_all(tolower) %>% 
+  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
 
 mlong <-read_dta(here::here("Data/zip_mother_1983_86/mlong.dta")) %>% # note: here::here calls the here function
-  rename_all(tolower)
+  rename_all(tolower) %>% 
+  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
+  
+  
+
 
 dim(mbirth2)
 dim(mlong)
@@ -51,10 +56,9 @@ names (mlong)
 Find the variables that relate to growth in this dataset
 ```{r, cache=TRUE}
 #subset mbirth data 
-#unite identifier variables
 growth83_86_birthdata<-mbirth2 %>% 
-  select(basebrgy,hhldnubi, basewman, sexchild, outcome, daybirth, mnthbrth, yearbirt, dayintw, mothintw, yearintw, bbweight, weight1, weightak, weightgm, heightcm ) %>% 
-  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
+  select(basebrgy_basewman, sexchild, outcome, daybirth, mnthbrth, yearbirt, dayintw, mothintw, yearintw, bbweight, weight1, weightak, weightgm, heightcm )
+  
 
 #Create variables for birthday and age at first weigh
  growth83_86_birthdata <- growth83_86_birthdata %>%  
@@ -82,12 +86,12 @@ growth83_86_birthdata <- growth83_86_birthdata %>%
 ```{r, cache=TRUE}
 #subset mlong data and add date of interview
 mlong_anthro <-mlong %>% 
-  select(basebrgy, basewman,weight, height, yearms, mntham, daymes) %>% 
+  select(basebrgy_basewman, weight, height, yearms, mntham, daymes) %>% 
   mutate(date_inf_meas = lubridate::make_date(year = yearms+1900,
                                               month = mntham,
                                               day = daymes)) %>% 
-  arrange(desc(basewman, basebrgy, date_inf_meas)) %>% 
-  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
+  arrange(desc(basebrgy_basewman, date_inf_meas)) 
+
 
 #make a subset for birthday data
 birthdates_data <- growth83_86_birthdata %>% 
@@ -222,29 +226,28 @@ summary_height83_86
 #Load and inspect 91 data
 ```{r}
 child2 <-read_dta(here::here("Data/zip_child_91/child291.dta")) %>% # note: here::here calls the here function
-  rename_all(tolower)
+  rename_all(tolower) %>% 
+  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
 
 hhold91 <-read_dta(here::here("Data/zip_household_91/hhold91.dta")) %>% # note: here::here calls the here function
-  rename_all(tolower)
+  rename_all(tolower) %>% 
+  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
 
 
 dim(child2)
 dim(hhold91)
 ```
 
-```{r}
+```{r, cache = TRUE}
 #subset child2 data
-#unite identifier variables
 
 growth2 <-child2 %>%
-  select(basebrgy, basewman, weghtndx, hightndx) %>% 
-  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
+  select(basebrgy_basewman, weghtndx, hightndx) 
 
 #subset hh91 data
-#unite identifier variables
+
 intw_date91 <- hhold91 %>% 
-  select(basebrgy, basewman, mointr91, dyintrvw, yrintr91) %>% 
-  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
+  select(basebrgy_basewman, mointr91, dyintrvw, yrintr91) 
 
 #join tables together to make growth91_data
 intersect(names(growth91_data_nobday), names(birthdates_data))
@@ -319,27 +322,26 @@ summary_height91
 ```{r}
 
 anthdiet <-read_dta(here::here("Data/zip_child_2002/anthdiet.dta")) %>% # note: here::here calls the here function
-  rename_all(tolower)
+  rename_all(tolower) %>% 
+  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
 
 screen_data<-read_dta(here::here("Data/zip_child_2002/screen.dta")) %>% # note: here::here calls the here function
-  rename_all(tolower)
+  rename_all(tolower) %>% 
+  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
 
 #subset anthdiet
 #calculate bmi
-#join identifier variable
 anthdiet <- anthdiet %>% 
-  select(basebrgy, basewman, weight, height) %>% 
+  select(basebrgy_basewman, weight, height) %>% 
   filter(weight > 0) %>% 
   filter(height > 0) %>% 
-  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman") %>% 
   rename(weight_02 = weight, height_02 = height)
 
 #subset screen_data
-#join identifier variable
 screen_data <- screen_data %>% 
-  select(basebrgy, basewman, dayntrvw, yrntrvw, montrvw) %>% 
-  mutate(intw_date02 = make_date(yrntrvw, montrvw, dayntrvw)) %>% 
-  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
+  select(basebrgy_basewman, dayntrvw, yrntrvw, montrvw) %>% 
+  mutate(intw_date02 = make_date(yrntrvw, montrvw, dayntrvw))
+ 
  
 #make interview date and find age at interview
 screen_data <- left_join(birthdates_data, screen_data, by = c("basebrgy_basewman")) %>% 
@@ -404,13 +406,13 @@ summary_weight_02
 ```{r, chache=TRUE}
 #load anthdiet 05
 anthdiet05 <-read_dta(here::here("Data/zip_child_2005/anthdiet.dta")) %>% # note: here::here calls the here function
-  rename_all(tolower)
+  rename_all(tolower) %>% 
+  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
 
 #subsetand  unite id variable
 #calculate bmi
 anthdiet05 <- anthdiet05 %>% 
-  select(basebrgy, basewman, age, sex, weight, height) %>% 
-  unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman") %>% 
+  select(basebrgy_basewman, age, sex, weight, height) %>% 
   rename(weight_05 = weight, height_05 = height)
   
 intersect(names(birthdates_data), names(anthdiet05))
@@ -540,14 +542,34 @@ dim(zscore_diffs[duplicated(zscore_diffs$basebrgy_basewman),])[1]
 length(unique(zscore_diffs$basebrgy_basewman)) == nrow(zscore_diffs)
 zscore_diffs[duplicated(zscore_diffs$basebrgy_basewman),]
 
-zscore_diffs %>% filter(basebrgy_basewman == "1_178")
-zscore_hfa_diffs %>% filter(basebrgy_basewman == "1_178")
-zscore_wfa_diffs %>% filter(basebrgy_basewman == "1_178")
-
-
-
 
 ```
+
+```{r}
+#Figure out whats going on with repeating rows
+
+#2 rows each-- look identical
+hfaz_diffs %>% filter(basebrgy_basewman == "1_178")
+wfaz_diffs %>% filter(basebrgy_basewman == "1_178")
+
+#four rows
+zscore_diffs %>% filter(basebrgy_basewman == "1_178")
+
+mbirth2 %>% filter(basebrgy_basewman == "1_178")
+mlong %>% filter(basebrgy_basewman == "1_178")
+child2 %>% filter(basebrgy_basewman == "1_178")
+
+#problem starts here-- same basebrgy_basewman with some different stuff 
+#looking at stat1991 I think were dealing with a mother and her child
+#What I'm wondering is if theres a mom and her kid for all the repeated rows, but only the kid has height/weight data, so when the files are merged identical weight and height is added to both rows
+hhold91 %>% filter(basebrgy_basewman == "1_178")
+anthdiet %>% filter(basebrgy_basewman == "1_178")
+screen_data %>% filter(basebrgy_basewman == "1_178")
+anthdiet05 %>% filter(basebrgy_basewman == "1_178")
+
+```
+
+
 
 ```{r}
 # join the growth datasets
