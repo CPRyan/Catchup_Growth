@@ -130,7 +130,10 @@ height_mlong_bday <-mlong_anthro_bday %>%
 weight_mlong_bday
 height_mlong_bday
 
-
+# height_mlong_bday %>% 
+#   group_by(basebrgy_basewman) %>% 
+#   summarize(n = n()) %>% 
+#   filter(n > 1)
 ```
 
 
@@ -152,6 +155,10 @@ height_mlong_bday_12 <- addWGSR(data = height_mlong_bday_12, sex = "sexchild", f
   rename( hfaz_inf_12 = hfaz)
 
 
+# weight_mlong_bday_12 %>%
+#   group_by(basebrgy_basewman) %>%
+#   summarize(n = n()) %>%
+#   filter(n > 1)
 ```
 
 ```{r, cache=TRUE}
@@ -164,11 +171,18 @@ growth83_86_infdata <-left_join(height_mlong_bday_12, weight_mlong_bday_12 %>%
 growth83_86_infdata
  
 
+# There isn't anything loaded yet that is called hfa_diff1 or hfa_diff2. 
 
-zscore_hfa_diffs <- left_join(hfa_diff1, hfa_diff2 %>% 
-                               select(-sexchild, -hfaz_inf_12), by = c("basebrgy_basewman"))
-
-zscore_hfa_diffs
+# zscore_hfa_diffs <- left_join(hfa_diff1, hfa_diff2 %>% 
+#                                select(-sexchild, -hfaz_inf_12), by = c("basebrgy_basewman"))
+# 
+# zscore_hfa_diffs
+# 
+# 
+# zscore_hfa_diffs %>% 
+#   group_by(basebrgy_basewman) %>%
+#   summarize(n = n()) %>%
+#   filter(n > 1)
 ```
 
 
@@ -179,7 +193,10 @@ intersect(names(growth83_86_birthdata), names(growth83_86_infdata))
 growth83_86_data <- left_join(growth83_86_birthdata, growth83_86_infdata %>% 
                                 select(-sexchild, -birthdate), by = c("basebrgy_basewman")) 
 
-growth83_86_data
+# growth83_86_data %>% 
+#   group_by(basebrgy_basewman) %>%
+#   summarize(n = n()) %>%
+#   filter(n > 1)
 ```
 
 ```{r}
@@ -236,29 +253,149 @@ hhold91 <-read_dta(here::here("Data/zip_household_91/hhold91.dta")) %>% # note: 
 
 dim(child2)
 dim(hhold91)
+
+child2 %>%
+  group_by(basebrgy_basewman) %>%
+  summarize(n = n()) %>%
+  filter(n > 1)
+# Ok, 32 women with duplicates in this child2 file
+
+hhold91 %>%
+  group_by(basebrgy_basewman) %>%
+  summarize(n = n()) %>%
+  filter(n > 1)
+# And 47 women with duplicates in the hhold91 file.
 ```
+## Find the duplicates
+```{r}
+dups_child <-child2 %>%
+  group_by(basebrgy_basewman) %>%
+  summarize(n = n()) %>%
+  filter(n > 1) %>% 
+  pull(basebrgy_basewman)
+
+dups_hhld91 <-hhold91 %>%
+  group_by(basebrgy_basewman) %>%
+  summarize(n = n()) %>%
+  filter(n > 1) %>% 
+  pull(basebrgy_basewman)
+
+# Check Child2
+child_foo <-child2 %>% 
+  filter(basebrgy_basewman %in% c(dups_child)) %>% 
+  arrange(basebrgy_basewman, stat1991) 
+
+child_foo %>%
+  nrow() 
+# 68 rows
+
+child_foo %>% 
+  filter(stat1991 != 2 & 
+           stat1991 != 3 &
+           stat1991 != 4 &
+           stat1991 > 8)
+# 10 basebrgy_basewman/combinations where child not present. etc.
+
+
+# Check hhold91
+hhold_foo <-hhold91 %>% 
+  filter(basebrgy_basewman %in% c(dups_hhld91)) %>% 
+  arrange(basebrgy_basewman, stat1991) 
+
+hhold_foo %>%
+  nrow() 
+# 94 rows!
+
+hhold_foo %>% 
+  filter(stat1991 != 2 & 
+           stat1991 != 3 &
+           stat1991 != 4 &
+           stat1991 > 8)
+# 14 basebrgy_basewman/combinations where child not present. etc.
+
+
+# Summary: 
+# There are many women with codes 10 (Other) or 11 (neither mother nor child present, but that retain values for heightndx etc. for the ICs. The goal will be to filter out those cases where missing values)
+
+```
+## Filter out the weird duplicates in 91
+```{r}
+child2 %>%
+  select(basebrgy_basewman, weghtndx, hightndx) %>% 
+  filter(!is.na(weghtndx) & !is.na(hightndx)) %>% 
+  group_by(basebrgy_basewman) %>%
+  summarize(n = n()) %>%
+  filter(n > 1)  
+# Great, this filters out all duplications for child2
+ 
+```
+
+
+```{r}
+hhold91 %>% 
+  select(basebrgy_basewman, mointr91, dyintrvw, yrintr91) %>% 
+  unique()
+# 2562 unique from a total of 2572 - 10 that are not unique
+
+hhold91 %>% 
+  select(basebrgy_basewman, mointr91, dyintrvw, yrintr91) %>% 
+  filter(basebrgy_basewman %in% c(dups_hhld91)) %>% 
+  unique()
+# 94 rows, of which 84 are unique - 10 that are not unique
+
+# Ok, sometimes the days are "slightly" off (interview over 2 dates, so maybe 5 days apart...). 5 days will not will not really affect growth
+
+#  
+hhold91_lag <-hhold91 %>% 
+  filter(basebrgy_basewman %in% c(dups_hhld91)) %>% 
+  select(basebrgy_basewman, mointr91, dyintrvw, yrintr91, stat1991) %>% 
+  arrange(basebrgy_basewman, stat1991) %>% 
+  mutate(interview_date91 = make_date(yrintr91+1900, mointr91, dyintrvw)) %>% 
+  group_by(basebrgy_basewman) %>% 
+  mutate(int_lag_time = interview_date91 - lead(interview_date91))
+
+hhold91_lag
+
+hhold91_lag %>% 
+  ggplot(., aes(x = int_lag_time)) + 
+  geom_histogram()
+# Ok, so measurements all within 30 days. Most zero difference.
+# Just use what's there.
+
+hhold91 %>% 
+  select(basebrgy_basewman, mointr91, dyintrvw, yrintr91) %>% 
+  distinct(basebrgy_basewman, .keep_all = T) 
+# This removes all rows that are not the same, using whichever day ends up being in there.
+
+# 
+```
+
 
 ```{r, cache = TRUE}
 #subset child2 data
 
 growth2 <-child2 %>%
-  select(basebrgy_basewman, weghtndx, hightndx) 
+  select(basebrgy_basewman, weghtndx, hightndx) %>% 
+  filter(!is.na(weghtndx) & !is.na(hightndx)) 
 
 #subset hh91 data
 
 intw_date91 <- hhold91 %>% 
-  select(basebrgy_basewman, mointr91, dyintrvw, yrintr91) 
+  select(basebrgy_basewman, mointr91, dyintrvw, yrintr91) %>% 
+  distinct(basebrgy_basewman, .keep_all = T) 
 
-#join tables together to make growth91_data
-intersect(names(growth91_data_nobday), names(birthdates_data))
 
 growth91_data_nobday <- left_join(growth2, intw_date91, by = c("basebrgy_basewman"))
 
 growth91_data_nobday
 
+#join tables together to make growth91_data
+intersect(names(growth91_data_nobday), names(birthdates_data))
+
 growth91_data <- left_join(growth91_data_nobday, birthdates_data, by = c("basebrgy_basewman"))
 
 growth91_data
+#2,278 
 ```
 
 ```{r, cache=TRUE}
@@ -283,7 +420,7 @@ growth91_data <- growth91_data %>%
 
 
 growth91_data
-
+#  2,241 
 ```
 
 ```{r}
@@ -473,11 +610,12 @@ summary_bmi_05
 
 ```{r, cache=TRUE }
 #table of zscores :)
+
+
 zscore_data <- left_join(growth83_86_data, growth91_data %>%  
                          select(-sexchild, -birthdate), by = c("basebrgy_basewman")) 
  
 
-intersect(names(zscore_data), names(growth02_data))
 
 zscore_data_unfilt <- left_join(zscore_data, growth02_data %>% 
                          select(-sexchild, -birthdate), by = c("basebrgy_basewman")) 
@@ -625,153 +763,277 @@ growth_clocks_data <- left_join(growth_data, clocks_data, by = c("uncchdid"))
 growth_clocks_data
 
 ```
-# modeling hfaz
+# modeling hfaz (no interactions)
+
+## Birth to 2 years old
 ```{r, cache=TRUE}
 # build regression models for birth hfaz
 # minimal just clock data and z scores?
+# CPR: No minimal models for now. Will run full models and those with interactions
 
-grim_hbirth_min_f<-lm(AgeAccelGrim ~ hfa_diff_birth_inf12, subset(growth_clocks_data, sex == "2"))
-grim_hbirth_min_f
+# 12:56:33 From Calen Ryan (he/him/his) to Everyone:
+# 	EEA ~ delta_growth + pregnancy_status + b_to_2
+# 12:56:46 From Calen Ryan (he/him/his) to Everyone:
+# 	EEA ~ delta_growth + pregnancy_status + b_to_2*delta_growth
 
-grim_hbirth_min_m<-lm(AgeAccelGrim ~ hfa_diff_birth_inf12, subset(growth_clocks_data, sex == "1"))
-grim_hbirth_min_m
 
-pheno_hbirth_min_f <-update(grim_hbirth_min_f, AgeAccelPheno ~ .)
-pheno_hbirth_min_f
+grim_height_b_2_f<-lm(AgeAccelGrim ~ hfa_diff_birth_inf12 + 
+                        was_preg_no_na, subset(growth_clocks_data, sex == "2"))
 
-pheno_hbirth_min_m <-update(grim_hbirth_min_m, AgeAccelPheno ~ .)
-pheno_hbirth_min_m
+grim_height_b_2_m<-lm(AgeAccelGrim ~ hfa_diff_birth_inf12, subset(growth_clocks_data, sex == "1"))
 
-han_hbirth_min_f <-update(grim_hbirth_min_f, EEAA ~ .)
-han_hbirth_min_f
+pheno_height_b_2_f <-update(grim_height_b_2_f, AgeAccelPheno ~ .)
 
-han_hbirth_min_m <-update(grim_hbirth_min_m, EEAA ~ .)
-han_hbirth_min_m
+pheno_height_b_2_m <-update(grim_height_b_2_m, AgeAccelPheno ~ .-was_preg_no_na)
 
-horv_hbirth_min_f <-update(grim_hbirth_min_f, IEAA ~ .)
-horv_hbirth_min_f
+han_height_b_2_f <-update(grim_height_b_2_f, EEAA ~ .)
 
-horv_hbirth_min_m <-update(grim_hbirth_min_m, IEAA ~ .)
-horv_hbirth_min_m
+
+han_height_b_2_m <-update(grim_height_b_2_m, EEAA ~ . -was_preg_no_na)
+
+
+horv_height_b_2_f <-update(grim_height_b_2_f, IEAA ~ .)
+
+
+horv_height_b_2_m <-update(grim_height_b_2_m, IEAA ~ . -was_preg_no_na)
+
+sjPlot::tab_model(grim_height_b_2_f, grim_height_b_2_m, 
+                  pheno_height_b_2_f, pheno_height_b_2_m, 
+                  han_height_b_2_f, han_height_b_2_m, 
+                  horv_height_b_2_f, horv_height_b_2_m)
+
+
+growth_clocks_data %>% 
+  select(uncchdid, hfa_diff_birth_inf12, AgeAccelGrim, AgeAccelPheno, EEAA, IEAA) %>% 
+  gather(key = clock_type, value = AgeAccel, -c(1,2)) %>% 
+  na.omit() %>% 
+  ggplot(., aes(x = hfa_diff_birth_inf12, y = AgeAccel, col = clock_type))+
+  geom_point()+
+  scale_color_brewer(type = "qual", palette = 6)+
+  facet_wrap(~clock_type)+
+  theme(legend.position = "none")
 
 
 ```
+
+## 2 to 8 years old
 ```{r, cache=TRUE}
 #hfaz 2years old model
-grim_hinf12_min_f<-lm(AgeAccelGrim ~ hfa_diff_inf12_91, subset(growth_clocks_data, sex == "2"))
-grim_hbirth_min_f
+grim_height_83_91_f <-lm(AgeAccelGrim ~ hfa_diff_inf12_91 + 
+                        hfa_diff_birth_inf12 +
+                        was_preg_no_na, subset(growth_clocks_data, sex == "2"))
 
-grim_hinf12_min_m<-lm(AgeAccelGrim ~ hfa_diff_inf12_91 , subset(growth_clocks_data, sex == "1"))
-grim_hinf12_min_m
+grim_height_83_91_m<-lm(AgeAccelGrim ~ hfa_diff_inf12_91 + 
+                        hfa_diff_birth_inf12, subset(growth_clocks_data, sex == "1"))
 
-pheno_hinf12_min_f <-update(grim_hinf12_min_f, AgeAccelPheno ~ .)
-pheno_hinf12_min_f
+pheno_height_83_91_f <-update(grim_height_83_91_f, AgeAccelPheno ~ .)
 
-pheno_hinf12_min_m <-update(grim_hinf12_min_m, AgeAccelPheno ~ .)
-pheno_hinf12_min_m
+pheno_height_83_91_m <-update(grim_height_83_91_m, AgeAccelPheno ~ .-was_preg_no_na)
 
-han_hinf12_min_f <-update(grim_hinf12_min_f, EEAA ~ .)
-han_hinf12_min_f
+han_height_83_91_f <-update(grim_height_83_91_f, EEAA ~ .)
 
-han_hinf12_min_m <-update(grim_hinf12_min_m, EEAA ~ .)
-han_hbirth_min_m
+han_height_83_91_m <-update(grim_height_83_91_m, EEAA ~ .-was_preg_no_na)
 
-horv_hinf12_min_f <-update(grim_hinf12_min_f, IEAA ~ .)
-horv_hinf12_min_f
+horv_height_83_91_f <-update(grim_height_83_91_f, IEAA ~ .)
 
-horv_hinf12_min_m <-update(grim_hinf12_min_m, IEAA ~ .)
-horv_hinf12_min_m
+horv_height_83_91_m <-update(grim_height_83_91_m, IEAA ~ .-was_preg_no_na)
 
+
+sjPlot::tab_model(grim_height_83_91_f, grim_height_83_91_m, 
+                  pheno_height_83_91_f, pheno_height_83_91_m, 
+                  han_height_83_91_f, han_height_83_91_m, 
+                  horv_height_83_91_f, horv_height_83_91_m)
 ```
 
+## 8 to 19 years old
 ```{r, cache=TRUE}
 #hfaz_91 minimal models
 
-grim_h91_min_f<-lm(AgeAccelGrim ~ hfa_diff_91_02, subset(growth_clocks_data, sex == "2"))
-grim_h91_min_f
+grim_height_91_02_f<-lm(AgeAccelGrim ~ hfa_diff_91_02 +
+                     hfa_diff_birth_inf12 +
+                     was_preg_no_na, subset(growth_clocks_data, sex == "2"))
 
-grim_h91_min_m<-lm(AgeAccelGrim ~ hfa_diff_91_02, subset(growth_clocks_data, sex == "1"))
-grim_h91_min_m
+grim_height_91_02_m<-lm(AgeAccelGrim ~ hfa_diff_91_02 +
+                     hfa_diff_birth_inf12, subset(growth_clocks_data, sex == "1"))
 
-pheno_h91_min_f <-update(grim_h91_min_f, AgeAccelPheno ~ .)
-pheno_h91_min_f
+pheno_height_91_02_f <-update(grim_height_91_02_f, AgeAccelPheno ~ .)
 
-pheno_h91_min_m <-update(grim_h91_min_m, AgeAccelPheno ~ .)
-pheno_h91_min_m
+pheno_height_91_02_m <-update(grim_height_91_02_m, AgeAccelPheno ~ .-was_preg_no_na)
 
-han_h91_min_f <-update(grim_h91_min_f, EEAA ~ .)
-han_h91_min_f
+han_height_91_02_f <-update(grim_height_91_02_f, EEAA ~ .)
 
-han_h91_min_m <-update(grim_h91_min_m, EEAA ~ .)
-han_h91_min_m
+han_height_91_02_m <-update(grim_height_91_02_m, EEAA ~ .-was_preg_no_na)
 
-horv_h91_min_f <-update(grim_h91_min_f, IEAA ~ .)
-horv_h91_min_f
+horv_height_91_02_f <-update(grim_height_91_02_f, IEAA ~ .)
 
-horv_h91_min_m <-update(grim_h91_min_m, IEAA ~ .)
-horv_h91_min_m
+horv_height_91_02_m <-update(grim_height_91_02_m, IEAA ~ .-was_preg_no_na)
 
+
+sjPlot::tab_model(grim_height_91_02_f, grim_height_91_02_m, 
+                  pheno_height_91_02_f, pheno_height_91_02_m, 
+                  han_height_91_02_f, han_height_91_02_m, 
+                  horv_height_91_02_f, horv_height_91_02_m)
 ```
 
 
-#modeling wfaz
+#modeling wfaz (no interactions)
 
+## Birth to 2 years old
 ```{r, cache=TRUE}
 #wfa birth minimal models
-grim_wbirth_min_f<-lm(AgeAccelGrim ~ wfa_diff_birth_inf12, subset(growth_clocks_data, sex == "2")) 
-grim_wbirth_min_f
+grim_weight_b_2_f<-lm(AgeAccelGrim ~ wfa_diff_birth_inf12, subset(growth_clocks_data, sex == "2")) 
 
-grim_wbirth_min_m<-lm(AgeAccelGrim ~ wfa_diff_birth_inf12, subset(growth_clocks_data, sex == "1"))
-grim_wbirth_min_m
+grim_weight_b_2_m<-lm(AgeAccelGrim ~ wfa_diff_birth_inf12, subset(growth_clocks_data, sex == "1"))
 
-pheno_wbirth_min_f <-update(grim_wbirth_min_f, AgeAccelPheno ~ .)
-pheno_wbirth_min_f
+pheno_weight_b_2_f <-update(grim_weight_b_2_f, AgeAccelPheno ~ .)
 
-pheno_wbirth_min_m <-update(grim_wbirth_min_m, AgeAccelPheno ~ .)
-pheno_wbirth_min_m
+pheno_weight_b_2_m <-update(grim_weight_b_2_m, AgeAccelPheno ~ .)
 
-han_wbirth_min_f <-update(grim_wbirth_min_f, EEAA ~ .)
-han_wbirth_min_f
+han_weight_b_2_f <-update(grim_weight_b_2_f, EEAA ~ .)
 
-han_wbirth_min_m <-update(grim_wbirth_min_m, EEAA ~ .)
-han_wbirth_min_m
+han_weight_b_2_m <-update(grim_weight_b_2_m, EEAA ~ .)
 
-horv_wbirth_min_f <-update(grim_wbirth_min_f, IEAA ~ .)
-horv_wbirth_min_f
+horv_weight_b_2_f <-update(grim_weight_b_2_f, IEAA ~ .)
 
-horv_wbirth_min_m <-update(grim_wbirth_min_m, IEAA ~ .)
-horv_wbirth_min_m
+horv_weight_b_2_m <-update(grim_weight_b_2_m, IEAA ~ .)
 
 
+sjPlot::tab_model(grim_weight_b_2_f, grim_weight_b_2_m, 
+                  pheno_weight_b_2_f, pheno_weight_b_2_m, 
+                  han_weight_b_2_f, han_weight_b_2_m, 
+                  horv_weight_b_2_f, horv_weight_b_2_m)
 ```
 
+## 2 to 8 years old
 ```{r, cache=TRUE}
 #wfaz inf12 minimal models
-grim_winf12_min_f<-lm(AgeAccelGrim ~ wfa_diff_inf12_91, subset(growth_clocks_data, sex == "2"))
-grim_winf12_min_f
+grim_weight_83_91_f<-lm(AgeAccelGrim ~ wfa_diff_inf12_91, subset(growth_clocks_data, sex == "2"))
 
-grim_winf12_min_m<-lm(AgeAccelGrim ~ wfa_diff_inf12_91, subset(growth_clocks_data, sex == "1"))
-grim_winf12_min_m
+grim_weight_83_91_m<-lm(AgeAccelGrim ~ wfa_diff_inf12_91, subset(growth_clocks_data, sex == "1"))
 
-pheno_winf12_min_f <-update(grim_winf12_min_f, AgeAccelPheno ~ .)
-pheno_winf12_min_f
+pheno_weight_83_91_f <-update(grim_weight_83_91_f, AgeAccelPheno ~ .)
 
-pheno_winf12_min_m <-update(grim_winf12_min_m, AgeAccelPheno ~ .)
-pheno_winf12_min_m
+pheno_weight_83_91_m <-update(grim_weight_83_91_m, AgeAccelPheno ~ .)
 
-han_winf12_min_f <-update(grim_winf12_min_f, EEAA ~ .)
-han_winf12_min_f
+han_weight_83_91_f <-update(grim_weight_83_91_f, EEAA ~ .)
 
-han_winf12_min_m <-update(grim_winf12_min_m, EEAA ~ .)
-han_winf12_min_m
+han_weight_83_91_m <-update(grim_weight_83_91_m, EEAA ~ .)
 
-horv_winf12_min_f <-update(grim_winf12_min_f, IEAA ~ .)
-horv_winf12_min_f
+horv_weight_83_91_f <-update(grim_weight_83_91_f, IEAA ~ .)
 
-horv_winf12_min_m <-update(grim_winf12_min_m, IEAA ~ .)
-horv_winf12_min_m
+horv_weight_83_91_m <-update(grim_weight_83_91_m, IEAA ~ .)
+
+
+sjPlot::tab_model(grim_weight_83_91_f, grim_weight_83_91_m, 
+                  pheno_weight_83_91_f, pheno_weight_83_91_m, 
+                  han_weight_83_91_f, han_weight_83_91_m, 
+                  horv_weight_83_91_f, horv_weight_83_91_m)
+```
+
+
+# modeling hfaz (interactions)
+
+
+## 2 to 8 years old
+```{r, cache=TRUE}
+#hfaz 2years old model
+grim_height_83_91_intxn_f<-lm(AgeAccelGrim ~ hfa_diff_inf12_91 * 
+                        hfa_diff_birth_inf12 +
+                        was_preg_no_na, subset(growth_clocks_data, sex == "2"))
+
+grim_height_83_91_intxn_m<-lm(AgeAccelGrim ~ hfa_diff_inf12_91 * 
+                        hfa_diff_birth_inf12, subset(growth_clocks_data, sex == "1"))
+
+pheno_height_83_91_intxn_f <-update(grim_height_83_91_intxn_f, AgeAccelPheno ~ .)
+
+pheno_height_83_91_intxn_m <-update(grim_height_83_91_intxn_m, AgeAccelPheno ~ .-was_preg_no_na)
+
+han_height_83_91_intxn_f <-update(grim_height_83_91_intxn_f, EEAA ~ .)
+
+han_height_83_91_intxn_m <-update(grim_height_83_91_intxn_m, EEAA ~ .-was_preg_no_na)
+
+horv_height_83_91_intxn_f <-update(grim_height_83_91_intxn_f, IEAA ~ .)
+
+horv_height_83_91_intxn_m <-update(grim_height_83_91_intxn_m, IEAA ~ .-was_preg_no_na)
+
+
+sjPlot::tab_model(grim_height_83_91_intxn_f, grim_height_83_91_intxn_m, 
+                  pheno_height_83_91_intxn_f, pheno_height_83_91_intxn_m, 
+                  han_height_83_91_intxn_f, han_height_83_91_intxn_m, 
+                  horv_height_83_91_intxn_f, horv_height_83_91_intxn_m)
+```
+
+## 8 to 19 years old
+```{r, cache=TRUE}
+#hfaz_91 minimal models
+
+grim_height_91_02_intxn_f<-lm(AgeAccelGrim ~ hfa_diff_91_02 *
+                     hfa_diff_birth_inf12 +
+                     was_preg_no_na, subset(growth_clocks_data, sex == "2"))
+
+grim_height_91_02_intxn_m<-lm(AgeAccelGrim ~ hfa_diff_91_02 *
+                     hfa_diff_birth_inf12, subset(growth_clocks_data, sex == "1"))
+
+pheno_height_91_02_intxn_f <-update(grim_height_91_02_intxn_f, AgeAccelPheno ~ .)
+
+pheno_height_91_02_intxn_m <-update(grim_height_91_02_intxn_m, AgeAccelPheno ~ .)
+
+han_height_91_02_intxn_f <-update(grim_height_91_02_intxn_f, EEAA ~ .)
+
+han_height_91_02_intxn_m <-update(grim_height_91_02_intxn_m, EEAA ~ .)
+
+horv_height_91_02_intxn_f <-update(grim_height_91_02_intxn_f, IEAA ~ .)
+
+horv_height_91_02_intxn_m <-update(grim_height_91_02_intxn_m, IEAA ~ .)
+
+sjPlot::tab_model(grim_height_91_02_intxn_f, grim_height_91_02_intxn_m, 
+                  pheno_height_91_02_intxn_f, pheno_height_91_02_intxn_m, 
+                  han_height_91_02_intxn_f, han_height_91_02_intxn_m, 
+                  horv_height_91_02_intxn_f, horv_height_91_02_intxn_m)
 
 ```
 
 
+#modeling wfaz (interactions)
+
+
+## 2 to 8 years old
+```{r, cache=TRUE}
+#wfaz inf12 minimal models
+grim_weight_83_91_intxn_f<-lm(AgeAccelGrim ~ wfa_diff_inf12_91 * wfa_diff_birth_inf12 + was_preg_no_na, subset(growth_clocks_data, sex == "2"))
+
+grim_weight_83_91_intxn_m<-lm(AgeAccelGrim ~ wfa_diff_inf12_91 * wfa_diff_birth_inf12, subset(growth_clocks_data, sex == "1"))
+
+pheno_weight_83_91_intxn_f <-update(grim_weight_83_91_intxn_f, AgeAccelPheno ~ .)
+
+pheno_weight_83_91_intxn_m <-update(grim_weight_83_91_intxn_m, AgeAccelPheno ~ .)
+
+han_weight_83_91_intxn_f <-update(grim_weight_83_91_intxn_f, EEAA ~ .)
+
+han_weight_83_91_intxn_m <-update(grim_weight_83_91_intxn_m, EEAA ~ .)
+
+horv_weight_83_91_intxn_f <-update(grim_weight_83_91_intxn_f, IEAA ~ .)
+
+horv_weight_83_91_intxn_m <-update(grim_weight_83_91_intxn_m, IEAA ~ .)
+
+
+sjPlot::tab_model(grim_weight_83_91_intxn_f, grim_weight_83_91_intxn_m, 
+                  pheno_weight_83_91_intxn_f, pheno_weight_83_91_intxn_m, 
+                  han_weight_83_91_intxn_f, han_weight_83_91_intxn_m, 
+                  horv_weight_83_91_intxn_f, horv_weight_83_91_intxn_m)
+
+```
+
+## Looked at another way (weight and height, females only, 83-91)
+```{r}
+sjPlot::tab_model(grim_weight_83_91_intxn_f, 
+                  pheno_weight_83_91_intxn_f, 
+                  han_weight_83_91_intxn_f,
+                  horv_weight_83_91_intxn_f,
+                  grim_height_83_91_intxn_f, 
+                  pheno_height_83_91_intxn_f, 
+                  han_height_83_91_intxn_f, 
+                  horv_height_83_91_intxn_f)
+
+```
 
