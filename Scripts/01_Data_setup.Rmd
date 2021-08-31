@@ -20,6 +20,7 @@ library(lubridate)
 library(anthro)
 library(childsds)
 library(sjlabelled)
+library(sjPlot)
 here::here()
 # sets a placeholder 'here'. Then we refer to our files based on the *relative* not the *absolute* location.
 ```
