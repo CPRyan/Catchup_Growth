@@ -64,6 +64,25 @@ growth_clocks_data %>%
   facet_wrap(~clock_type)+
   theme(legend.position = "none")
 
+#birth-2 yrs old visualization 
+par(mfrow=c(2,2))
+plot(grim_height_b_2_f)
+
+par(mfrow=c(2,2))
+plot(grim_height_b_2_m)
+
+par(mfrow=c(2,2))
+plot(pheno_height_b_2_f)
+
+par(mfrow=c(2,2))
+plot(pheno_height_b_2_m)
+
+par(mfrow=c(2,2))
+plot(han_height_b_2_f)
+
+par(mfrow=c(2,2))
+plot(han_height_b_2_m)
+
 ```
 
 #
@@ -93,6 +112,26 @@ sjPlot::tab_model(grim_height_83_91_f, grim_height_83_91_m,
                   pheno_height_83_91_f, pheno_height_83_91_m, 
                   han_height_83_91_f, han_height_83_91_m, 
                   horv_height_83_91_f, horv_height_83_91_m)
+
+#83-91 visualization 
+par(mfrow=c(2,2))
+plot(grim_height_83_91_f)
+
+par(mfrow=c(2,2))
+plot(grim_height_83_91_m)
+
+par(mfrow=c(2,2))
+plot(pheno_height_83_91_f)
+
+par(mfrow=c(2,2))
+plot(pheno_height_83_91_m)
+
+par(mfrow=c(2,2))
+plot(han_height_83_91_f)
+
+par(mfrow=c(2,2))
+plot(han_height_83_91_m)
+
 ```
 
 ## 8 to 19 years old
@@ -123,6 +162,25 @@ sjPlot::tab_model(grim_height_91_02_f, grim_height_91_02_m,
                   pheno_height_91_02_f, pheno_height_91_02_m, 
                   han_height_91_02_f, han_height_91_02_m, 
                   horv_height_91_02_f, horv_height_91_02_m)
+
+#91-02 visualization
+par(mfrow=c(2,2))
+plot(grim_height_91_02_f)
+
+par(mfrow=c(2,2))
+plot(grim_height_91_02_m)
+
+par(mfrow=c(2,2))
+plot(pheno_height_91_02_f)
+
+par(mfrow=c(2,2))
+plot(pheno_height_91_02_m)
+
+par(mfrow=c(2,2))
+plot(han_height_91_02_f)
+
+par(mfrow=c(2,2))
+plot(han_height_91_02_m)
 ```
 
 
@@ -152,6 +210,26 @@ sjPlot::tab_model(grim_weight_b_2_f, grim_weight_b_2_m,
                   pheno_weight_b_2_f, pheno_weight_b_2_m, 
                   han_weight_b_2_f, han_weight_b_2_m, 
                   horv_weight_b_2_f, horv_weight_b_2_m)
+
+#weight birth-2 yrs old 
+par(mfrow=c(2,2))
+plot(grim_weight_b_2_f)
+
+par(mfrow=c(2,2))
+plot(grim_weight_b_2_m)
+
+par(mfrow=c(2,2))
+plot(pheno_weight_b_2_f)
+
+par(mfrow=c(2,2))
+plot(pheno_weight_b_2_m)
+
+par(mfrow=c(2,2))
+plot(han_weight_b_2_f)
+
+par(mfrow=c(2,2))
+plot(han_weight_b_2_m)
+
 ```
 
 ## 2 to 8 years old
@@ -182,6 +260,26 @@ sjPlot::tab_model(grim_weight_83_91_f, grim_weight_83_91_m,
                   pheno_weight_83_91_f, pheno_weight_83_91_m, 
                   han_weight_83_91_f, han_weight_83_91_m, 
                   horv_weight_83_91_f, horv_weight_83_91_m)
+
+#weight 83-91 yrs old 
+par(mfrow=c(2,2))
+plot(grim_weight_83_91_f)
+
+par(mfrow=c(2,2))
+plot(grim_weight_83_91_m)
+
+par(mfrow=c(2,2))
+plot(pheno_weight_83_91_f)
+
+par(mfrow=c(2,2))
+plot(pheno_weight_83_91_m)
+
+par(mfrow=c(2,2))
+plot(han_weight_83_91_f)
+
+par(mfrow=c(2,2))
+plot(han_weight_83_91_m)
+
 ```
 
 
@@ -215,6 +313,25 @@ sjPlot::tab_model(grim_height_83_91_intxn_f, grim_height_83_91_intxn_m,
                   pheno_height_83_91_intxn_f, pheno_height_83_91_intxn_m, 
                   han_height_83_91_intxn_f, han_height_83_91_intxn_m, 
                   horv_height_83_91_intxn_f, horv_height_83_91_intxn_m)
+
+#height 83-91 interaction models 
+par(mfrow=c(2,2))
+plot(grim_height_83_91_intxn_f)
+
+par(mfrow=c(2,2))
+plot(grim_height_83_91_intxn_m)
+
+par(mfrow=c(2,2))
+plot(pheno_height_83_91_intxn_f)
+
+par(mfrow=c(2,2))
+plot(pheno_height_83_91_intxn_m)
+
+par(mfrow=c(2,2))
+plot(han_height_83_91_intxn_f)
+
+par(mfrow=c(2,2))
+plot(han_height_83_91_intxn_m)
 ```
 
 ## 8 to 19 years old
@@ -244,6 +361,25 @@ sjPlot::tab_model(grim_height_91_02_intxn_f, grim_height_91_02_intxn_m,
                   pheno_height_91_02_intxn_f, pheno_height_91_02_intxn_m, 
                   han_height_91_02_intxn_f, han_height_91_02_intxn_m, 
                   horv_height_91_02_intxn_f, horv_height_91_02_intxn_m)
+
+#height 91-02 interaction models 
+par(mfrow=c(2,2))
+plot(grim_height_91_02_intxn_f)
+
+par(mfrow=c(2,2))
+plot(grim_height_91_02_intxn_m)
+
+par(mfrow=c(2,2))
+plot(pheno_height_91_02_intxn_f)
+
+par(mfrow=c(2,2))
+plot(pheno_height_91_02_intxn_m)
+
+par(mfrow=c(2,2))
+plot(han_height_91_02_intxn_f)
+
+par(mfrow=c(2,2))
+plot(han_height_91_02_intxn_m)
 
 ```
 
@@ -275,6 +411,25 @@ sjPlot::tab_model(grim_weight_83_91_intxn_f, grim_weight_83_91_intxn_m,
                   pheno_weight_83_91_intxn_f, pheno_weight_83_91_intxn_m, 
                   han_weight_83_91_intxn_f, han_weight_83_91_intxn_m, 
                   horv_weight_83_91_intxn_f, horv_weight_83_91_intxn_m)
+
+#weight 83-91 interaction models 
+par(mfrow=c(2,2))
+plot(grim_weight_83_91_intxn_f)
+
+par(mfrow=c(2,2))
+plot(grim_weight_83_91_intxn_m)
+
+par(mfrow=c(2,2))
+plot(pheno_weight_83_91_intxn_f)
+
+par(mfrow=c(2,2))
+plot(pheno_weight_83_91_intxn_m)
+
+par(mfrow=c(2,2))
+plot(han_weight_83_91_intxn_f)
+
+par(mfrow=c(2,2))
+plot(han_weight_83_91_intxn_m)
 
 ```
 
