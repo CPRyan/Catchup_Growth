@@ -765,6 +765,8 @@ clocks_data <- read_csv(here::here ("Data/Clocks/QC_Norm_LisaMcEwan_meth_DatMini
 growth_clocks_data <- left_join(growth_data, clocks_data, by = c("uncchdid"))
 growth_clocks_data
 
+write.csv(growth_clocks_data,"growth_clocks_data.csv")
+
 ```
 # modeling hfaz (no interactions)
 
