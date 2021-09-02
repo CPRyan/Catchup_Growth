@@ -1,0 +1,512 @@
+---
+title: "Catchup Growth Models"
+output: html_document
+---
+
+```{r}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse) # great collection of packages for data carpentry, modelling, and visualization
+library(readr)
+library(haven) # package for loading Stata's .dta files. 
+library(sjlabelled) # good for renaming, changing classes, etc. in the piped dplyr mode
+library(zscorer)
+library(lubridate)
+library(anthro)
+library(childsds)
+library(sjlabelled)
+library(sjPlot)
+library(VIF)
+library(car)
+```
+
+```{r}
+growth_clocks_data <- read_csv(here::here ("Data/growth_clocks_data.csv"))
+
+growth_clocks_data
+```
+
+#Birth to 2 years old
+```{r}
+grim_height_b_2_f<-lm(AgeAccelGrim ~ hfa_diff_birth_inf12 + 
+                        was_preg_no_na, subset(growth_clocks_data, sex == "2"))
+
+grim_height_b_2_m<-lm(AgeAccelGrim ~ hfa_diff_birth_inf12, subset(growth_clocks_data, sex == "1"))
+
+pheno_height_b_2_f <-update(grim_height_b_2_f, AgeAccelPheno ~ .)
+
+pheno_height_b_2_m <-update(grim_height_b_2_m, AgeAccelPheno ~ .-was_preg_no_na)
+
+han_height_b_2_f <-update(grim_height_b_2_f, EEAA ~ .)
+
+
+han_height_b_2_m <-update(grim_height_b_2_m, EEAA ~ . -was_preg_no_na)
+
+
+horv_height_b_2_f <-update(grim_height_b_2_f, IEAA ~ .)
+
+
+horv_height_b_2_m <-update(grim_height_b_2_m, IEAA ~ . -was_preg_no_na)
+
+sjPlot::tab_model(grim_height_b_2_f, grim_height_b_2_m, 
+                  pheno_height_b_2_f, pheno_height_b_2_m, 
+                  han_height_b_2_f, han_height_b_2_m, 
+                  horv_height_b_2_f, horv_height_b_2_m)
+
+
+growth_clocks_data %>% 
+  select(uncchdid, hfa_diff_birth_inf12, AgeAccelGrim, AgeAccelPheno, EEAA, IEAA) %>% 
+  gather(key = clock_type, value = AgeAccel, -c(1,2)) %>% 
+  na.omit() %>% 
+  ggplot(., aes(x = hfa_diff_birth_inf12, y = AgeAccel, col = clock_type))+
+  geom_point()+
+  scale_color_brewer(type = "qual", palette = 6)+
+  facet_wrap(~clock_type)+
+  theme(legend.position = "none")
+
+#birth-2 yrs old visualization 
+par(mfrow=c(2,2))
+plot(grim_height_b_2_f)
+
+par(mfrow=c(2,2))
+plot(grim_height_b_2_m)
+
+par(mfrow=c(2,2))
+plot(pheno_height_b_2_f)
+
+par(mfrow=c(2,2))
+plot(pheno_height_b_2_m)
+
+par(mfrow=c(2,2))
+plot(han_height_b_2_f)
+
+par(mfrow=c(2,2))
+plot(han_height_b_2_m)
+
+```
+
+#
+```{r}
+#hfaz 2years old model
+grim_height_83_91_f <-lm(AgeAccelGrim ~ hfa_diff_inf12_91 + 
+                        hfa_diff_birth_inf12 +
+                        was_preg_no_na, subset(growth_clocks_data, sex == "2"))
+
+grim_height_83_91_m<-lm(AgeAccelGrim ~ hfa_diff_inf12_91 + 
+                        hfa_diff_birth_inf12, subset(growth_clocks_data, sex == "1"))
+
+pheno_height_83_91_f <-update(grim_height_83_91_f, AgeAccelPheno ~ .)
+
+pheno_height_83_91_m <-update(grim_height_83_91_m, AgeAccelPheno ~ .-was_preg_no_na)
+
+han_height_83_91_f <-update(grim_height_83_91_f, EEAA ~ .)
+
+han_height_83_91_m <-update(grim_height_83_91_m, EEAA ~ .-was_preg_no_na)
+
+horv_height_83_91_f <-update(grim_height_83_91_f, IEAA ~ .)
+
+horv_height_83_91_m <-update(grim_height_83_91_m, IEAA ~ .-was_preg_no_na)
+
+
+sjPlot::tab_model(grim_height_83_91_f, grim_height_83_91_m, 
+                  pheno_height_83_91_f, pheno_height_83_91_m, 
+                  han_height_83_91_f, han_height_83_91_m, 
+                  horv_height_83_91_f, horv_height_83_91_m)
+
+#83-91 visualization 
+par(mfrow=c(2,2))
+plot(grim_height_83_91_f)
+
+par(mfrow=c(2,2))
+plot(grim_height_83_91_m)
+
+par(mfrow=c(2,2))
+plot(pheno_height_83_91_f)
+
+par(mfrow=c(2,2))
+plot(pheno_height_83_91_m)
+
+par(mfrow=c(2,2))
+plot(han_height_83_91_f)
+
+par(mfrow=c(2,2))
+plot(han_height_83_91_m)
+
+```
+
+## 8 to 19 years old
+```{r, cache=TRUE}
+#hfaz_91 minimal models
+
+grim_height_91_02_f<-lm(AgeAccelGrim ~ hfa_diff_91_02 +
+                     hfa_diff_birth_inf12 +
+                     was_preg_no_na, subset(growth_clocks_data, sex == "2"))
+
+grim_height_91_02_m<-lm(AgeAccelGrim ~ hfa_diff_91_02 +
+                     hfa_diff_birth_inf12, subset(growth_clocks_data, sex == "1"))
+
+pheno_height_91_02_f <-update(grim_height_91_02_f, AgeAccelPheno ~ .)
+
+pheno_height_91_02_m <-update(grim_height_91_02_m, AgeAccelPheno ~ .-was_preg_no_na)
+
+han_height_91_02_f <-update(grim_height_91_02_f, EEAA ~ .)
+
+han_height_91_02_m <-update(grim_height_91_02_m, EEAA ~ .-was_preg_no_na)
+
+horv_height_91_02_f <-update(grim_height_91_02_f, IEAA ~ .)
+
+horv_height_91_02_m <-update(grim_height_91_02_m, IEAA ~ .-was_preg_no_na)
+
+
+sjPlot::tab_model(grim_height_91_02_f, grim_height_91_02_m, 
+                  pheno_height_91_02_f, pheno_height_91_02_m, 
+                  han_height_91_02_f, han_height_91_02_m, 
+                  horv_height_91_02_f, horv_height_91_02_m)
+
+#91-02 visualization
+par(mfrow=c(2,2))
+plot(grim_height_91_02_f)
+
+par(mfrow=c(2,2))
+plot(grim_height_91_02_m)
+
+par(mfrow=c(2,2))
+plot(pheno_height_91_02_f)
+
+par(mfrow=c(2,2))
+plot(pheno_height_91_02_m)
+
+par(mfrow=c(2,2))
+plot(han_height_91_02_f)
+
+par(mfrow=c(2,2))
+plot(han_height_91_02_m)
+```
+
+
+#modeling wfaz (no interactions)
+
+## Birth to 2 years old
+```{r, cache=TRUE}
+#wfa birth minimal models
+grim_weight_b_2_f<-lm(AgeAccelGrim ~ wfa_diff_birth_inf12 + was_preg_no_na, subset(growth_clocks_data, sex == "2")) 
+
+grim_weight_b_2_m<-lm(AgeAccelGrim ~ wfa_diff_birth_inf12, subset(growth_clocks_data, sex == "1"))
+
+pheno_weight_b_2_f <-update(grim_weight_b_2_f, AgeAccelPheno ~ .)
+
+pheno_weight_b_2_m <-update(grim_weight_b_2_m, AgeAccelPheno ~ .)
+
+han_weight_b_2_f <-update(grim_weight_b_2_f, EEAA ~ .)
+
+han_weight_b_2_m <-update(grim_weight_b_2_m, EEAA ~ .)
+
+horv_weight_b_2_f <-update(grim_weight_b_2_f, IEAA ~ .)
+
+horv_weight_b_2_m <-update(grim_weight_b_2_m, IEAA ~ .)
+
+
+sjPlot::tab_model(grim_weight_b_2_f, grim_weight_b_2_m, 
+                  pheno_weight_b_2_f, pheno_weight_b_2_m, 
+                  han_weight_b_2_f, han_weight_b_2_m, 
+                  horv_weight_b_2_f, horv_weight_b_2_m)
+
+#weight birth-2 yrs old 
+par(mfrow=c(2,2))
+plot(grim_weight_b_2_f)
+
+par(mfrow=c(2,2))
+plot(grim_weight_b_2_m)
+
+par(mfrow=c(2,2))
+plot(pheno_weight_b_2_f)
+
+par(mfrow=c(2,2))
+plot(pheno_weight_b_2_m)
+
+par(mfrow=c(2,2))
+plot(han_weight_b_2_f)
+
+par(mfrow=c(2,2))
+plot(han_weight_b_2_m)
+
+```
+
+## 2 to 8 years old
+```{r, cache=TRUE}
+#wfaz inf12 minimal models
+grim_weight_83_91_f<-lm(AgeAccelGrim ~ wfa_diff_inf12_91 + 
+                          wfa_diff_birth_inf12+
+                          was_preg_no_na, subset(growth_clocks_data, sex == "2"))
+
+grim_weight_83_91_m<-lm(AgeAccelGrim ~ wfa_diff_inf12_91+
+                          wfa_diff_birth_inf12,
+                          subset(growth_clocks_data, sex == "1"))
+                        
+pheno_weight_83_91_f <-update(grim_weight_83_91_f, AgeAccelPheno ~ .)
+
+pheno_weight_83_91_m <-update(grim_weight_83_91_m, AgeAccelPheno ~ .)
+
+han_weight_83_91_f <-update(grim_weight_83_91_f, EEAA ~ .)
+
+han_weight_83_91_m <-update(grim_weight_83_91_m, EEAA ~ .)
+
+horv_weight_83_91_f <-update(grim_weight_83_91_f, IEAA ~ .)
+
+horv_weight_83_91_m <-update(grim_weight_83_91_m, IEAA ~ .)
+
+
+sjPlot::tab_model(grim_weight_83_91_f, grim_weight_83_91_m, 
+                  pheno_weight_83_91_f, pheno_weight_83_91_m, 
+                  han_weight_83_91_f, han_weight_83_91_m, 
+                  horv_weight_83_91_f, horv_weight_83_91_m)
+
+#weight 83-91 yrs old 
+par(mfrow=c(2,2))
+plot(grim_weight_83_91_f)
+
+par(mfrow=c(2,2))
+plot(grim_weight_83_91_m)
+
+par(mfrow=c(2,2))
+plot(pheno_weight_83_91_f)
+
+par(mfrow=c(2,2))
+plot(pheno_weight_83_91_m)
+
+par(mfrow=c(2,2))
+plot(han_weight_83_91_f)
+
+par(mfrow=c(2,2))
+plot(han_weight_83_91_m)
+
+```
+
+
+# modeling hfaz (interactions)
+
+
+## 2 to 8 years old
+```{r, cache=TRUE}
+#hfaz 2years old model
+grim_height_83_91_intxn_f<-lm(AgeAccelGrim ~ hfa_diff_inf12_91 * 
+                        hfa_diff_birth_inf12 +
+                        was_preg_no_na, subset(growth_clocks_data, sex == "2"))
+
+grim_height_83_91_intxn_m<-lm(AgeAccelGrim ~ hfa_diff_inf12_91 * 
+                        hfa_diff_birth_inf12, subset(growth_clocks_data, sex == "1"))
+
+pheno_height_83_91_intxn_f <-update(grim_height_83_91_intxn_f, AgeAccelPheno ~ .)
+
+pheno_height_83_91_intxn_m <-update(grim_height_83_91_intxn_m, AgeAccelPheno ~ .-was_preg_no_na)
+
+han_height_83_91_intxn_f <-update(grim_height_83_91_intxn_f, EEAA ~ .)
+
+han_height_83_91_intxn_m <-update(grim_height_83_91_intxn_m, EEAA ~ .-was_preg_no_na)
+
+horv_height_83_91_intxn_f <-update(grim_height_83_91_intxn_f, IEAA ~ .)
+
+horv_height_83_91_intxn_m <-update(grim_height_83_91_intxn_m, IEAA ~ .-was_preg_no_na)
+
+
+sjPlot::tab_model(grim_height_83_91_intxn_f, grim_height_83_91_intxn_m, 
+                  pheno_height_83_91_intxn_f, pheno_height_83_91_intxn_m, 
+                  han_height_83_91_intxn_f, han_height_83_91_intxn_m, 
+                  horv_height_83_91_intxn_f, horv_height_83_91_intxn_m)
+
+#height 83-91 interaction models 
+par(mfrow=c(2,2))
+plot(grim_height_83_91_intxn_f)
+
+par(mfrow=c(2,2))
+plot(grim_height_83_91_intxn_m)
+
+par(mfrow=c(2,2))
+plot(pheno_height_83_91_intxn_f)
+
+par(mfrow=c(2,2))
+plot(pheno_height_83_91_intxn_m)
+
+par(mfrow=c(2,2))
+plot(han_height_83_91_intxn_f)
+
+par(mfrow=c(2,2))
+plot(han_height_83_91_intxn_m)
+```
+
+## 8 to 19 years old
+```{r, cache=TRUE}
+#hfaz_91 minimal models
+
+grim_height_91_02_intxn_f<-lm(AgeAccelGrim ~ hfa_diff_91_02 *
+                     hfa_diff_birth_inf12 +
+                     was_preg_no_na, subset(growth_clocks_data, sex == "2"))
+
+grim_height_91_02_intxn_m<-lm(AgeAccelGrim ~ hfa_diff_91_02 *
+                     hfa_diff_birth_inf12, subset(growth_clocks_data, sex == "1"))
+
+pheno_height_91_02_intxn_f <-update(grim_height_91_02_intxn_f, AgeAccelPheno ~ .)
+
+pheno_height_91_02_intxn_m <-update(grim_height_91_02_intxn_m, AgeAccelPheno ~ .)
+
+han_height_91_02_intxn_f <-update(grim_height_91_02_intxn_f, EEAA ~ .)
+
+han_height_91_02_intxn_m <-update(grim_height_91_02_intxn_m, EEAA ~ .)
+
+horv_height_91_02_intxn_f <-update(grim_height_91_02_intxn_f, IEAA ~ .)
+
+horv_height_91_02_intxn_m <-update(grim_height_91_02_intxn_m, IEAA ~ .)
+
+sjPlot::tab_model(grim_height_91_02_intxn_f, grim_height_91_02_intxn_m, 
+                  pheno_height_91_02_intxn_f, pheno_height_91_02_intxn_m, 
+                  han_height_91_02_intxn_f, han_height_91_02_intxn_m, 
+                  horv_height_91_02_intxn_f, horv_height_91_02_intxn_m)
+
+#height 91-02 interaction models 
+par(mfrow=c(2,2))
+plot(grim_height_91_02_intxn_f)
+
+par(mfrow=c(2,2))
+plot(grim_height_91_02_intxn_m)
+
+par(mfrow=c(2,2))
+plot(pheno_height_91_02_intxn_f)
+
+par(mfrow=c(2,2))
+plot(pheno_height_91_02_intxn_m)
+
+par(mfrow=c(2,2))
+plot(han_height_91_02_intxn_f)
+
+par(mfrow=c(2,2))
+plot(han_height_91_02_intxn_m)
+
+```
+
+
+#modeling wfaz (interactions)
+
+
+## 2 to 8 years old
+```{r, cache=TRUE}
+#wfaz inf12 minimal models
+grim_weight_83_91_intxn_f<-lm(AgeAccelGrim ~ wfa_diff_inf12_91 * wfa_diff_birth_inf12 + was_preg_no_na, subset(growth_clocks_data, sex == "2"))
+
+grim_weight_83_91_intxn_m<-lm(AgeAccelGrim ~ wfa_diff_inf12_91 * wfa_diff_birth_inf12, subset(growth_clocks_data, sex == "1"))
+
+pheno_weight_83_91_intxn_f <-update(grim_weight_83_91_intxn_f, AgeAccelPheno ~ .)
+
+pheno_weight_83_91_intxn_m <-update(grim_weight_83_91_intxn_m, AgeAccelPheno ~ .)
+
+han_weight_83_91_intxn_f <-update(grim_weight_83_91_intxn_f, EEAA ~ .)
+
+han_weight_83_91_intxn_m <-update(grim_weight_83_91_intxn_m, EEAA ~ .)
+
+horv_weight_83_91_intxn_f <-update(grim_weight_83_91_intxn_f, IEAA ~ .)
+
+horv_weight_83_91_intxn_m <-update(grim_weight_83_91_intxn_m, IEAA ~ .)
+
+
+sjPlot::tab_model(grim_weight_83_91_intxn_f, grim_weight_83_91_intxn_m, 
+                  pheno_weight_83_91_intxn_f, pheno_weight_83_91_intxn_m, 
+                  han_weight_83_91_intxn_f, han_weight_83_91_intxn_m, 
+                  horv_weight_83_91_intxn_f, horv_weight_83_91_intxn_m)
+
+#weight 83-91 interaction models 
+par(mfrow=c(2,2))
+plot(grim_weight_83_91_intxn_f)
+
+par(mfrow=c(2,2))
+plot(grim_weight_83_91_intxn_m)
+
+par(mfrow=c(2,2))
+plot(pheno_weight_83_91_intxn_f)
+
+par(mfrow=c(2,2))
+plot(pheno_weight_83_91_intxn_m)
+
+par(mfrow=c(2,2))
+plot(han_weight_83_91_intxn_f)
+
+par(mfrow=c(2,2))
+plot(han_weight_83_91_intxn_m)
+
+```
+
+## Looked at another way (weight and height, females only, 83-91)
+```{r}
+sjPlot::tab_model(grim_weight_83_91_intxn_f, 
+                  pheno_weight_83_91_intxn_f, 
+                  han_weight_83_91_intxn_f,
+                  horv_weight_83_91_intxn_f,
+                  grim_height_83_91_intxn_f, 
+                  pheno_height_83_91_intxn_f, 
+                  han_height_83_91_intxn_f, 
+                  horv_height_83_91_intxn_f)
+
+```
+
+
+```{r, cache=TRUE}
+
+vif(grim_height_83_91_f)
+vif(grim_height_83_91_m)
+vif(pheno_height_83_91_f)
+vif(pheno_height_83_91_m)
+vif(han_height_83_91_f)
+vif(han_height_83_91_m)
+
+vif(grim_height_91_02_f)
+vif(grim_height_91_02_m)
+vif(pheno_height_91_02_f)
+vif(pheno_height_91_02_m)
+vif(han_height_91_02_f)
+vif(han_height_91_02_m)
+
+```
+
+```{r, cache=TRUE}
+vif(grim_weight_83_91_f)
+vif(grim_weight_83_91_m)
+vif(pheno_weight_83_91_f)
+vif(pheno_weight_83_91_m)
+vif(han_weight_83_91_f)
+vif(han_weight_83_91_m)
+vif(horv_weight_83_91_f)
+vif(horv_weight_83_91_m)
+```
+
+```{r, cache=TRUE}
+vif(grim_height_83_91_intxn_f)
+vif(grim_height_83_91_intxn_m)
+vif(pheno_height_83_91_intxn_f)
+vif(pheno_height_83_91_intxn_m)
+vif(han_height_83_91_intxn_f)
+vif(han_height_83_91_intxn_m)
+vif(horv_height_83_91_intxn_f)
+vif(horv_height_83_91_intxn_m)
+
+```
+
+```{r, cache=TRUE}
+vif(grim_height_91_02_intxn_f)
+vif(grim_height_91_02_intxn_m)
+vif(pheno_height_91_02_intxn_f)
+vif(pheno_height_91_02_intxn_m)
+vif(han_height_91_02_intxn_f)
+vif(han_height_91_02_intxn_m)
+vif(horv_height_91_02_intxn_f)
+vif(horv_height_91_02_intxn_m)
+```
+
+```{r, cache=TRUE}
+vif(grim_weight_83_91_intxn_f)
+vif(grim_weight_83_91_intxn_m)
+vif(pheno_weight_83_91_intxn_f)
+vif(pheno_weight_83_91_intxn_m)
+vif(han_weight_83_91_intxn_f)
+vif(han_weight_83_91_intxn_m)
+vif(horv_weight_83_91_intxn_f)
+vif(horv_weight_83_91_intxn_m)
+```
+
