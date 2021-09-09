@@ -549,13 +549,14 @@ anthdiet05 <-read_dta(here::here("Data/zip_child_2005/anthdiet.dta")) %>% # note
   rename_all(tolower) %>% 
   unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
 
+names(anthdiet05)
+
 #subsetand  unite id variable
 #calculate bmi
 anthdiet05 <- anthdiet05 %>% 
-  select(basebrgy_basewman, age, sex, weight, height) %>% 
-  rename(weight_05 = weight, height_05 = height)
+  select(basebrgy_basewman, age, sex, weight, height, waist, tricep1, tricep2, tricep3, subscap1, subscap2, subscap3) %>% 
+  rename(weight_05 = weight, height_05 = height, waist_05 = waist, tricep1_05 = tricep1, tricep2_05 = tricep2, tricep3_05 = tricep3, subscap1_05 = subscap1, subscap2_05 = subscap2, subscap3_05 = subscap3)
   
-intersect(names(birthdates_data), names(anthdiet05))
 
 
 growth05_data <- left_join(birthdates_data, anthdiet05, by = c("basebrgy_basewman")) %>% 
@@ -749,7 +750,7 @@ by = c("basebrgy", "basewman"))
 
 growth_data<- growth_data_unfiltered %>% 
    unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman") %>% 
-  select(uncchdid, basebrgy_basewman, sexchild, sex, outcome, birthdate, intwdate, age_days_birthweigh, weightak_kg, heightcm, date_inf_meas, age_days_infweigh, hght_12, wght_12, intwdate91, age91_days, age_mo_91, age91_years, hightndx, weghtndx, intw_date02, age_days_02, age_years_02, age_cutoff, age_cutoff_days, height_02, weight_02, age, height_05, height_m_05, weight_05, bmi_05, hfaz_birth, hfaz_inf_12, hfaz_91, hfaz_02, hfa_diff_birth_inf12, hfa_diff_inf12_91, hfa_diff_91_02, wfaz_birth, wfaz_inf_12, wfaz_91, wfa_diff_birth_inf12, wfa_diff_inf12_91, reprostat, was_preg_no_na, trimester) %>% 
+  select(uncchdid, basebrgy_basewman, sexchild, sex, outcome, birthdate, intwdate, age_days_birthweigh, weightak_kg, heightcm, date_inf_meas, age_days_infweigh, hght_12, wght_12, intwdate91, age91_days, age_mo_91, age91_years, hightndx, weghtndx, intw_date02, age_days_02, age_years_02, age_cutoff, age_cutoff_days, height_02, weight_02, age, height_05, height_m_05, weight_05, bmi_05, waist_05, tricep1_05, tricep2_05, tricep3_05, subscap1_05, subscap2_05, subscap3_05,hfaz_birth, hfaz_inf_12, hfaz_91, hfaz_02, hfa_diff_birth_inf12, hfa_diff_inf12_91, hfa_diff_91_02, wfaz_birth, wfaz_inf_12, wfaz_91, wfa_diff_birth_inf12, wfa_diff_inf12_91, reprostat, was_preg_no_na, trimester) %>% 
   rename(intwdate_birth = intwdate, weightak_birth_kg = weightak_kg, heightcm_birth = heightcm, weghtndx_91 = weghtndx, hightndx_91 = hightndx, age_cutoff_02 = age_cutoff, age_cutoff_02_days = age_cutoff_days, age_05 = age) 
   
 
