@@ -21,6 +21,14 @@ library(car)
 ```
 
 ```{r}
+z_inf_all_meas <- read_csv(here::here ("Data/z_inf_all_meas.csv"))
+
+  
+
+```
+
+
+```{r}
 growth_clocks_data <- read_csv(here::here ("Data/growth_clocks_data.csv"))
 
 growth_clocks_data
