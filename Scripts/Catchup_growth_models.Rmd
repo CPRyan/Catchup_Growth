@@ -21,9 +21,17 @@ library(car)
 ```
 
 ```{r}
+growth_clocks_data <- read_csv(here::here ("Data/growth_clocks_data.csv"))
+
+growth_clocks_data
+
 hfaz_inf_all_meas <- read_csv(here::here ("Data/hfaz_inf_all_meas.csv"))
 wfaz_inf_all_meas <- read_csv(here::here ("Data/wfaz_inf_all_meas.csv"))
 
+```
+
+
+```{r}
 #Find average z score for m/w meas 1-12
 
 # first hfaz
@@ -267,13 +275,30 @@ wfaz_12_summary <-wfaz_inf_all_meas %>%
 wfaz_12_summary
   
 ```
-
-
 ```{r}
-growth_clocks_data <- read_csv(here::here ("Data/growth_clocks_data.csv"))
+#average hfaz difference 
 
-growth_clocks_data
+summary_hfaz_inf12_91_diff <- growth_clocks_data %>% 
+  group_by(sexchild) %>% 
+  drop_na(hfa_diff_inf12_91) %>% 
+  summarize(mean_hfaz_diff = mean(hfa_diff_inf12_91),
+            std_dev_hfaz_diff = sd(hfa_diff_inf12_91),
+            med_hfaz_diff = median(hfa_diff_inf12_91),
+            count = n(), .groups = "keep")
+summary_hfaz_inf12_91_diff
+  
+#average wfaz diff
+
+summary_wfaz_inf12_91_diff <- growth_clocks_data %>% 
+  group_by(sexchild) %>% 
+  drop_na(wfa_diff_inf12_91) %>% 
+  summarize(mean_wfaz_diff = mean(wfa_diff_inf12_91),
+            std_dev_wfaz_diff = sd(wfa_diff_inf12_91),
+            med_wfaz_diff = median(wfa_diff_inf12_91),
+            count = n(), .groups = "keep")
+summary_wfaz_inf12_91_diff
 ```
+
 
 #Birth to 2 years old
 ```{r}
