@@ -164,7 +164,9 @@ hfaz_inf_1 <- hfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "1")
 
 hfaz_inf_1 <- addWGSR(data = hfaz_inf_1, sex = "sexchild", firstPart = "1", secondPart = "age_days_infweigh", index = "hfa") %>% 
-  rename(hfaz_1 = hfaz)
+  rename(hfaz_1 = hfaz) %>% 
+  select(basebrgy_basewman, sexchild, age_days_infweigh, hfaz_1) %>% 
+  drop_na()
 
 hfaz_inf_1
 
@@ -173,7 +175,9 @@ hfaz_inf_2 <- hfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "2")
 
 hfaz_inf_2 <- addWGSR(data = hfaz_inf_2, sex = "sexchild", firstPart = "2", secondPart = "age_days_infweigh", index = "hfa") %>% 
-  rename(hfaz_2 = hfaz)
+  rename(hfaz_2 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_2) %>% 
+  drop_na()
 
 hfaz_inf_2
 
@@ -182,7 +186,9 @@ hfaz_inf_3 <- hfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "3")
 
 hfaz_inf_3 <- addWGSR(data = hfaz_inf_3, sex = "sexchild", firstPart = "3", secondPart = "age_days_infweigh", index = "hfa") %>% 
-  rename(hfaz_3 = hfaz)
+  rename(hfaz_3 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_3) %>% 
+  drop_na()
 
 hfaz_inf_3
 
@@ -191,7 +197,9 @@ hfaz_inf_4 <- hfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "4")
 
 hfaz_inf_4 <- addWGSR(data = hfaz_inf_4, sex = "sexchild", firstPart = "4", secondPart = "age_days_infweigh", index = "hfa") %>% 
-  rename(hfaz_4 = hfaz)
+  rename(hfaz_4 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_4) %>% 
+  drop_na()
 
 hfaz_inf_4
 
@@ -200,7 +208,9 @@ hfaz_inf_5 <- hfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "5")
 
 hfaz_inf_5 <- addWGSR(data = hfaz_inf_5, sex = "sexchild", firstPart = "5", secondPart = "age_days_infweigh", index = "hfa") %>% 
-  rename(hfaz_5 = hfaz)
+  rename(hfaz_5 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_5) %>% 
+  drop_na()
 
 hfaz_inf_5
 
@@ -209,7 +219,9 @@ hfaz_inf_6 <- hfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "6")
 
 hfaz_inf_6 <- addWGSR(data = hfaz_inf_6, sex = "sexchild", firstPart = "6", secondPart = "age_days_infweigh", index = "hfa") %>% 
-  rename(hfaz_6 = hfaz)
+  rename(hfaz_6 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_6) %>% 
+  drop_na()
 
 hfaz_inf_6
 
@@ -218,7 +230,9 @@ hfaz_inf_7 <- hfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "7")
 
 hfaz_inf_7 <- addWGSR(data = hfaz_inf_7, sex = "sexchild", firstPart = "7", secondPart = "age_days_infweigh", index = "hfa") %>% 
-  rename(hfaz_7 = hfaz)
+  rename(hfaz_7 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_7) %>% 
+  drop_na()
 
 hfaz_inf_7
 
@@ -227,7 +241,9 @@ hfaz_inf_8 <- hfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "8")
 
 hfaz_inf_8 <- addWGSR(data = hfaz_inf_8, sex = "sexchild", firstPart = "8", secondPart = "age_days_infweigh", index = "hfa") %>% 
-  rename(hfaz_8 = hfaz)
+  rename(hfaz_8 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_8) %>% 
+  drop_na()
 
 hfaz_inf_8
 
@@ -236,7 +252,9 @@ hfaz_inf_9 <- hfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "9")
 
 hfaz_inf_9 <- addWGSR(data = hfaz_inf_9, sex = "sexchild", firstPart = "9", secondPart = "age_days_infweigh", index = "hfa") %>% 
-  rename(hfaz_9 = hfaz)
+  rename(hfaz_9 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_9) %>% 
+  drop_na()
 
 hfaz_inf_9
 
@@ -245,7 +263,9 @@ hfaz_inf_10 <- hfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "10")
 
 hfaz_inf_10 <- addWGSR(data = hfaz_inf_10, sex = "sexchild", firstPart = "10", secondPart = "age_days_infweigh", index = "hfa") %>% 
-  rename(hfaz_10 = hfaz)
+  rename(hfaz_10 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_10) %>% 
+  drop_na()
 
 hfaz_inf_10
 
@@ -254,7 +274,9 @@ hfaz_inf_11 <- hfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "11")
 
 hfaz_inf_11 <- addWGSR(data = hfaz_inf_11, sex = "sexchild", firstPart = "11", secondPart = "age_days_infweigh", index = "hfa") %>% 
-  rename(hfaz_11 = hfaz)
+  rename(hfaz_11 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_11) %>% 
+  drop_na()
 
 hfaz_inf_11
 
@@ -264,7 +286,9 @@ hfaz_inf_12 <- hfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "12")
 
 hfaz_inf_12 <- addWGSR(data = hfaz_inf_12, sex = "sexchild", firstPart = "12", secondPart = "age_days_infweigh", index = "hfa") %>% 
-  rename(hfaz_12 = hfaz)
+  rename(hfaz_12 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_12) %>% 
+  drop_na()
 
 hfaz_inf_12
 
@@ -284,7 +308,9 @@ wfaz_inf_1 <- wfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "1")
 
 wfaz_inf_1 <- addWGSR(data = wfaz_inf_1, sex = "sexchild", firstPart = "1", secondPart = "age_days_infweigh", index = "wfa") %>% 
-  rename(wfaz_1 = wfaz)
+  rename(wfaz_1 = wfaz) %>% 
+  select(basebrgy_basewman, sexchild, age_days_infweigh, wfaz_1) %>% 
+  drop_na()
 
 wfaz_inf_1
 
@@ -293,7 +319,9 @@ wfaz_inf_2 <- wfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "2")
 
 wfaz_inf_2 <- addWGSR(data = wfaz_inf_2, sex = "sexchild", firstPart = "2", secondPart = "age_days_infweigh", index = "wfa") %>% 
-  rename(wfaz_2 = wfaz)
+  rename(wfaz_2 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_2) %>% 
+  drop_na()
 
 wfaz_inf_2
 
@@ -302,7 +330,9 @@ wfaz_inf_3 <- wfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "3")
 
 wfaz_inf_3 <- addWGSR(data = wfaz_inf_3, sex = "sexchild", firstPart = "3", secondPart = "age_days_infweigh", index = "wfa") %>% 
-  rename(wfaz_3 = wfaz)
+  rename(wfaz_3 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_3) %>% 
+  drop_na()
 
 wfaz_inf_3
 
@@ -311,7 +341,9 @@ wfaz_inf_4 <- wfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "4")
 
 wfaz_inf_4 <- addWGSR(data = wfaz_inf_4, sex = "sexchild", firstPart = "4", secondPart = "age_days_infweigh", index = "wfa") %>% 
-  rename(wfaz_4 = wfaz)
+  rename(wfaz_4 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_4) %>% 
+  drop_na()
 
 wfaz_inf_4
 
@@ -320,7 +352,9 @@ wfaz_inf_5 <- wfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "5")
 
 wfaz_inf_5 <- addWGSR(data = wfaz_inf_5, sex = "sexchild", firstPart = "5", secondPart = "age_days_infweigh", index = "wfa") %>% 
-  rename(wfaz_5 = wfaz)
+  rename(wfaz_5 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_5) %>% 
+  drop_na()
 
 wfaz_inf_5
 
@@ -329,7 +363,9 @@ wfaz_inf_6 <- wfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "6")
 
 wfaz_inf_6 <- addWGSR(data = wfaz_inf_6, sex = "sexchild", firstPart = "6", secondPart = "age_days_infweigh", index = "wfa") %>% 
-  rename(wfaz_6 = wfaz)
+  rename(wfaz_6 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_6) %>% 
+  drop_na()
 
 wfaz_inf_6
 
@@ -338,7 +374,9 @@ wfaz_inf_7 <- wfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "7")
 
 wfaz_inf_7 <- addWGSR(data = wfaz_inf_7, sex = "sexchild", firstPart = "7", secondPart = "age_days_infweigh", index = "wfa") %>% 
-  rename(wfaz_7 = wfaz)
+  rename(wfaz_7 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_7) %>% 
+  drop_na()
 
 wfaz_inf_7
 
@@ -347,7 +385,9 @@ wfaz_inf_8 <- wfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "8")
 
 wfaz_inf_8 <- addWGSR(data = wfaz_inf_8, sex = "sexchild", firstPart = "8", secondPart = "age_days_infweigh", index = "wfa") %>% 
-  rename(wfaz_8 = wfaz)
+  rename(wfaz_8 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_8) %>% 
+  drop_na()
 
 wfaz_inf_8
 
@@ -356,7 +396,9 @@ wfaz_inf_9 <- wfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "9")
 
 wfaz_inf_9 <- addWGSR(data = wfaz_inf_9, sex = "sexchild", firstPart = "9", secondPart = "age_days_infweigh", index = "wfa") %>% 
-  rename(wfaz_9 = wfaz)
+  rename(wfaz_9 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_9) %>% 
+  drop_na()
 
 wfaz_inf_9
 
@@ -365,7 +407,9 @@ wfaz_inf_10 <- wfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "10")
 
 wfaz_inf_10 <- addWGSR(data = wfaz_inf_10, sex = "sexchild", firstPart = "10", secondPart = "age_days_infweigh", index = "wfa") %>% 
-  rename(wfaz_10 = wfaz)
+  rename(wfaz_10 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_10) %>% 
+  drop_na()
 
 wfaz_inf_10
 
@@ -374,7 +418,9 @@ wfaz_inf_11 <- wfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "11")
 
 wfaz_inf_11 <- addWGSR(data = wfaz_inf_11, sex = "sexchild", firstPart = "11", secondPart = "age_days_infweigh", index = "wfa") %>% 
-  rename(wfaz_11 = wfaz)
+  rename(wfaz_11 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_11) %>% 
+  drop_na()
 
 wfaz_inf_11
 
@@ -384,13 +430,28 @@ wfaz_inf_12 <- wfaz_inf_all_meas %>%
   select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "12")
 
 wfaz_inf_12 <- addWGSR(data = wfaz_inf_12, sex = "sexchild", firstPart = "12", secondPart = "age_days_infweigh", index = "wfa") %>% 
-  rename(wfaz_12 = wfaz)
+  rename(wfaz_12 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_12) %>% 
+  drop_na()
 
 wfaz_inf_12
 
-
 ```
 
+```{r}
+
+#make inf 1-12 z score data frames
+hfaz_inf_all_meas <-plyr::join_all(list(hfaz_inf_1, hfaz_inf_2, hfaz_inf_3, hfaz_inf_4, hfaz_inf_5, hfaz_inf_6, hfaz_inf_7, hfaz_inf_8, hfaz_inf_9, hfaz_inf_10, hfaz_inf_11, hfaz_inf_12), by='basebrgy_basewman', type='left')
+
+hfaz_inf_all_meas
+
+wfaz_inf_all_meas <-plyr::join_all(list(wfaz_inf_1, wfaz_inf_2, wfaz_inf_3, wfaz_inf_4, wfaz_inf_5, wfaz_inf_6, wfaz_inf_7, wfaz_inf_8, wfaz_inf_9, wfaz_inf_10, wfaz_inf_11, wfaz_inf_12), by='basebrgy_basewman', type='left')
+
+wfaz_inf_all_meas
+
+write.csv(hfaz_inf_all_meas,"hfaz_inf_all_meas.csv")
+write.csv(wfaz_inf_all_meas,"wfaz_inf_all_meas.csv")
+```
 
 
 ```{r, cache=TRUE}
