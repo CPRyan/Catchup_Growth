@@ -868,16 +868,48 @@ names(anthdiet05)
 #subsetand  unite id variable
 #calculate bmi
 anthdiet05 <- anthdiet05 %>% 
-  select(basebrgy_basewman, age, sex, weight, height, waist, tricep1, tricep2, tricep3, subscap1, subscap2, subscap3) %>% 
-  rename(weight_05 = weight, height_05 = height, waist_05 = waist, tricep1_05 = tricep1, tricep2_05 = tricep2, tricep3_05 = tricep3, subscap1_05 = subscap1, subscap2_05 = subscap2, subscap3_05 = subscap3)
+  select(basebrgy_basewman, age, sex, weight, height, waist, hip, armcircm, tricep1, tricep2, tricep3, subscap1, subscap2, subscap3, suprail1, suprail2, suprail3) %>% 
+  rename(weight_05 = weight, height_05 = height, waist_05 = waist, hip_05 = hip, armcircm_05 = armcircm, tricep1_05 = tricep1, tricep2_05 = tricep2, tricep3_05 = tricep3, subscap1_05 = subscap1, subscap2_05 = subscap2, subscap3_05 = subscap3, suprail1_05 = suprail1, suprail2_05 = suprail2, suprail3_05 = suprail3)
   
+anthdiet05 <-anthdiet05 %>% 
+  filter_at(vars(starts_with("tricep")), all_vars(.>0)) %>% # filter out people without skinfolds. The guy has -6, which is code for 'disabled, no measurement taken"
+  filter_at(vars(starts_with("subscap")), all_vars(.>0)) %>%
+  filter_at(vars(starts_with("suprail")), all_vars(.>0)) %>%
+  na_if(., -9) %>%
+  mutate(whr_05 = waist_05 / hip_05) %>%   
+  mutate(tricep_mean = rowMeans(select(., starts_with("tricep")), na.rm = TRUE)) %>%  # mean of 3 measurements in mm
+  mutate(subscap_mean = rowMeans(select(., starts_with("subscap")), na.rm = TRUE)) %>%  # mean of 3 measurements in mm
+  mutate(supra_mean = rowMeans(select(., starts_with("suprail")), na.rm = TRUE)) %>%  # mean of 3 measurements in mm
+  mutate(arm_musc_circ = armcircm_05*10 - (tricep_mean * 3.14)) %>% # Upper arm muscle circ. (S) in mm: S = c - ( T * 3.14) 
+  mutate(arm_musc_area = arm_musc_circ^2 / 12.56) %>% # Upper arm muscle area (M) in mm² : M = S² / 12.56
+  mutate(bmi_05 = weight_05/(height_05/100)^2) %>% 
+  select(basebrgy_basewman, weight_05, height_05, bmi_05, waist_05, hip_05, whr_05, armcircm_05, subscap_mean, supra_mean, tricep_mean, arm_musc_area) %>% 
+  mutate(skinfold_sum = subscap_mean + supra_mean + tricep_mean) 
+
+# Calculate the density, fat-free mass, etc.
+# Constants from Durnin and Womersley, 1974, (Males, Age 20-29)
+# Linear regressionequations for the estimation of body density x 10^3(kg/m^3)
+# density = c - m x log skinfold
+
+dw_c <-1.1575
+dw_m <-0.0617
+# bfperc = ((4.95/density )-4.5)*100
+# fatmass = (( bfperc *.01)*weight)
+# ffm05 = weight-fatmass
+
+anthdiet05 <-anthdiet05 %>% 
+  mutate(logfolds = log10(skinfold_sum), 
+         density = dw_c - (dw_m * logfolds), 
+         bfperc = ((4.95/density )-4.5)*100,
+         fatmass = (( bfperc *.01)*weight_05),
+         fatfree_mass = weight_05-fatmass)
 
 
+#join birthdates and anthdiet05
 growth05_data <- left_join(birthdates_data, anthdiet05, by = c("basebrgy_basewman")) %>% 
-  mutate(height_m_05 = (height_05/100)) %>% 
-  mutate( bmi_05 = (weight_05/(height_m_05^2))) %>% 
   filter(weight_05 > 0) %>% 
   filter(height_05 > 0)
+
 
 growth05_data
 
