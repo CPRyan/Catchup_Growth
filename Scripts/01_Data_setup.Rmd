@@ -638,12 +638,42 @@ hhold_foo %>%
 ## Filter out the weird duplicates in 91
 ```{r}
 child2 %>%
-  select(basebrgy_basewman, weghtndx, hightndx) %>% 
+  select(basebrgy_basewman, weghtndx, hightndx, skinndx1, skinndx2, skinndx3, subsndx1, subsndx2, subsndx3, circmndx) %>% 
   filter(!is.na(weghtndx) & !is.na(hightndx)) %>% 
   group_by(basebrgy_basewman) %>%
   summarize(n = n()) %>%
   filter(n > 1)  
 # Great, this filters out all duplications for child2
+
+child2 <-child2 %>% 
+  filter_at(vars(starts_with("skin")), all_vars(.>0)) %>% # filter out people without skinfolds. The guy has -6, which is code for 'disabled, no measurement taken"
+  filter_at(vars(starts_with("subs")), all_vars(.>0)) %>%
+  na_if(., -9) %>%
+  mutate(tricep_mean = rowMeans(select(., starts_with("skin")), na.rm = TRUE)) %>%  # mean of 3 measurements in mm
+  mutate(subscap_mean = rowMeans(select(., starts_with("subs")), na.rm = TRUE)) %>%  # mean of 3 measurements in mm
+  mutate(arm_musc_circ_91 = circmndx*10 - (tricep_mean * 3.14)) %>% # Upper arm muscle circ. (S) in mm: S = c - ( T * 3.14) 
+  mutate(arm_musc_area_91 = arm_musc_circ_91^2 / 12.56) %>% # Upper arm muscle area (M) in mm² : M = S² / 12.56
+  mutate(bmi_91 = weghtndx/(hightndx/100)^2) %>% 
+  select(basebrgy_basewman, weghtndx, hightndx, bmi_91, circmndx, subscap_mean, tricep_mean, arm_musc_area_91) %>% 
+  mutate(skinfold_sum = subscap_mean + tricep_mean) 
+
+# Calculate the density, fat-free mass, etc.
+# Constants from Durnin and Womersley, 1974, (Males, Age 20-29)
+# Linear regressionequations for the estimation of body density x 10^3(kg/m^3)
+# density = c - m x log skinfold
+
+dw_c_m_91 <-1.1575
+dw_m_m_91 <-0.0617
+# bfperc = ((4.95/density )-4.5)*100
+# fatmass = (( bfperc *.01)*weight)
+# ffm05 = weight-fatmass
+
+child2 <-child2 %>% 
+  mutate(logfolds = log10(skinfold_sum), 
+         density = dw_c_m_91 - (dw_m_m_91 * logfolds), 
+         bfperc = ((4.95/density )-4.5)*100,
+         fatmass = (( bfperc *.01)*weghtndx),
+         fatfree_mass = weghtndx-fatmass)
  
 ```
 
@@ -786,10 +816,41 @@ screen_data<-read_dta(here::here("Data/zip_child_2002/screen.dta")) %>% # note: 
 #subset anthdiet
 #calculate bmi
 anthdiet <- anthdiet %>% 
-  select(basebrgy_basewman, weight, height) %>% 
+  select(basebrgy_basewman, weight, height, tricep1, tricep2, tricep3, subscap1, subscap2, subscap3, waist, hip, armcircm) %>% 
   filter(weight > 0) %>% 
   filter(height > 0) %>% 
   rename(weight_02 = weight, height_02 = height)
+
+anthdiet <-anthdiet %>% 
+  filter_at(vars(starts_with("tricep")), all_vars(.>0)) %>% # filter out people without skinfolds. The guy has -6, which is code for 'disabled, no measurement taken"
+  filter_at(vars(starts_with("subscap")), all_vars(.>0)) %>%
+  na_if(., -9) %>%
+  mutate(whr_02 = waist / hip) %>%   
+  mutate(tricep_mean = rowMeans(select(., starts_with("tricep")), na.rm = TRUE)) %>%  # mean of 3 measurements in mm
+  mutate(subscap_mean = rowMeans(select(., starts_with("subscap")), na.rm = TRUE)) %>%  # mean of 3 measurements in mm
+  mutate(arm_musc_circ = armcircm*10 - (tricep_mean * 3.14)) %>% # Upper arm muscle circ. (S) in mm: S = c - ( T * 3.14) 
+  mutate(arm_musc_area_02 = arm_musc_circ^2 / 12.56) %>% # Upper arm muscle area (M) in mm² : M = S² / 12.56
+  mutate(bmi_02 = weight_02/(height_02/100)^2) %>% 
+  select(basebrgy_basewman, weight_02, height_02, bmi_02, waist, hip, whr_02, armcircm, subscap_mean, tricep_mean, arm_musc_area_02) %>% 
+  mutate(skinfold_sum_02 = subscap_mean + tricep_mean) 
+
+# Calculate the density, fat-free mass, etc.
+# Constants from Durnin and Womersley, 1974, (Males, Age 20-29)
+# Linear regressionequations for the estimation of body density x 10^3(kg/m^3)
+# density = c - m x log skinfold
+
+dw_c_m_02 <-1.1561
+dw_m_m_02 <-0.0711
+# bfperc = ((4.95/density )-4.5)*100
+# fatmass = (( bfperc *.01)*weight)
+# ffm05 = weight-fatmass
+
+anthdiet <-anthdiet %>% 
+  mutate(logfolds = log10(skinfold_sum_02), 
+         density = dw_c_m_02 - (dw_m_m_02 * logfolds), 
+         bfperc = ((4.95/density )-4.5)*100,
+         fatmass = (( bfperc *.01)*weight_02),
+         fatfree_mass = weight_02-fatmass)
 
 #subset screen_data
 screen_data <- screen_data %>% 
@@ -883,7 +944,7 @@ anthdiet05 <-anthdiet05 %>%
   mutate(arm_musc_circ = armcircm_05*10 - (tricep_mean * 3.14)) %>% # Upper arm muscle circ. (S) in mm: S = c - ( T * 3.14) 
   mutate(arm_musc_area = arm_musc_circ^2 / 12.56) %>% # Upper arm muscle area (M) in mm² : M = S² / 12.56
   mutate(bmi_05 = weight_05/(height_05/100)^2) %>% 
-  select(basebrgy_basewman, weight_05, height_05, bmi_05, waist_05, hip_05, whr_05, armcircm_05, subscap_mean, supra_mean, tricep_mean, arm_musc_area) %>% 
+  select(basebrgy_basewman, age, weight_05, height_05, bmi_05, waist_05, hip_05, whr_05, armcircm_05, subscap_mean, supra_mean, tricep_mean, arm_musc_area) %>% 
   mutate(skinfold_sum = subscap_mean + supra_mean + tricep_mean) 
 
 # Calculate the density, fat-free mass, etc.
@@ -891,15 +952,15 @@ anthdiet05 <-anthdiet05 %>%
 # Linear regressionequations for the estimation of body density x 10^3(kg/m^3)
 # density = c - m x log skinfold
 
-dw_c <-1.1575
-dw_m <-0.0617
+dw_c_m_05 <-1.1575
+dw_m_m_05 <-0.0617
 # bfperc = ((4.95/density )-4.5)*100
 # fatmass = (( bfperc *.01)*weight)
 # ffm05 = weight-fatmass
 
 anthdiet05 <-anthdiet05 %>% 
   mutate(logfolds = log10(skinfold_sum), 
-         density = dw_c - (dw_m * logfolds), 
+         density = dw_c_m_05 - (dw_m_m_05 * logfolds), 
          bfperc = ((4.95/density )-4.5)*100,
          fatmass = (( bfperc *.01)*weight_05),
          fatfree_mass = weight_05-fatmass)
