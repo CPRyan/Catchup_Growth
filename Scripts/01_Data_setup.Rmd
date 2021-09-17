@@ -733,7 +733,7 @@ growth91_data <- left_join(growth91_data_nobday, birthdates_data, by = c("basebr
          fatmass_f_91 = (( bfperc_f_91 *.01)*weghtndx),
          fatmass_91 = if_else(sexchild == "1", fatmass_m_91, fatmass_f_91)) %>%
   select(-c(fatmass_f_91, fatmass_m_91)) %>% 
-  mutate( fatfree_mass = weghtndx-fatmass_91)
+  mutate( fatfree_mass_91 = weghtndx-fatmass_91)
 
 growth91_data
 #2,278 
@@ -867,9 +867,9 @@ growth02_data <- left_join(screen_data, anthdiet, by = c("basebrgy_basewman")) %
          density_f_02 = dw_c_f_02 - (dw_m_f_02 * logfolds), 
          bfperc_f_02 = ((4.95/density_f_02 )-4.5)*100,
          fatmass_f_02 = (( bfperc_f_02 *.01)*weight_02)) %>% 
-  mutate(fatmass = if_else(sexchild == "1", fatmass_m_02, fatmass_f_02)) %>%
+  mutate(fatmass_02 = if_else(sexchild == "1", fatmass_m_02, fatmass_f_02)) %>%
   select(-c(fatmass_f_02, fatmass_m_02)) %>% 
-  mutate (fatfree_mass_02 = weight_02-fatmass)
+  mutate (fatfree_mass_02 = weight_02-fatmass_02)
 
   
 
@@ -972,9 +972,9 @@ anthdiet05 <-anthdiet05 %>%
          density_f_05 = dw_c_f_05 - (dw_m_f_05 * logfolds), 
          bfperc_f_05 = ((4.95/density_f_05 )-4.5)*100,
          fatmass_f_05 = (( bfperc_f_05 *.01)*weight_05)) %>% 
-  mutate(fatmass = if_else(sex == "1", fatmass_m_05, fatmass_f_05)) %>%
+  mutate(fatmass_05 = if_else(sex == "1", fatmass_m_05, fatmass_f_05)) %>%
   select(-c(fatmass_f_05, fatmass_m_05)) %>% 
-  mutate (fatfree_mass_05 = weight_05-fatmass)
+  mutate (fatfree_mass_05 = weight_05-fatmass_05)
 
 
 
@@ -1154,7 +1154,7 @@ growth_data_unfiltered
 
 ```
 
-```{r}
+```{r, cache = TRUE}
 #read in unc child ID data
 unc_base_reprostat <-read_csv(here::here("Output/Data/CPR/unc_base_reprostat.csv"))
 unc_base_reprostat
@@ -1170,8 +1170,8 @@ by = c("basebrgy", "basewman"))
 
 growth_data<- growth_data_unfiltered %>% 
    unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman") %>% 
-  select(uncchdid, basebrgy_basewman, sexchild, sex, outcome, birthdate, intwdate, age_days_birthweigh, weightak_kg, heightcm, date_inf_meas, age_days_infweigh, hght_12, wght_12, intwdate91, age91_days, age_mo_91, age91_years, hightndx, weghtndx, intw_date02, age_days_02, age_years_02, age_cutoff, age_cutoff_days, height_02, weight_02, age, height_05, height_m_05, weight_05, bmi_05, waist_05, tricep1_05, tricep2_05, tricep3_05, subscap1_05, subscap2_05, subscap3_05,hfaz_birth, hfaz_inf_12, hfaz_91, hfaz_02, hfa_diff_birth_inf12, hfa_diff_inf12_91, hfa_diff_91_02, wfaz_birth, wfaz_inf_12, wfaz_91, wfa_diff_birth_inf12, wfa_diff_inf12_91, reprostat, was_preg_no_na, trimester) %>% 
-  rename(intwdate_birth = intwdate, weightak_birth_kg = weightak_kg, heightcm_birth = heightcm, weghtndx_91 = weghtndx, hightndx_91 = hightndx, age_cutoff_02 = age_cutoff, age_cutoff_02_days = age_cutoff_days, age_05 = age) 
+  select(uncchdid, basebrgy_basewman, sexchild, sex, outcome, birthdate, intwdate, age_days_birthweigh, weightak_kg, heightcm, date_inf_meas, age_days_infweigh, hght_12, wght_12, intwdate91, age91_days, age_mo_91, age91_years, hightndx, weghtndx, bfperc_m_91, bfperc_f_91, fatmass_91, fatfree_mass_91, intw_date02, age_days_02, age_years_02, age_cutoff, age_cutoff_days, height_02, weight_02, waist, hip, bfperc_m_02, bfperc_f_02, fatmass_02, fatfree_mass_02,age, height_05, weight_05, bmi_05, waist_05, hip_05, bfperc_m_05, bfperc_f_05, fatmass_05, fatfree_mass_05,hfaz_birth, hfaz_inf_12, hfaz_91, hfaz_02, hfa_diff_birth_inf12, hfa_diff_inf12_91, hfa_diff_91_02, wfaz_birth, wfaz_inf_12, wfaz_91, wfa_diff_birth_inf12, wfa_diff_inf12_91, reprostat, was_preg_no_na, trimester) %>% 
+  rename(intwdate_birth = intwdate, weightak_birth_kg = weightak_kg, heightcm_birth = heightcm, weghtndx_91 = weghtndx, hightndx_91 = hightndx, age_cutoff_02 = age_cutoff, age_cutoff_02_days = age_cutoff_days, age_05 = age, waist_02 = waist, hip_02 = hip) 
   
 
 growth_data
