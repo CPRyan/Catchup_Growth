@@ -636,7 +636,7 @@ hhold_foo %>%
 
 ```
 ## Filter out the weird duplicates in 91
-```{r}
+```{r, cache = TRUE}
 child2 %>%
   select(basebrgy_basewman, weghtndx, hightndx, skinndx1, skinndx2, skinndx3, subsndx1, subsndx2, subsndx3, circmndx) %>% 
   filter(!is.na(weghtndx) & !is.na(hightndx)) %>% 
@@ -658,21 +658,9 @@ child2 <-child2 %>%
   mutate(skinfold_sum = subscap_mean + tricep_mean) 
 
 # Calculate the density, fat-free mass, etc.
-# Equation from Durnin and Womersley, 1974, (Males, Age 20-29)
+# Equation from Durnin and Womersley
 
 
-
-# fatmass = (( bfperc *.01)*weight)
-# ffm05 = weight-fatmass
-
-child2 <-child2 %>% 
-  mutate(bfperc_m_91 = ((14.28*log10(skinfold_sum)-(21.50*log10(hightndx))+ 90.69)),
-         bfperc_f_91 = (13.95*log10(skinfold_sum)-(18.09*log10(hightndx))+ 77.17),
-         fatmass_m_91 = (( bfperc_m_91 *.01)*weghtndx),
-         fatmass_f_91 = (( bfperc_f_91 *.01)*weghtndx) %>% 
-  mutate(fatmass_91 = if_else(sexchild == "1", fatmass_m_91, fatmass_f_91)) %>%
-  select(-c(fatmass_f_91, fatmass_m_91)) %>% 
-  mutate( fatfree_mass = weghtndx-fatmass_91))
  
 ```
 
@@ -721,7 +709,7 @@ hhold91 %>%
 #subset child2 data
 
 growth2 <-child2 %>%
-  select(basebrgy_basewman, weghtndx, hightndx) %>% 
+  select(basebrgy_basewman, weghtndx, hightndx, bmi_91, circmndx, subscap_mean, tricep_mean, arm_musc_area_91, skinfold_sum) %>% 
   filter(!is.na(weghtndx) & !is.na(hightndx)) 
 
 #subset hh91 data
@@ -738,7 +726,14 @@ growth91_data_nobday
 #join tables together to make growth91_data
 intersect(names(growth91_data_nobday), names(birthdates_data))
 
-growth91_data <- left_join(growth91_data_nobday, birthdates_data, by = c("basebrgy_basewman"))
+growth91_data <- left_join(growth91_data_nobday, birthdates_data, by = c("basebrgy_basewman")) %>% 
+  mutate(bfperc_m_91 = ((14.28*log10(skinfold_sum)-(21.50*log10(hightndx))+ 90.69)),
+         bfperc_f_91 = (13.95*log10(skinfold_sum)-(18.09*log10(hightndx))+ 77.17),
+         fatmass_m_91 = (( bfperc_m_91 *.01)*weghtndx),
+         fatmass_f_91 = (( bfperc_f_91 *.01)*weghtndx),
+         fatmass_91 = if_else(sexchild == "1", fatmass_m_91, fatmass_f_91)) %>%
+  select(-c(fatmass_f_91, fatmass_m_91)) %>% 
+  mutate( fatfree_mass = weghtndx-fatmass_91)
 
 growth91_data
 #2,278 
