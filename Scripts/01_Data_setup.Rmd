@@ -841,17 +841,14 @@ anthdiet <-anthdiet %>%
 
 dw_c_m_02 <-1.1561
 dw_m_m_02 <-0.0711
+
+dw_c_f_02 <- 1.1468
+dw_m_f_02 <- 0.0740
 # bfperc = ((4.95/density )-4.5)*100
 # fatmass = (( bfperc *.01)*weight)
 # ffm05 = weight-fatmass
 
-anthdiet <-anthdiet %>% 
-  mutate(logfolds = log10(skinfold_sum_02), 
-         density = dw_c_m_02 - (dw_m_m_02 * logfolds), 
-         bfperc = ((4.95/density )-4.5)*100,
-         fatmass = (( bfperc *.01)*weight_02),
-         fatfree_mass = weight_02-fatmass)
-
+ 
 #subset screen_data
 screen_data <- screen_data %>% 
   select(basebrgy_basewman, dayntrvw, yrntrvw, montrvw) %>% 
@@ -868,7 +865,19 @@ screen_data <- left_join(birthdates_data, screen_data, by = c("basebrgy_basewman
   
   
 
-growth02_data <- left_join(screen_data, anthdiet, by = c("basebrgy_basewman"))
+growth02_data <- left_join(screen_data, anthdiet, by = c("basebrgy_basewman")) %>% 
+  mutate(logfolds = log10(skinfold_sum_02), 
+         density_m_02 = dw_c_m_02 - (dw_m_m_02 * logfolds), 
+         bfperc_m_02 = ((4.95/density_m_02 )-4.5)*100,
+         fatmass_m_02 = (( bfperc_m_02 *.01)*weight_02),
+         density_f_02 = dw_c_f_02 - (dw_m_f_02 * logfolds), 
+         bfperc_f_02 = ((4.95/density_f_02 )-4.5)*100,
+         fatmass_f_02 = (( bfperc_f_02 *.01)*weight_02)) %>% 
+  mutate(fatmass = if_else(sexchild == "1", fatmass_m_02, fatmass_f_02)) %>%
+  select(-c(fatmass_f_02, fatmass_m_02)) %>% 
+  mutate (fatfree_mass_02 = weight_02-fatmass)
+
+  
 
 growth02_data <- addWGSR(data = growth02_data, sex = "sexchild", firstPart= "height_02", secondPart = "age_cutoff_days", index = "hfa") %>% 
    rename(hfaz_02 = hfaz)
@@ -944,7 +953,7 @@ anthdiet05 <-anthdiet05 %>%
   mutate(arm_musc_circ = armcircm_05*10 - (tricep_mean * 3.14)) %>% # Upper arm muscle circ. (S) in mm: S = c - ( T * 3.14) 
   mutate(arm_musc_area = arm_musc_circ^2 / 12.56) %>% # Upper arm muscle area (M) in mm² : M = S² / 12.56
   mutate(bmi_05 = weight_05/(height_05/100)^2) %>% 
-  select(basebrgy_basewman, age, weight_05, height_05, bmi_05, waist_05, hip_05, whr_05, armcircm_05, subscap_mean, supra_mean, tricep_mean, arm_musc_area) %>% 
+  select(basebrgy_basewman, age, sex, weight_05, height_05, bmi_05, waist_05, hip_05, whr_05, armcircm_05, subscap_mean, supra_mean, tricep_mean, arm_musc_area) %>% 
   mutate(skinfold_sum = subscap_mean + supra_mean + tricep_mean) 
 
 # Calculate the density, fat-free mass, etc.
@@ -954,16 +963,26 @@ anthdiet05 <-anthdiet05 %>%
 
 dw_c_m_05 <-1.1575
 dw_m_m_05 <-0.0617
+
+dw_c_f_05 <- 1.1566
+dw_m_f_05 <- 0.0728
 # bfperc = ((4.95/density )-4.5)*100
 # fatmass = (( bfperc *.01)*weight)
 # ffm05 = weight-fatmass
 
 anthdiet05 <-anthdiet05 %>% 
   mutate(logfolds = log10(skinfold_sum), 
-         density = dw_c_m_05 - (dw_m_m_05 * logfolds), 
-         bfperc = ((4.95/density )-4.5)*100,
-         fatmass = (( bfperc *.01)*weight_05),
-         fatfree_mass = weight_05-fatmass)
+         density_m_05 = dw_c_m_05 - (dw_m_m_05 * logfolds), 
+         bfperc_m_05 = ((4.95/density_m_05 )-4.5)*100,
+         fatmass_m_05 = (( bfperc_m_05 *.01)*weight_05),
+         density_f_05 = dw_c_f_05 - (dw_m_f_05 * logfolds), 
+         bfperc_f_05 = ((4.95/density_f_05 )-4.5)*100,
+         fatmass_f_05 = (( bfperc_f_05 *.01)*weight_05)) %>% 
+  mutate(fatmass = if_else(sex == "1", fatmass_m_05, fatmass_f_05)) %>%
+  select(-c(fatmass_f_05, fatmass_m_05)) %>% 
+  mutate (fatfree_mass_05 = weight_05-fatmass)
+
+
 
 
 #join birthdates and anthdiet05
