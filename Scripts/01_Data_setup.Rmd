@@ -658,22 +658,21 @@ child2 <-child2 %>%
   mutate(skinfold_sum = subscap_mean + tricep_mean) 
 
 # Calculate the density, fat-free mass, etc.
-# Constants from Durnin and Womersley, 1974, (Males, Age 20-29)
-# Linear regressionequations for the estimation of body density x 10^3(kg/m^3)
-# density = c - m x log skinfold
+# Equation from Durnin and Womersley, 1974, (Males, Age 20-29)
 
-dw_c_m_91 <-1.1575
-dw_m_m_91 <-0.0617
-# bfperc = ((4.95/density )-4.5)*100
+
+
 # fatmass = (( bfperc *.01)*weight)
 # ffm05 = weight-fatmass
 
 child2 <-child2 %>% 
-  mutate(logfolds = log10(skinfold_sum), 
-         density = dw_c_m_91 - (dw_m_m_91 * logfolds), 
-         bfperc = ((4.95/density )-4.5)*100,
-         fatmass = (( bfperc *.01)*weghtndx),
-         fatfree_mass = weghtndx-fatmass)
+  mutate(bfperc_m_91 = ((14.28*log10(skinfold_sum)-(21.50*log10(hightndx))+ 90.69)),
+         bfperc_f_91 = (13.95*log10(skinfold_sum)-(18.09*log10(hightndx))+ 77.17),
+         fatmass_m_91 = (( bfperc_m_91 *.01)*weghtndx),
+         fatmass_f_91 = (( bfperc_f_91 *.01)*weghtndx) %>% 
+  mutate(fatmass_91 = if_else(sexchild == "1", fatmass_m_91, fatmass_f_91)) %>%
+  select(-c(fatmass_f_91, fatmass_m_91)) %>% 
+  mutate( fatfree_mass = weghtndx-fatmass_91))
  
 ```
 
