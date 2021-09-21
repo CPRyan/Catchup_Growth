@@ -130,6 +130,16 @@ height_mlong_bday <-mlong_anthro_bday %>%
   spread(key = id, value = height, drop = TRUE) %>% 
   rename(hght_12 = "12" )
 
+z_inf_all_meas<- mlong_anthro_bday %>% 
+  select(basebrgy_basewman, sexchild, height, weight_kg, date_inf_meas, age_days_infweigh, birthdate) 
+
+z_inf_all_meas <- addWGSR(data = z_inf_all_meas, sex = "sexchild", firstPart= "weight_kg", secondPart = "age_days_infweigh", index = "wfa")
+
+z_inf_all_meas <- addWGSR(data = z_inf_all_meas, sex = "sexchild", firstPart = "height", secondPart = "age_days_infweigh", index = "hfa")
+  
+write.csv(z_inf_all_meas,"z_inf_all_meas.csv")
+z_inf_all_meas
+
 weight_mlong_bday
 height_mlong_bday
 
@@ -137,6 +147,310 @@ height_mlong_bday
 #   group_by(basebrgy_basewman) %>% 
 #   summarize(n = n()) %>% 
 #   filter(n > 1)
+```
+
+```{r}
+#compute z scores for the 12 infancy measurments 
+
+hfaz_inf_all_meas <-mlong_anthro_bday %>%
+  select(basebrgy_basewman, sexchild, height, date_inf_meas, age_days_infweigh, birthdate) %>%
+  group_by(basebrgy_basewman) %>%
+  mutate(id = row_number()) %>%
+  arrange(basebrgy_basewman, id) %>% 
+  spread(key = id, value = height, drop = TRUE) 
+
+#first height measurment
+hfaz_inf_1 <- hfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "1")
+
+hfaz_inf_1 <- addWGSR(data = hfaz_inf_1, sex = "sexchild", firstPart = "1", secondPart = "age_days_infweigh", index = "hfa") %>% 
+  rename(hfaz_1 = hfaz) %>% 
+  select(basebrgy_basewman, sexchild, age_days_infweigh, hfaz_1) %>% 
+  drop_na()
+
+hfaz_inf_1
+
+#second height meas
+hfaz_inf_2 <- hfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "2")
+
+hfaz_inf_2 <- addWGSR(data = hfaz_inf_2, sex = "sexchild", firstPart = "2", secondPart = "age_days_infweigh", index = "hfa") %>% 
+  rename(hfaz_2 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_2) %>% 
+  drop_na()
+
+hfaz_inf_2
+
+#third height
+hfaz_inf_3 <- hfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "3")
+
+hfaz_inf_3 <- addWGSR(data = hfaz_inf_3, sex = "sexchild", firstPart = "3", secondPart = "age_days_infweigh", index = "hfa") %>% 
+  rename(hfaz_3 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_3) %>% 
+  drop_na()
+
+hfaz_inf_3
+
+#fourth height
+hfaz_inf_4 <- hfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "4")
+
+hfaz_inf_4 <- addWGSR(data = hfaz_inf_4, sex = "sexchild", firstPart = "4", secondPart = "age_days_infweigh", index = "hfa") %>% 
+  rename(hfaz_4 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_4) %>% 
+  drop_na()
+
+hfaz_inf_4
+
+#fifth height
+hfaz_inf_5 <- hfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "5")
+
+hfaz_inf_5 <- addWGSR(data = hfaz_inf_5, sex = "sexchild", firstPart = "5", secondPart = "age_days_infweigh", index = "hfa") %>% 
+  rename(hfaz_5 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_5) %>% 
+  drop_na()
+
+hfaz_inf_5
+
+#sixth height
+hfaz_inf_6 <- hfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "6")
+
+hfaz_inf_6 <- addWGSR(data = hfaz_inf_6, sex = "sexchild", firstPart = "6", secondPart = "age_days_infweigh", index = "hfa") %>% 
+  rename(hfaz_6 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_6) %>% 
+  drop_na()
+
+hfaz_inf_6
+
+#seventh height
+hfaz_inf_7 <- hfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "7")
+
+hfaz_inf_7 <- addWGSR(data = hfaz_inf_7, sex = "sexchild", firstPart = "7", secondPart = "age_days_infweigh", index = "hfa") %>% 
+  rename(hfaz_7 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_7) %>% 
+  drop_na()
+
+hfaz_inf_7
+
+#8th height
+hfaz_inf_8 <- hfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "8")
+
+hfaz_inf_8 <- addWGSR(data = hfaz_inf_8, sex = "sexchild", firstPart = "8", secondPart = "age_days_infweigh", index = "hfa") %>% 
+  rename(hfaz_8 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_8) %>% 
+  drop_na()
+
+hfaz_inf_8
+
+#ninth height
+hfaz_inf_9 <- hfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "9")
+
+hfaz_inf_9 <- addWGSR(data = hfaz_inf_9, sex = "sexchild", firstPart = "9", secondPart = "age_days_infweigh", index = "hfa") %>% 
+  rename(hfaz_9 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_9) %>% 
+  drop_na()
+
+hfaz_inf_9
+
+#tenth height
+hfaz_inf_10 <- hfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "10")
+
+hfaz_inf_10 <- addWGSR(data = hfaz_inf_10, sex = "sexchild", firstPart = "10", secondPart = "age_days_infweigh", index = "hfa") %>% 
+  rename(hfaz_10 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_10) %>% 
+  drop_na()
+
+hfaz_inf_10
+
+#eleventh height
+hfaz_inf_11 <- hfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "11")
+
+hfaz_inf_11 <- addWGSR(data = hfaz_inf_11, sex = "sexchild", firstPart = "11", secondPart = "age_days_infweigh", index = "hfa") %>% 
+  rename(hfaz_11 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_11) %>% 
+  drop_na()
+
+hfaz_inf_11
+
+#12th height
+
+hfaz_inf_12 <- hfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "12")
+
+hfaz_inf_12 <- addWGSR(data = hfaz_inf_12, sex = "sexchild", firstPart = "12", secondPart = "age_days_infweigh", index = "hfa") %>% 
+  rename(hfaz_12 = hfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, hfaz_12) %>% 
+  drop_na()
+
+hfaz_inf_12
+
+
+
+#Weight
+
+wfaz_inf_all_meas <-mlong_anthro_bday %>%
+  select(basebrgy_basewman, sexchild, weight_kg, yearms, mntham, daymes, date_inf_meas, age_days_infweigh, birthdate) %>%
+  group_by(basebrgy_basewman) %>%
+  mutate(id = row_number()) %>%
+  arrange(basebrgy_basewman, id) %>% 
+  spread(key = id, value = weight_kg, drop = TRUE) 
+
+#first weight measurment
+wfaz_inf_1 <- wfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "1")
+
+wfaz_inf_1 <- addWGSR(data = wfaz_inf_1, sex = "sexchild", firstPart = "1", secondPart = "age_days_infweigh", index = "wfa") %>% 
+  rename(wfaz_1 = wfaz) %>% 
+  select(basebrgy_basewman, sexchild, age_days_infweigh, wfaz_1) %>% 
+  drop_na()
+
+wfaz_inf_1
+
+#second weight meas
+wfaz_inf_2 <- wfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "2")
+
+wfaz_inf_2 <- addWGSR(data = wfaz_inf_2, sex = "sexchild", firstPart = "2", secondPart = "age_days_infweigh", index = "wfa") %>% 
+  rename(wfaz_2 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_2) %>% 
+  drop_na()
+
+wfaz_inf_2
+
+#third weight
+wfaz_inf_3 <- wfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "3")
+
+wfaz_inf_3 <- addWGSR(data = wfaz_inf_3, sex = "sexchild", firstPart = "3", secondPart = "age_days_infweigh", index = "wfa") %>% 
+  rename(wfaz_3 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_3) %>% 
+  drop_na()
+
+wfaz_inf_3
+
+#fourth weight
+wfaz_inf_4 <- wfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "4")
+
+wfaz_inf_4 <- addWGSR(data = wfaz_inf_4, sex = "sexchild", firstPart = "4", secondPart = "age_days_infweigh", index = "wfa") %>% 
+  rename(wfaz_4 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_4) %>% 
+  drop_na()
+
+wfaz_inf_4
+
+#fifth weight
+wfaz_inf_5 <- wfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "5")
+
+wfaz_inf_5 <- addWGSR(data = wfaz_inf_5, sex = "sexchild", firstPart = "5", secondPart = "age_days_infweigh", index = "wfa") %>% 
+  rename(wfaz_5 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_5) %>% 
+  drop_na()
+
+wfaz_inf_5
+
+#sixth weight
+wfaz_inf_6 <- wfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "6")
+
+wfaz_inf_6 <- addWGSR(data = wfaz_inf_6, sex = "sexchild", firstPart = "6", secondPart = "age_days_infweigh", index = "wfa") %>% 
+  rename(wfaz_6 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_6) %>% 
+  drop_na()
+
+wfaz_inf_6
+
+#seventh weight
+wfaz_inf_7 <- wfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "7")
+
+wfaz_inf_7 <- addWGSR(data = wfaz_inf_7, sex = "sexchild", firstPart = "7", secondPart = "age_days_infweigh", index = "wfa") %>% 
+  rename(wfaz_7 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_7) %>% 
+  drop_na()
+
+wfaz_inf_7
+
+#8th weight
+wfaz_inf_8 <- wfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "8")
+
+wfaz_inf_8 <- addWGSR(data = wfaz_inf_8, sex = "sexchild", firstPart = "8", secondPart = "age_days_infweigh", index = "wfa") %>% 
+  rename(wfaz_8 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_8) %>% 
+  drop_na()
+
+wfaz_inf_8
+
+#ninth weight
+wfaz_inf_9 <- wfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "9")
+
+wfaz_inf_9 <- addWGSR(data = wfaz_inf_9, sex = "sexchild", firstPart = "9", secondPart = "age_days_infweigh", index = "wfa") %>% 
+  rename(wfaz_9 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_9) %>% 
+  drop_na()
+
+wfaz_inf_9
+
+#tenth weight
+wfaz_inf_10 <- wfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "10")
+
+wfaz_inf_10 <- addWGSR(data = wfaz_inf_10, sex = "sexchild", firstPart = "10", secondPart = "age_days_infweigh", index = "wfa") %>% 
+  rename(wfaz_10 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_10) %>% 
+  drop_na()
+
+wfaz_inf_10
+
+#eleventh weight
+wfaz_inf_11 <- wfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "11")
+
+wfaz_inf_11 <- addWGSR(data = wfaz_inf_11, sex = "sexchild", firstPart = "11", secondPart = "age_days_infweigh", index = "wfa") %>% 
+  rename(wfaz_11 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_11) %>% 
+  drop_na()
+
+wfaz_inf_11
+
+#12th weight
+
+wfaz_inf_12 <- wfaz_inf_all_meas %>% 
+  select(basebrgy_basewman, sexchild, date_inf_meas, age_days_infweigh, birthdate, "12")
+
+wfaz_inf_12 <- addWGSR(data = wfaz_inf_12, sex = "sexchild", firstPart = "12", secondPart = "age_days_infweigh", index = "wfa") %>% 
+  rename(wfaz_12 = wfaz) %>% 
+  select(basebrgy_basewman, age_days_infweigh, wfaz_12) %>% 
+  drop_na()
+
+wfaz_inf_12
+
+```
+
+```{r}
+
+#make inf 1-12 z score data frames
+hfaz_inf_all_meas <-plyr::join_all(list(hfaz_inf_1, hfaz_inf_2, hfaz_inf_3, hfaz_inf_4, hfaz_inf_5, hfaz_inf_6, hfaz_inf_7, hfaz_inf_8, hfaz_inf_9, hfaz_inf_10, hfaz_inf_11, hfaz_inf_12), by='basebrgy_basewman', type='left')
+
+hfaz_inf_all_meas
+
+wfaz_inf_all_meas <-plyr::join_all(list(wfaz_inf_1, wfaz_inf_2, wfaz_inf_3, wfaz_inf_4, wfaz_inf_5, wfaz_inf_6, wfaz_inf_7, wfaz_inf_8, wfaz_inf_9, wfaz_inf_10, wfaz_inf_11, wfaz_inf_12), by='basebrgy_basewman', type='left')
+
+wfaz_inf_all_meas
+
+write.csv(hfaz_inf_all_meas,"hfaz_inf_all_meas.csv")
+write.csv(wfaz_inf_all_meas,"wfaz_inf_all_meas.csv")
 ```
 
 
@@ -322,14 +636,31 @@ hhold_foo %>%
 
 ```
 ## Filter out the weird duplicates in 91
-```{r}
+```{r, cache = TRUE}
 child2 %>%
-  select(basebrgy_basewman, weghtndx, hightndx) %>% 
+  select(basebrgy_basewman, weghtndx, hightndx, skinndx1, skinndx2, skinndx3, subsndx1, subsndx2, subsndx3, circmndx) %>% 
   filter(!is.na(weghtndx) & !is.na(hightndx)) %>% 
   group_by(basebrgy_basewman) %>%
   summarize(n = n()) %>%
   filter(n > 1)  
 # Great, this filters out all duplications for child2
+
+child2 <-child2 %>% 
+  filter_at(vars(starts_with("skin")), all_vars(.>0)) %>% # filter out people without skinfolds. The guy has -6, which is code for 'disabled, no measurement taken"
+  filter_at(vars(starts_with("subs")), all_vars(.>0)) %>%
+  na_if(., -9) %>%
+  mutate(tricep_mean = rowMeans(select(., starts_with("skin")), na.rm = TRUE)) %>%  # mean of 3 measurements in mm
+  mutate(subscap_mean = rowMeans(select(., starts_with("subs")), na.rm = TRUE)) %>%  # mean of 3 measurements in mm
+  mutate(arm_musc_circ_91 = circmndx*10 - (tricep_mean * 3.14)) %>% # Upper arm muscle circ. (S) in mm: S = c - ( T * 3.14) 
+  mutate(arm_musc_area_91 = arm_musc_circ_91^2 / 12.56) %>% # Upper arm muscle area (M) in mm² : M = S² / 12.56
+  mutate(bmi_91 = weghtndx/(hightndx/100)^2) %>% 
+  select(basebrgy_basewman, weghtndx, hightndx, bmi_91, circmndx, subscap_mean, tricep_mean, arm_musc_area_91) %>% 
+  mutate(skinfold_sum = subscap_mean + tricep_mean) 
+
+# Calculate the density, fat-free mass, etc.
+# Equation from Durnin and Womersley
+
+
  
 ```
 
@@ -378,7 +709,7 @@ hhold91 %>%
 #subset child2 data
 
 growth2 <-child2 %>%
-  select(basebrgy_basewman, weghtndx, hightndx) %>% 
+  select(basebrgy_basewman, weghtndx, hightndx, bmi_91, circmndx, subscap_mean, tricep_mean, arm_musc_area_91, skinfold_sum) %>% 
   filter(!is.na(weghtndx) & !is.na(hightndx)) 
 
 #subset hh91 data
@@ -395,7 +726,14 @@ growth91_data_nobday
 #join tables together to make growth91_data
 intersect(names(growth91_data_nobday), names(birthdates_data))
 
-growth91_data <- left_join(growth91_data_nobday, birthdates_data, by = c("basebrgy_basewman"))
+growth91_data <- left_join(growth91_data_nobday, birthdates_data, by = c("basebrgy_basewman")) %>% 
+  mutate(bfperc_m_91 = ((14.28*log10(skinfold_sum)-(21.50*log10(hightndx))+ 90.69)),
+         bfperc_f_91 = (13.95*log10(skinfold_sum)-(18.09*log10(hightndx))+ 77.17),
+         fatmass_m_91 = (( bfperc_m_91 *.01)*weghtndx),
+         fatmass_f_91 = (( bfperc_f_91 *.01)*weghtndx),
+         fatmass_91 = if_else(sexchild == "1", fatmass_m_91, fatmass_f_91)) %>%
+  select(-c(fatmass_f_91, fatmass_m_91)) %>% 
+  mutate( fatfree_mass_91 = weghtndx-fatmass_91)
 
 growth91_data
 #2,278 
@@ -472,11 +810,39 @@ screen_data<-read_dta(here::here("Data/zip_child_2002/screen.dta")) %>% # note: 
 #subset anthdiet
 #calculate bmi
 anthdiet <- anthdiet %>% 
-  select(basebrgy_basewman, weight, height) %>% 
+  select(basebrgy_basewman, weight, height, tricep1, tricep2, tricep3, subscap1, subscap2, subscap3, waist, hip, armcircm) %>% 
   filter(weight > 0) %>% 
   filter(height > 0) %>% 
   rename(weight_02 = weight, height_02 = height)
 
+anthdiet <-anthdiet %>% 
+  filter_at(vars(starts_with("tricep")), all_vars(.>0)) %>% # filter out people without skinfolds. The guy has -6, which is code for 'disabled, no measurement taken"
+  filter_at(vars(starts_with("subscap")), all_vars(.>0)) %>%
+  na_if(., -9) %>%
+  mutate(whr_02 = waist / hip) %>%   
+  mutate(tricep_mean = rowMeans(select(., starts_with("tricep")), na.rm = TRUE)) %>%  # mean of 3 measurements in mm
+  mutate(subscap_mean = rowMeans(select(., starts_with("subscap")), na.rm = TRUE)) %>%  # mean of 3 measurements in mm
+  mutate(arm_musc_circ = armcircm*10 - (tricep_mean * 3.14)) %>% # Upper arm muscle circ. (S) in mm: S = c - ( T * 3.14) 
+  mutate(arm_musc_area_02 = arm_musc_circ^2 / 12.56) %>% # Upper arm muscle area (M) in mm² : M = S² / 12.56
+  mutate(bmi_02 = weight_02/(height_02/100)^2) %>% 
+  select(basebrgy_basewman, weight_02, height_02, bmi_02, waist, hip, whr_02, armcircm, subscap_mean, tricep_mean, arm_musc_area_02) %>% 
+  mutate(skinfold_sum_02 = subscap_mean + tricep_mean) 
+
+# Calculate the density, fat-free mass, etc.
+# Constants from Durnin and Womersley, 1974, (Males, Age 20-29)
+# Linear regressionequations for the estimation of body density x 10^3(kg/m^3)
+# density = c - m x log skinfold
+
+dw_c_m_02 <-1.1561
+dw_m_m_02 <-0.0711
+
+dw_c_f_02 <- 1.1468
+dw_m_f_02 <- 0.0740
+# bfperc = ((4.95/density )-4.5)*100
+# fatmass = (( bfperc *.01)*weight)
+# ffm05 = weight-fatmass
+
+ 
 #subset screen_data
 screen_data <- screen_data %>% 
   select(basebrgy_basewman, dayntrvw, yrntrvw, montrvw) %>% 
@@ -493,7 +859,19 @@ screen_data <- left_join(birthdates_data, screen_data, by = c("basebrgy_basewman
   
   
 
-growth02_data <- left_join(screen_data, anthdiet, by = c("basebrgy_basewman"))
+growth02_data <- left_join(screen_data, anthdiet, by = c("basebrgy_basewman")) %>% 
+  mutate(logfolds = log10(skinfold_sum_02), 
+         density_m_02 = dw_c_m_02 - (dw_m_m_02 * logfolds), 
+         bfperc_m_02 = ((4.95/density_m_02 )-4.5)*100,
+         fatmass_m_02 = (( bfperc_m_02 *.01)*weight_02),
+         density_f_02 = dw_c_f_02 - (dw_m_f_02 * logfolds), 
+         bfperc_f_02 = ((4.95/density_f_02 )-4.5)*100,
+         fatmass_f_02 = (( bfperc_f_02 *.01)*weight_02)) %>% 
+  mutate(fatmass_02 = if_else(sexchild == "1", fatmass_m_02, fatmass_f_02)) %>%
+  select(-c(fatmass_f_02, fatmass_m_02)) %>% 
+  mutate (fatfree_mass_02 = weight_02-fatmass_02)
+
+  
 
 growth02_data <- addWGSR(data = growth02_data, sex = "sexchild", firstPart= "height_02", secondPart = "age_cutoff_days", index = "hfa") %>% 
    rename(hfaz_02 = hfaz)
@@ -549,20 +927,63 @@ anthdiet05 <-read_dta(here::here("Data/zip_child_2005/anthdiet.dta")) %>% # note
   rename_all(tolower) %>% 
   unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman")
 
+names(anthdiet05)
+
 #subsetand  unite id variable
 #calculate bmi
 anthdiet05 <- anthdiet05 %>% 
-  select(basebrgy_basewman, age, sex, weight, height) %>% 
-  rename(weight_05 = weight, height_05 = height)
+  select(basebrgy_basewman, age, sex, weight, height, waist, hip, armcircm, tricep1, tricep2, tricep3, subscap1, subscap2, subscap3, suprail1, suprail2, suprail3) %>% 
+  rename(weight_05 = weight, height_05 = height, waist_05 = waist, hip_05 = hip, armcircm_05 = armcircm, tricep1_05 = tricep1, tricep2_05 = tricep2, tricep3_05 = tricep3, subscap1_05 = subscap1, subscap2_05 = subscap2, subscap3_05 = subscap3, suprail1_05 = suprail1, suprail2_05 = suprail2, suprail3_05 = suprail3)
   
-intersect(names(birthdates_data), names(anthdiet05))
+anthdiet05 <-anthdiet05 %>% 
+  filter_at(vars(starts_with("tricep")), all_vars(.>0)) %>% # filter out people without skinfolds. The guy has -6, which is code for 'disabled, no measurement taken"
+  filter_at(vars(starts_with("subscap")), all_vars(.>0)) %>%
+  filter_at(vars(starts_with("suprail")), all_vars(.>0)) %>%
+  na_if(., -9) %>%
+  mutate(whr_05 = waist_05 / hip_05) %>%   
+  mutate(tricep_mean = rowMeans(select(., starts_with("tricep")), na.rm = TRUE)) %>%  # mean of 3 measurements in mm
+  mutate(subscap_mean = rowMeans(select(., starts_with("subscap")), na.rm = TRUE)) %>%  # mean of 3 measurements in mm
+  mutate(supra_mean = rowMeans(select(., starts_with("suprail")), na.rm = TRUE)) %>%  # mean of 3 measurements in mm
+  mutate(arm_musc_circ = armcircm_05*10 - (tricep_mean * 3.14)) %>% # Upper arm muscle circ. (S) in mm: S = c - ( T * 3.14) 
+  mutate(arm_musc_area = arm_musc_circ^2 / 12.56) %>% # Upper arm muscle area (M) in mm² : M = S² / 12.56
+  mutate(bmi_05 = weight_05/(height_05/100)^2) %>% 
+  select(basebrgy_basewman, age, sex, weight_05, height_05, bmi_05, waist_05, hip_05, whr_05, armcircm_05, subscap_mean, supra_mean, tricep_mean, arm_musc_area) %>% 
+  mutate(skinfold_sum = subscap_mean + supra_mean + tricep_mean) 
+
+# Calculate the density, fat-free mass, etc.
+# Constants from Durnin and Womersley, 1974, (Males, Age 20-29)
+# Linear regressionequations for the estimation of body density x 10^3(kg/m^3)
+# density = c - m x log skinfold
+
+dw_c_m_05 <-1.1575
+dw_m_m_05 <-0.0617
+
+dw_c_f_05 <- 1.1566
+dw_m_f_05 <- 0.0728
+# bfperc = ((4.95/density )-4.5)*100
+# fatmass = (( bfperc *.01)*weight)
+# ffm05 = weight-fatmass
+
+anthdiet05 <-anthdiet05 %>% 
+  mutate(logfolds = log10(skinfold_sum), 
+         density_m_05 = dw_c_m_05 - (dw_m_m_05 * logfolds), 
+         bfperc_m_05 = ((4.95/density_m_05 )-4.5)*100,
+         fatmass_m_05 = (( bfperc_m_05 *.01)*weight_05),
+         density_f_05 = dw_c_f_05 - (dw_m_f_05 * logfolds), 
+         bfperc_f_05 = ((4.95/density_f_05 )-4.5)*100,
+         fatmass_f_05 = (( bfperc_f_05 *.01)*weight_05)) %>% 
+  mutate(fatmass_05 = if_else(sex == "1", fatmass_m_05, fatmass_f_05)) %>%
+  select(-c(fatmass_f_05, fatmass_m_05)) %>% 
+  mutate (fatfree_mass_05 = weight_05-fatmass_05)
 
 
+
+
+#join birthdates and anthdiet05
 growth05_data <- left_join(birthdates_data, anthdiet05, by = c("basebrgy_basewman")) %>% 
-  mutate(height_m_05 = (height_05/100)) %>% 
-  mutate( bmi_05 = (weight_05/(height_m_05^2))) %>% 
   filter(weight_05 > 0) %>% 
   filter(height_05 > 0)
+
 
 growth05_data
 
@@ -733,7 +1154,7 @@ growth_data_unfiltered
 
 ```
 
-```{r}
+```{r, cache = TRUE}
 #read in unc child ID data
 unc_base_reprostat <-read_csv(here::here("Output/Data/CPR/unc_base_reprostat.csv"))
 unc_base_reprostat
@@ -749,8 +1170,8 @@ by = c("basebrgy", "basewman"))
 
 growth_data<- growth_data_unfiltered %>% 
    unite(basebrgy, basewman, sep = "_", col = "basebrgy_basewman") %>% 
-  select(uncchdid, basebrgy_basewman, sexchild, sex, outcome, birthdate, intwdate, age_days_birthweigh, weightak_kg, heightcm, date_inf_meas, age_days_infweigh, hght_12, wght_12, intwdate91, age91_days, age_mo_91, age91_years, hightndx, weghtndx, intw_date02, age_days_02, age_years_02, age_cutoff, age_cutoff_days, height_02, weight_02, age, height_05, height_m_05, weight_05, bmi_05, hfaz_birth, hfaz_inf_12, hfaz_91, hfaz_02, hfa_diff_birth_inf12, hfa_diff_inf12_91, hfa_diff_91_02, wfaz_birth, wfaz_inf_12, wfaz_91, wfa_diff_birth_inf12, wfa_diff_inf12_91, reprostat, was_preg_no_na, trimester) %>% 
-  rename(intwdate_birth = intwdate, weightak_birth_kg = weightak_kg, heightcm_birth = heightcm, weghtndx_91 = weghtndx, hightndx_91 = hightndx, age_cutoff_02 = age_cutoff, age_cutoff_02_days = age_cutoff_days, age_05 = age) 
+  select(uncchdid, basebrgy_basewman, sexchild, sex, outcome, birthdate, intwdate, age_days_birthweigh, weightak_kg, heightcm, date_inf_meas, age_days_infweigh, hght_12, wght_12, intwdate91, age91_days, age_mo_91, age91_years, hightndx, weghtndx, bfperc_m_91, bfperc_f_91, fatmass_91, fatfree_mass_91, intw_date02, age_days_02, age_years_02, age_cutoff, age_cutoff_days, height_02, weight_02, waist, hip, bfperc_m_02, bfperc_f_02, fatmass_02, fatfree_mass_02,age, height_05, weight_05, bmi_05, waist_05, hip_05, bfperc_m_05, bfperc_f_05, fatmass_05, fatfree_mass_05,hfaz_birth, hfaz_inf_12, hfaz_91, hfaz_02, hfa_diff_birth_inf12, hfa_diff_inf12_91, hfa_diff_91_02, wfaz_birth, wfaz_inf_12, wfaz_91, wfa_diff_birth_inf12, wfa_diff_inf12_91, reprostat, was_preg_no_na, trimester) %>% 
+  rename(intwdate_birth = intwdate, weightak_birth_kg = weightak_kg, heightcm_birth = heightcm, weghtndx_91 = weghtndx, hightndx_91 = hightndx, age_cutoff_02 = age_cutoff, age_cutoff_02_days = age_cutoff_days, age_05 = age, waist_02 = waist, hip_02 = hip) 
   
 
 growth_data
