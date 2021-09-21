@@ -1,6 +1,8 @@
 ---
 title: "Catchup Growth Models"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r}
@@ -18,6 +20,8 @@ library(sjlabelled)
 library(sjPlot)
 library(VIF)
 library(car)
+# install.packages("interactions")
+library(interactions)
 ```
 
 ```{r}
@@ -362,6 +366,11 @@ sjPlot::tab_model(grim_height_91_02_intxn_f, grim_height_91_02_intxn_m,
                   han_height_91_02_intxn_f, han_height_91_02_intxn_m, 
                   horv_height_91_02_intxn_f, horv_height_91_02_intxn_m)
 
+
+```
+
+## Diagnostics
+```{r}
 #height 91-02 interaction models 
 par(mfrow=c(2,2))
 plot(grim_height_91_02_intxn_f)
@@ -381,6 +390,15 @@ plot(han_height_91_02_intxn_f)
 par(mfrow=c(2,2))
 plot(han_height_91_02_intxn_m)
 
+```
+
+## Visualizations
+```{r}
+interact_plot(horv_height_91_02_intxn_m, pred = hfa_diff_91_02, modx = hfa_diff_birth_inf12, plot.points = TRUE)
+# 
+interact_plot(han_height_91_02_intxn_m, pred = hfa_diff_91_02, modx = hfa_diff_birth_inf12, plot.points = TRUE)
+
+interact_plot(pheno_height_91_02_intxn_m, pred = hfa_diff_91_02, modx = hfa_diff_birth_inf12, plot.points = TRUE)
 ```
 
 
@@ -411,6 +429,11 @@ sjPlot::tab_model(grim_weight_83_91_intxn_f, grim_weight_83_91_intxn_m,
                   pheno_weight_83_91_intxn_f, pheno_weight_83_91_intxn_m, 
                   han_weight_83_91_intxn_f, han_weight_83_91_intxn_m, 
                   horv_weight_83_91_intxn_f, horv_weight_83_91_intxn_m)
+```
+
+
+## Diagnostics
+```{r}
 
 #weight 83-91 interaction models 
 par(mfrow=c(2,2))
@@ -508,5 +531,9 @@ vif(han_weight_83_91_intxn_f)
 vif(han_weight_83_91_intxn_m)
 vif(horv_weight_83_91_intxn_f)
 vif(horv_weight_83_91_intxn_m)
+```
+
+```{r}
+
 ```
 

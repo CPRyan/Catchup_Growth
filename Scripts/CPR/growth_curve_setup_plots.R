@@ -60,16 +60,17 @@ mlong_anthro_bday %>%
   theme_bw()
 
 
-# Boxplots by age group
+# Growth Curves for height by age
 mlong_anthro_bday %>% 
-  filter(!is.na(sexchild)) %>%
+  filter(!is.na(sexchild) & age_inf_meas > -10) %>%
   mutate(growth_accel_bin = cut_interval(growth_accel, n = 4)) %>% 
-  ggplot(., aes(x = age_inf_meas, y = height, group = basebrgy_basewman, col = growth_accel_bin))+
-  geom_point(alpha = 0.2)+
-  geom_line(alpha = 0.4)+
+  ggplot(., aes(x = age_inf_meas, y = height))+
+ # geom_point(alpha = 0.2)+
+#  geom_line(alpha = 0.2, aes(group = basebrgy_basewman, col = growth_accel_bin))+
+  geom_smooth(aes(group = sexchild, col = as_factor(sexchild)))+
  # scale_color_manual(values = c("black", "brown", "blue", "green", "red", "white"))+
-  facet_wrap(.~sexchild)+
-  scale_color_brewer(type = "div", palette = 9)+
+ # facet_wrap(.~sexchild)+
+#  scale_color_brewer(type = "div", palette = 9)+
   theme_bw()
 
 

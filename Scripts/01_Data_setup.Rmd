@@ -1046,7 +1046,7 @@ sjPlot::tab_model(grim_weight_83_91_intxn_f,
 
 ```
 
-
+## VIF checks
 ```{r}
 
 vif(grim_height_83_91_f)
@@ -1106,5 +1106,96 @@ vif(han_weight_83_91_intxn_f)
 vif(han_weight_83_91_intxn_m)
 vif(horv_weight_83_91_intxn_f)
 vif(horv_weight_83_91_intxn_m)
+```
+
+# Plots: Catchup Growth
+
+## hfaz and wfaz-score by sex
+```{r}
+z_checks <-growth_clocks_data %>% 
+  select(uncchdid, sexchild, hfaz_birth:wfa_diff_inf12_91, was_preg_no_na, IEAA, EEAA, DNAmGrimAgeAdjAge, DNAmPhenoAgeAdjAge)
+
+# Which is female...?
+z_checks %>% 
+  mutate(sexchild = as_factor(sexchild)) %>% 
+  filter(!is.na(IEAA)) %>% 
+  select(sexchild) %>% 
+  summary()
+# Ok, 2 is female
+
+z_checks %>% 
+  select(uncchdid, sexchild, contains("hfaz")) %>% 
+  gather(key = measure, value = value, -c(1,2)) %>% 
+  ggplot(., aes(x = measure,  y = value,  fill = as_factor(sexchild)))+
+  geom_boxplot()+
+  scale_fill_brewer(palette = "Set1")+
+  theme_bw()
+# Note, 2 is female
+# 
+# 
+z_checks %>% 
+  select(uncchdid, sexchild, contains("wfaz")) %>% 
+  gather(key = measure, value = value, -c(1,2)) %>% 
+  ggplot(., aes(x = measure,  y = value,  fill = as_factor(sexchild)))+
+  geom_boxplot()+
+  scale_fill_brewer(palette = "Set1")+
+  theme_bw()
+# Note, 2 is female
+```
+## Changes in hfaz and wfaz-score by sex
+```{r}
+z_checks %>% 
+  select(uncchdid, sexchild, contains("hfa_diff")) %>% 
+  gather(key = measure, value = value, -c(1,2)) %>% 
+  ggplot(., aes(x = measure,  y = value,  fill = as_factor(sexchild)))+
+  geom_boxplot()+
+  scale_fill_brewer(palette = "Set1")+
+  theme_bw()
+# Note, 2 is female
+
+z_checks %>% 
+  select(uncchdid, sexchild, contains("wfa_diff")) %>% 
+  gather(key = measure, value = value, -c(1,2)) %>% 
+  ggplot(., aes(x = measure,  y = value,  fill = as_factor(sexchild)))+
+  geom_boxplot()+
+  scale_fill_brewer(palette = "Set1")+
+  theme_bw()
+
+# Note, 2 is female
+```
+## Growth curves with mean
+```{r}
+
+
+
+
+```
+
+```{r, eval = FALSE}
+z_checks %>% 
+  group_by(sexchild) %>%
+  select(contains("hfa"), contains("wfa")) %>% 
+  summarize_all(list(mean = mean, sd = sd), na.rm = TRUE)
+
+
+stargazer::stargazer(as.data.frame(z_checks))
+                     
+                     
+stargazer::stargazer(as.data.frame(z_checks %>% filter(sexchild == 1)), type = "html", 
+                     summary = TRUE, 
+                     out = here::here("Output/Figures/z_checks_boys.html"))
+
+stargazer::stargazer(as.data.frame(z_checks %>% filter(sexchild == 2)), type = "html", 
+                     summary = TRUE, 
+                     out = here::here("Output/Figures/z_checks_girls.html"))
+```
+
+```{r}
+t.test(z_checks$hfaz_birth, z_checks$sexchild)
+
+
+
+sapply(z_checks[,-c(1:2, 15:19)], function(i) t.test(i ~ z_checks$sexchild))
+
 ```
 
