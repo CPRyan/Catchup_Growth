@@ -344,13 +344,13 @@ full_for_meaghan <-haven::read_dta(here::here("Data/Misc/Full_cohort_for_Meaghan
 brgy_uncchdid_info <-full_for_meaghan %>% 
   select(uncchdid, basebrgy, basewman)
 
-reprostat_females_w_dnam <-read_csv(here::here("Data/Misc/repro_final_original.csv")) %>% 
-  mutate(was_preg_no_na = if_else(reprostat == "pregnant" | reprostat == "preg_&_bf", "Yes", "No")) %>% 
+reprostat_females_w_dnam <-read_csv(here::here("Data/Misc/repro.final_all_ics.csv")) %>% 
+  mutate(was_preg_no_na = if_else(reprostat == "pregnant" | reprostat == "pregnant_and_breastfeeding", "Yes", "No")) %>% 
   select(uncchdid, reprostat, was_preg_no_na, trimester)
 
 unc_base_reprostat <-left_join(brgy_uncchdid_info, reprostat_females_w_dnam, by = "uncchdid")
 
-readr::write_csv(unc_base_reprostat, here::here("Output/Data/CPR/unc_base_reprostat.csv"))
+readr::write_csv(unc_base_reprostat, here::here("Output/Data/CPR/unc_base_reprostat_all_ics.csv"))
 
 
 unc_base_reprostat %>% filter(!is.na(reprostat))

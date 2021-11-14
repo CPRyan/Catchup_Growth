@@ -4,6 +4,7 @@ output:
   html_document: default
   pdf_document: default
 ---
+Note: All model diagnostics plots looks good and so are not shown (to see, remove 'eval = FALSE' from each code block)
 
 ```{r}
 knitr::opts_chunk$set(echo = TRUE)
@@ -25,284 +26,10 @@ library(interactions)
 ```
 
 ```{r}
-growth_clocks_data <- read_csv(here::here ("Data/growth_clocks_data.csv"))
+growth_clocks_data <- read_csv(here::here ("Output/Data/CPR", "growth_clocks_data.csv"))
 
 growth_clocks_data
-
-hfaz_inf_all_meas <- read_csv(here::here ("Data/hfaz_inf_all_meas.csv"))
-wfaz_inf_all_meas <- read_csv(here::here ("Data/wfaz_inf_all_meas.csv"))
-
 ```
-
-
-```{r}
-#Find average z score for m/w meas 1-12
-
-# first hfaz
-hfaz_1_summary <-hfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  summarize(mean_hfaz_1 = mean(hfaz_1),
-            std_dev_hfaz_1 = sd(hfaz_1),
-            med_hfaz_1 = median(hfaz_1),
-            count = n(), .groups = "keep")
-hfaz_1_summary
-
-# 2nd hfaz
-hfaz_2_summary <-hfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(hfaz_2) %>% 
-  summarize(mean_hfaz_2 = mean(hfaz_2),
-            std_dev_hfaz_2 = sd(hfaz_2),
-            med_hfaz_2 = median(hfaz_2),
-            count = n(), .groups = "keep")
-hfaz_2_summary
-
-# 3rd hfaz
-hfaz_3_summary <-hfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(hfaz_3) %>% 
-  summarize(mean_hfaz_3 = mean(hfaz_3),
-            std_dev_hfaz_3 = sd(hfaz_3),
-            med_hfaz_3 = median(hfaz_3),
-            count = n(), .groups = "keep")
-hfaz_3_summary
-
-# 4th hfaz
-hfaz_4_summary <-hfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(hfaz_4) %>% 
-  summarize(mean_hfaz_4 = mean(hfaz_4),
-            std_dev_hfaz_4 = sd(hfaz_4),
-            med_hfaz_4 = median(hfaz_4),
-            count = n(), .groups = "keep")
-hfaz_4_summary
-
-# 5th hfaz
-hfaz_5_summary <-hfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(hfaz_5) %>% 
-  summarize(mean_hfaz_5 = mean(hfaz_5),
-            std_dev_hfaz_5 = sd(hfaz_5),
-            med_hfaz_5 = median(hfaz_5),
-            count = n(), .groups = "keep")
-hfaz_5_summary
-
-# 6th hfaz
-hfaz_6_summary <-hfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(hfaz_6) %>% 
-  summarize(mean_hfaz_6 = mean(hfaz_6),
-            std_dev_hfaz_6 = sd(hfaz_6),
-            med_hfaz_6 = median(hfaz_6),
-            count = n(), .groups = "keep")
-hfaz_6_summary
-
-# 7th hfaz
-hfaz_7_summary <-hfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(hfaz_7) %>% 
-  summarize(mean_hfaz_7 = mean(hfaz_7),
-            std_dev_hfaz_7 = sd(hfaz_7),
-            med_hfaz_7 = median(hfaz_7),
-            count = n(), .groups = "keep")
-hfaz_7_summary
-
-# 8th hfaz
-hfaz_8_summary <-hfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(hfaz_8) %>% 
-  summarize(mean_hfaz_8 = mean(hfaz_8),
-            std_dev_hfaz_8 = sd(hfaz_8),
-            med_hfaz_8 = median(hfaz_8),
-            count = n(), .groups = "keep")
-hfaz_8_summary
-
-# 9th hfaz
-hfaz_9_summary <-hfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(hfaz_9) %>% 
-  summarize(mean_hfaz_9 = mean(hfaz_9),
-            std_dev_hfaz_9 = sd(hfaz_9),
-            med_hfaz_9 = median(hfaz_9),
-            count = n(), .groups = "keep")
-hfaz_9_summary
-
-# 10th hfaz
-hfaz_10_summary <-hfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(hfaz_10) %>% 
-  summarize(mean_hfaz_10 = mean(hfaz_10),
-            std_dev_hfaz_10 = sd(hfaz_10),
-            med_hfaz_10 = median(hfaz_10),
-            count = n(), .groups = "keep")
-hfaz_10_summary
-
-# 11th hfaz
-hfaz_11_summary <-hfaz_inf_all_meas %>% 
-  group_by(sexchild) %>%
-  drop_na(hfaz_11) %>% 
-  summarize(mean_hfaz_11 = mean(hfaz_11),
-            std_dev_hfaz_11 = sd(hfaz_11),
-            med_hfaz_11 = median(hfaz_11),
-            count = n(), .groups = "keep")
-hfaz_11_summary
-
-# 12th hfaz
-hfaz_12_summary <-hfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(hfaz_12) %>% 
-  summarize(mean_hfaz_12 = mean(hfaz_12),
-            std_dev_hfaz_12 = sd(hfaz_12),
-            med_hfaz_12 = median(hfaz_12),
-            count = n(), .groups = "keep")
-hfaz_12_summary
-  
-```
-```{r}
-# first wfaz
-wfaz_1_summary <-wfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  summarize(mean_wfaz_1 = mean(wfaz_1),
-            std_dev_wfaz_1 = sd(wfaz_1),
-            med_wfaz_1 = median(wfaz_1),
-            count = n(), .groups = "keep")
-wfaz_1_summary
-
-# 2nd wfaz
-wfaz_2_summary <-wfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(wfaz_2) %>% 
-  summarize(mean_wfaz_2 = mean(wfaz_2),
-            std_dev_wfaz_2 = sd(wfaz_2),
-            med_wfaz_2 = median(wfaz_2),
-            count = n(), .groups = "keep")
-wfaz_2_summary
-
-# 3rd wfaz
-wfaz_3_summary <-wfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(wfaz_3) %>% 
-  summarize(mean_wfaz_3 = mean(wfaz_3),
-            std_dev_wfaz_3 = sd(wfaz_3),
-            med_wfaz_3 = median(wfaz_3),
-            count = n(), .groups = "keep")
-wfaz_3_summary
-
-# 4th wfaz
-wfaz_4_summary <-wfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(wfaz_4) %>% 
-  summarize(mean_wfaz_4 = mean(wfaz_4),
-            std_dev_wfaz_4 = sd(wfaz_4),
-            med_wfaz_4 = median(wfaz_4),
-            count = n(), .groups = "keep")
-wfaz_4_summary
-
-# 5th wfaz
-wfaz_5_summary <-wfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(wfaz_5) %>% 
-  summarize(mean_wfaz_5 = mean(wfaz_5),
-            std_dev_wfaz_5 = sd(wfaz_5),
-            med_wfaz_5 = median(wfaz_5),
-            count = n(), .groups = "keep")
-wfaz_5_summary
-
-# 6th wfaz
-wfaz_6_summary <-wfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(wfaz_6) %>% 
-  summarize(mean_wfaz_6 = mean(wfaz_6),
-            std_dev_wfaz_6 = sd(wfaz_6),
-            med_wfaz_6 = median(wfaz_6),
-            count = n(), .groups = "keep")
-wfaz_6_summary
-
-# 7th wfaz
-wfaz_7_summary <-wfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(wfaz_7) %>% 
-  summarize(mean_wfaz_7 = mean(wfaz_7),
-            std_dev_wfaz_7 = sd(wfaz_7),
-            med_wfaz_7 = median(wfaz_7),
-            count = n(), .groups = "keep")
-wfaz_7_summary
-
-# 8th hfaz
-wfaz_8_summary <-wfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(wfaz_8) %>% 
-  summarize(mean_wfaz_8 = mean(wfaz_8),
-            std_dev_wfaz_8 = sd(wfaz_8),
-            med_wfaz_8 = median(wfaz_8),
-            count = n(), .groups = "keep")
-wfaz_8_summary
-
-# 9th wfaz
-wfaz_9_summary <-wfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(wfaz_9) %>% 
-  summarize(mean_wfaz_9 = mean(wfaz_9),
-            std_dev_wfaz_9 = sd(wfaz_9),
-            med_wfaz_9 = median(wfaz_9),
-            count = n(), .groups = "keep")
-wfaz_9_summary
-
-# 10th wfaz
-wfaz_10_summary <-wfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(wfaz_10) %>% 
-  summarize(mean_wfaz_10 = mean(wfaz_10),
-            std_dev_wfaz_10 = sd(wfaz_10),
-            med_wfaz_10 = median(wfaz_10),
-            count = n(), .groups = "keep")
-wfaz_10_summary
-
-# 11th wfaz
-wfaz_11_summary <-wfaz_inf_all_meas %>% 
-  group_by(sexchild) %>%
-  drop_na(wfaz_11) %>% 
-  summarize(mean_wfaz_11 = mean(wfaz_11),
-            std_dev_wfaz_11 = sd(wfaz_11),
-            med_wfaz_11 = median(wfaz_11),
-            count = n(), .groups = "keep")
-wfaz_11_summary
-
-# 12th wfaz
-wfaz_12_summary <-wfaz_inf_all_meas %>% 
-  group_by(sexchild) %>% 
-  drop_na(wfaz_12) %>% 
-  summarize(mean_wfaz_12 = mean(wfaz_12),
-            std_dev_wfaz_12 = sd(wfaz_12),
-            med_wfaz_12 = median(wfaz_12),
-            count = n(), .groups = "keep")
-wfaz_12_summary
-  
-```
-```{r}
-#average hfaz difference 
-
-summary_hfaz_inf12_91_diff <- growth_clocks_data %>% 
-  group_by(sexchild) %>% 
-  drop_na(hfa_diff_inf12_91) %>% 
-  summarize(mean_hfaz_diff = mean(hfa_diff_inf12_91),
-            std_dev_hfaz_diff = sd(hfa_diff_inf12_91),
-            med_hfaz_diff = median(hfa_diff_inf12_91),
-            count = n(), .groups = "keep")
-summary_hfaz_inf12_91_diff
-  
-#average wfaz diff
-
-summary_wfaz_inf12_91_diff <- growth_clocks_data %>% 
-  group_by(sexchild) %>% 
-  drop_na(wfa_diff_inf12_91) %>% 
-  summarize(mean_wfaz_diff = mean(wfa_diff_inf12_91),
-            std_dev_wfaz_diff = sd(wfa_diff_inf12_91),
-            med_wfaz_diff = median(wfa_diff_inf12_91),
-            count = n(), .groups = "keep")
-summary_wfaz_inf12_91_diff
-```
-
 
 #Birth to 2 years old
 ```{r}
@@ -342,6 +69,9 @@ growth_clocks_data %>%
   facet_wrap(~clock_type)+
   theme(legend.position = "none")
 
+
+```
+```{r, eval = FALSE}
 #birth-2 yrs old visualization 
 par(mfrow=c(2,2))
 plot(grim_height_b_2_f)
@@ -360,7 +90,6 @@ plot(han_height_b_2_f)
 
 par(mfrow=c(2,2))
 plot(han_height_b_2_m)
-
 ```
 
 #
@@ -391,6 +120,10 @@ sjPlot::tab_model(grim_height_83_91_f, grim_height_83_91_m,
                   han_height_83_91_f, han_height_83_91_m, 
                   horv_height_83_91_f, horv_height_83_91_m)
 
+
+```
+
+```{r, eval = FALSE}
 #83-91 visualization 
 par(mfrow=c(2,2))
 plot(grim_height_83_91_f)
@@ -412,8 +145,9 @@ plot(han_height_83_91_m)
 
 ```
 
+
 ## 8 to 19 years old
-```{r, cache=TRUE}
+```{r}
 #hfaz_91 minimal models
 
 grim_height_91_02_f<-lm(AgeAccelGrim ~ hfa_diff_91_02 +
@@ -441,6 +175,10 @@ sjPlot::tab_model(grim_height_91_02_f, grim_height_91_02_m,
                   han_height_91_02_f, han_height_91_02_m, 
                   horv_height_91_02_f, horv_height_91_02_m)
 
+
+```
+
+```{r, eval = FALSE}
 #91-02 visualization
 par(mfrow=c(2,2))
 plot(grim_height_91_02_f)
@@ -465,7 +203,7 @@ plot(han_height_91_02_m)
 #modeling wfaz (no interactions)
 
 ## Birth to 2 years old
-```{r, cache=TRUE}
+```{r}
 #wfa birth minimal models
 grim_weight_b_2_f<-lm(AgeAccelGrim ~ wfa_diff_birth_inf12 + was_preg_no_na, subset(growth_clocks_data, sex == "2")) 
 
@@ -489,6 +227,11 @@ sjPlot::tab_model(grim_weight_b_2_f, grim_weight_b_2_m,
                   han_weight_b_2_f, han_weight_b_2_m, 
                   horv_weight_b_2_f, horv_weight_b_2_m)
 
+
+```
+
+
+```{r, eval = FALSE}
 #weight birth-2 yrs old 
 par(mfrow=c(2,2))
 plot(grim_weight_b_2_f)
@@ -511,7 +254,7 @@ plot(han_weight_b_2_m)
 ```
 
 ## 2 to 8 years old
-```{r, cache=TRUE}
+```{r}
 #wfaz inf12 minimal models
 grim_weight_83_91_f<-lm(AgeAccelGrim ~ wfa_diff_inf12_91 + 
                           wfa_diff_birth_inf12+
@@ -539,6 +282,11 @@ sjPlot::tab_model(grim_weight_83_91_f, grim_weight_83_91_m,
                   han_weight_83_91_f, han_weight_83_91_m, 
                   horv_weight_83_91_f, horv_weight_83_91_m)
 
+
+
+```
+
+```{r, eval = FALSE}
 #weight 83-91 yrs old 
 par(mfrow=c(2,2))
 plot(grim_weight_83_91_f)
@@ -557,7 +305,6 @@ plot(han_weight_83_91_f)
 
 par(mfrow=c(2,2))
 plot(han_weight_83_91_m)
-
 ```
 
 
@@ -565,7 +312,7 @@ plot(han_weight_83_91_m)
 
 
 ## 2 to 8 years old
-```{r, cache=TRUE}
+```{r}
 #hfaz 2years old model
 grim_height_83_91_intxn_f<-lm(AgeAccelGrim ~ hfa_diff_inf12_91 * 
                         hfa_diff_birth_inf12 +
@@ -592,6 +339,10 @@ sjPlot::tab_model(grim_height_83_91_intxn_f, grim_height_83_91_intxn_m,
                   han_height_83_91_intxn_f, han_height_83_91_intxn_m, 
                   horv_height_83_91_intxn_f, horv_height_83_91_intxn_m)
 
+
+```
+
+```{r, eval = FALSE}
 #height 83-91 interaction models 
 par(mfrow=c(2,2))
 plot(grim_height_83_91_intxn_f)
@@ -612,8 +363,9 @@ par(mfrow=c(2,2))
 plot(han_height_83_91_intxn_m)
 ```
 
+
 ## 8 to 19 years old
-```{r, cache=TRUE}
+```{r}
 #hfaz_91 minimal models
 
 grim_height_91_02_intxn_f<-lm(AgeAccelGrim ~ hfa_diff_91_02 *
@@ -644,7 +396,7 @@ sjPlot::tab_model(grim_height_91_02_intxn_f, grim_height_91_02_intxn_m,
 ```
 
 ## Diagnostics
-```{r}
+```{r, eval = FALSE}
 #height 91-02 interaction models 
 par(mfrow=c(2,2))
 plot(grim_height_91_02_intxn_f)
@@ -680,7 +432,7 @@ interact_plot(pheno_height_91_02_intxn_m, pred = hfa_diff_91_02, modx = hfa_diff
 
 
 ## 2 to 8 years old
-```{r, cache=TRUE}
+```{r}
 #wfaz inf12 minimal models
 grim_weight_83_91_intxn_f<-lm(AgeAccelGrim ~ wfa_diff_inf12_91 * wfa_diff_birth_inf12 + was_preg_no_na, subset(growth_clocks_data, sex == "2"))
 
@@ -707,7 +459,7 @@ sjPlot::tab_model(grim_weight_83_91_intxn_f, grim_weight_83_91_intxn_m,
 
 
 ## Diagnostics
-```{r}
+```{r, eval = FALSE}
 
 #weight 83-91 interaction models 
 par(mfrow=c(2,2))
@@ -744,7 +496,7 @@ sjPlot::tab_model(grim_weight_83_91_intxn_f,
 ```
 
 
-```{r, cache=TRUE}
+```{r}
 
 vif(grim_height_83_91_f)
 vif(grim_height_83_91_m)
@@ -762,7 +514,7 @@ vif(han_height_91_02_m)
 
 ```
 
-```{r, cache=TRUE}
+```{r}
 vif(grim_weight_83_91_f)
 vif(grim_weight_83_91_m)
 vif(pheno_weight_83_91_f)
@@ -773,7 +525,7 @@ vif(horv_weight_83_91_f)
 vif(horv_weight_83_91_m)
 ```
 
-```{r, cache=TRUE}
+```{r}
 vif(grim_height_83_91_intxn_f)
 vif(grim_height_83_91_intxn_m)
 vif(pheno_height_83_91_intxn_f)
@@ -785,7 +537,7 @@ vif(horv_height_83_91_intxn_m)
 
 ```
 
-```{r, cache=TRUE}
+```{r}
 vif(grim_height_91_02_intxn_f)
 vif(grim_height_91_02_intxn_m)
 vif(pheno_height_91_02_intxn_f)
@@ -796,7 +548,7 @@ vif(horv_height_91_02_intxn_f)
 vif(horv_height_91_02_intxn_m)
 ```
 
-```{r, cache=TRUE}
+```{r}
 vif(grim_weight_83_91_intxn_f)
 vif(grim_weight_83_91_intxn_m)
 vif(pheno_weight_83_91_intxn_f)
@@ -807,7 +559,5 @@ vif(horv_weight_83_91_intxn_f)
 vif(horv_weight_83_91_intxn_m)
 ```
 
-```{r}
 
-```
 

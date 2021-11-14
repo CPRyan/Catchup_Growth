@@ -1159,9 +1159,13 @@ growth_data_unfiltered
 unc_base_reprostat <-read_csv(here::here("Output/Data/CPR/unc_base_reprostat.csv"))
 unc_base_reprostat
 
+
+unc_base_reprostat_all_ics <-read_csv(here::here("Output/Data/CPR/unc_base_reprostat_all_ics.csv"))
+unc_base_reprostat_all_ics
+
 growth_data_unfiltered <- left_join(growth_data_unfiltered %>%
  as_character(basebrgy, basewman),
-unc_base_reprostat %>%
+unc_base_reprostat_all_ics %>%
  as_character(basebrgy, basewman),
 by = c("basebrgy", "basewman"))
 
@@ -1181,14 +1185,40 @@ growth_data
 
 #read in epigenetic data
 ```{r}
-clocks_data <- read_csv(here::here ("Data/Clocks/QC_Norm_LisaMcEwan_meth_DatMini3.output.csv"))
+# Old clocks data
+# clocks_data <- read_csv(here::here ("Data/Clocks/QC_Norm_LisaMcEwan_meth_DatMini3.output.csv"))
+
+# New clocks data
+clocks_data <- read_csv(here::here ("Data/Clocks/datout_badprobes_notcalled_NA_orderSamples_not_fixed.output.csv")) 
+
+# Remove replicates
+# 20361
+# 21540
+# 22623
+# 23222 
+# since I have no other reason - remove all but first
+# Also, remove 1 sample that has an 'evaporated' replicate (23222)
+# Also, remove 1 sample that has only "rep" (have to include the id number because str_detect will just pull of any that have "rep" in the name).
+
+clocks_data <-clocks_data %>% 
+  filter(!str_detect(Sample_Name, "rep2") & 
+           !str_detect(Sample_Name, "rep3") &
+           !str_detect(Sample_Name, "rep4") &
+           !str_detect(Sample_Name, "rep5") &
+           !str_detect(Sample_Name, "rep6") &
+           !str_detect(Sample_Name, "rep7") &
+           !str_detect(Sample_Name, "rep8") &
+           !str_detect(Sample_Name, "rep9") &
+           !str_detect(Sample_Name, "rep10") &
+           !str_detect(Sample_Name, "_evaporated") &
+           !str_detect(Sample_Name, "22623_rep")) 
 
 growth_clocks_data <- left_join(growth_data, clocks_data, by = c("uncchdid"))
 growth_clocks_data
 
-write.csv(growth_clocks_data,"growth_clocks_data.csv")
-
+write.csv(growth_clocks_data,here::here("Output/Data/CPR/","growth_clocks_data.csv"))
 ```
+
 # modeling hfaz (no interactions)
 
 ## Birth to 2 years old
@@ -1228,18 +1258,31 @@ sjPlot::tab_model(grim_height_b_2_f, grim_height_b_2_m,
                   han_height_b_2_f, han_height_b_2_m, 
                   horv_height_b_2_f, horv_height_b_2_m)
 
-
-growth_clocks_data %>% 
+# Males
+growth_clocks_data %>%
+  filter(sex == 1) %>% 
   select(uncchdid, hfa_diff_birth_inf12, AgeAccelGrim, AgeAccelPheno, EEAA, IEAA) %>% 
   gather(key = clock_type, value = AgeAccel, -c(1,2)) %>% 
   na.omit() %>% 
   ggplot(., aes(x = hfa_diff_birth_inf12, y = AgeAccel, col = clock_type))+
-  geom_point()+
+  geom_point(alpha = 0.3)+
+  geom_smooth(method = "lm")+
   scale_color_brewer(type = "qual", palette = 6)+
-  facet_wrap(~clock_type)+
+  facet_wrap(~clock_type,scales = "free")+
   theme(legend.position = "none")
 
-
+# Females
+growth_clocks_data %>%
+  filter(sex == 2) %>% 
+  select(uncchdid, hfa_diff_birth_inf12, AgeAccelGrim, AgeAccelPheno, EEAA, IEAA) %>% 
+  gather(key = clock_type, value = AgeAccel, -c(1,2)) %>% 
+  na.omit() %>% 
+  ggplot(., aes(x = hfa_diff_birth_inf12, y = AgeAccel, col = clock_type))+
+  geom_point(alpha = 0.3)+
+  geom_smooth(method = "lm")+
+  scale_color_brewer(type = "qual", palette = 6)+
+  facet_wrap(~clock_type,scales = "free")+
+  theme(legend.position = "none")
 ```
 
 ## 2 to 8 years old
@@ -1534,20 +1577,20 @@ vif(horv_weight_83_91_intxn_m)
 ## hfaz and wfaz-score by sex
 ```{r}
 z_checks <-growth_clocks_data %>% 
-  select(uncchdid, sexchild, hfaz_birth:wfa_diff_inf12_91, was_preg_no_na, IEAA, EEAA, DNAmGrimAgeAdjAge, DNAmPhenoAgeAdjAge)
+  select(uncchdid, sex, hfaz_birth:wfa_diff_inf12_91, was_preg_no_na, IEAA, EEAA, DNAmGrimAgeAdjAge, DNAmPhenoAgeAdjAge)
 
 # Which is female...?
 z_checks %>% 
-  mutate(sexchild = as_factor(sexchild)) %>% 
+  mutate(sex = as_factor(sex)) %>% 
   filter(!is.na(IEAA)) %>% 
-  select(sexchild) %>% 
+  select(sex) %>% 
   summary()
 # Ok, 2 is female
 
 z_checks %>% 
-  select(uncchdid, sexchild, contains("hfaz")) %>% 
+  select(uncchdid, sex, contains("hfaz")) %>% 
   gather(key = measure, value = value, -c(1,2)) %>% 
-  ggplot(., aes(x = measure,  y = value,  fill = as_factor(sexchild)))+
+  ggplot(., aes(x = measure,  y = value,  fill = as_factor(sex)))+
   geom_boxplot()+
   scale_fill_brewer(palette = "Set1")+
   theme_bw()
@@ -1555,9 +1598,9 @@ z_checks %>%
 # 
 # 
 z_checks %>% 
-  select(uncchdid, sexchild, contains("wfaz")) %>% 
+  select(uncchdid, sex, contains("wfaz")) %>% 
   gather(key = measure, value = value, -c(1,2)) %>% 
-  ggplot(., aes(x = measure,  y = value,  fill = as_factor(sexchild)))+
+  ggplot(., aes(x = measure,  y = value,  fill = as_factor(sex)))+
   geom_boxplot()+
   scale_fill_brewer(palette = "Set1")+
   theme_bw()
@@ -1566,18 +1609,18 @@ z_checks %>%
 ## Changes in hfaz and wfaz-score by sex
 ```{r}
 z_checks %>% 
-  select(uncchdid, sexchild, contains("hfa_diff")) %>% 
+  select(uncchdid, sex, contains("hfa_diff")) %>% 
   gather(key = measure, value = value, -c(1,2)) %>% 
-  ggplot(., aes(x = measure,  y = value,  fill = as_factor(sexchild)))+
+  ggplot(., aes(x = measure,  y = value,  fill = as_factor(sex)))+
   geom_boxplot()+
   scale_fill_brewer(palette = "Set1")+
   theme_bw()
 # Note, 2 is female
 
 z_checks %>% 
-  select(uncchdid, sexchild, contains("wfa_diff")) %>% 
+  select(uncchdid, sex, contains("wfa_diff")) %>% 
   gather(key = measure, value = value, -c(1,2)) %>% 
-  ggplot(., aes(x = measure,  y = value,  fill = as_factor(sexchild)))+
+  ggplot(., aes(x = measure,  y = value,  fill = as_factor(sex)))+
   geom_boxplot()+
   scale_fill_brewer(palette = "Set1")+
   theme_bw()
@@ -1585,16 +1628,10 @@ z_checks %>%
 # Note, 2 is female
 ```
 ## Growth curves with mean
-```{r}
-
-
-
-
-```
 
 ```{r, eval = FALSE}
 z_checks %>% 
-  group_by(sexchild) %>%
+  group_by(sex) %>%
   select(contains("hfa"), contains("wfa")) %>% 
   summarize_all(list(mean = mean, sd = sd), na.rm = TRUE)
 
@@ -1602,21 +1639,21 @@ z_checks %>%
 stargazer::stargazer(as.data.frame(z_checks))
                      
                      
-stargazer::stargazer(as.data.frame(z_checks %>% filter(sexchild == 1)), type = "html", 
+stargazer::stargazer(as.data.frame(z_checks %>% filter(sex == 1)), type = "html", 
                      summary = TRUE, 
                      out = here::here("Output/Figures/z_checks_boys.html"))
 
-stargazer::stargazer(as.data.frame(z_checks %>% filter(sexchild == 2)), type = "html", 
+stargazer::stargazer(as.data.frame(z_checks %>% filter(sex == 2)), type = "html", 
                      summary = TRUE, 
                      out = here::here("Output/Figures/z_checks_girls.html"))
 ```
 
 ```{r}
-t.test(z_checks$hfaz_birth, z_checks$sexchild)
+t.test(z_checks$hfaz_birth, z_checks$child)
 
 
 
-sapply(z_checks[,-c(1:2, 15:19)], function(i) t.test(i ~ z_checks$sexchild))
+sapply(z_checks[,-c(1:2, 15:19)], function(i) t.test(i ~ z_checks$sex))
 
 ```
 

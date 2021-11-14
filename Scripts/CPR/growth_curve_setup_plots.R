@@ -66,11 +66,11 @@ mlong_anthro_bday %>%
   mutate(growth_accel_bin = cut_interval(growth_accel, n = 4)) %>% 
   ggplot(., aes(x = age_inf_meas, y = height))+
  # geom_point(alpha = 0.2)+
-#  geom_line(alpha = 0.2, aes(group = basebrgy_basewman, col = growth_accel_bin))+
-  geom_smooth(aes(group = sexchild, col = as_factor(sexchild)))+
+  geom_line(alpha = 0.2, aes(group = basebrgy_basewman, col = growth_accel_bin))+
+ # geom_smooth(aes(group = sexchild, col = as_factor(sexchild)))+
  # scale_color_manual(values = c("black", "brown", "blue", "green", "red", "white"))+
- # facet_wrap(.~sexchild)+
-#  scale_color_brewer(type = "div", palette = 9)+
+  facet_wrap(.~sexchild)+
+  scale_color_brewer(type = "div", palette = 9)+
   theme_bw()
 
 
@@ -99,4 +99,56 @@ mlong_for_spread %>%
          time_diff =   age_inf_meas - lag(age_inf_meas)) %>% 
   select(basebrgy_basewman, weight_diff, height_diff, time_diff, everything(.))
 
-         
+###########################################
+# Bring in epigenetic age data, color slopes by epigenetic clocks. 
+###########################################
+###########################################
+# New clocks data
+clocks_data <- read_csv(here::here ("Data/Clocks/datout_badprobes_notcalled_NA_orderSamples_not_fixed.output.csv")) 
+
+# Remove replicates
+# 20361
+# 21540
+# 22623
+# 23222 
+# since I have no other reason - remove all but first
+# Also, remove 1 sample that has an 'evaporated' replicate (23222)
+# Also, remove 1 sample that has only "rep" (have to include the id number because str_detect will just pull of any that have "rep" in the name).
+
+clocks_data <-clocks_data %>% 
+  filter(!str_detect(Sample_Name, "rep2") & 
+           !str_detect(Sample_Name, "rep3") &
+           !str_detect(Sample_Name, "rep4") &
+           !str_detect(Sample_Name, "rep5") &
+           !str_detect(Sample_Name, "rep6") &
+           !str_detect(Sample_Name, "rep7") &
+           !str_detect(Sample_Name, "rep8") &
+           !str_detect(Sample_Name, "rep9") &
+           !str_detect(Sample_Name, "rep10") &
+           !str_detect(Sample_Name, "_evaporated") &
+           !str_detect(Sample_Name, "22623_rep")) 
+
+
+clocks_data <-clocks_data %>% 
+  unite("basebrgy_basewman", c(basebrgy, basewman))
+
+
+growth_clocks_data <- read_csv(here::here ("Output/Data/CPR", "growth_clocks_data.csv"))
+
+mlong_anthro_bday_clocks <-left_join(mlong_anthro_bday, growth_clocks_data, by = "basebrgy_basewman")
+
+
+
+
+mlong_anthro_bday_clocks %>% 
+  filter(!is.na(sexchild.x) & age_inf_meas > -10) %>%
+#  filter(sexchild.x == 2) %>% 
+  mutate(AgeAccel_bin = cut_interval(AgeAccelGrim, n = 2)) %>% 
+  select(basebrgy_basewman, height, sexchild.x, age_inf_meas, AgeAccel_bin, was_preg_no_na) %>% 
+  ggplot(., aes(x = age_inf_meas, y = height))+
+  # geom_point(alpha = 0.2)+
+  geom_line(alpha = 0.2, aes(group = basebrgy_basewman, col = AgeAccel_bin))+
+  geom_smooth(aes(group = AgeAccel_bin, col = as_factor(AgeAccel_bin)))+
+  facet_wrap(~sexchild.x)+
+  scale_color_manual(values = c("green", "blue"))+
+  theme_bw()
